@@ -230,7 +230,7 @@
 	<div class="w1200 middle hidden">
 		<!-- 공지사항 -->
 		<div class="notice">
-			<h3>공지사항</h3>
+			<h3><a href="views/notice/NoticeList.jsp">공지사항</a></h3>
 			<ul>
 				<li><a href="#">[풍치/치주염] 풍치 진단과 검사<span class="">2018-02-03</span></a></li>
 				<li><a href="#">[치아교정] 부정교합의 문제점과 치료효과<span class="">2018-02-03</span></a></li>

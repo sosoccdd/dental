@@ -15,7 +15,7 @@
 			<h1><a class="logo" href="<%= request.getContextPath()%>/index.jsp">조은치과 </a></h1>
 			
 			<ul class="gnb fl hidden">
-				<li><a href="#">병원찾기</a></li>
+				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
 				<li><a href="#">가족병원</a></li>
 				<li><a href="#">이벤트</a></li>
 				<li><a href="#">게시판</a></li>
