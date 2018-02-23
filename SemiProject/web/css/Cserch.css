@@ -8,6 +8,19 @@
    margin-left: 19px;
    text-align: center;
 }
+.tr-tag-st{
+	width: 100px;
+	height: 10px;
+}
+.tr-img-tag{
+	width: 20%;
+	text-align: center;
+	margin: 30px 30px;
+	
+}
+.tr-td-img-tag{
+	vertical-align: middle;
+}
 .li-div-tag {
    width: 90px;
    height: 90px;
@@ -19,6 +32,7 @@
 .bluck-in{
 	display: inline-block;
 }
+
 .first-div{
 	width: 1200px; 
 	margin: 0 auto; 
