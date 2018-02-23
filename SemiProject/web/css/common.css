@@ -25,6 +25,7 @@
 .nanumbarungothic * {
  font-family: 'NanumBarunGothic', sans-serif;
 }
+
 .normal { font-style: normal;}
 .w250 { font-weight: 250;}
 .w300 { font-weight: 300;}
@@ -50,6 +51,8 @@
 .txt-ri{ text-align: right;}
 
 .c-fe7506{ color: #fe7506;}
+.c-308deb{ color: #308deb;}
+
 
 .lh14{ line-height: 1.4em;}
 .lh16{ line-height: 1.6em;}
@@ -136,6 +139,10 @@
 .fl{ float: left;}
 .fr{ float: right;}
 .hidden{ overflow: hidden;}
+.subPage{ 
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
 
 /* header */
 header{

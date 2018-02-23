@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>조은치과 - 당신의 치아를 응원합니다</title>
+<title>조은치과 - 당신의 치아를 응원합니다</title
 <link rel="stylesheet" href="/semi/css/reset.css">
 <link rel="stylesheet" href="/semi/css/common.css">
 <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
-</head>
 <body>
 	<header>
 		<div class="w1200 middle">
