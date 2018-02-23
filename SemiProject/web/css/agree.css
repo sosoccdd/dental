@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+.agree-wrap {
+	background-color: #f6f6f6;
+	border: 1px solid #d7d7d7;
+	padding: 50px 100px;
+}
+.agree-wrap h2{
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+.agree-wrap label {
+	font-size: 16px
+}
+
+.terms_p {
+	margin-bottom: 20px;
+	border: solid 1px #dadada;
+	background: #fff;
+}
+.input_chk {
+    position: relative;
+    display: block;
+}
+.terms_chk_all {
+	display: block;
+	padding: 15px 25px;
+}
+
+
+.terms_chk_all .input_chk label {
+	line-height: 20px;
+	top: -1px;
+	display: table;
+	width: 100%;
+}
+
+.input_chk label {
+	background: url('../images/join/pc_ico_check_off.png') 100% 50%
+		no-repeat;
+	display: block;
+	width: 100%;
+}
+.input_chk input {
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	right: 1px;
+	width: 22px;
+	height: 22px;
+	margin-top: -11px;
+	opacity: 0;
+	outline: 0;
+}
+.terms_bx_list{
+	padding-bottom: 10px;
+}
+.terms_bx {
+	display: block;
+	padding: 13px 25px 7px
+}
+
+.terms_bx:first-child {
+	border-top: 1px solid #f0f0f0
+}
+
+.terms_box {
+	position: relative;
+	overflow: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 88px;
+	margin-top: 11px;
+	padding: 8px 10px;
+	border: 1px solid #f0f0f0;
+	background: #f7f7f7;
+	scrollbar-base-color: #d9d9d9;
+	scrollbar-3dlight-color: #d9d9d9;
+	scrollbar-darkshadow-color: #d9d9d9;
+	scrollbar-face-color: #d9d9d9;
+	scrollbar-highlight-color: #d9d9d9;
+	scrollbar-shadow-color: #d9d9d9;
+	scrollbar-track-color: #f2f2f2;
+	-webkit-overflow-scrolling: touch
+}
+
+.terms_box .article {
+	font-size: 12px;
+	line-height: 16px;
+	color: #666
+}
+
+.input_chk input:checked+label {
+	background: url('../images/join/pc_ico_check_on.png') 100% 50% no-repeat;
+}
+.input_chk label.on {
+    background: url('../images/join/pc_ico_check_off.png') 100% 50% no-repeat;
+}
+.input_chk label .terms_choice {
+    font-size: 12px;
+    font-weight: 400;
+    color: #308deb;
+}
+.choice_mem{
+	border-top: 1px solid #f0f0f0;
+	padding: 25px 25px 35px 25px;
+}
+.choice_mem label{
+	background: #fff;
+	cursor: pointer;
+}
+.choice_mem input{
+	visibility: hidden;
+}
+.choice_mem input+label{
+	border: 1px solid #308deb;
+	color: #308deb;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+.choice_mem label:hover,
+.choice_mem input:checked+label {
+	background: #308deb;
+	color: #fff;
+}
+.choice_mem label.on {
+	background: #308deb;
+	color: #fff;
+}
+.agree-join-btn{
+	width: 100%;
+	border: 0;
+	background: #308deb;
+	color: #fff;
+	padding: 15px 0;
+	font-size: 15px;
+	cursor: pointer;
+}
+b{
+	font-weight: bold;
+	font-size: 14px;
+}
