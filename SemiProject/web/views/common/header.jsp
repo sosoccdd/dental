@@ -4,18 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>조은치과 - 당신의 치아를 응원합니다</title>
-<link rel="stylesheet" href="<%= request.getContextPath() %>/css/reset.css">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/css/common.css">
-<script src="<%= request.getContextPath() %>/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-</head>
+<title>조은치과 - 당신의 치아를 응원합니다</title
+<link rel="stylesheet" href="/semi/css/reset.css">
+<link rel="stylesheet" href="/semi/css/common.css">
+<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <body>
 	<header>
 		<div class="w1200 middle">
 			<h1><a class="logo" href="<%= request.getContextPath()%>/index.jsp">조은치과 </a></h1>
 			
 			<ul class="gnb fl hidden">
-				<li><a href="#">병원찾기</a></li>
+				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
 				<li><a href="#">가족병원</a></li>
 				<li><a href="#">이벤트</a></li>
 				<li><a href="#">게시판</a></li>
