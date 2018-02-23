@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%@ include file="../common/header.jsp"%>
+	<div class = "EventDetail">
+		이벤트 상세페이지
+	</div>
+	
+	
+	<%@ include file="../common/footer.jsp" %>
 </body>
 </html>
