@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="com.kh.dental.admin.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="619" width="315" x="45" y="8"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="2" language="java" name="com.kh.dental.admin.controller.DeleteAdminServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/controller/DeleteAdminServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="204" y="127"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.kh.dental.admin.controller.InsertAdminServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/controller/InsertAdminServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="204" y="264"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.kh.dental.admin.controller.SelectAdminServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/controller/SelectAdminServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="205" y="403"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.kh.dental.admin.controller.UpdateAdminServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/controller/UpdateAdminServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="204" y="542"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="6" language="java" name="com.kh.dental.admin.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="142" width="221" x="390" y="20"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="7" language="java" name="com.kh.dental.admin.model.dao.AdminDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/model/dao/AdminDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="493" y="111"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="8" language="java" name="com.kh.dental.admin.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="143" width="225" x="388" y="174"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="9" language="java" name="com.kh.dental.admin.model.service.AdminService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/model/service/AdminService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="503" y="269"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="10" language="java" name="com.kh.dental.admin.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="222" x="390" y="329"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="11" language="java" name="com.kh.dental.admin.model.vo.Admin" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/admin/model/vo/Admin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="499" y="424"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="12" language="java" name="com.kh.dental.common" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/common" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="166" width="157" x="683" y="22"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="13" language="java" name="com.kh.dental.common.JDBCTemplt" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/common/JDBCTemplt.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="759" y="122"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="14" language="java" name="com.kh.dental.event.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="635" width="315" x="913" y="17"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="15" language="java" name="com.kh.dental.event.controller.DeleteEventServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/controller/DeleteEventServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1070" y="147"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.kh.dental.event.controller.InsertEventServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/controller/InsertEventServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1070" y="289"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.kh.dental.event.controller.SelectEventServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/controller/SelectEventServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1070" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.kh.dental.event.controller.UpdateEventServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/controller/UpdateEventServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1070" y="574"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="19" language="java" name="com.kh.dental.event.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="144" width="222" x="1248" y="17"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="20" language="java" name="com.kh.dental.event.model.dao.EventDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/model/dao/EventDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="142" x="1278" y="74"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="21" language="java" name="com.kh.dental.event.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="141" width="221" x="1248" y="176"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="22" language="java" name="com.kh.dental.event.model.service.EventService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/model/service/EventService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="158" x="1283" y="225"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="23" language="java" name="com.kh.dental.event.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="146" width="222" x="1249" y="322"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="24" language="java" name="com.kh.dental.event.model.vo.Event" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/event/model/vo/Event.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1356" y="413"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="25" language="java" name="com.kh.dental.family.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="360" width="332" x="46" y="662"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="26" language="java" name="com.kh.dental.family.controller.SelectFamilyServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/controller/SelectFamilyServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="209" y="791"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.kh.dental.family.controller.UpdateFamilyServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/controller/UpdateFamilyServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="208" y="933"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="28" language="java" name="com.kh.dental.family.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="148" width="202" x="393" y="661"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="29" language="java" name="com.kh.dental.family.model.dao.FamilyDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/model/dao/FamilyDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="493" y="752"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="30" language="java" name="com.kh.dental.family.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="143" width="223" x="392" y="829"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="31" language="java" name="com.kh.dental.family.model.service.FamilyService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/model/service/FamilyService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="502" y="918"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="32" language="java" name="com.kh.dental.family.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="194" x="392" y="990"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="33" language="java" name="com.kh.dental.family.model.vo.Family" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/family/model/vo/Family.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="484" y="1093"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="34" language="java" name="com.kh.dental.filter" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/filter" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="260" width="152" x="679" y="211"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="35" language="java" name="com.kh.dental.filter.CoomonFilter" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/filter/CoomonFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="99" x="708" y="262"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="com.kh.dental.filter.IncryptFilter" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/filter/IncryptFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="760" y="401"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="37" language="java" name="com.kh.dental.HealthInfo.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="522" width="348" x="696" y="661"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="38" language="java" name="com.kh.dental.HealthInfo.controller.InsertHealthInfoServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/HealthInfo/controller/InsertHealthInfoServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="880" y="791"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="com.kh.dental.HealthInfo.controller.SelectHealthInfoServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/HealthInfo/controller/SelectHealthInfoServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="878" y="937"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="com.kh.dental.HealthInfo.controller.UpdateHealthInfoServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/HealthInfo/controller/UpdateHealthInfoServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="878" y="1081"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="41" language="java" name="com.kh.dental.HealthInfo.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="152" width="226" x="1055" y="660"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="42" language="java" name="com.kh.dental.HealthInfo.model.dao.HealthInfoDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/model/dao/HealthInfoDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1164" y="759"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="43" language="java" name="com.kh.dental.HealthInfo.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="144" width="247" x="1053" y="832"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="44" language="java" name="com.kh.dental.HealthInfo.model.service.HealthInfoService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/model/service/HealthInfoService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1175" y="925"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="45" language="java" name="com.kh.dental.HealthInfo.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="175" width="218" x="1052" y="989"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="46" language="java" name="com.kh.dental.HealthInfo.model.vo.HealthInfo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/HealthInfo/model/vo/HealthInfo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1163" y="1091"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="47" language="java" name="com.kh.dental.member.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="500" width="332" x="1487" y="15"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="48" language="java" name="com.kh.dental.member.controller.InsertMemberServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/controller/InsertMemberServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1655" y="144"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="com.kh.dental.member.controller.LoginServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/controller/LoginServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1656" y="289"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="com.kh.dental.member.controller.LogoutServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/controller/LogoutServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1656" y="431"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="51" language="java" name="com.kh.dental.member.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="164" width="221" x="1838" y="12"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="52" language="java" name="com.kh.dental.member.model.dao.MemberDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/model/dao/MemberDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1945" y="114"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="53" language="java" name="com.kh.dental.member.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="144" width="237" x="1837" y="185"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="54" language="java" name="com.kh.dental.member.model.service.MemberService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/model/service/MemberService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1954" y="278"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="55" language="java" name="com.kh.dental.member.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="143" width="208" x="1839" y="346"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="56" language="java" name="com.kh.dental.member.model.vo.Member" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/model/vo/Member.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1946" y="437"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="57" language="java" name="com.kh.dental.member.wrapper" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/wrapper" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="205" x="1842" y="498"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="58" language="java" name="com.kh.dental.member.wrapper.LoginWrapper" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/member/wrapper/LoginWrapper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1943" y="592"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="59" language="java" name="com.kh.dental.mypage.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="497" width="354" x="1321" y="660"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="60" language="java" name="com.kh.dental.mypage.controller.SelectMypageServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/controller/SelectMypageServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1499" y="780"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="com.kh.dental.mypage.controller.DeletMypageServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/controller/DeletMypageServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1504" y="928"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="com.kh.dental.mypage.controller.InsertMypageServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/controller/InsertMypageServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1505" y="1070"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="63" language="java" name="com.kh.dental.mypage.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="147" width="214" x="1709" y="662"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="64" language="java" name="com.kh.dental.mypage.model.dao.MypageDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/model/dao/MypageDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1814" y="757"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="65" language="java" name="com.kh.dental.mypage.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="146" width="235" x="1709" y="817"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="66" language="java" name="com.kh.dental.mypage.model.service.MypageService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/model/service/MypageService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1824" y="909"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="67" language="java" name="com.kh.dental.mypage.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="152" width="222" x="1709" y="973"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="68" language="java" name="com.kh.dental.mypage.model.vo.Mypage" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/mypage/model/vo/Mypage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1811" y="1069"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="69" language="java" name="com.kh.dental.notice.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="812" width="331" x="26" y="1214"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="70" language="java" name="com.kh.dental.notice.controller.DeleteNoticeServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/controller/DeleteNoticeServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="194" y="1349"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="71" language="java" name="com.kh.dental.notice.controller.UpdateNoticeServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/controller/UpdateNoticeServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="194" y="1491"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="72" language="java" name="com.kh.dental.notice.controller.SelectNoticeListServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/controller/SelectNoticeListServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="194" y="1638"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="73" language="java" name="com.kh.dental.notice.controller.SelectOneNoticeServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/controller/SelectOneNoticeServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="194" y="1780"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="74" language="java" name="com.kh.dental.notice.controller.InsertNoticeServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/controller/InsertNoticeServlet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="194" y="1935"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="75" language="java" name="com.kh.dental.notice.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="148" width="204" x="396" y="1212"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="76" language="java" name="com.kh.dental.notice.model.dao.NoticeDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/model/dao/NoticeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="492" y="1302"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="77" language="java" name="com.kh.dental.notice.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="225" x="390" y="1377"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="78" language="java" name="com.kh.dental.notice.model.service.NoticeService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/model/service/NoticeService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="497" y="1470"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="79" language="java" name="com.kh.dental.notice.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="152" width="196" x="388" y="1544"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="80" language="java" name="com.kh.dental.notice.model.vo.Notice" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/notice/model/vo/Notice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="480" y="1639"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="81" language="java" name="com.kh.dental.qna.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="672" width="383" x="673" y="1213"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="82" language="java" name="com.kh.dental.qna.controller.DeleteQnAServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/controller/DeleteQnAServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="871" y="1358"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="83" language="java" name="com.kh.dental.qna.controller.UpdateQnAServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/controller/UpdateQnAServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="869" y="1503"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="84" language="java" name="com.kh.dental.qna.controller.InsertQnAServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/controller/InsertQnAServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="868" y="1649"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="85" language="java" name="com.kh.dental.qna.controller.SelectQnAServlet" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/controller/SelectQnAServlet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="871" y="1799"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="86" language="java" name="com.kh.dental.qna.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="147" width="190" x="1085" y="1213"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="87" language="java" name="com.kh.dental.qna.model.dao.QnADao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/model/dao/QnADao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1172" y="1309"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="88" language="java" name="com.kh.dental.qna.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="164" width="211" x="1078" y="1378"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="89" language="java" name="com.kh.dental.qna.model.service.QnAService" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/model/service/QnAService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1184" y="1476"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="90" language="java" name="com.kh.dental.qna.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="145" width="182" x="1075" y="1557"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="91" language="java" name="com.kh.dental.qna.model.vo.QnA" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/qna/model/vo/QnA.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1166" y="1651"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="92" language="java" name="com.kh.dental.searchclinic.controller" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/searchclinic/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="672" width="332" x="1317" y="1211"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="93" language="java" name="com.kh.dental.searchclinic.controller.InsertSearchClinicServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/searchclinic/controller/InsertSearchClinicServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1481" y="1356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="94" language="java" name="com.kh.dental.searchclinic.controller.UpdateSearchClinicServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/searchclinic/controller/UpdateSearchClinicServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1486" y="1514"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="95" language="java" name="com.kh.dental.searchclinic.controller.SelectSearchClinicServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/searchclinic/controller/SelectSearchClinicServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1486" y="1662"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="96" language="java" name="com.kh.dental.searchclinic.controller.DeletSearchClinicServlet" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/searchclinic/controller/DeletSearchClinicServlet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1487" y="1806"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="97" language="java" name="com.kh.dental.searchclinic.model.dao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/searchclinic/model/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="152" width="239" x="1692" y="1209"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="98" language="java" name="com.kh.dental.searchclinic.model.dao.SearchClinicDao" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/searchclinic/model/dao/SearchClinicDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1808" y="1303"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="99" language="java" name="com.kh.dental.searchclinic.model.service" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/searchclinic/model/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="150" width="260" x="1691" y="1377"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="100" language="java" name="com.kh.dental.searchclinic.model.service.SearchClinicService" 
+    project="SemiProject" file="/SemiProject/src/com/kh/dental/searchclinic/model/service/SearchClinicService.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1800" y="1472"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="101" language="java" name="com.kh.dental.searchclinic.model.vo" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/searchclinic/model/vo" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="152" width="268" x="1691" y="1546"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="102" language="java" name="com.kh.dental.searchclinic.model.vo.SearchClinic" project="SemiProject" 
+    file="/SemiProject/src/com/kh/dental/searchclinic/model/vo/SearchClinic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1824" y="1639"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
