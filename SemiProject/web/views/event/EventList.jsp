@@ -13,7 +13,6 @@
 <title>Insert title here</title>
 <style>
 	.ADmain{
-	
 		width:500px;
 		height:400px;
 		border: 2px solid lightgray;
