@@ -6,11 +6,15 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../../css/reset.css">
 <link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/Cdentail.css">
+<link rel="stylesheet" href="../../css/Cdetail.css">
 <title>Insert title here</title>
 </head>
 <body>
 
+	<!-- 헤더 -->
+	<%@ include file="../../views/common/header.jsp" %>
+
+	
 
 
 
@@ -23,11 +27,8 @@
 
 
 
-
-
-
-
-
+	<!-- footer -->
+	<%@ include file="../../views/common/footer.jsp" %>
 
 </body>
 </html>
