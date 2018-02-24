@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+
+.sub-bg{
+	width: 100%;
+	background: #ddd;
+	padding: 30px 0;
+	margin-bottom: 50px;
+}
+.sub-bg > div {
+	overflow: hidden;
+}
+
+.line-txt{
+	font-size: 30px;
+	float: left;
+}
+
+.srch-wrap{
+	float: right;
+}
+
+.srch-wrap button{
+	margin-top:45px;
+	border: none;
+	
+}
+.srch-wrap img{
+	
+	
+	width:10px;
+	height: auto; 	
+	
+}
+
+.qna-li-title{
+	
+	font-size: 25px;
+	font-weight: 700;
+	
+}
+
+.qna-li-date{
+	
+	
+	font-size: 15px;
+	
+}
+
+.ans-head{
+	
+	width: 100%;
+	
+	
+	
+	
+}
+.wrap-ans {
+	
+	padding-top: 100px;
+	
+	
+}
+
+.bottom-line{
+	
+	margin-top: 100px;
+	display:block;
+	
+}
+
+
+
+
+.doc_img{
+	
+	padding-left: 15px;
+	display:inline;
+	float:left;
+	margin-right: 30px;
+}
+
+
+.doc_img img {
+	
+	border-radius :50%;
+	
+	
+}
+.doc_info {
+	float:left;
+	padding-top: 10px;	
+	overflow:hidden;
+	
+}
+
+.clinic_name {
+	
+	display:block;
+	
+	
+}
+
+
+.point-info{
+	margin-top:10px;
+	float:right;
+	
+}
+.date {
+	
+	display:block;
+	
+}
+
+.answer-body{
+	
+	width:100%;
+
+}
+
+.content{
+	
+	font-size: 15px;
+	
+}
+
+.btn-body{
+	
+	float:right;
+	margin-top: 50px;
+	
+}
+.comment{
+	width:100%;
+	
+}
+
+
+
+.btn-body button{
+	
+	padding: 8px 12px;
+	border-radius: 5px;
+	border: 1px solid #0080fc;
+	color: #0090fc;
+	background-color: transparent;
+	margin-left: 10px;
+	cursor: pointer;
+	
+}
