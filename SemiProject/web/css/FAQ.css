@@ -1,9 +1,10 @@
 @CHARSET "UTF-8";
 
 .q1 {
-	background:lightgray;
-	height:60px;
+	background:#f1f1f1;
+	height:70px;
 	width:100%;
+	
 }
 
 .q11 {
@@ -30,5 +31,52 @@
 	width:20px;
 	height:18px;
 	vertical-align: middle;
+	
+}
+
+.e1 {
+	background:#f1f1f1;
+	height:300px;
+	width:100%;
+	
+}
+.e2 {
+	background:white;
+	height:300px;
+	width:100%;
+}
+
+.e11 {
+	width:600px;
+	height:300px;
+	display:inline-block;
+	
+}
+.e22 {
+	width:600px;
+	height:300px;
+	
+}
+.e123 {
+	font-size:20px;
+	
+}
+.image1{
+	width:25px;
+	height:25px;
+	vertical-align: middle;
+	padding-bottom:10px;
+	
+}
+.qnaa {
+	display: none;
+	
+}
+
+.e11 label {
+	cursor:pointer;
+}
+.e22 label {
+	cursor:pointer;
 	
 }
