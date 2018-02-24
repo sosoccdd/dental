@@ -43,7 +43,7 @@
 	<%@ include file="../../views/common/header.jsp" %>
 
 	<div class="hi w1200 middle">
-		<label align="center" class="hi1">공지사항</label>
+		<label align="center" class="f20">공지사항</label>
 	</div>
 	
 	<div class="w1200 middle di1">
