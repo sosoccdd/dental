@@ -90,7 +90,7 @@
 	
 	<div class="cmt-body">
 	
-	<textarea class="comment" ></textarea>
+	<textarea class="comment" ></textarea><button>댓글달기</button>
 	
 	</div>
 	</div>
