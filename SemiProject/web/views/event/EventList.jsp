@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../..//css/common.css">
 <title>Insert title here</title>
 <style>
+
 	.ADmain{
 		width:500px;
 		height:400px;
