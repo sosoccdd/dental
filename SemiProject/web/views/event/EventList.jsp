@@ -152,7 +152,6 @@
 	
 
 	<br><br>
-
 	<!-- 광고리스트 -->
 	<ul class="w1200 middle">
 		<li>
