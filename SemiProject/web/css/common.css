@@ -143,6 +143,16 @@
 	margin-top: 30px;
 	margin-bottom: 50px;
 }
+.must::before{
+	content: '* ';
+	color: red;
+}
+.reset{
+	padding: 0 !important;
+	margin: 0 !important;
+	width: initial !important;
+	height: initial !important;
+}
 
 /* header */
 header{
