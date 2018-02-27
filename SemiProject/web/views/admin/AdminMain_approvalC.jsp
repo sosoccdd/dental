@@ -30,37 +30,42 @@
 <link rel="stylesheet" href="../../css/admin/w3.css">
 
 
+
 </head>
 
 <body>
 
 	<%@include file="common/header.jsp"%>
 	<%@include file="common/leftnav.jsp"%>
-
 	<div class="div-tag-good">
-  <div class="w3-bar w3-sand">
-    <a href="AdminMain.jsp" class="w3-bar-item w3-button test-a-tag">일반</a>
-    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button ">의사</a>
-    <a href="AdminMain_C.jsp" class="w3-bar-item w3-button">병원</a>
+  <div class="w3-bar w3-sand f20">
+   	병원 회원가입 승인 요청
   </div>
 
   <table class="w3-table-all w3-hoverable">
     <thead>
       <tr class="w3-light-grey">
-        <th>구분</th>
-        <th>회원아이디</th>
-        <th>회원이름</th>
-        <th>가입일</th>
-        <th>탈퇴여부</th>
+        <th>회원 ID</th>
+        <th>병원 이름</th>
+        <th>주소</th>
+        <th>전화번호</th>
+        <th>가입날짜</th>
+        <th>이메일주소</th>
+        <th>승인여부</th>
       </tr>
     </thead>
     <%for(int i = 0; i<20; i++){ %>
     <tr>
-      <td>1</td>
       <td>test01</td>
-      <td>서은별</td>
-      <td>2017-12-30</td>
-      <td><button class="w3-white w3-border w3-border-blue w3-round">탈퇴</button></td>
+      <td>조은치과</td>
+      <td>서울특별시 구로구</td>
+      <td>033-1233-1233</td>
+      <td>2018-03-03</td>
+      <td>123@nam.dkk</td>
+      <td>
+      <button class="w3-white w3-border w3-border-blue w3-round">승인</button>
+      <button class="w3-white w3-border w3-border-blue w3-round">거절</button>
+      </td>
     </tr>
    <%} %>
 
