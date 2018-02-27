@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+.join-process {
+	background: #2f6bad;
+}
+
+.join-process li {
+	background-color: transparent;
+	float: left;
+	cursor: default;
+	font-size: 16px;
+	color: #fff;
+	width: calc(1200px/ 4);
+	padding: 34px 0;
+	text-align: center;
+}
+.join-process li.on {
+	background-color: #195596;
+	font-weight: bold;
+}
+
+.join-wrap, .confirm-wrap {
+	background-color: #f6f6f6;
+	border: 1px solid #d7d7d7;
+	padding: 50px 100px;
+}
+
+.confirm-wrap {
+	background-image: url('../images/join/cellphone_verification.png');
+	background-repeat: no-repeat;
+	background-position: 400px 90px;
+}
+
+.join-wrap h2, .confirm-wrap h2 {
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+.login-bg {
+	background: #fff;
+	margin-bottom: 3px;
+	font-size: 14px;
+	padding: 8px 18px;
+}
+
+.login-bg label {
+	display: inline-block;
+	width: 110px;
+}
+
+.login-bg input {
+	border: none;
+	width: 700px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.short-input input{
+	width: 22%;
+}
+.getData {
+	height: 40px;
+	line-height: 40px;
+}
+
+.chkId-overlap, .zip-code, 
+.add-btn, .email-certifi {
+	background: #308deb;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.idChk p, .pwdChk p {
+	padding-left: 25px;
+	margin: 15px 20px;
+}
+
+.idChk .united, .pwdChk .united {
+	background: url('../images/join/icon_check.png') no-repeat;
+}
+
+.idChk .inconcinnity, .pwdChk .inconcinnity {
+	background: url('../images/join/icon_ExclamationMark.png') no-repeat;
+	color: red;
+}
+
+.address-area input:last-child {
+	float: right;
+}
+
+.join-member {
+	width: 100%;
+	border: 0;
+	background: #3d3d3d;
+	color: #fff;
+	padding: 15px 0;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.join-can {
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	margin-top: 10px;
+	font-size: 14px;
+	float: right;
+	color: #308deb;
+}
+
+.join-can:hover {
+	text-decoration: underline;
+}
+
+.confirm-wrap button {
+	width: 100%;
+	border: none;
+	margin-top: 20px;
+	background: #308deb;
+	padding: 15px 0;
+	color: #fff;
+	cursor: pointer;
+}
+.other-bg{
+	background: #fff;
+    padding: 18px 18px;
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+.other-bg > label:first-child{
+	display: inline-block;
+	width: 110px;
+	float: left;
+}
+.chkbox-wrap{
+	float:left;
+	width: 852px;
+}
+/*체크박스 폼*/
+input[type=checkbox]{
+	display: none;
+}
+input[type=checkbox] + label {
+    position: relative;
+    padding: 0 90px;
+}
+svg{
+	height: 20px;
+	position: absolute;
+    left: 0;
+}
+.p-label{
+	position: absolute;
+    top: 0;
+    left: 30px;
+}
+
+.check{
+	transition: stroke-dashoffset .5s ease-in-out .2s, stroke-width .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.outer{
+	transition: fill .3s ease-out;
+	fill: #BDBDBD;
+}
+.outer:hover{
+	fill: #9e9e9e;
+}
+.inner{
+	fill: #FFFFFF;
+	transition: opacity .2s ease-in-out .2s, height .3s ease-in-out .3s, width .3s ease-in-out .3s, x .3s ease-in-out .3s, y .3s ease-in-out .3s, rx .3s ease-in-out .3s;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	x: 12px;
+	y: 28px;
+	rx: 100px;
+}
+input[type=checkbox]:checked+label .check{
+	stroke-dashoffset: 0;
+	stroke-width: 7px;
+	background: red;
+}
+input[type=checkbox]:checked+label .outer{
+	transition: fill .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    fill: #2196F3;
+}
+input[type=checkbox]:checked+label .inner{
+    height: 0px;
+    width: 0px;
+    x: 16px;
+    y: 16px;
+    rx: 100px;
+}
+.careerList{
+	overflow: hidden;
+}
+.careerList:fisrt-child{
+	margin-top: 20px;
+}
+.careers{
+	padding: 10px 19px;
+    width: 80%;
+    margin-left: 124px;
+    float: left;
+}
+.careers:last-child{
+	margin-bottom: 20px;
+}
+.delCareer{
+	clear: right;
+	float: left;
+	background-color: transparent;
+	border-color: transparent;
+	color: #333;
+	font-size: 20px;
+	margin-top: 7px;
+	cursor: pointer;
+}
+.delCareer i:hover{
+	color: #308deb;
+}
+
+/* 파일업로드 css */
+.form-group {
+	background: #fff;
+	margin-bottom: 3px;
+	font-size: 14px;
+	padding: 18px;
+	overflow: hidden;
+}
+.form-group > label{
+	display: inline-block;
+    width: 110px;
+    float: left;
+}
+.where {
+  display: block;
+  margin: 25px 15px;
+  font-size: 11px;
+  color: #000;
+  text-decoration: none;
+  font-family: verdana;
+  font-style: italic;
+} 
+
+.filebox input[type="file"],
+.filebox2 input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip:rect(0,0,0,0);
+	border: 0;
+}
+
+.filebox label,
+.filebox2 label {
+	display: inline-block;
+	padding: .5em .75em;
+	color: #999;
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+}
+
+/* named upload */
+.filebox .upload-name,
+.filebox2 .upload-name2 {
+	display: inline-block;
+	padding: .5em .75em;
+	font-size: inherit;
+	font-family: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #f5f5f5;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* imaged preview */
+.filebox,.filebox2 {
+	overflow: hidden;
+	width: 850px;
+	float: left;
+}
+.filebox .upload-display,
+.filebox2 .upload-display2 {
+	margin-bottom: 5px;
+	display: inline-block;
+	float: left;
+	margin-right: 20px;
+}
+
+.filebox .upload-thumb-wrap,
+.filebox2 .upload-thumb-wrap  {
+	display: inline-block;
+	width: 134px;
+	padding: 2px;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.filebox .upload-display img,
+.filebox2 .upload-display2 img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.filebox.bs3-primary label,
+.filebox2.bs3-primary label {
+ 	color: #fff;
+	background-color: #308deb;
+	border-color: #308deb;
+}
+.success-join{
+	background-image: url('../images/join/join_ok.png');
+	background-repeat: no-repeat;
+	background-position: 430px 170px;
+	text-align: center;
+}
+.success-join h2{
+	font-size: 40px;
+	font-weight: bold;
+	margin: 20px 0 50px 0;
+}
+.success-join p{
+	margin: 60px 0 30px 0;
+	font-size: 15px;
+}
+.success-join button{
+	border: none;
+	color: #fff;
+	width: 140px;
+	height: 50px;
+	border-radius: 5px;
+	background: #308deb;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+.success-join button:last-child{
+	background-color: #969696;
+}

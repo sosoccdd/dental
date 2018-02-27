@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.health-title{
+	font-size: 30px;
+	width: 1200px;
+	margin: 20px auto 30px auto;
+}
+.health-cate-wrap{
+	background: #e4e4e4;
+	padding: 50px 0;
+}
+.health-cate{
+	overflow: hidden;
+}
+.health-cate li{
+	float: left;
+	width: calc(100%/8);
+	text-align: center;
+	padding-left: 40px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.health-cate .cate-img{
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.health-cate .cate-img img{
+	width: 100%;
+	min-height: 110px;
+}
+.health-cate li:first-child{
+	background: #333;
+	color: #fff;
+	line-height: 150px;
+	font-size: 16px;
+	padding-left: 0;
+	cursor: default;
+}

@@ -7,14 +7,13 @@
 <%@ include file="../common/header.jsp"%>
 
 <div class="w1200 middle agreePage subPage">
-	<ol class="join-process hidden">
-		<li>01 본인인증</li>
-		<li class="on">02 약관동의</li>
-		<li>03 상세정보입력</li>
-		<li>04 가입완료</li>
+	<ol class="join-process cjoin3 hidden">
+		<li class="on">01 약관동의</li>
+		<li>02 상세정보입력</li>
+		<li>03 가입완료</li>
 	</ol>
 	
-	<div class="agree-wrap">
+	<div class="agree-wrap cagree">
 		<h2>회원가입 약관 동의</h2>
 		
 		<form action="" method="post">
@@ -58,48 +57,12 @@
 						<%@ include file="join/privacy.jsp" %>
 					</div>
 				</li>
-				
-				<!-- 위치정보 이용약관 동의 -->
-				<li class="terms_bx terms_location">
-					<span class="input_chk"> 
-						<input type="checkbox" id="termsLocation" onclick="" class=""> 
-						<label id="termsLocationLb" for="termsLocation" class="">
-							위치정보 이용약관 동의 <span class="terms_no">(선택)</span>
-						</label>
-					</span>
-					
-					<div class="terms_box" id="divTerm">
-						<%@ include file="join/location.jsp" %>
-					</div>
-				</li>
-				
-				<!-- 이벤트 등 프로모션 알림 메일 수신 동의 -->
-				<li class="terms_bx terms_event">
-					<span class="input_chk"> 
-						<input type="checkbox" id="termsEvent" onclick="" class=""> 
-						<label id="termsEventLb" for="termsEvent" class="">
-							이벤트 등 프로모션 알림 메일 수신<span class="terms_no">(선택)</span>
-						</label>
-					</span>
+				<li class="pl25 pr25 mt30">
+					<button type="submit" class="agree-join-btn">가입하기</button>`
 				</li>
 			</ul>
-			
-			<!-- 회원선택 -->
-			<div class="choice_mem txt-ce">
-				<span class="f16">회원 유형에 따라 가입 절차에 차이가 있으니 일반회원 또는 의사회원을 선택해주세요</span>
-				<br><br>
-				<!-- 일반  -->
-				<input type="radio" id="ch_mem_normal" name="chs_mem">
-				<label for="ch_mem_normal" class="ch_mem_normal">일반회원</label>
-				
-				<!-- 의사 -->
-				<input type="radio" id="ch_mem_dentist" name="chs_mem">
-				<label for="ch_mem_dentist">의사회원</label>
-			</div>
-			<!-- choice -->
 		</div>
 		<!-- terms_p -->
-			<button type="submit" class="agree-join-btn">가입하기</button>`
 		</form>
 	</div>
 </div>
