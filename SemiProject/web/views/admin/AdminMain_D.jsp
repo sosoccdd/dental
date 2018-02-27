@@ -39,8 +39,8 @@
 
 	<div class="div-tag-good">
   <div class="w3-bar w3-sand">
-    <a href="AdminMain.jsp" class="w3-bar-item w3-button test-a-tag">일반</a>
-    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button ">의사</a>
+    <a href="AdminMain.jsp" class="w3-bar-item w3-button">일반</a>
+    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button test-a-tag">의사</a>
     <a href="AdminMain_C.jsp" class="w3-bar-item w3-button">병원</a>
   </div>
 
@@ -63,9 +63,7 @@
       <td><button class="w3-white w3-border w3-border-blue w3-round">탈퇴</button></td>
     </tr>
    <%} %>
-
-    
-  </table>
+   </table>
 <div class="w3-center">
 <div class="w3-bar">
   <a href="#" class="w3-button">&laquo;</a>

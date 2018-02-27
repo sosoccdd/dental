@@ -100,7 +100,7 @@
 		<h3 class="w1200">문의하기</h3>
 		
 		<ul class="w1200 middle">
-			<li onclick="location.href='#'" class="mb40 pb40">
+			<li onclick="location.href='/semi/views/QnA/QnAView.jsp'" class="mb40 pb40">
 				<p class="f15">사랑니</p>
 				<p class="f20 mb15">교정 후 상악 확장장치에 음식물 끼임</p>
 				<p class="f15 mb15"><span class="f15 c-fe7506 w700 mr10">답변</span> 부혜진 상담의</p>
@@ -112,7 +112,7 @@
 				<p class="f16 mt15">다른 전문가 답변 1개</p> 
 			</li>
 			
-			<li onclick="location.href='#'">
+			<li onclick="location.href='/semi/views/QnA/QnAView.jsp'">
 				<p class="f15">사랑니</p>
 				<p class="f20 mb15">교정 후 상악 확장장치에 음식물 끼임</p>
 				<p class="f15 mb15"><span class="f15 c-fe7506 w700 mr10">답변</span> 부혜진 상담의</p>
@@ -123,7 +123,7 @@
 				<div class="imgWrap mt10 mr15 ml15"><img src="images/dentist/dentist01.png"></div>
 				<p class="f16 mt15">다른 전문가 답변 1개</p> 
 			</li>
-			<li class="mt20"><button type="button">문의하기 전체보기</button></li>
+			<li class="mt20"><button type="button" onclick="/semi/views/QnA/QnAList.jsp">문의하기 전체보기</button></li>
 		</ul>
 		
 	</div>
@@ -135,19 +135,19 @@
 		<h3>건강정보</h3>
   		<ul>
 			<li class="w1200">
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews1.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 				
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews1.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 				
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews1.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
@@ -155,19 +155,19 @@
 			</li>
 			
 			<li class="w1200">
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews2.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 				
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews2.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 				
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews2.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
@@ -175,19 +175,19 @@
 			</li>
 			
 			<li class="w1200">
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews3.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 				
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews3.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 				
-				<dl onclick="location.href='#'">
+				<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 					<dt><img src="images/main/dentalNews3.jpg"></dt>
 					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
@@ -195,7 +195,9 @@
 			</li>
 		</ul>
 		
-		<div class="w1200 middle"><button type="button" class="mt20">건강정보 전체보기</button></div>
+		<div class="w1200 middle">
+			<button type="button" class="mt20" onclick="location.href='/semi/views/HealthInfo/HealthList.jsp'">건강정보 전체보기</button>
+		</div>
 		
 		<span class="leftBtn">&#10094;</span>
 		<span class="rightBtn">&#10095;</span>
@@ -207,18 +209,18 @@
 	<div class="event bt">
 	<div class="w1200 middle relative">
 		<h3 class="w1200">이벤트</h3>
-		<ul class="w1200 middle">
-			<li><img src="images/event/event01.jpg"></li>
-			<li><img src="images/event/event01.jpg"></li>
-			<li><img src="images/event/event01.jpg"></li>
-			<li><img src="images/event/event02.jpg"></li>
-			<li><img src="images/event/event02.jpg"></li>
-			<li><img src="images/event/event02.jpg"></li>
-			<li><img src="images/event/event03.jpg"></li>
-			<li><img src="images/event/event03.jpg"></li>
-			<li><img src="images/event/event03.jpg"></li>
+		<ul class="w1200 middle bxslider">
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event01.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event01.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event01.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event02.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event02.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event02.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event03.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'"><img src="images/event/event03.jpg"></li>
+			<li onclick="location.href='/semi/event/EventView.jsp'" ><img src="images/event/event03.jpg"></li>
 		</ul>
-		<div class="w1200 middle"><button type="button" class="mt20">이벤트 전체보기</button></div>
+		<div class="w1200 middle"><button type="button" class="mt20" onclick="location.href='/semi/event/EventList.jsp'">이벤트 전체보기</button></div>
 		<span class="left-btn">&#10094;</span>
 		<span class="right-btn">&#10095;</span>
 	</div>
@@ -230,11 +232,11 @@
 	<div class="w1200 middle hidden">
 		<!-- 공지사항 -->
 		<div class="notice">
-			<h3><a href="views/notice/NoticeList.jsp">공지사항</a></h3>
+			<h3><a href="/semi/views/notice/NoticeList.jsp">공지사항</a></h3>
 			<ul>
-				<li><a href="#">[풍치/치주염] 풍치 진단과 검사<span class="">2018-02-03</span></a></li>
-				<li><a href="#">[치아교정] 부정교합의 문제점과 치료효과<span class="">2018-02-03</span></a></li>
-				<li><a href="#">[치아교정] 치아교정 시 발치를 해야하는 경우<span class="">2018-02-03</span></a></li>
+				<li><a href="/semi/views/notice/NoticeView.jsp">[풍치/치주염] 풍치 진단과 검사<span class="">2018-02-03</span></a></li>
+				<li><a href="/semi/views/notice/NoticeView.jsp">[치아교정] 부정교합의 문제점과 치료효과<span class="">2018-02-03</span></a></li>
+				<li><a href="/semi/views/notice/NoticeView.jsp">[치아교정] 치아교정 시 발치를 해야하는 경우<span class="">2018-02-03</span></a></li>
 			</ul>
 		</div>
 		<!-- notice -->

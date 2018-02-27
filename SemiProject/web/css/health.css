@@ -1,0 +1,103 @@
+@charset "UTF-8";
+.health-title{
+	width: 1200px;
+	margin: 20px auto 30px auto;
+	position: relative;
+}
+.health-title h2{
+	font-size: 30px;
+}
+.srch-wrap{
+	width: 310px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.srch-wrap input{
+	padding: 10px;
+	width: 260px;
+	float: left;
+	border: 1px solid #d7d7d7;
+	border-right: 0;
+}
+.srch-wrap button{
+	border: 1px solid #d7d7d7;
+	border-left: 0;
+	width: 50px;
+	height: 42px;
+	margin: 0;
+	background: #fff;
+}
+.srch-wrap i{
+	font-size: 20px;
+	color: #d7d7d7;
+}
+.health-cate-wrap{
+	background: #e4e4e4;
+	padding: 50px 0;
+	margin-bottom: 50px;
+}
+.health-cate{
+	overflow: hidden;
+}
+.health-cate li{
+	float: left;
+	width: calc(100%/8);
+	text-align: center;
+	padding-left: 40px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.health-cate .cate-img{
+	border-radius: 50%;
+	overflow: hidden;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.health-cate .cate-img img{
+	width: 100%;
+	min-height: 110px;
+}
+.health-cate li:first-child{
+	background: #333;
+	color: #fff;
+	line-height: 150px;
+	font-size: 16px;
+	padding-left: 0;
+	cursor: default;
+}
+.h_infoList li{
+	border: 1px solid #d7d7d7;
+	margin: 0 15px 15px 0;
+	width: calc(1170px/3);
+	float: left;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.h_infoList li:hover{
+	border: 1px solid #333;
+}
+.h_infoList li:nth-child(3n){
+	margin-right: 0;
+}
+.h_infoList .h-if-img{
+	height: 220px;
+	overflow: hidden;
+	position: relative;
+}
+.h_infoList img{
+	width: 100%;
+	position: absolute;
+	top:-60px;
+}
+.h_infoList p{
+	font-size: 18px;
+	padding: 15px 15px 0 15px;
+	border-top: 1px solid #d7d7d7;
+}
+.h_infoList p:last-child{
+	font-size: 12px;
+	padding: 2px 15px 15px 15px;
+	border: 0;
+}
