@@ -2,11 +2,21 @@
 	pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../../css/health.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
 <!-- header -->
 <%@ include file="../common/header.jsp"%>
-
-		<h2 class="health-title">건강정보</h2>
+		
+		<div class="health-title">
+			<h2>건강정보</h2>
+			
+			<div class="srch-wrap">
+				<input type="search" placeholder="건강정보를 입력하세요">
+				<button type="button"><i class="fa fa-search"></i></button>
+			</div>
+			<!-- srch-wrap -->
+		</div>
+		<!-- health-title -->
 		<div class="health-cate-wrap">
 			<div class="w1200 middle">
 				
@@ -46,6 +56,83 @@
 		<!-- health-title -->
 		
 		
+		<div class="w1200 middle">
+
+			<ul class="h_infoList hidden">
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews1.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews1.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews1.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews3.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews1.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews3.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews2.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews3.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+				<li>
+					<div class="h-if-img">
+						<img src="/semi/images/main/dentalNews2.jpg">
+					</div>
+						<p>치아 건강을 해치는 이갈이</p>
+						<p>이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</p>
+				</li>
+				
+			</ul>
+		</div>
 
 <!-- footer -->
 <%@ include file="../common/footer.jsp"%>

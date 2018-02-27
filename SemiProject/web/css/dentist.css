@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.titleArea{
+	background: #2f6bad;
+	padding: 30px 60px;
+	border: 1px solid red;
+}
