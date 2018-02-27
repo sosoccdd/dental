@@ -101,7 +101,7 @@
 <body>
 	<%@ include file="../common/header.jsp"%>
 		
-	<div class="container">
+  <div class="container">
   <h2>조치 이벤트</h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
