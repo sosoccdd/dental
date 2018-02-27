@@ -39,9 +39,9 @@
 
 	<div class="div-tag-good">
   <div class="w3-bar w3-sand">
-    <a href="AdminMain.jsp" class="w3-bar-item w3-button test-a-tag">일반</a>
-    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button ">의사</a>
-    <a href="AdminMain_C.jsp" class="w3-bar-item w3-button">병원</a>
+    <a href="AdminMain.jsp" class="w3-bar-item w3-button">일반</a>
+    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button">의사</a>
+    <a href="AdminMain_C.jsp" class="w3-bar-item w3-button test-a-tag">병원</a>
   </div>
 
   <table class="w3-table-all w3-hoverable">

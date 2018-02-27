@@ -30,37 +30,39 @@
 <link rel="stylesheet" href="../../css/admin/w3.css">
 
 
+
 </head>
 
 <body>
 
 	<%@include file="common/header.jsp"%>
 	<%@include file="common/leftnav.jsp"%>
-
+	
 	<div class="div-tag-good">
-  <div class="w3-bar w3-sand">
-    <a href="AdminMain.jsp" class="w3-bar-item w3-button test-a-tag">일반</a>
-    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button ">의사</a>
-    <a href="AdminMain_C.jsp" class="w3-bar-item w3-button">병원</a>
+  <div class="w3-bar w3-sand f20">
+     병원정보수정요청내역
   </div>
 
   <table class="w3-table-all w3-hoverable">
     <thead>
       <tr class="w3-light-grey">
-        <th>구분</th>
-        <th>회원아이디</th>
-        <th>회원이름</th>
-        <th>가입일</th>
-        <th>탈퇴여부</th>
+        <th>게시판코드</th>
+        <th>요청회원아이디</th>
+        <th>요청날짜</th>
+        <th>요청병원</th>
+        <th>요청내용</th>
+        <th>요청완료여부</th>
       </tr>
     </thead>
     <%for(int i = 0; i<20; i++){ %>
     <tr>
-      <td>1</td>
+      <td>1_222</td>
       <td>test01</td>
-      <td>서은별</td>
       <td>2017-12-30</td>
-      <td><button class="w3-white w3-border w3-border-blue w3-round">탈퇴</button></td>
+      <td>조은치과</td>
+      <td>점심시간 정보 수정 요청 </td>
+      <td><button class="w3-white w3-border w3-border-blue w3-round">승인</button>
+      <button class="w3-white w3-border w3-border-blue w3-round">취소</button></td>
     </tr>
    <%} %>
 
@@ -77,6 +79,7 @@
 </div>
 </div>
 </div>
+	
 </body>
 
 </html>
