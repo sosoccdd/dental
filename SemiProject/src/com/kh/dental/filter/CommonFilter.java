@@ -8,22 +8,19 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-
-import com.kh.dental.member.wrapper.LoginWrapper;
-
 
 /**
- * Servlet Filter implementation class IncryptFilter
+ * Servlet Filter implementation class CommonFilter
  */
-@WebFilter(filterName="incrypt", urlPatterns="*.me")
-public class IncryptFilter implements Filter {
+@WebFilter(filterName="encoding", urlPatterns="/*")
+public class CommonFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public IncryptFilter() {
+    public CommonFilter() {
         // TODO Auto-generated constructor stub
+    	System.out.println("common 필터 객체 생성");
     }
 
 	/**
@@ -31,6 +28,7 @@ public class IncryptFilter implements Filter {
 	 */
 	public void destroy() {
 		// TODO Auto-generated method stub
+		System.out.println("destroy()호출...");
 	}
 
 	/**
@@ -39,15 +37,12 @@ public class IncryptFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		// place your code here
-		System.out.println("암호화 필터");
-		
-		request.setAttribute("checkPwd", request.getParameter("userPwd"));
-		HttpServletRequest h_request = (HttpServletRequest)request;
-		
-		LoginWrapper lw = new LoginWrapper(h_request);
-		
+		//System.out.println("doFilter()호출...");
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		System.out.println("인코딩 완료");
 		// pass the request along the filter chain
-		chain.doFilter(lw, response);
+		chain.doFilter(request, response);
 	}
 
 	/**
@@ -55,6 +50,7 @@ public class IncryptFilter implements Filter {
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
+		//System.out.println("init()호출...");
 	}
 
 }
