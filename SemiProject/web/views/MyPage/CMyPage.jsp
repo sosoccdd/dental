@@ -258,7 +258,9 @@
                        <td>ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄱㄷ쥿ㄷ</td>
                        <td>티몬과품바</td>
                        <td>2016.02.18</td>
+
                        <td>N</td>   
+
                      </tr>      
                      
                      
@@ -268,6 +270,7 @@
          
          <div id="Information" class="tabcontent">
            
+
          
       <div id="pass-wrap" class="pass-wrap">
          <pre>안전한 개인정보 관리를 위하여 비밀번호를 다시 입력해주세요.
@@ -396,6 +399,7 @@
    </script>
    
       
+
 
    
    <%@ include file="../common/footer.jsp"%>

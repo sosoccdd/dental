@@ -1,0 +1,123 @@
+@charset "UTF-8"@charset "UTF-8";
+
+
+
+.sub-bg > div {
+   overflow: hidden;
+}
+.srch-wrap{
+   float: right;
+}
+
+.line-txt{
+   font-size: 30px;
+   float: left;
+}
+.srch-wrap button{
+   margin-top:45px;
+   border: none;
+   
+}
+.srch-wrap img{
+   
+   
+   width:10px;
+   height: auto;    
+      
+}
+
+.sub-bg{
+   width: 100%;
+   background: #ddd;
+   padding: 30px 0;
+   margin-bottom: 50px;
+}
+
+.qna-list{
+   margin-top:30px;
+}
+
+
+.qna-li-title{
+   font-size: 24px;
+}
+
+
+.qna-list li{
+   
+   padding: 25px;
+   overflow: hidden;
+   margin-bottom: 30px;
+}
+.answerTable{
+   
+   padding-left: 24px; 
+   
+}
+
+
+.doc-text{
+   border : 1px solid black;
+   margin-left: 53px; 
+   width: 300px;
+}
+
+.ans-text{
+   
+   
+}
+
+.ans-tab{
+   
+    margin-top: 30px;   
+   
+   
+   
+}
+.ans-text > td{
+   
+   padding-right: 40px; 
+    display: table-cell;
+    vertical-align: top;
+}
+
+.content{
+   
+   
+   
+   
+   }
+
+
+.ans-btn {
+    
+   
+   margin-top: 50px;
+   margin-right: 10px;
+   padding: 8px 12px;
+   border-radius: 5px;
+   border: 1px solid #0080fc;
+   color: #0090fc;
+   background-color: transparent;
+   
+   cursor: pointer;
+   
+   
+}
+
+.btn-wrap{
+   
+   padding-top : 50px;
+   
+   
+}
+
+.answerTable label{
+	font-size:20px;
+	font-weight:bold;
+	
+}
+.answerTable p{
+	
+	
+}

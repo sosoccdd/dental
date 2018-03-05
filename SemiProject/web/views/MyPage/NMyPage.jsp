@@ -200,6 +200,7 @@
 	</div>
 	
 
+
 	<div class = "NMtotal2 w1200 middle">	
 		<div class="tab w1200 middle">
 		  <button class="tablinks NMRegister active" onclick="openCity(event, 'NMRegister')"> 접수현황 </button>
@@ -520,5 +521,6 @@
    }
    </script>
    
+
 </body>
 </html>
