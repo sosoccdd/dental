@@ -2,6 +2,137 @@
 
 .titleArea{
 	background: #2f6bad;
-	padding: 30px 60px;
-	border: 1px solid red;
+	padding: 35px 60px;
+	overflow: hidden;
+	margin-top: 30px;
+}
+.denti-img{
+	width: 180px;
+	height: 180px;
+	overflow: hidden;
+	border-radius: 50%;
+	float: left;
+	margin-right: 50px;
+}
+.denti-img img{
+	width: 180px;
+}
+.titleArea li{
+	color: #fff;
+}
+.titleArea li:first-child{
+	font-size: 24px;
+	margin-top: 40px;
+	font-weight: bold;
+}
+.titleArea li:nth-child(2){
+	font-size: 16px;
+}
+.titleArea li:nth-child(3){
+	margin-top: 20px;
+}
+.titleArea li span{
+	background: #0d427d;
+	border: 1px solid #0d427d;
+	color: #fff;
+	padding: 8px 14px;
+	border-radius: 5px;
+	margin-right: 5px;
+	cursor: default;
+}
+
+.conArea{
+	background: #f6f6f6;
+	border: 1px solid #d7d7d7;
+	padding: 50px 70px;
+	margin-bottom: 50px;
+}
+/* tab menu */
+.tab {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-bottom: 30px;
+}
+.borderBottom{
+	border-bottom: 1px solid #ccc;
+    height: 55px;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 26px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-bottom: 1px solid #ccc;
+}
+.tab button:hover {
+    background-color: #ddd;
+}
+.tab button.active {
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    border-bottom: 0;
+}
+.tabcontent{
+	padding: 15px;
+}
+#qnaRe,
+#dentalNews,
+#dentCalumn{
+	display: none;
+}
+.tabcontent h4{
+	color: #2f6bad;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.tabcontent ul,
+.tabcontent dl{
+	margin-bottom: 30px;
+}
+.tabcontent dt{
+	font-size: 15px;
+}
+.tabcontent li{
+	font-size: 14px;
+}
+.tab-qna dl{
+	margin-top: 30px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dedede;
+	position: relative;
+}
+.tab-qna dl:hover{
+	text-decoration: underline;
+    cursor: pointer;
+}
+.tab-qna dl:last-child{
+	border-bottom: 0;
+}
+.tab-qna dt{
+	font-size: 16px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.tab-qna dt span{
+	font-size: 12px;
+	margin-left: 10px;
+	color: #c0c0c0;
+}
+.tab-qna dd{
+	font-size: 14px;
+	line-height: 1.6em;
+	margin-bottom: 10px;
+}
+.noData{
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 140px;
+	background: url('/semi/images/dentist/nodata.png') no-repeat;
+	background-position: 50%;
+	background-size: 80px;
 }
