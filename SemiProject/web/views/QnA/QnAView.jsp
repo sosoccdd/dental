@@ -77,7 +77,7 @@
       <button type="button" class="ask-btn">질문하기</button>
    </div>
 </div>
-   <table class="page-table w1200 middle">
+   <table class="page-table ">
       <tr class="page-wrap">
          <td class="page"><a href="#">1</a><a href="#">2</a></td>
       </tr>

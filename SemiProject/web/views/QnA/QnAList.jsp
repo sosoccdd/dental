@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <meta charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert titl	e here</title>
+<title>Insert title here</title>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
