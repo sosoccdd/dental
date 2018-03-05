@@ -17,9 +17,9 @@
 			
 			<ul class="gnb fl hidden">
 				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
-				<li><a href="#">가족병원</a></li>
-				<li><a href="#">이벤트</a></li>
-				<li><a href="#">게시판</a></li>
+				<li><a href="/semi/views/event/EventForm.jsp">이벤트</a></li>
+				<li><a href="/semi/views/QnA/QnAForm.jsp">Q & A</a></li>
+				<li><a href="/semi/views/HealthInfo/HealthView.jsp">건강정보</a></li>
 			</ul>
 			
 			<ul class="btn-wrap fr hidden">
