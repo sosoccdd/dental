@@ -1,4 +1,24 @@
 @charset "UTF-8";
+.join-process{
+	background: #2f6bad;
+}
+.join-process li{
+	background-color: transparent;
+    float: left;
+    cursor: default;
+    font-size: 16px;
+    color: #fff;
+    width: calc(1200px/4);
+    padding: 34px 0;
+    text-align: center;
+}
+.cjoin3 > li{
+	width: calc(1200px/ 3);
+}
+.join-process li.on{
+	background-color: #195596;
+	font-weight: bold;
+}
 
 .agree-wrap {
 	background-color: #f6f6f6;
@@ -85,6 +105,9 @@
 	scrollbar-shadow-color: #d9d9d9;
 	scrollbar-track-color: #f2f2f2;
 	-webkit-overflow-scrolling: touch
+}
+.cagree .terms_box{
+	height: 140px;
 }
 
 .terms_box .article {

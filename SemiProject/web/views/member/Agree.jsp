@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/agree.css">
-<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/agree.css">
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
 <!-- header -->
 <%@ include file="../common/header.jsp"%>
 
 <div class="w1200 middle agreePage subPage">
+	<ol class="join-process hidden">
+		<li>01 본인인증</li>
+		<li class="on">02 약관동의</li>
+		<li>03 상세정보입력</li>
+		<li>04 가입완료</li>
+	</ol>
+	
 	<div class="agree-wrap">
 		<h2>회원가입 약관 동의</h2>
 		
@@ -15,7 +22,7 @@
 		<div class="terms_p">
 			<p class="terms_chk_all">
 				<span class="input_chk"> 
-					<input type="checkbox" id="chk_all" onclick="setTerms();clickcr(this, 'tos.all', '', '', event);" class=""> 
+					<input type="checkbox" id="chk_all" onclick="" class=""> 
 					<label id="chk_allLb" for="chk_all" class="">
 						이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), <br>
 						프로모션 안내 메일 수신(선택)에 모두 동의합니다.
@@ -102,13 +109,13 @@
 <script type="text/javascript">
 	//체크박스 전체 선택
 	$(function(){
-		$("#chk_all").click(function(){
+ 		$("#chk_all").click(function(){
 			if($("#chk_all").prop("checked")){
 				$(".terms_bx input[type=checkbox]").prop("checked", true);
 			} else {
 				$(".terms_bx input[type=checkbox]").prop("checked", false);
 			}
-		});
+		})
 	});
 </script>
 <!-- footer -->

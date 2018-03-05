@@ -49,7 +49,7 @@
 				<span class="c-308deb">휴대폰번호 인증</span>을 거치시면 <span class="c-308deb">즉시 비밀번호</span>를 
 				<span class="c-308deb">변경</span>하실 수 있습니다.
 			</span>
-			<form id="pwdSrch" action="" method="post" class="hidden">
+			<form id="pwdSrch" action="" method="post" class="hidden" style="display:none">
 				<ul>
 					<li class="login-bg">
 						<label>아이디</label>
@@ -69,7 +69,7 @@
 				<button type="button" class="btn-srch-pwd-can">취소</button>
 			</form>
 
-			<form id="pwdSrch2" action="" method="post" class="hidden" style="display:none">
+			<form id="pwdSrch2" action="" method="post" class="hidden">
 				<ul>
 					<li class="login-bg">
 						<label>아이디</label>

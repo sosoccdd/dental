@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+
+
+.pass-wrap {
+	margin-top: 100px;
+	font-size:15px;
+	width:100%;
+	text-align:center;
+	
+}
+.pass-text{
+	padding-top: 15px;
+	padding-left:80px;
+	margin-top:10px;
+	resize:none;
+}
+
+.pass-check{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	height:50px;	
+	width:313px;
+	padding: 8px 12px;
+	border: 1px solid #0080fc;
+	background: #0090fc;
+	color: white;
+	cursor: pointer;
+	
+}

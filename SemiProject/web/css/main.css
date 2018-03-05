@@ -110,18 +110,8 @@ h3{
 
 /* 건강정보  */
 
-.dentalNews {
-	padding:auto;
-	
-}
-.cm1 {
-	margin-left:350px;	
-}
-.cm3 {
-	margin-left:0;
-	
-}
-.dentalNews ul{
+/* .dentalNews ul{
+
 	overflow: hidden;
 	width: 3000px;
 	height: 367.5px;
@@ -145,39 +135,68 @@ h3{
 .dentalNews .rightBtn{
 	right: -40px;
 }
-.dentalNews li{
-	overflow: hidden;
-	float: left;
+*/
+.slidebox {
+	width:1200px;
+    overflow:hidden;
+    position:relative;
+    height:370px;
 }
-.dentalNews dl{
-	border: 1px solid #f1eeec;
-	width: 380px;
-	float: left;
+.slide{
+        width:3600px;
+        height: 380px;
+        position: absolute;
+        left:0;
+        overflow: hidden;
+}
+.slide > li {
+    float: left;
+    width: 1200px;
+    height: 380px;
+    overflow: hidden;
+}
+.slide dl{
 	margin-right: 30px;
+	width: calc(1140px/3);
+	float: left;
+	border: 1px solid #f1eeec;
 	box-sizing: border-box;
 	cursor: pointer;
 }
-.dentalNews dl:last-child{
+.slide dl:last-child{
 	margin-right: 0;
 }
-.dentalNews img{
+.slide img{
 	width: 100%;
+	border-bottom: 1px solid #f1eeec;
 }
+.dentalNews{
+	position: relative;
+}
+.slidectrl{
+	width: 1200px;
+}
+.slidectrl > button{
+	position: absolute;
+	font-size: 40px;
+	padding: 0 !important;
+	margin: 0 !important;
+	top: 200px;
+}
+.slidectrl #leftbtn{
+	left: -40px;
+}
+.slidectrl #rightbtn{
+	right: -40px;
+}
+
+
+
 
 /* 이벤트 */
 
-.m5 {
-	margin-left:200px;
-}
-.m4 {
-	margin-left:40px;
-	width:400px;
-	
-}
-.m6 {
-	margin-left:10px;
-}
-.event ul{
+/* .event ul{
+
 	overflow: hidden;
 	width: 1200px;
 	height: 159px;
@@ -206,7 +225,66 @@ h3{
 }
 .event li img{
 	width: 100%;
+} */
+
+
+
+
+.event{
+	position: relative;
 }
+.nav{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+div.nav > button{
+	position: absolute;
+	border: 0;
+	top: 130px;
+	font-size: 40px;
+	background-color: transparent;
+	margin-left:-40px;
+	curosr: pointer
+}
+div.nav > button.ri-btn{
+	margin-left: 1210px;
+}
+.RollDiv{
+	margin: 0 auto; 
+	width: 1200px; 
+	height:152px;
+	overflow:hidden;
+}  
+.RollDiv > div{
+	overflow:hidden;
+	height:152px;
+	width: 2400px;
+}
+.RollDiv > div > a{ 
+	float:left; 
+	display:block;
+}
+.RollDiv > div > a > img{ 
+	width: calc(1140px/3);
+	margin-right: 30px;
+}
+.RollDiv > div > a > img:nth-child(4n){
+	margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 문의하기 */
 div.bt{
