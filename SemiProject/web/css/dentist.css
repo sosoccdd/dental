@@ -99,3 +99,40 @@
 .tabcontent li{
 	font-size: 14px;
 }
+.tab-qna dl{
+	margin-top: 30px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dedede;
+	position: relative;
+}
+.tab-qna dl:hover{
+	text-decoration: underline;
+    cursor: pointer;
+}
+.tab-qna dl:last-child{
+	border-bottom: 0;
+}
+.tab-qna dt{
+	font-size: 16px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.tab-qna dt span{
+	font-size: 12px;
+	margin-left: 10px;
+	color: #c0c0c0;
+}
+.tab-qna dd{
+	font-size: 14px;
+	line-height: 1.6em;
+	margin-bottom: 10px;
+}
+.noData{
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 140px;
+	background: url('/semi/images/dentist/nodata.png') no-repeat;
+	background-position: 50%;
+	background-size: 80px;
+}
