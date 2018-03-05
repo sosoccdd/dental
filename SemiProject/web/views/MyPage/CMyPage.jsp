@@ -258,7 +258,9 @@
                        <td>ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄱㄷ쥿ㄷ</td>
                        <td>티몬과품바</td>
                        <td>2016.02.18</td>
-                       <td>N</td>	
+
+                       <td>N</td>   
+
                      </tr>      
                      
                      
@@ -268,116 +270,117 @@
          
          <div id="Information" class="tabcontent">
            
-			
-		<div id="pass-wrap" class="pass-wrap">
-			<pre>안전한 개인정보 관리를 위하여 비밀번호를 다시 입력해주세요.
+
+         
+      <div id="pass-wrap" class="pass-wrap">
+         <pre>안전한 개인정보 관리를 위하여 비밀번호를 다시 입력해주세요.
 개인정보 변경의 휴대폰 번호의 이메일은 재인증을 통해 변경 가능합니다.</pre>
-			
-			<img src="../../images/QnA/lock.png">
-			<br>
-		<textarea class="pass-text" placeholder="비밀번호를 입력해주세요." cols="50"></textarea>	
-		
-		<button id="pass-check" class="pass-check">확인</button>
-		</div>
-			
-	<!--  클릭할 시 나오게 하는 jquery
-	            다른 탭을 클릭시 원상복귀 -->		
-	<script>
-	
-		$(function(){
-			
-			$("#default-wrap").hide();
-			$("#pass-check").click(function(){
-				
-				$("#pass-wrap").hide();
-				$("#default-wrap").show();
-			});
-			
-			$(".tablinks").click(function(){
-				
-				$(".Ctotal2").css("height","700px");
-				$("#pass-wrap").show();
-				$("#default-wrap").hide();
-				$("#withdraw-btn").css("margin-top","10px");
-			});
-			
-		});
-	
-	
-	
-	</script>		
-		
-		
-		<div id="default-wrap" class="default-wrap">
-			<div class="inner-wrap1">
-			<p class="default-title">기본설정</p>
-			<hr>
-			<span class="title">이메일</span><span class="content">thdwotkd@nave.rcom</span>
-			<hr>
-			<span class="title">이름</span><span class="content">송재상</span>
-			<hr>
-			<span class="title">전화번호</span><span class="content">010-1234-5678</span>
-			<hr>
-			<span class="title last">주소</span><span class="content">경기도 수우너시시ㅟㅈ뷪부긴</span>
-			</div>
-			
-			<div class="inner-wrap2" id="inner-wrap2">
-			<p class="default-title">회원설정</p>
-			<hr>
-			<span class="title">본인인증하기</span><span class="check-wrap"><span class="check-text">인증완료</span><button class="check-btn">이메일재인증</button><button class="check-btn">휴대폰재인증</button></span>
-			<hr>
-			<span class="title">비밀번호변경</span><img id="change-btn" class="change-btn" src="../../images/mypage/bottom-direction.png">
-			<span id="tog">
-			<hr>
-			<span class="title">현재비밀번호</span><textarea class="change-area" placeholder="현재 비밀번호를 입력하세요." "></textarea>
-			<hr>
-			<span class="title">새 비밀번호</span><textarea class="change-area" placeholder="새로운 비밀번호를 입력하세요."></textarea>
-			<hr>
-			<span class="title">비밀번호 확인</span><textarea class="change-area" placeholder="비밀번호를 확인해주세요."></textarea>
-			</span>
-			
-			</div>
-			<button id="withdraw-btn" class="withdraw-btn">회원탈퇴</button>
-			
-			
-			</div>
-			
-		
-		<script>
-		
-		$(function(){
-			/*.Ctotal2  */
-			
-			$("#tog").hide();
-			
-			$("#change-btn").click(function(){
-			$("#tog").toggle();
-			if($(".Ctotal2").height()==700){
-				
-			 	$(".Ctotal2").css("height","900px");
+         
+         <img src="../../images/QnA/lock.png">
+         <br>
+      <textarea class="pass-text" placeholder="비밀번호를 입력해주세요." cols="50"></textarea>   
+      
+      <button id="pass-check" class="pass-check">확인</button>
+      </div>
+         
+   <!--  클릭할 시 나오게 하는 jquery
+               다른 탭을 클릭시 원상복귀 -->      
+   <script>
+   
+      $(function(){
+         
+         $("#default-wrap").hide();
+         $("#pass-check").click(function(){
+            
+            $("#pass-wrap").hide();
+            $("#default-wrap").show();
+         });
+         
+         $(".tablinks").click(function(){
+            
+            $(".Ctotal2").css("height","700px");
+            $("#pass-wrap").show();
+            $("#default-wrap").hide();
+            $("#withdraw-btn").css("margin-top","10px");
+         });
+         
+      });
+   
+   
+   
+   </script>      
+      
+      
+      <div id="default-wrap" class="default-wrap">
+         <div class="inner-wrap1">
+         <p class="default-title">기본설정</p>
+         <hr>
+         <span class="title">이메일</span><span class="content">thdwotkd@nave.rcom</span>
+         <hr>
+         <span class="title">이름</span><span class="content">송재상</span>
+         <hr>
+         <span class="title">전화번호</span><span class="content">010-1234-5678</span>
+         <hr>
+         <span class="title last">주소</span><span class="content">경기도 수우너시시ㅟㅈ뷪부긴</span>
+         </div>
+         
+         <div class="inner-wrap2" id="inner-wrap2">
+         <p class="default-title">회원설정</p>
+         <hr>
+         <span class="title">본인인증하기</span><span class="check-wrap"><span class="check-text">인증완료</span><button class="check-btn">이메일재인증</button><button class="check-btn">휴대폰재인증</button></span>
+         <hr>
+         <span class="title">비밀번호변경</span><img id="change-btn" class="change-btn" src="../../images/mypage/bottom-direction.png">
+         <span id="tog">
+         <hr>
+         <span class="title">현재비밀번호</span><textarea class="change-area" placeholder="현재 비밀번호를 입력하세요." "></textarea>
+         <hr>
+         <span class="title">새 비밀번호</span><textarea class="change-area" placeholder="새로운 비밀번호를 입력하세요."></textarea>
+         <hr>
+         <span class="title">비밀번호 확인</span><textarea class="change-area" placeholder="비밀번호를 확인해주세요."></textarea>
+         </span>
+         
+         </div>
+         <button id="withdraw-btn" class="withdraw-btn">회원탈퇴</button>
+         
+         
+         </div>
+         
+      
+      <script>
+      
+      $(function(){
+         /*.Ctotal2  */
+         
+         $("#tog").hide();
+         
+         $("#change-btn").click(function(){
+         $("#tog").toggle();
+         if($(".Ctotal2").height()==700){
+            
+             $(".Ctotal2").css("height","900px");
 
-				$("#withdraw-btn").css("margin-top","150px");
-				
-			}else if($(".Ctotal2").height()==900){
-				
-				$(".Ctotal2").css("height","700px");
+            $("#withdraw-btn").css("margin-top","150px");
+            
+         }else if($(".Ctotal2").height()==900){
+            
+            $(".Ctotal2").css("height","700px");
 
-				$("#withdraw-btn").css("margin-top","10px");
-			};
-			});
-			
-			
-		});
-		
-		
-		</script>
-		
-		
-	</div>
-	
+            $("#withdraw-btn").css("margin-top","10px");
+         };
+         });
+         
+         
+      });
+      
+      
+      </script>
+      
+      
+   </div>
+   
 
 
-		 </div>
+       </div>
    </div>
    <script>
    function openCity(evt, cityName) {
@@ -396,6 +399,7 @@
    </script>
    
       
+
 
    
    <%@ include file="../common/footer.jsp"%>
