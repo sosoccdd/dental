@@ -2,6 +2,68 @@
     pageEncoding="UTF-8"%>
 <!-- header -->
 <%@ include file="views/common/header.jsp" %>
+<link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+<script src="jquery.bxslider/jquery.bxslider.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<style>
+
+
+	.slidebox {
+        width:1200px;
+        overflow:hidden;
+        position:relative;
+        height:500px;
+    }
+     
+    .slide {
+        width:3000px;
+        height:500px;
+        position:relative;
+        left:0;
+    }
+     
+    .slide li {
+        display:inline-block;
+        width:400px;
+        height:400px;  
+        text-align:center;
+        color:white;
+        font-size:30px;
+        line-height:150px;
+        margin-right:-4px;
+    }
+    
+    .slidebox1 {
+        width:1200px;
+        overflow:hidden;
+        position:relative;
+        height:159px;
+    }
+     
+    .slide1 {
+        width:1500px;
+        height:500px;
+        position:relative;
+        left:0;
+    }
+     
+    .slide1 li {
+        display:inline-block;
+        width:400px;
+        height:400px;  
+        text-align:center;
+        color:white;
+        font-size:30px;
+        line-height:150px;
+        margin-right:-4px;
+    }
+
+
+
+
+
+</style>
 
 <!-- cssArea -->
 <link rel="stylesheet" href="css/main.css">
@@ -96,7 +158,7 @@
 	<!-- monthlyBest -->
 	
 	<!-- 문의하기 -->
-	<div class="ask bt">
+	<div class="ask middle bt">
 		<h3 class="w1200">문의하기</h3>
 		
 		<ul class="w1200 middle">
@@ -128,12 +190,54 @@
 		
 	</div>
 	<!-- ask -->
+
+<script>
+    var idx = 0;
+    var slidemax = 1;
+    var pos = 800;
+    
+    function sliding(add) {
+        idx = idx + add;
+        if(idx < 0) idx = slidemax;
+        else if(idx > slidemax) idx = 0;
+        $('.slide').stop().animate({'left' : -(idx*pos)+"px"}, "slow");
+    }
+     
+    autoslide = setInterval(function() { sliding(1) }, 3000);
+     
+    function after() {
+        setTimeout(function() {
+            clearInterval(autoslide);  
+            autoslide = setInterval(function() { sliding(1) }, 3000);
+        }, 2000);
+    }
+    
+    /* function sliding(add) {
+        idx1 = idx1 + add;
+        if(idx1 < 0) idx1 = slidemax1;
+        else if(idx1 > slidemax1) idx1 = 0;
+        $('.slide').stop().animate({'left' : -(idx1*pos1)+"px"}, "slow");
+    }
+     
+    autoslide1 = setInterval(function() { sliding(1) }, 3000);
+     
+    function after() {
+        setTimeout(function() {
+            clearInterval(autoslide1);  
+            autoslide1 = setInterval(function() { sliding(1) }, 3000);
+        }, 2000);
+    }
+ */
+
+</script>	
+	
+	
 	
 	<!-- 건강정보 -->
-	<div class="dentalNews bt">
-	<div class="w1200 middle relative">
-		<h3>건강정보</h3>
-  		<ul>
+	<div align="center" class="dentalNews bt">
+	<div class="w1200 middle slidebox cm1">
+	<h3>건강정보</h3>
+  		<ul class="slide">
 			<li class="w1200">
 				<dl onclick="location.href='#'">
 					<dt><img src="images/main/dentalNews1.jpg"></dt>
@@ -193,6 +297,48 @@
 					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 				</dl>
 			</li>
+			
+			<li class="w1200">
+				<dl onclick="location.href='#'">
+					<dt><img src="images/main/dentalNews1.jpg"></dt>
+					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
+					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+				</dl>
+				
+				<dl onclick="location.href='#'">
+					<dt><img src="images/main/dentalNews1.jpg"></dt>
+					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
+					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+				</dl>
+				
+				<dl onclick="location.href='#'">
+					<dt><img src="images/main/dentalNews1.jpg"></dt>
+					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
+					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+				</dl>
+			</li>
+			
+			
+			<li class="w1200">
+				<dl onclick="location.href='#'">
+					<dt><img src="images/main/dentalNews2.jpg"></dt>
+					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
+					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+				</dl>
+				
+				<dl onclick="location.href='#'">
+					<dt><img src="images/main/dentalNews2.jpg"></dt>
+					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
+					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+				</dl>
+				
+				<dl onclick="location.href='#'">
+					<dt><img src="images/main/dentalNews2.jpg"></dt>
+					<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
+					<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+				</dl>
+			</li>
+			
 		</ul>
 		
 		<div class="w1200 middle"><button type="button" class="mt20">건강정보 전체보기</button></div>
@@ -200,29 +346,79 @@
 		<span class="leftBtn">&#10094;</span>
 		<span class="rightBtn">&#10095;</span>
  	</div>
+ 	
 	</div>
 	<!-- dentalNews -->
 	
+	
+	
 	<!-- 이벤트 -->
-	<div class="event bt">
-	<div class="w1200 middle relative">
+	<div class="w1200 middle event bt">
 		<h3 class="w1200">이벤트</h3>
-		<ul class="w1200 middle">
-			<li><img src="images/event/event01.jpg"></li>
-			<li><img src="images/event/event01.jpg"></li>
+	<div class="middle m4 fl slidebox1 m5">
+		<ul class="w1200 middle slide1 fl m4">
 			<li><img src="images/event/event01.jpg"></li>
 			<li><img src="images/event/event02.jpg"></li>
-			<li><img src="images/event/event02.jpg"></li>
-			<li><img src="images/event/event02.jpg"></li>
-			<li><img src="images/event/event03.jpg"></li>
-			<li><img src="images/event/event03.jpg"></li>
 			<li><img src="images/event/event03.jpg"></li>
 		</ul>
+		
+		<!-- <div class="w1200 middle"><button type="button" class="mt20">이벤트 전체보기</button></div>
+		<span class="left-btn">&#10094;</span>
+		<span class="right-btn">&#10095;</span> -->
+	</div>
+	
+	
+	<div class="middle m4 fl slidebox1 m6">
+		<ul class="w1200 middle slide1 fl m4">
+			<li><img src="images/event/event01.jpg"></li>
+			<li><img src="images/event/event02.jpg"></li>
+			<li><img src="images/event/event03.jpg"></li>
+		</ul>
+		
+		<!-- <div class="w1200 middle"><button type="button" class="mt20">이벤트 전체보기</button></div>
+		<span class="left-btn">&#10094;</span>
+		<span class="right-btn">&#10095;</span> -->
+	</div>
+	<div class="middle m4 slidebox1">
+		<ul class="w1200 middle slide1 m4">
+			<li><img src="images/event/event01.jpg"></li>
+			<li><img src="images/event/event02.jpg"></li>
+			<li><img src="images/event/event03.jpg"></li>
+		</ul>
+		
+	</div>
 		<div class="w1200 middle"><button type="button" class="mt20">이벤트 전체보기</button></div>
 		<span class="left-btn">&#10094;</span>
 		<span class="right-btn">&#10095;</span>
+	
+	
+	
 	</div>
-	</div>
+	
+	<script>
+    var idx1 = 0;
+    var slidemax1 = 2;
+    var pos1 = 400;
+	
+    function sliding1(add1) {
+        idx1 = idx1 + add1;
+        if(idx1 < 0) idx1 = slidemax1;
+        else if(idx1 > slidemax1) idx1 = 0;
+        $('.slide1').stop().animate({'left' : -(idx1*pos1)+"px"}, "slow");
+    }
+     
+    autoslide1 = setInterval(function() { sliding1(1) }, 3000);
+     
+    function after1() {
+        setTimeout(function() {
+            clearInterval(autoslide1);  
+            autoslide1 = setInterval(function() { sliding1(1) }, 3000);
+        }, 2000);
+    }
+	</script>
+	
+	
+	
 	<!-- event -->
 	
 	
@@ -249,9 +445,18 @@
 	</div>
 	</div>
 	<!-- boardBox -->
+	
+	
+	
+	
  
+
 <script type="text/javascript">
 //건강정보
+
+
+
+
  $(document).ready(function () {
     var timeonoff; //자동기능
 	 var cnt=true;  //true:왼쪽, flase:오른쪽
@@ -285,5 +490,6 @@
 	 
 });
 </script>
+
 <!-- footer -->
 <%@ include file="views/common/footer.jsp" %>
