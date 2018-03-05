@@ -28,7 +28,7 @@
       <!-- srch-warp -->
    </div>
 </div>
-<div class="w1200 middle relative ">
+<div class="w1200 middle relati9 ve ">
    <ul class="qna-list">
          <li>
             <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
@@ -40,16 +40,18 @@
 </div>
       
 <div class="w1200 middle relative">
-    <div class="answerTable"><b>답변달기</b>
+    <div class="answerTable">
+    	<label>답변달기</label> <!-- 수정: b 태그에서 label -->
         <br>
         <br>
-        <font>의사 명:</font>
+        <p>의사 명:</p><!--  수정: font 태그에서 p태그 -->
         <input type="text" class="doc-text">
     <table class="ans-tab" >
-    
+     
     
     <tr class="ans-text">
-       <td>답변 CONTENT:</td><td><textarea cols="130" rows="15" class="content" placeholder="*본 답변은 참고용으로 의학적 판단이나 진료행위로  해석 될 수 없습니다."></textarea></td>
+       <td>답변 CONTENT:</td>
+       <td><textarea cols="130" rows="15" class="content" placeholder="*본 답변은 참고용으로 의학적 판단이나 진료행위로  해석 될 수 없습니다."></textarea></td>
     </tr>
        
     </table>
