@@ -124,7 +124,7 @@
 				<div class="imgWrap mt10 mr15 ml15"><img src="images/dentist/dentist01.png"></div>
 				<p class="f16 mt15">다른 전문가 답변 1개</p> 
 			</li>
-			<li class="mt20"><button type="button" onclick="/semi/views/QnA/QnAList.jsp">문의하기 전체보기</button></li>
+			<li class="mt20"><button type="button" onclick="location.href='/semi/views/QnA/QnAList.jsp'">문의하기 전체보기</button></li>
 		</ul>
 		
 	</div>
