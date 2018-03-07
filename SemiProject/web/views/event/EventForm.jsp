@@ -5,9 +5,25 @@
 <head>
 <meta charset=UTF-8>
 <title>Insert title here</title>
+<!-- datePicker -->
+ 
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+   </script>
+<!-- 결제 api  -->
+<script src="https://service.iamport.kr/js/iamport.payment-1.1.5.js" type="text/javascript"></script>
+ 
 <link rel="stylesheet" href="/semi/css/event.css">
+<link rel="stylesheet" href="../../css/common.css">
 </head>
 <body>
+
 	<%@ include file="../common/header.jsp"%>
 	
 	<div class = "FormHeader">
@@ -93,5 +109,6 @@
 	</div>
 	
 	<%@ include file="../common/footer.jsp" %>
+
 </body>
 </html>

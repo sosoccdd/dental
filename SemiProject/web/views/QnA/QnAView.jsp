@@ -1,6 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*, com.kh.dental.qna.model.vo.*"%>
+<%
+	/* ArrayList<QnA> list = (ArrayList<QnA>)request.getAttribute("list");
+	QnAPageInfo qpi = (QnAPageInfo)request.getAttribute("qpi");
+	int listCount=qpi.getListCount();
+	int totalPage=qpi.getTotalPage();
+	int currentPage=qpi.getCurrentPage();
+	int startPage=qpi.getStartPage();
+	int lastPage=qpi.getLastPage();
+	 */
+	 	int listCount=5;
+		int totalPage=25;
+		int pageNum=10;
+		int currentPage=1;
+		 int startPage=1;
+		 int lastPage=10;
+		
+	
 
+%>
       
 <!DOCTYPE html>
 <html>
@@ -26,8 +44,8 @@
       </p>
       
       <div class="srch-wrap">
-         <input type="search">
-         <button type="button">검색</button>
+         <input type="search" class="search-input">
+         <button type="button"><img src="../../images/QnA/KakaoTalk_20180221_121825952.png"></button>
       </div>
       <!-- srch-warp -->
    </div>
@@ -37,36 +55,13 @@
 <div class="w1200 middle relative">
    <ul class="qna-list">
       <li>
-         <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
+         <p class="qna-li-title"  onclick="location.href='/semi/views/QnA/QnAList.jsp'">보리차를 먹으면 치아 변색되나요?</p>
          <p class="qna-li-date">2012-02-23</p>
          <hr>
          <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
-         <button type="button" class="reply">답변달기</button>
+         <button type="button" class="reply" onclick="location.href='/semi/views/QnA/QnAForm.jsp'">답변달기</button>
       </li>
-      
-      <li>
-         <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
-         <p class="qna-li-date">2012-02-23</p>
-         <hr>
-         <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
-         <button type="button" class="reply">답변달기</button>
-      </li>
-      <li>
-         <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
-         <p class="qna-li-date">2012-02-23</p>
-         <hr>
-         <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
-         <button type="button" class="reply">답변달기</button>
-      </li>
-      
-      <li>
-         <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
-         <p class="qna-li-date">2012-02-23</p>
-         <hr>
-         <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
-         <button type="button" class="reply">답변달기</button>
-      </li>
-   </ul>
+    </ul>
    
    <div class="qna-box w1200">
       <ul class="order-by">
@@ -74,14 +69,40 @@
          <li>질문 최신순</li>
       </ul>
       
-      <button type="button" class="ask-btn">질문하기</button>
+      <button type="button" class="ask-btn" onclick="location.href='/semi/views/QnA/QnAEnroll.jsp'">질문하기</button>
    </div>
 </div>
-   <table class="page-table ">
-      <tr class="page-wrap">
-         <td class="page"><a href="#">1</a><a href="#">2</a></td>
-      </tr>
-   </table>
+<%--페이지 처리 --%>
+<div class="pagingArea" align="center">
+	<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=1'"><<</button>
+	<% if(currentPage<=1){ %>
+	<button disabled><</button>
+	<%}else{ %>
+	<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=<%=currentPage-1 %>'"><</button>
+	<%} %>
+	
+	<%for(int p = startPage; p<=lastPage; p++){
+			if(p==currentPage){
+		%>
+		<button disabled><%=p %></button>
+	
+	<%		}else{%>
+		<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=<%=p %>'"><%=p %></button>
+		<%} %>
+		
+		
+	<%} %>	
+	
+	<%if(currentPage>=totalPage){ %>
+	<button disabled>></button>
+	<%} else{ %>
+	<button onclick="lication.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=<%=currentPage+1 %>'">></button>	
+	<%} %>
+	<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPag=<%=totalPage %>'">>></button>
+	
+
+</div>
+
    
    
    <%@ include file="../common/footer.jsp" %>
