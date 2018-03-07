@@ -129,7 +129,6 @@
 						dong:dong
 					},
 					success:function(data){
-						
 						var table="";
 						for(var i=0;i<6;i++){
 							
