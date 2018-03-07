@@ -74,4 +74,85 @@ public class SearchClinicDao {
 		return list;
 	}
 
+
+	public ArrayList<SearchClinic> selectgugun(Connection con, String sido, String gugun) {
+		ArrayList<SearchClinic> list=new ArrayList<SearchClinic>();
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		
+		String query = prop.getProperty("selectgugun");
+		
+		try {
+			pstmt=con.prepareStatement(query);
+			pstmt.setString(1, sido);
+			pstmt.setString(2, gugun);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()){
+				SearchClinic sc = new SearchClinic();
+				sc.setYkiho_enc(rset.getString("YKIHO_ENC"));
+				sc.setYadm_nm(rset.getString("YADM_NM"));
+				sc.setAddr(rset.getString("ADDR"));
+				sc.setTelno(rset.getString("TELNO"));
+				sc.setX_pos(rset.getString("X_POS_WGS84"));
+				sc.setY_pos(rset.getString("Y_POS_WGS84"));
+				sc.setStatus(rset.getString("STATUS"));
+				list.add(sc);
+			}
+			System.out.println(list);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return list;
+	}
+
+
+	public ArrayList<SearchClinic> selectsido(Connection con, String sido) {
+		ArrayList<SearchClinic> list=new ArrayList<SearchClinic>();
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		
+		String query = prop.getProperty("selectsido");
+		
+		try {
+			pstmt=con.prepareStatement(query);
+			pstmt.setString(1, sido);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()){
+				SearchClinic sc = new SearchClinic();
+				sc.setYkiho_enc(rset.getString("YKIHO_ENC"));
+				sc.setYadm_nm(rset.getString("YADM_NM"));
+				sc.setAddr(rset.getString("ADDR"));
+				sc.setTelno(rset.getString("TELNO"));
+				sc.setX_pos(rset.getString("X_POS_WGS84"));
+				sc.setY_pos(rset.getString("Y_POS_WGS84"));
+				sc.setStatus(rset.getString("STATUS"));
+				list.add(sc);
+			}
+			System.out.println(list);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return list;
+	}
+
 }

@@ -9,13 +9,19 @@
    text-align: center;
 }
 .tr-tag-st{
-	width: 100px;
+	width: 800px;
 	height: 10px;
 }
+.td-px-wi-1{
+	width: 70px;
+}
+.td-px-wi-2{
+	width: 400px;
+}
 .tr-img-tag{
-	width: 20%;
+	width: 15%;
 	text-align: center;
-	margin: 30px 30px;
+	margin: 30px 20px;
 	
 }
 .tr-td-img-tag{
@@ -31,7 +37,7 @@
 }
 .bluck-in{
 	display: inline-block;
-	margin: 30px 50px;
+	margin: 30px 20px;
 }
 
 .first-div{
