@@ -58,7 +58,7 @@ public class MemberDao {
 				loginUser.setmGender(rset.getString("M_GENDER"));
 				loginUser.setmType(rset.getString("M_TYPE"));
 				loginUser.setmNo(rset.getInt("M_NO"));
-				loginUser.setmField(rset.getInt("M_FIELD"));
+				loginUser.setmField(rset.getInt("F_NUM"));
 				loginUser.setmPtNo(rset.getInt("M_PT_NO"));
 				loginUser.setmRes(rset.getInt("M_RES"));
 				
