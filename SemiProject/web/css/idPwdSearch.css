@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* tab menu*/
+.tab {
+    overflow: hidden;
+    background-color: #2f6bad;
+}
+.tab button {
+    background-color: transparent;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    color: #fff;
+    width: calc(1200px/2);
+    padding: 34px 0;
+}
+.tab button:hover,
+.active{
+	background-color: #2d67a7;
+	color: #ddd;
+}
+.tabcontent{
+	background-color: #f6f6f6;
+	border: 1px solid #d7d7d7;
+	padding: 50px 100px 35px 100px;
+}
+.tabcontent h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.tabcontent span{
+	text-align: center;
+}
+.tabcontent ul{
+	margin-top: 30px;
+}
+
+.login-bg{
+	background: #fff;
+	margin-bottom: 3px;
+	font-size: 14px;
+	padding: 8px 18px;
+}
+#pwdSrch2 .login-bg:first-child{
+	height: 40px;
+	line-height: 40px;
+}
+.login-bg label{
+	display: inline-block;
+	width: 80px;
+}
+#pwdSrch2 .login-bg label{
+	width: 140px;
+}
+.login-bg input{
+	border: none;
+	width: 90%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+#pwdSrch2 .login-bg input{
+	width: 85%;
+}
+.btn-srch-id, .btn-srch-pwd{
+	width: 100%;
+	border: none;
+	padding: 16px;
+	color: #fff;
+	cursor: pointer;
+	background: #3d3d3d;
+}
+.btn-srch-id-can, .btn-srch-pwd-can{
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-top: 15px;
+	color: #308deb;
+	float: right;
+}
+
+/* 병원회원 아이디/비밀번호 찾기 */
+.ask-for-help{
+	cursor: default;
+}
+.ask-for-help span{
+	color: #308deb;
+}
+.ask-for-help .help1{
+	font-size: 16px;
+}
+.certifi-btn input[type=button]{
+	width: 110px;
+	margin-left: 10px;
+	background-color: transparent;
+	border: 1px solid #308deb;
+	color: #308deb;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.certifi-btn input[type=button]:hover{
+	background: #308deb;
+	color: #fff;
+}
+.pwdChk p{
+	padding-left: 25px;
+	margin: 15px 20px;
+}
+.pwdChk .united{
+	background: url('../images/join/icon_check.png') no-repeat;
+}
+.pwdChk .inconcinnity{
+	background: url('../images/join/icon_ExclamationMark.png') no-repeat;
+	color: red;
+}

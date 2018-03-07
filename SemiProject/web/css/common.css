@@ -25,6 +25,18 @@
 .nanumbarungothic * {
  font-family: 'NanumBarunGothic', sans-serif;
 }
+::placeholder {
+    color: #d7d7d7;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #d7d7d7;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #d7d7d7;
+}
 .normal { font-style: normal;}
 .w250 { font-weight: 250;}
 .w300 { font-weight: 300;}
@@ -50,6 +62,8 @@
 .txt-ri{ text-align: right;}
 
 .c-fe7506{ color: #fe7506;}
+.c-308deb{ color: #308deb;}
+
 
 .lh14{ line-height: 1.4em;}
 .lh16{ line-height: 1.6em;}
@@ -136,12 +150,26 @@
 .fl{ float: left;}
 .fr{ float: right;}
 .hidden{ overflow: hidden;}
+.subPage{ 
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+.must::before{
+	content: '* ';
+	color: red;
+}
+.reset{
+	padding: 0 !important;
+	margin: 0 !important;
+	width: initial !important;
+	height: initial !important;
+}
 
 /* header */
 header{
 	background: rgba(255,255,255,0.9);
 	padding: 20px 0;
-	overflow: hidden;
+	height: 60px;
 }
 h1 .logo{
 	display: block;
@@ -180,7 +208,61 @@ h1 .logo{
 	color: #fff;
 }
 
-
+.login-name{
+    font-size: 15px;
+    line-height: 38px;
+    padding: 0 22px 20px 40px;
+    background: url(../images/common/arrow_down.png) no-repeat;
+    background-size: 12px;
+    background-position: 102px 15px;
+    cursor: pointer;
+    margin-right: 40px;
+    position: relative;
+}
+.user-type{
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 30px;
+	height: 30px;
+	text-indent: -99999px;
+	border-radius: 50%;
+	background-size: cover;
+}
+.gUser{
+	background-image: url('../images/common/tooth2.png');
+}
+.dUser{
+	background-image: url('../images/common/stethoscope2.png');
+}
+.cUser{
+	background-image: url('../images/common/hospital2.png');
+}
+.after-login{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 58px;
+	border: 1px solid #d7d7d7;
+	background: #fff;
+	border-radius: 3px;
+}
+.login-name:hover .after-login{
+	display: block;
+}
+.after-login li{
+	float: inherit;
+	font-size: 14px;
+	width: 100px;
+    text-align: center;
+    padding: 10px;
+}
+.after-login li:nth-child(5){
+	border-top: 1px solid #d7d7d7;
+}
+.after-login li:hover{
+	background: #f1f1f1;
+}
 /* 가족 치과 등록 */
 .familyAd{
 	padding: 40px 0;

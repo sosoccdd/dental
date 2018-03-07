@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+/* 윗부분css  */
+
+ .CHeader2{
+      background:#2f6bad;
+      color: white;
+      height:160px;
+      
+   }
+   .CHeader2 label,
+   .CHeader2 div, i{
+      color:white;
+   }
+   .CHeader2 label{
+      margin-top: 60px;
+         margin-left: 25px;
+         font-size: 20px;
+         width:400px;
+   }
+  	.CMsubtitle{
+       width:100px;
+       height:100px;
+       margin-top:25px;
+       margin-left:50px;
+   }
+    .CMfirstdiv{
+      font-size: 17px;
+       margin-top: 30px;
+       margin-right: 30px;
+   }
+   .CMfirstdiv p{
+      color:white;
+      font-size:35px;
+      text-align:center;
+      font-weight:bold;
+   
+   }
+   body {font-family: Arial;}
+  
+  /* Style the tab */
+   .tab {
+       overflow: hidden;
+       border: 1px solid #ccc;
+       background-color: #f1f1f1;
+       padding-top:40px;
+      
+   }
+   
+   /* Style the buttons inside the tab */
+   .tab button {
+       background-color: inherit;
+       float: left;
+       border: none;
+       outline: none;
+       cursor: pointer;
+       padding: 14px 16px;
+       transition: 0.3s;
+       font-size: 17px;
+   }
+   
+   /* Change background color of buttons on hover */
+   .tab button:hover {
+       background-color: #ddd;
+   }
+   
+   /* Create an active/current tablink class */
+   .tab button.active {
+       background-color: #ccc;
+   }
+   
+   /* Style the tab content */
+   .tabcontent {
+      display: none;
+       padding: 6px 12px;
+       border-top: none;
+   }
+   .tablinks{
+      border:1px solid lightgray;
+      width:599px;
+   }
+   .CMsubtitle{
+       width:100px;
+       height:100px;
+       margin-top:25px;
+       margin-left:50px;
+   }
+
+   .Ctotal2{
+      height:700px;
+      background:#f6f6f6;
+   }
+   .Cregister{
+      background:white;
+      margin-top:50px;
+      margin-left:30px;
+      padding:30px;
+      width:305px;
+   }
+   .CMstorybtn{
+      background:white;
+      border:2px solid #308deb;
+      color: #308deb;
+   }
+   .CMstorybtn:hover{
+      background:#308deb;
+      color:white;
+   }
+   .table tr:nth-child(odd){
+       background: #f1f1f1;
+   }
+   .table .CMtr2{
+      background:#ccc;
+   }
+   .CMreservebtnstyle{
+      background:white;
+      color:#308deb;
+      border:1px solid white;
+   }
+   .CMRegister{
+      display: block;
+   }
+   .CMwating{
+      font-size:40px; 
+      color:#308deb;
+   } 
+   .CMtable{
+      margin-top:20px;
+   }
+   .CMbottombtn{
+      margin-top:30px;
+   }
+   .CMtr2 th:first-child{
+      width:100px;
+   }
+   .CMtr2 th:nth-child(2){
+      width:160px;
+   }
+   .CMtr2 th:nth-child(3){
+      width:80px;
+   }
+   .CMtr2 th:last-child{
+      width:120px;
+   }
+   
+   
+   
+  
+  
+  	
+
+/*  1:1문의 테이블, 겉의테이블은 접수현황의 테이블과 같다 */
+ .CMtr3 th:first-child{
+      width:100px;
+   }
+   .CMtr3 th:nth-child(2){
+      width:180px;
+   }
+   .CMtr3 th:nth-child(3){
+      width:80px;
+   	  
+   }
+   .CMtr3 th:last-child{
+      width:120px;
+	}
+	
+	.CMtable td{
+	overflow:hidden;
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+	width:30px;
+
+	}
+	.CMRreview{
+      height:20px;
+   } 
+	.Inquiry-btn{
+	
+		float:right;
+      background:#f1f1f1;
+      border:1px solid #f1f1f1;
+	
+	}
+	.tabcontent {
+      display: none;
+       padding: 6px 12px;
+       border-top: none;
+   }
+   
+   /* 개인정보탭 비밀번호누르세요 css */
+
+.pass-wrap {
+	margin-top: 100px;
+	font-size:20px;
+	width:100%;
+	text-align:center;
+	
+}
+.pass-text{
+	text-align:center;
+	padding-top: 15px;
+	padding-left:30px;
+	margin-top:10px;
+	resize:none;
+	height:50px;
+}
+
+.pass-check{
+	
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	height:50px;	
+	width:590px;
+	padding: 8px 12px;
+	border: 1px solid #0080fc;
+	background: #0090fc;
+	color: white;
+	cursor: pointer;
+	
+}
+
+
+/*  1:1문의 테이블, 겉의테이블은 접수현황의 테이블과 같다 */
+ .CMtr3 th:first-child{
+      width:100px;
+   }
+   .CMtr3 th:nth-child(2){
+      width:180px;
+   }
+   .CMtr3 th:nth-child(3){
+      width:80px;
+   	  
+   }
+   .CMtr3 th:last-child{
+      width:120px;
+	}
+	
+	.CMtable td{
+	overflow:hidden;
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+	width:30px;
+
+	}
+	
+	.Inquiry-btn{
+	
+		float:right;
+      background:#f1f1f1;
+      border:1px solid #f1f1f1;
+	
+	}
+	
+	/* 의사정보 css */
+	
+	@charset "UTF-8";
+
+.info-wrap {
+	
+	margin-left:auto;
+	margin-right:auto;
+	width:1200px;
+	height:900px;
+	background: darkgray;
+	padding-top:20px;
+}
+
+.default-wrap{
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+	background:white;
+	height:260px;
+	
+}
+
+.default-title{
+	padding-top:20px;
+	padding-left:30px;
+	margin-top: 15px;
+	color: #0090fc;
+	
+	
+}
+
+.inner-wrap1{
+	
+	margin-bottom:150px;
+	height:410px;
+	background:#f6f6f6;
+	
+}
+.title{
+	
+	font-size:15px;
+	font-weight:700;
+	display:inline-block;
+	margin-top:5px;
+	margin-left: 30px;
+	width:10%;
+	
+}
+
+
+
+.check-wrap{
+	
+	float:right;
+	
+	
+}
+
+.uchange-btn{
+	
+	
+	margin-right:40px !important;
+	
+	
+}
+.exp-wrap{
+	
+	width:73.5%;
+	float:right;
+	
+}
+
+.inner-wrap2{
+	margin-top:80px;
+	background:#f6f6f6;
+	height:160px;
+	
+	
+} 
+.change-btn{
+	margin-right:30px;
+	float:right;
+	width:20px;
+	height:auto;
+	
+}
+.last{
+	
+	
+}
+
+.title{
+	
+	font-weight:500;
+	display:inline-block;
+	margin-top:5px;
+	margin-left: 30px;
+	width:15%;
+}
+.check-text{
+	
+	margin-right:20px;
+	color:#0090fc;
+}
+.content{
+	
+	text-align:center;
+	margin-left: 80px;
+	
+}
+
+
+.check-text1{
+	margin-right:20px;
+	color:#0090fc;
+	float:right;
+	margin-right: 40px;
+	
+}
+
+.check-text2{
+	
+	margin-right:20px;
+	color:#0090fc;
+	float:right;
+	margin-right: 40px;
+	
+	
+}
+.check-text3{
+	
+	margin-right:20px;
+	color:#0090fc;
+	float:right;
+	margin-right: 40px;
+	
+	
+}
+
+.check-text4{
+	
+	margin-right:20px;
+	color:orange;
+	float:right;
+	margin-right: 40px;
+	
+	
+}
+.self-photo{
+	
+	position:absolute;
+	overflow:hidden;
+	width:150px;
+	height:auto;
+	margin-left:780px;
+	margin-top:70px;
+	
+}
+
+.check-btn{
+	margin-right:15px;
+	background:#0090fc;
+	color:white;
+	padding:5px;
+	border:none;
+	border-radius :10px;
+	align
+	
+}
+.notify{
+	font-weight:500;
+	display:inline-block;
+	margin-left:28px;
+	
+	
+}
+
+.tog{
+	
+	
+	
+}
+
+
+hr {
+	
+	border: 0.5px solid #dee2e6;	
+}
+
+
+	
+.change-area{
+	position:absolute;
+	height:30px;
+	width:300px;
+	resize:none;
+	border:none;
+	margin-left: 80px;
+}
+
+.withdraw-btn{
+	margin-right:10px;
+	margin-top:60px;
+	float:right;
+	border:none;
+	background:#f6f6f6;
+	color:#0090fc;
+}
+
+	
+   
