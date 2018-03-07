@@ -363,11 +363,11 @@
 					
 					if(pwd1 === pwd2){
 						$.ajax({
-							url:"/semi/updatePwd.me",
+							url:"updatePwd.me",
 							type:"post",
 							data:{pwd:pwd1},
 							success:function(data){
-								$("#pwd").text(data);
+								alert("성공");
 							},
 							error:function(){
 								alert("비밀번호 변경 실패");
