@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.kh.dental.member.model.vo.*"%>
+   
+   
 <!DOCTYPE html>
 <html>
 <head>
-<meta  charset=UTF-8">
+<meta  charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/semi/css/event.css">
 <link rel="stylesheet" href="/semi/css/CMyPage.css">
@@ -12,6 +14,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>/
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 /* 이거지우면 내려감 왜그런지모름 */
 
@@ -31,7 +34,7 @@
          <img src = "../../images/common/tooth2.png" class = "CMsubtitle">
       </div>
       <div class = "fl">
-         <label class = "CMname"> 서은별 님<% %></label> <!-- 이름값 받아오기 -->
+         <label class = "CMname"><%= loginUser.getmName() %></label> <!-- 이름값 받아오기 -->
       </div>
       
       <div class = "CMfirstdiv fl">
@@ -69,10 +72,10 @@
              <hr>
              <label> 병원 도착 시 꼭 접수실에 알려주세요</label>
              <br><br>
-                <div>
+               <%--  <div>
                    <label >대기<br>인원 </label> &nbsp;&nbsp;
                    <label class ="CMwating "> 001 <%  %></label> <!-- 대기인원을 알려주는 칸  -->
-                </div><br>
+                </div> --%><br>
                 
              <label> 진료 순서가 지나면 다시 접수를 하셔야 합니다. <br> 시간 내 방문이 어려운 경우, 병원에 미리 연락 부탁드립니다.</label>
              <hr>
@@ -126,7 +129,7 @@
                        <td>김지현 원장</td>
                        <td></td>
                      </tr>      
-                     <tr >
+                     <!-- <tr >
                        <td>아삭치과의원</td>
                        <td>2018-02-26(월)</td>
                        <td>13:20</td>
@@ -188,7 +191,7 @@
                        <td>13:20</td>
                        <td>김지현 원장</td>
                         <td></td>
-                     </tr>
+                     </tr> -->
                    </tbody>
                  </table>
                  
@@ -278,7 +281,7 @@
          
          <img src="../../images/QnA/lock.png">
          <br>
-      <textarea class="pass-text" placeholder="비밀번호를 입력해주세요." cols="50"></textarea>   
+      <input type="text" class="pass-text" placeholder="비밀번호를 입력해주세요." name="pass-check"/>   
       
       <button id="pass-check" class="pass-check">확인</button>
       </div>
@@ -308,72 +311,103 @@
    
    
    
-   </script>      
-      
-      
-      <div id="default-wrap" class="default-wrap">
-         <div class="inner-wrap1">
-         <p class="default-title">기본설정</p>
-         <hr>
-         <span class="title">이메일</span><span class="content">thdwotkd@nave.rcom</span>
-         <hr>
-         <span class="title">이름</span><span class="content">송재상</span>
-         <hr>
-         <span class="title">전화번호</span><span class="content">010-1234-5678</span>
-         <hr>
-         <span class="title last">주소</span><span class="content">경기도 수우너시시ㅟㅈ뷪부긴</span>
-         </div>
-         
-         <div class="inner-wrap2" id="inner-wrap2">
-         <p class="default-title">회원설정</p>
-         <hr>
-         <span class="title">본인인증하기</span><span class="check-wrap"><span class="check-text">인증완료</span><button class="check-btn">이메일재인증</button><button class="check-btn">휴대폰재인증</button></span>
-         <hr>
-         <span class="title">비밀번호변경</span><img id="change-btn" class="change-btn" src="../../images/mypage/bottom-direction.png">
-         <span id="tog">
-         <hr>
-         <span class="title">현재비밀번호</span><textarea class="change-area" placeholder="현재 비밀번호를 입력하세요." "></textarea>
-         <hr>
-         <span class="title">새 비밀번호</span><textarea class="change-area" placeholder="새로운 비밀번호를 입력하세요."></textarea>
-         <hr>
-         <span class="title">비밀번호 확인</span><textarea class="change-area" placeholder="비밀번호를 확인해주세요."></textarea>
-         </span>
-         
-         </div>
-         <button id="withdraw-btn" class="withdraw-btn">회원탈퇴</button>
-         
-         
-         </div>
-         
-      
-      <script>
-      
-      $(function(){
-         /*.Ctotal2  */
-         
-         $("#tog").hide();
-         
-         $("#change-btn").click(function(){
-         $("#tog").toggle();
-         if($(".Ctotal2").height()==700){
-            
-             $(".Ctotal2").css("height","900px");
+   </script>
+			
+			
+			<div id="default-wrap" class="default-wrap">
+				<div class="inner-wrap1">
+					<p class="default-title">기본설정</p>
+					<hr>
+					<%--  <span class="title">이메일</span><span class="content"><%=loginUser.get %></span>
+         <hr> --%>
+					<span class="title">이름</span><span class="content"><%=loginUser.getmName() %></span>
+					<hr>
+					<span class="title">전화번호</span><span class="content"><%=loginUser.getmPhone() %></span>
+					<hr>
+					<span class="title last">주소</span><span class="content"><%=loginUser.getmAddr() %></span>
+				</div>
 
-            $("#withdraw-btn").css("margin-top","150px");
-            
-         }else if($(".Ctotal2").height()==900){
-            
-            $(".Ctotal2").css("height","700px");
+				
+					<div class="inner-wrap2" id="inner-wrap2">
+						<p class="default-title">회원설정</p>
+						<hr>
+						<span class="title">본인인증하기</span><span class="check-wrap"><span
+							class="check-text">인증완료</span>
+						<button class="check-btn">이메일재인증</button>
+							<button class="check-btn">휴대폰재인증</button></span>
+						<hr>
+						<span class="title">비밀번호변경</span><img id="change-btn"
+							class="change-btn" src="../../images/mypage/bottom-direction.png">
+						<span id="tog">
+							<hr> <span class="title">현재비밀번호</span><input id="pwd" type="text"
+							class="change-area" placeholder="현재 비밀번호를 입력하세요." readonly
+							value="<%=loginUser.getmPwd()%>">
+							<hr> <span class="title">새 비밀번호</span><input type="text"
+							class="change-area" placeholder="새로운 비밀번호를 입력하세요." id="pwd1">
+							<hr> <span class="title">비밀번호 확인</span><input type="text"
+							class="change-area" placeholder="비밀번호를 확인해주세요." id="pwd2">
+						</span>
 
-            $("#withdraw-btn").css("margin-top","10px");
-         };
-         });
-         
-         
-      });
-      
-      
-      </script>
+
+
+					</div>
+					<button id="withdraw-btn1" class="withdraw-btn">비밀번호 변경</button>
+					<button id="withdraw-btn" class="withdraw-btn">회원탈퇴</button>
+			</div>
+			
+
+			<script>
+				$("#withdraw-btn1").click(function(){
+					var pwd1 = $("#pwd1").val();
+					var pwd2 = $("#pwd2").val();
+					
+					if(pwd1 === pwd2){
+						$.ajax({
+							url:"updatePwd.me",
+							type:"post",
+							data:{pwd:pwd1},
+							success:function(data){
+								alert("성공");
+							},
+							error:function(){
+								alert("비밀번호 변경 실패");
+							}
+						});						
+						
+					}else{
+						alert("비밀번호가 일치하지 않습니다.");
+					}
+					
+				});
+
+				function deleteMember() {
+
+				}
+
+				$(function() {
+					/*.Ctotal2  */
+
+					$("#tog").hide();
+
+					$("#change-btn").click(function() {
+						$("#tog").toggle();
+						if ($(".Ctotal2").height() == 700) {
+
+							$(".Ctotal2").css("height", "900px");
+
+							$("#withdraw-btn1").css("margin-top", "150px");
+							$("#withdraw-btn").css("margin-top", "150px");
+
+						} else if ($(".Ctotal2").height() == 900) {
+
+							$(".Ctotal2").css("height", "700px");
+
+							$("#withdraw-btn").css("margin-top", "10px");
+						}
+						;
+					});
+				});
+			</script>
       
       
    </div>
@@ -405,3 +439,4 @@
    <%@ include file="../common/footer.jsp"%>
 </body>
 </html>
+
