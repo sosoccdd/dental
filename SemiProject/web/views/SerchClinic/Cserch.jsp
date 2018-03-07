@@ -1,5 +1,8 @@
+<%@page import="com.kh.dental.searchclinic.model.vo.SearchClinic"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<% ArrayList<SearchClinic> list = (ArrayList<SearchClinic>)request.getAttribute("list"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,6 +111,9 @@
 
 			
 			<script type="text/javascript">
+			var x_pos_test=[];
+			var y_pos_test=[];
+			
 			
 			$("#selectsearch").click(function(){
 				var sido = $("#sido option:selected").val();
@@ -123,6 +129,35 @@
 						dong:dong
 					},
 					success:function(data){
+						
+						var table="";
+						for(var i=0;i<6;i++){
+							
+						table += "<table class='table-box bluck-in' id='table-tag-id'>"
+								+"<tr class='tr-tag-st'>"
+								+"<td class='tr-img-tag'>"
+								+"<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
+								+"<td colspan='2' class='f20'>"
+								+data[i].yadm_nm
+								+"</td></tr><tr><td></td><td></td><td></td></tr>"
+								+"<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+								+data[i].addr
+								+"</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
+								+data[i].telno
+								+"</td></tr><tr><td></td><td>진료시간 &nbsp;:&nbsp;</td>"
+								+"<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td></tr>"
+								+"<tr><td></td><td>전문분야 &nbsp;:&nbsp;</td><td>치아보철과,치주과,구강내과,치아교정과</td></tr></table>";
+						x_pos_test+=data[i].x_pos;
+						y_pos_test+=data[i].y_pos;
+						
+						}
+						
+						
+						
+						$('#div-tag-table-add').html(table);
+						
+						
+						
 						
 						console.log("가져오기 성공");
 						
@@ -543,182 +578,7 @@
 	
 
 	<div class="">
-		<div class="w1200 middle">
-
-			<table class="table-box bluck-in" id="table-tag-id">
-				<tr class="tr-tag-st">
-					<td class="tr-img-tag">
-					<img class="tr-td-img-tag" alt="" src="../../images/SerchClinic/지도포인트.png"></td>
-					<td colspan="2" class="f20">강남 루덴 플러스 치과의원</td>
-				</tr>
-				<tr><td></td><td></td><td></td></tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td>
-					<td>서울특별시 강남구 역삼동 649-10 서림 빌딩 2층</td>
-				</tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>전화번호 &nbsp;:&nbsp;</td>
-					<td>02-2051-2875</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>진료시간 &nbsp;:&nbsp;</td>
-					<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>전문분야 &nbsp;:&nbsp;</td>
-					<td>치아보철과,치주과,구강내과,치아교정과</td>
-				</tr>
-
-			</table>
-			<table class="table-box bluck-in " id="table-tag-id">
-				<tr class="tr-tag-st">
-					<td class="tr-img-tag">
-					<img class="tr-td-img-tag" alt="" src="../../images/SerchClinic/지도포인트.png"></td>
-					<td colspan="2" class="f20">강남 루덴 플러스 치과의원</td>
-				</tr>
-				<tr><td></td><td></td><td></td></tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td>
-					<td>서울특별시 강남구 역삼동 649-10 서림 빌딩 2층</td>
-				</tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>전화번호 &nbsp;:&nbsp;</td>
-					<td>02-2051-2875</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>진료시간 &nbsp;:&nbsp;</td>
-					<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>전문분야 &nbsp;:&nbsp;</td>
-					<td>치아보철과,치주과,구강내과,치아교정과</td>
-				</tr>
-
-			</table>
-			<table class="table-box bluck-in" id="table-tag-id">
-				<tr class="tr-tag-st">
-					<td class="tr-img-tag">
-					<img class="tr-td-img-tag" alt="" src="../../images/SerchClinic/지도포인트.png"></td>
-					<td colspan="2" class="f20">강남 루덴 플러스 치과의원</td>
-				</tr>
-				<tr><td></td><td></td><td></td></tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td>
-					<td>서울특별시 강남구 역삼동 649-10 서림 빌딩 2층</td>
-				</tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>전화번호 &nbsp;:&nbsp;</td>
-					<td>02-2051-2875</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>진료시간 &nbsp;:&nbsp;</td>
-					<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>전문분야 &nbsp;:&nbsp;</td>
-					<td>치아보철과,치주과,구강내과,치아교정과</td>
-				</tr>
-
-			</table>
-			<table class="table-box bluck-in " id="table-tag-id">
-				<tr class="tr-tag-st">
-					<td class="tr-img-tag">
-					<img class="tr-td-img-tag" alt="" src="../../images/SerchClinic/지도포인트.png"></td>
-					<td colspan="2" class="f20">강남 루덴 플러스 치과의원</td>
-				</tr>
-				<tr><td></td><td></td><td></td></tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td>
-					<td>서울특별시 강남구 역삼동 649-10 서림 빌딩 2층</td>
-				</tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>전화번호 &nbsp;:&nbsp;</td>
-					<td>02-2051-2875</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>진료시간 &nbsp;:&nbsp;</td>
-					<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>전문분야 &nbsp;:&nbsp;</td>
-					<td>치아보철과,치주과,구강내과,치아교정과</td>
-				</tr>
-
-			</table>
-			<table class="table-box bluck-in " id="table-tag-id">
-				<tr class="tr-tag-st">
-					<td class="tr-img-tag">
-					<img class="tr-td-img-tag" alt="" src="../../images/SerchClinic/지도포인트.png"></td>
-					<td colspan="2" class="f20">강남 루덴 플러스 치과의원</td>
-				</tr>
-				<tr><td></td><td></td><td></td></tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td>
-					<td>서울특별시 강남구 역삼동 649-10 서림 빌딩 2층</td>
-				</tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>전화번호 &nbsp;:&nbsp;</td>
-					<td>02-2051-2875</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>진료시간 &nbsp;:&nbsp;</td>
-					<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>전문분야 &nbsp;:&nbsp;</td>
-					<td>치아보철과,치주과,구강내과,치아교정과</td>
-				</tr>
-
-			</table>
-			<table class="table-box bluck-in " id="table-tag-id">
-				<tr class="tr-tag-st">
-					<td class="tr-img-tag">
-					<img class="tr-td-img-tag" alt="" src="../../images/SerchClinic/지도포인트.png"></td>
-					<td colspan="2" class="f20">강남 루덴 플러스 치과의원</td>
-				</tr>
-				<tr><td></td><td></td><td></td></tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td>
-					<td>서울특별시 강남구 역삼동 649-10 서림 빌딩 2층</td>
-				</tr>
-				<tr class="tr-tag-st">
-					<td></td>
-					<td>전화번호 &nbsp;:&nbsp;</td>
-					<td>02-2051-2875</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>진료시간 &nbsp;:&nbsp;</td>
-					<td>월-금 9:00 - 21:00 토요일 9:00-14:00 일요일 휴무</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>전문분야 &nbsp;:&nbsp;</td>
-					<td>치아보철과,치주과,구강내과,치아교정과</td>
-				</tr>
-
-			</table>
+		<div class="w1200 middle" id="div-tag-table-add">
 			
 			<script type="text/javascript">
 				$(function(){
