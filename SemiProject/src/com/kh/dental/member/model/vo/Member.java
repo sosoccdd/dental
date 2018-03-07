@@ -13,7 +13,7 @@ public class Member implements java.io.Serializable {
 	private String mType;
 	private String mStatus;
 	private int mNo;
-	private int mField;
+	private int fNum;
 	private int mPtNo;
 	private int mRes;
 	private String hosDoc;
@@ -24,7 +24,7 @@ public class Member implements java.io.Serializable {
 	public Member(){}
 
 	public Member(String mId, String mName, String mAddr, String mPwd, String mPhone, Date mDate, String mGender,
-			String mType, String mStatus, int mNo, int mField, int mPtNo, int mRes, String hosDoc, String hosDocGender,
+			String mType, String mStatus, int mNo, int fNum, int mPtNo, int mRes, String hosDoc, String hosDocGender,
 			String hosDocType, String hosDocEtc) {
 		super();
 		this.mId = mId;
@@ -37,7 +37,7 @@ public class Member implements java.io.Serializable {
 		this.mType = mType;
 		this.mStatus = mStatus;
 		this.mNo = mNo;
-		this.mField = mField;
+		this.fNum = fNum;
 		this.mPtNo = mPtNo;
 		this.mRes = mRes;
 		this.hosDoc = hosDoc;
@@ -126,12 +126,12 @@ public class Member implements java.io.Serializable {
 		this.mNo = mNo;
 	}
 
-	public int getmField() {
-		return mField;
+	public int getfNum() {
+		return fNum;
 	}
 
-	public void setmField(int mField) {
-		this.mField = mField;
+	public void setfNum(int fNum) {
+		this.fNum = fNum;
 	}
 
 	public int getmPtNo() {
@@ -186,7 +186,7 @@ public class Member implements java.io.Serializable {
 	public String toString() {
 		return "Member [mId=" + mId + ", mName=" + mName + ", mAddr=" + mAddr + ", mPwd=" + mPwd + ", mPhone=" + mPhone
 				+ ", mDate=" + mDate + ", mGender=" + mGender + ", mType=" + mType + ", mStatus=" + mStatus + ", mNo="
-				+ mNo + ", mField=" + mField + ", mPtNo=" + mPtNo + ", mRes=" + mRes + ", hosDoc=" + hosDoc
+				+ mNo + ", fNum=" + fNum + ", mPtNo=" + mPtNo + ", mRes=" + mRes + ", hosDoc=" + hosDoc
 				+ ", hosDocGender=" + hosDocGender + ", hosDocType=" + hosDocType + ", hosDocEtc=" + hosDocEtc + "]";
 	}
 	
