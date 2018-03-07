@@ -18,31 +18,31 @@
 	<div class="join-wrap">
 		<h2>회원가입 | 일반</h2>
 		
-		<form action="" method="post" class="hidden">
+		<form id="NJoinForm" action="<%= request.getContextPath() %>/insertNMember.me" method="post" class="hidden">
 			<ul>
 				<!-- 휴대폰인증으로 정보 받아온 영역 -->
 				<li class="login-bg getData">
 					<label>이름</label>
-					<span class="c-308deb">getUserId()</span>
+					<input type="text" value="getUserId()" name="mName" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>핸드폰 번호</label>
-					<span class="c-308deb">getPhone()</span>
+					<input type="text" value="getPhone()" name="mPhone" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>생년월일</label>
-					<span class="c-308deb">getBirthday()</span>
+					<input type="text" value="getBirthday()" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>성별</label>
-					<span class="c-308deb">getGender()</span>
+					<input type="text" value="getGender()" name="mGender" class="c-308deb" readonly />
 				</li>
 				
 				<!-- 입력정보 영역 -->
 				<li class="login-bg short-input">
 					<label class="must">아이디</label>
-					<input type="text" placeholder="아이디를 입력하세요">
-					<button type="button" class="chkId-overlap">중복확인</button>
+					<input type="text" name="mId" placeholder="아이디를 입력하세요">
+					<button type="button" id="idCheck" class="chkId-overlap">중복확인</button>
 				</li>
 				<li class="idChk">
 					<p class="united">사용할 수 있는 아이디 입니다.</p>
@@ -50,11 +50,11 @@
 				</li>
 				<li class="login-bg">
 					<label class="must">비밀번호</label>
-					<input type="password" placeholder="비밀번호를 입력하세요">
+					<input type="password" name="mPwd" placeholder="비밀번호를 입력하세요">
 				</li>
 				<li class="login-bg">
 					<label class="must">비밀번호 확인</label>
-					<input type="password" placeholder="비밀번호를 다시 한 번 입력하세요">
+					<input type="password" name="mPwd2" placeholder="비밀번호를 다시 한 번 입력하세요">
 				</li>
 				<li class="pwdChk">
 					<p class="united">패스워드가 일치합니다.</p>
@@ -67,11 +67,11 @@
 				</li>
 				<li class="login-bg hidden">
 					<label>주소</label>
-					<input type="password" placeholder="주소를 적어주세요">
+					<input type="password" name="mAddr" placeholder="주소를 적어주세요">
 				</li>
 			</ul>
 					
-			<button type="submit" class="join-member">확인</button>
+			<button type="submit" id="joinBtn" onclick="" class="join-member">확인</button>
 			<button type="reset" class="join-can">취소하기</button>
 		</form>
 	</div>

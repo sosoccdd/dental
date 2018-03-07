@@ -2,6 +2,68 @@
     pageEncoding="UTF-8"%>
 <!-- header -->
 <%@ include file="views/common/header.jsp" %>
+<link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+<script src="jquery.bxslider/jquery.bxslider.js"></script>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<style>
+
+
+	.slidebox {
+        width:1200px;
+        overflow:hidden;
+        position:relative;
+        height:500px;
+    }
+     
+    .slide {
+        width:3000px;
+        height:500px;
+        position:relative;
+        left:0;
+    }
+     
+    .slide li {
+        display:inline-block;
+        width:400px;
+        height:400px;  
+        text-align:center;
+        color:white;
+        font-size:30px;
+        line-height:150px;
+        margin-right:-4px;
+    }
+    
+    .slidebox1 {
+        width:1200px;
+        overflow:hidden;
+        position:relative;
+        height:159px;
+    }
+     
+    .slide1 {
+        width:1500px;
+        height:500px;
+        position:relative;
+        left:0;
+    }
+     
+    .slide1 li {
+        display:inline-block;
+        width:400px;
+        height:400px;  
+        text-align:center;
+        color:white;
+        font-size:30px;
+        line-height:150px;
+        margin-right:-4px;
+    }
+
+
+
+
+
+</style>
 
 <!-- cssArea -->
 <link rel="stylesheet" href="css/main.css">
@@ -97,7 +159,7 @@
 	<!-- monthlyBest -->
 	
 	<!-- 문의하기 -->
-	<div class="ask bt">
+	<div class="ask middle bt">
 		<h3 class="w1200">문의하기</h3>
 		
 		<ul class="w1200 middle">
@@ -124,13 +186,56 @@
 				<div class="imgWrap mt10 mr15 ml15"><img src="images/dentist/dentist01.png"></div>
 				<p class="f16 mt15">다른 전문가 답변 1개</p> 
 			</li>
-			<li class="mt20"><button type="button" onclick="/semi/views/QnA/QnAList.jsp">문의하기 전체보기</button></li>
+			<li class="mt20"><button type="button" onclick="location.href='/semi/views/QnA/QnAList.jsp'">문의하기 전체보기</button></li>
 		</ul>
 		
 	</div>
 	<!-- ask -->
+
+<script>
+    var idx = 0;
+    var slidemax = 1;
+    var pos = 800;
+    
+    function sliding(add) {
+        idx = idx + add;
+        if(idx < 0) idx = slidemax;
+        else if(idx > slidemax) idx = 0;
+        $('.slide').stop().animate({'left' : -(idx*pos)+"px"}, "slow");
+    }
+     
+    autoslide = setInterval(function() { sliding(1) }, 3000);
+     
+    function after() {
+        setTimeout(function() {
+            clearInterval(autoslide);  
+            autoslide = setInterval(function() { sliding(1) }, 3000);
+        }, 2000);
+    }
+    
+    /* function sliding(add) {
+        idx1 = idx1 + add;
+        if(idx1 < 0) idx1 = slidemax1;
+        else if(idx1 > slidemax1) idx1 = 0;
+        $('.slide').stop().animate({'left' : -(idx1*pos1)+"px"}, "slow");
+    }
+     
+    autoslide1 = setInterval(function() { sliding(1) }, 3000);
+     
+    function after() {
+        setTimeout(function() {
+            clearInterval(autoslide1);  
+            autoslide1 = setInterval(function() { sliding(1) }, 3000);
+        }, 2000);
+    }
+ */
+
+</script>	
+	
+	
 	
 	<!-- 건강정보 -->
+
 	<div class="dentalNews bt">
 	<div class="w1200 middle relative">
 		<h3>건강정보</h3>
@@ -155,6 +260,7 @@
 						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 					</dl>
 				</li>
+
 				
 		        <li>
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
@@ -176,6 +282,7 @@
 					</dl>
 				</li>
 				
+
 		        <li>
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
 						<dt><img src="images/main/dentalNews3.jpg"></dt>
@@ -197,6 +304,7 @@
 				</li>
 		    </ul>
 		</div>
+
 		
 		<div class="slidectrl">
 		    <button type="button" id="leftbtn">&#10094;</button>
@@ -209,10 +317,14 @@
 
 
  	</div>
+ 	
 	</div>
 	<!-- dentalNews -->
 	
+	
+	
 	<!-- 이벤트 -->
+
 	<div class="event">
 		<h3 class="w1200">이벤트</h3>
 		
@@ -238,6 +350,7 @@
 			<button type="button" class="mt20" onclick="location.href='/semi/views/event/EventList.jsp'">이벤트 전체보기</button>
 		</div>
 	</div>
+
 	<!-- event -->
 	
 	
@@ -264,7 +377,12 @@
 	</div>
 	</div>
 	<!-- boardBox -->
+	
+	
+	
+	
  
+
 <script type="text/javascript">
 //건강정보 스크립트
 var idx = 0;
@@ -375,6 +493,7 @@ function imgMove(){
 }
 }
 imgMove(); 
+
 </script>
 
 <!-- footer -->
