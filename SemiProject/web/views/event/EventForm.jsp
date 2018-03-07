@@ -87,7 +87,6 @@
 				}
 				function goMain(){
 					location.href="<%= request.getContextPath() %>/index.jsp"
-					
 				}
 			</script>
 		</form>
