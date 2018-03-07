@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% String msg = (String)request.getAttribute("msg"); %>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css">
 <!-- header -->
@@ -22,7 +23,14 @@
 	  <h3>일반로그인</h3>
 	  <p>회원가입 시 등록하신 아이디와 비밀번호를 입력해주세요.</p>
 	  
-	  <div class="login-bg welcom-txt c-308deb">조치에 방문해 주셔서 감사합니다.</div>
+	  <div class="login-bg welcom-txt c-308deb">
+	  	<% if(msg == null) { %>
+	  		조치에 방문해 주셔서 감사합니다.
+	  	<% } else { %>
+	  		<%= msg %>
+	  	<% } %>
+	  </div>
+	  
 	  <!-- 아이디입력  -->
 	  <div class="login-bg">
 	  	<label>아이디</label>
@@ -52,7 +60,14 @@
 	  <h3>의사로그인</h3>
 	  <p>회원가입 시 등록하신 의사 아이디와 비밀번호를 입력해주세요.</p>
 	  
-	  <div class="login-bg welcom-txt c-308deb">조치에 방문해 주셔서 감사합니다.</div>
+	  <div class="login-bg welcom-txt c-308deb">
+	  	<% if(msg == null) { %>
+	  		조치에 방문해 주셔서 감사합니다.
+	  	<% } else { %>
+	  		<%= msg %>
+	  	<% } %>
+	  </div>
+	  
 	  <!-- 아이디입력  -->
 	  <div class="login-bg">
 	  	<label>아이디</label>
@@ -82,7 +97,14 @@
 	  <h3>치과로그인</h3>
 	  <p>회원가입 시 등록하신 치과의 아이디와 비밀번호를 입력해주세요.</p>
 	  
-	  <div class="login-bg welcom-txt c-308deb">조치에 방문해 주셔서 감사합니다.</div>
+	  <div class="login-bg welcom-txt c-308deb">
+	  	<% if(msg == null) { %>
+	  		조치에 방문해 주셔서 감사합니다.
+	  	<% } else { %>
+	  		<%= msg %>
+	  	<% } %>
+	  </div>
+	  
 	  <!-- 아이디입력  -->
 	  <div class="login-bg">
 	  	<label>아이디</label>

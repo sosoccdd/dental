@@ -8,27 +8,15 @@ import java.sql.Connection;
 import static com.kh.dental.common.JDBCTemplet.*;
 public class MemberService {
 	
-	//로그인 처리용 메소드
-	public Member GloginCheck(String mId, String mPwd) {
+	//일반회원 로그인 처리용 메소드
+	public Member loginCheck(String mId, String mPwd) {
 		Connection con = getConnection();
 		
-		Member loginUser = new MemberDao().GloginCheck(con, mId, mPwd);
-		System.out.println("memberService : " + loginUser);
+		Member loginUser = new MemberDao().loginCheck(con, mId, mPwd);
+		//System.out.println("memberService : " + loginUser);
 		close(con);
 		
 		return loginUser;
 	}
-
-/*	public Member DloginCheck(String mId, String mPwd, String mType) {
-		Connection con = getConnection();
-		
-		Member loginUser = new MemberDao().DloginCheck(con, mId, mPwd, mType);
-		
-		close(con);
-		
-		return loginUser;
-	}*/
-
-
 
 }

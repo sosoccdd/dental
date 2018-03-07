@@ -30,55 +30,21 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String mId = request.getParameter("mId");
 		String mPwd = request.getParameter("mPwd");
-		String mType = request.getParameter("mType");
 		
-	/*	System.out.println("아이디 : " + mId);
-		System.out.println("비밀번호 : " + mPwd);
-		System.out.println("회원종류 : " + mType);*/
+		Member loginUser = new MemberService().loginCheck(mId, mPwd);
 		
-		//일반회원
-		if(mType.equals("G")) {
-			Member loginUser = new MemberService().GloginCheck(mId, mPwd);
-			
-			if(loginUser != null) {
-				HttpSession session = request.getSession();
-				session.setAttribute("loginUser", loginUser);
-				
-				response.sendRedirect("index.jsp");
-			} else {
-				request.setAttribute("msg", "올바르지 않은 로그인 정보입니다. 다시 입력해 주세요.");
-			}
-		
-		//의사회원
-		} else if(mType.equals("D")) {
-/*			Member loginUser = new MemberService().DloginCheck(mId, mPwd, mType);
-			
-			if(loginUser != null) {
-				HttpSession session = request.getSession();
-				session.setAttribute("loginUser", loginUser);
-				
-				response.sendRedirect("index.jsp");
-			} else {
-				request.setAttribute("msg", "올바르지 않은 로그인 정보입니다. 다시 입력해 주세요.");
-			}
-			*/
-		//치과회원
+		System.out.println(loginUser);
+		if(loginUser != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("loginUser", loginUser);
+			response.sendRedirect("index.jsp");
 		} else {
-	/*		Member loginUser = new MemberService().CloginCheck(mId, mPwd);
-			
-			if(loginUser != null) {
-				HttpSession session = request.getSession();
-				session.setAttribute("loginUser", loginUser);
-				
-				response.sendRedirect("index.jsp");
-			} else {
-				request.setAttribute("msg", "올바르지 않은 로그인 정보입니다. 다시 입력해 주세요.");
-			}*/
+			request.setAttribute("msg", "올바르지 않은 로그인 정보입니다. 다시 입력해 주세요.");
+			request.getRequestDispatcher("/views/member/Login.jsp").forward(request, response);
 		}
-		
-		
 		
 		
 	}
