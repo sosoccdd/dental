@@ -6,6 +6,27 @@
    padding: 30px 0;
    margin-bottom: 50px;
 }
+
+.search-input{
+	
+	width:300px;
+	
+}
+
+.srch-wrap button{
+   margin-top:45px;
+   border: none;
+   
+}
+
+.srch-wrap img{
+   
+   
+   width:10px;
+   height: auto;    
+      
+}
+
 .sub-bg > div {
    overflow: hidden;
 }
@@ -27,6 +48,7 @@
 }
 .qna-li-title{
    font-size: 24px;
+   cursor:pointer;
 }
 .qna-li-con{
    font-size: 16px;
@@ -72,28 +94,15 @@
    width: 120px;
    height: 40px;
    cursor: pointer;
-   
+   margin-right:25px;
 }
 
-.page{
-   
-   
-   
+.pagingArea button{
+	border:1px solid  #0090fc;
+	background:white;
+	color:#0090fc;
+	margin-left:3px;
+	font-size: 20px;
+	
 }
 
-
-
-.page-wrap{
-   
-   
-   margin : 15px auto;
-   
-   
-}
-
-.page > a{
-   
-   background: red;
-   font-size: 15px;
-   
-}

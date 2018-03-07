@@ -24,6 +24,7 @@
 </style>
 </head>
 <body>
+   
    <%@ include file="../common/header.jsp"%>
    
    <div class ="w1200 middle CHeader2 hidden">

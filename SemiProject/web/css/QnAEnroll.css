@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.sub-bg{
+   width: 100%;
+   background: #ddd;
+   padding: 40px 0;
+   margin-bottom: 50px;
+}
+
+.sub-bg p{
+	
+	text-align:center;
+	font-size: 25px;
+	
+}
+
+
+
+.title-wrap{
+	
+	width:50%;
+	
+	
+}
+
+.enroll-wrap {
+	
+	padding-left:750px !important;
+	
+}
+
+.enroll-wrap span{
+	display:inline;
+	vertical-align:top;
+	
+}
+
+textarea{
+	
+	resize:none;
+	margin-left: 50px;	
+}
+.add-wrap textarea{
+	
+	
+	margin-left: 54px;
+}
+
+.find-btn{
+	position:absolute;
+	margin-left: 10px;
+	
+}
+
+.enroll-btn{
+	    margin-left: 280px;
+  	  margin-top: 15px;
+  	  margin-bottom:150px;
+	
+}
+
+

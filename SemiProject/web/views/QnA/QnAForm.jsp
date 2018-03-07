@@ -13,7 +13,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../common/header.jsp" %>
+
+<header>
+		<div class="w1200 middle">
+			<h1><a class="logo" href="/semi/index.jsp">조은치과 </a></h1>
+			
+			<ul class="gnb fl hidden">
+				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
+				<li><a href="/semi/views/event/EventForm.jsp">이벤트</a></li>
+				<li><a href="/semi/views/QnA/QnAView.jsp">Q & A</a></li>
+				<li><a href="/semi/views/HealthInfo/HealthView.jsp">건강정보</a></li>
+			</ul>
+			
+			<ul class="btn-wrap fr hidden">
+				<li>
+					<button type="button" class="login-btn" onclick="location.href='/semi/views/member/Login.jsp'">로그인</button>
+				</li>
+				
+				<li>
+					<button type="button" class="join-btn" onclick="location.href='/semi/views/member/memberConfirm.jsp'">회원가입</button>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+
+
+
 <div class="sub-bg">
    <div class="w1200 middle">
       <p class="line-txt">
@@ -28,7 +54,7 @@
       <!-- srch-warp -->
    </div>
 </div>
-<div class="w1200 middle relati9 ve ">
+<div class="w1200 middle relati9 ve">
    <ul class="qna-list">
          <li>
             <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
