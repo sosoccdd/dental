@@ -1,62 +1,56 @@
 @CHARSET "UTF-8";
 
-
-	 .FormHeader{
-		text-align: center;
-	
-		height:100px;
-		width: 100%;
-		background:lightgray;
-		
-		
-	}
 	.subFormHeader{
 		text-align:center;
 		vertical-align:middle;
 		width:1200px;
 		height:100px;
 		font-size:20px;
-		font-weight:bold;
+
 		line-height:100px;
 		margin:0 auto;
+		background:#2f6bad;
+		color:white;
+		margin-top:30px;
+		
 	}
-	.td2{
-		font-size:20px;
-		font-weight:bold;
+	.Eventbody{
+		background-color:#f6f6f6;
 	}
-	.tail{
-		color:orangered;
-		text-align:center;
+	.EFul2{
+		margin-right:100px;
+		margin-left:100px;
+		margin-top:50px;
+	}
+	.EFul2 li{
+		background-color:#fff;
+		margin-bottom:3px;
+		font-size:14px;
+		padding: 8px 18px;
 	}
 	
-	.goMain:hover, .buyBtn:hover{
-		cursor:pointer;
+	.EFul2 li input{
+		border:1px solid white;
+		height:35px;
+		vertical-text:middle;
+		font-size:15px;
+		width:700px;
 	}
-	
-	.buyBtn, .goMain{
-		display:inline-block;
+	.EFlabel{
+		width: 120px;
+		text-align:left;
+		margin-left:10px;
+		margin-right:30px;
+		font-size:15px;
 	} 
+	.tail{
+
+		color: #308deb;
+		text-align:center;
+		margin-top:20px;
+	}
 	
-	.table2{
-		border : 1px solid lightgray;
+
+
 	
-	}
-	.label{
-		text-align:right;
-	}
-	.tr2{
-		height: 50px;
-	}
-	.Ebtn{
-		border:1px solid blue;
-		color: blue;
-		background: white;
-	}
-	.btn{
-		width:100px;
-		height:50px;
-		font-size:20px;
-	}
-	.file2{
-		background:white;
-	}
+	
