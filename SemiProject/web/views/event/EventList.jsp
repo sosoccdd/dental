@@ -9,7 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../../css/reset.css">
-  <link rel="stylesheet" href="../..//css/common.css">
+  <link rel="stylesheet" href="../../css/common.css">
 <title>Insert title here</title>
 <style>
 	.ADmain{
@@ -114,15 +114,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="../../images/event/event11.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="../../images/event/event11.jpg" alt="EAD1" style="width:100%;">
       </div>
 
       <div class="item">
-         <img src="../../images/event/event07.jpg" alt="Chicago" style="width:100%;"> 
+         <img src="../../images/event/event07.jpg" alt="EAD2" style="width:100%;"> 
       </div>
     
       <div class="item">
-        <img src="../../images/event/event03.jpg" alt="New york" style="width:100%;">
+        <img src="../../images/event/event03.jpg" alt="EAD3" style="width:100%;">
       </div>
     </div>
 

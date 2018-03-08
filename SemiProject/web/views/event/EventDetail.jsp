@@ -106,7 +106,7 @@
 	<div class = "EventDetail" style="margin-bottom:20px;">
 		<ul class="w1200 middle">
 			<label class = "Dposition2">[인천광역시 연수구]</label>&nbsp;&nbsp;
-			<label class = "DHname2">강남 365 치과의원(송도점)</label><br>
+			<label class = "DHname2">강남 365 치과의원(송도점) </label><br>
 			<label class = "Ddate2">이벤트 기간: 2018.01.31 ~ 2018.02.28 </label>
 		</ul>
 	</div>
