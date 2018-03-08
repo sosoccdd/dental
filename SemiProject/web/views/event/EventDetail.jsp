@@ -117,7 +117,7 @@
 		<label class = "DsubTitle2">내 스타일에 맞춰 선택하는 치아교정! </label>
 		<button class ="Dbutton2 btn btn-outline-primary" >이벤트 등록하기 </button>
 		<div class="conArea fl">
-			<img src = "../../images/event/event01-01.jpg" class = "Dimg2"/>
+			<img src = "../../image	s/event/event01-01.jpg" class = "Dimg2"/>
 			<img src = "../../images/event/event01-02.jpg" class = "Dimg2"/>
 			<img src = "../../images/event/event01-03.jpg" class = "Dimg2"/>
 			<img src = "../../images/event/event01-04.jpg" class = "Dimg2"/>

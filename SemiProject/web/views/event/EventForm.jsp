@@ -10,6 +10,7 @@
 <meta charset=UTF-8>
 <title>Insert title here</title>
 <!-- datePicker -->
+
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -19,11 +20,13 @@
  </script>
   
 
+ 
 <!-- 결제 api  -->
 <script src="https://service.iamport.kr/js/iamport.payment-1.1.5.js" type="text/javascript"></script>
  
 <link rel="stylesheet" href="/semi/css/event.css">
 <link rel="stylesheet" href="../../css/common.css">
+
 
 <Style>
 	.EcontentImg{
@@ -205,6 +208,7 @@
 				<input type="file" id="thumbnail3" name="thumbnailImg3" onchange="LoadImg3(this);"/>
 				<input type="file" id="thumbnail4" name="thumbnailImg4" onchange="LoadImg4(this);"/>				
 				<input type="file" id="thumbnail5" name="thumbnailImg5" onchange="LoadImg5(this);"/>
+
 		</div>
          
          <br>
@@ -433,6 +437,7 @@
 					$("#contentImg2").attr("src", e.target.result); /* 파일이 브라우저에 저장되어잇는 위치를 가져옴 */
 					$("#contentImgArea3").show();
 				}
+
 				reader.readAsDataURL(value.files[0]);
 			}
 		}
@@ -443,6 +448,7 @@
 				reader.onload = function(e){
 					$("#contentImg3").attr("src", e.target.result); /* 파일이 브라우저에 저장되어잇는 위치를 가져옴 */
 					$("#contentImgArea4").show();
+
 				}
 				reader.readAsDataURL(value.files[0]);
 			}
@@ -459,11 +465,13 @@
 		}
 	
 	
+
 		
          </script>
          
    </div>
 
    <%@ include file="../common/footer.jsp" %>
+
 </body>
 </html>
