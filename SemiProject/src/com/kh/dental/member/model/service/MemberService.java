@@ -18,5 +18,27 @@ public class MemberService {
 		
 		return loginUser;
 	}
+	
+	//아이디 중복체크 처리용 메소드
+	public int idCheck(String mId) {
+		Connection con = getConnection();
+		
+		int result = new MemberDao().idCheck(con, mId);
+		
+		close(con);
+		
+		return result;
+	}
+
+	//회원가입 처리용 메소드
+	public int insertMember(Member m) {
+		Connection con = getConnection();
+		int result = new MemberDao().insertMember(con, m);
+
+		if(result > 0 ) commit(con);
+		else rollback(con);
+		
+		return result;
+	}
 
 }

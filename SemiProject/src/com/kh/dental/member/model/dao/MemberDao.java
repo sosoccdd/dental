@@ -38,7 +38,7 @@ public class MemberDao {
 		String query = prop.getProperty("loginCheck");
 		
 		try {
-			//System.out.println(query);
+			//System.out.println("쿼리문 : " + query);
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);
@@ -49,20 +49,26 @@ public class MemberDao {
 			if(rset.next()) {
 				loginUser = new Member();
 					
+				loginUser.setmNo(rset.getInt("M_NO"));
 				loginUser.setmId(rset.getString("M_ID"));
 				loginUser.setmName(rset.getString("M_NAME"));
-				loginUser.setmAddr(rset.getString("M_ADDR"));
 				loginUser.setmPwd(rset.getString("M_PWD"));
-				loginUser.setmPhone(rset.getString("M_PHONE"));
-				loginUser.setmDate(rset.getDate("M_DATE"));
-				loginUser.setmGender(rset.getString("M_GENDER"));
-				loginUser.setmType(rset.getString("M_TYPE"));
-				loginUser.setmNo(rset.getInt("M_NO"));
+				loginUser.setAddress(rset.getString("M_ADDR"));
+				loginUser.setPhone(rset.getString("M_PHONE"));
+				loginUser.setGender(rset.getString("M_GENDER"));
+				loginUser.setType(rset.getString("M_TYPE"));
+				loginUser.setPtNo(rset.getInt("M_PT_NO"));
+				loginUser.setJoinDate(rset.getDate("M_JOIN_DATE"));
+				loginUser.setStatus(rset.getString("M_STATUS"));
+				loginUser.setDelDate(rset.getDate("M_DELETE_DATE"));
 				loginUser.setfNum(rset.getInt("F_NUM"));
-				loginUser.setmPtNo(rset.getInt("M_PT_NO"));
-				loginUser.setmRes(rset.getInt("M_RES"));
+				loginUser.setHosNo(rset.getInt("M_HOS_NO"));
+				loginUser.setHosName(rset.getString("M_HOS_NAME"));
+				loginUser.setHosGender(rset.getString("M_HOS_GENDER"));
+				loginUser.setHosEtc(rset.getString("M_HOS_ETC"));
+				loginUser.setbIdCnt(rset.getInt("BID_COUNT"));
 				
-				System.out.println("memberDao : " + loginUser);
+				//System.out.println("memberDao : " + loginUser);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,6 +78,64 @@ public class MemberDao {
 		}
 		
 		return loginUser;
+	}
+
+	//아이디 중복체크 처리용 메소드
+	public int idCheck(Connection con, String mId) {
+		int result = 0;
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("idCheck");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, mId);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				result = rset.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	//회원가입 처리용 메소드
+	public int insertMember(Connection con, Member m) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertMember");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setString(1, m.getmId());
+			pstmt.setString(2, m.getmName());
+			pstmt.setString(3, m.getmPwd());
+			pstmt.setString(4, m.getAddress());
+			pstmt.setString(5, m.getPhone());
+			pstmt.setString(6, m.getGender());
+			pstmt.setString(7, m.getType());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

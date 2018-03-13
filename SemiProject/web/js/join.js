@@ -48,26 +48,14 @@ $(document).ready(function(){
 
 //경력사항 추가 삭제
 function addCareer() {
-	
-	arr+=1;
-	
-	console.log(arr);
-	
-	
-    document.getElementById("careerList").innerHTML += "<div class='careers'>" + document.getElementById("career").value 
-    + "<button type='button' class='delCareer' onclick='delCareer(); delBtn()'><i class='fa fa-trash'></i></button>" +
-    		"</div>";
+	$("#careerList").append("<p class='careers'>" + $("#career").val() + "<button type='button' class='del' onclick='delCareer()'>x</button></p>");
 }
 function delCareer(){
-	/*$('.careers').children().first().remove();*/
+	$(".del").click(function(){
+		$(this).parent().remove();
+	});
 }
-function delBtn(){
-	
-	$('.careerList').eq($('li').click(function(){
-		
-		$('li').index(this).remove();
-	}));
-}
+
 
 //파일업로드2
 $(document).ready(function(){

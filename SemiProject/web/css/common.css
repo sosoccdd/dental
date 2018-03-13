@@ -214,7 +214,8 @@ h1 .logo{
     padding: 0 22px 20px 40px;
     background: url(../images/common/arrow_down.png) no-repeat;
     background-size: 12px;
-    background-position: 102px 15px;
+    background-position-y: 15px;
+    background-position-x: 100%;
     cursor: pointer;
     margin-right: 40px;
     position: relative;
@@ -241,7 +242,7 @@ h1 .logo{
 .after-login{
 	display: none;
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 58px;
 	border: 1px solid #d7d7d7;
 	background: #fff;
