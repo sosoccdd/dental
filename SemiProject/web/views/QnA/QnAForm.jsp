@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.kh.dental.member.model.vo.*,java.sql.Date, com.kh.dental.qna.model.vo.*"%>
+    
+ <%
+ 
+ 	Member m = (Member)session.getAttribute("loginUser");
+ 	QnA q = (QnA)request.getAttribute("q");
+ %>   
+    
 <!DOCTYPE html>
 <html>
 <head>
 
-<link rel="stylesheet" href="../../css/reset.css">
-<link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/QnAForm.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/reset.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/QnAForm.css">
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <meta charset=UTF-8">
@@ -14,29 +21,8 @@
 </head>
 <body>
 
-<header>
-		<div class="w1200 middle">
-			<h1><a class="logo" href="/semi/index.jsp">조은치과 </a></h1>
-			
-			<ul class="gnb fl hidden">
-				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
-				<li><a href="/semi/views/event/EventForm.jsp">이벤트</a></li>
-				<li><a href="/semi/views/QnA/QnAView.jsp">Q & A</a></li>
-				<li><a href="/semi/views/HealthInfo/HealthView.jsp">건강정보</a></li>
-			</ul>
-			
-			<ul class="btn-wrap fr hidden">
-				<li>
-					<button type="button" class="login-btn" onclick="location.href='/semi/views/member/Login.jsp'">로그인</button>
-				</li>
-				
-				<li>
-					<button type="button" class="join-btn" onclick="location.href='/semi/views/member/memberConfirm.jsp'">회원가입</button>
-				</li>
-			</ul>
-		</div>
-	</header>
-
+ <%@ include file="../common/header.jsp"%>
+ 
 
 
 
@@ -57,34 +43,48 @@
 <div class="w1200 middle relati9 ve">
    <ul class="qna-list">
          <li>
-            <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
-            <p class="qna-li-date">2012-02-23</p>
+            <p class="qna-li-title"><%=q.getbTitle() %></p>
+            <p class="qna-li-date"><%=(Date)q.getbDate() %></p>
             <hr>
-            <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
+            <p class="qna-li-con"><%=q.getbContent() %></p>
             </li>
    </ul>      
 </div>
       
+    <form action="<%=request.getContextPath()%>/InsertAnswerServlet?tNo=<%=q.gettNo() %>" method="post" encType="multipart/form-data">
 <div class="w1200 middle relative">
     <div class="answerTable">
-    	<label>답변달기</label> <!-- 수정: b 태그에서 label -->
+    	<label>답변 제목</label> <!-- 수정: b 태그에서 label -->
+    	<input type=text name="title" class="ans-title">
         <br>
         <br>
-        <p>의사 명:</p><!--  수정: font 태그에서 p태그 -->
-        <input type="text" class="doc-text">
+        <p>답변자 명:</p><!--  수정: font 태그에서 p태그 -->
+       <%--  <% if((String)m.getmType()=="D" && (String)m.getmType()=="C"){ %>
+        <input type="text" class="doc-text" name="name" value="의사이름!" readonly style="border:none;">
+    	<%}else{ %>
+    	  <input type="text" class="doc-text" name="id" value="일반인아이디!" readonly style="border:none;">
+    	<%} %> --%>
+    <input type="text" class="doc-text" name="id" value="로그인후 설정다시!" readonly style="border:none;">
+    	
     <table class="ans-tab" >
      
     
     <tr class="ans-text">
        <td>답변 CONTENT:</td>
-       <td><textarea cols="130" rows="15" class="content" placeholder="*본 답변은 참고용으로 의학적 판단이나 진료행위로  해석 될 수 없습니다."></textarea></td>
+       <td><textarea cols="130" rows="15" class="content" placeholder="*본 답변은 참고용으로 의학적 판단이나 진료행위로  해석 될 수 없습니다." name="content"></textarea></td>
     </tr>
        
     </table>
+    <div class="add-wrap">
+    	<label class="add-file">사진첨부</label>
+    	<input type="file" class="file-container" name="file" >
     </div>
-</div>      
+    </div>
+</div>    
+   
 <div class="w1200 middle" align="center">
-<button class="ans-btn">답변달기</button><button class="ans-btn">취소하기</button>
+<button class="ans-btn" type="submit">답변달기</button><button class="ans-btn" onclick="location.href='/semi/views/QnA/QnAView.jsp'">취소하기</button>
 </div>  
+    </form>
  </body>
 </html>

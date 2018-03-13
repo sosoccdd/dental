@@ -1,13 +1,58 @@
 
+<%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*,com.kh.dental.common.*, com.kh.dental.qna.model.vo.*" %>
+    
+ <%
+ 	Member m =(Member)session.getAttribute("loginUser");
+ 
+ 	QnA q = (QnA)request.getAttribute("qContent");
+ 	
+ 	ArrayList<Attachment> list = new ArrayList<Attachment>();
+ 	if((ArrayList<Attachment>)request.getAttribute("qPic") !=null){
+ 			list=(ArrayList<Attachment>)request.getAttribute("qPic");
+ 
+ 	}
+ 
+ 
+ 
+ 
+ 	/* ArrayList<HashMap<String,Object>> list1=new ArrayList<HashMap<String,Object>>();
+	ArrayList<HashMap<String,Object>> list2=new ArrayList<HashMap<String,Object>>();
+ 					list1=(ArrayList<HashMap<String,Object>>)request.getAttribute("list1");
+		 
+ 	if(request.getAttribute("list2")!=null){
+		 			list2=(ArrayList<HashMap<String,Object>>)request.getAttribute("list2");
+					 }
+ 	HashMap<String, Object> hmap = list1.get(0);
+ 	
+ 	
+ 	Attachment[] pic=null;
+ 	
+ 	for(int i =0 ; i>list1.size(); i++){
+ 		
+ 		HashMap<String,Object> pict = new HashMap<String,Object>();
+ 		pict=list1.get(i);
+ 		
+ 		pic=new Attachment[list1.size()];
+ 		if(pict.get("pAfterName")!=null){
+ 		pic[i].setChangeName((String)pict.get("pAfterName"));
+ 		}
+ 	} */
+ 	
+ 	
+ 
+ %>   
+    
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../../css/reset.css">
 <link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/QnAList.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/QnAList.css">
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <meta charset=UTF-8">
@@ -33,56 +78,55 @@
 <div class="w1200 middle relative  ">
    <ul class="qna-list">
          <li>
-            <p class="qna-li-title">보리차를 먹으면 치아 변색되나요?</p>
-            <p class="qna-li-date">2012-02-23</p>
+         	 <p class="qna-li-title" name="question">Q.<%=q.getbDate() %>  <-날짜  <%=q.getbTitle()%></p>
+            <p class="qna-li-date" name="date"><%=q.getbDate() %></p>
             <hr>
-            <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
+            <p class="qna-li-con" name="content"><%=q.getbContent() %></p>
          </li>
    </ul>      
 </div>
-<div class="w1200 middle relative wrap-ans">	
+<%-- <div class="w1200 middle relative wrap-ans">	 나중에
+	<%if(list.size()!=0){
+		for(int i=0; i<=1;i++){
+		Attachment at = list.get(i);%>
+	<div>
       <div class="ans-head">
          <span class="doc_img">
             <img src="../../images/dentist/dentist01.png" width="60" height="60">
          </span>
          
          <div class="doc_info">
-            <a href="" class="link_doctor">김지현 의사</a>
-            <span class="clinic_name">좋은 치과 의원</span>
+            <a href="" class="link_doctor"><%=hmap1.get("dName") %></a>
+            <span class="d_major"><%=hmap1.get("fName") %></span>
          </div>
       
       
       <div class="point-info">
-         <span class="point">조치 포인트: 1201</span>
-         <span class="date">2017.08.25</span>   
+         <span class="point"><%=hmap1.get("dPoint") %></span>
+         <span class="date"><%=hmap1.get("dDate") %></span>   
       </div>
+       
       
-      
-      <div class="">
-      
-      
-      </div>
        
       </div>
       <hr class="bottom-line">
-      
+     
       <div class="answer-body">
          <div class="content">
-         
-         안녕하세요, 하이닥 내과 상담의 서종필 입니다.
-         일단 높아졌을때의 수축기 혈압과 이완기 혈압이 너무나 높습니다. 대부분의 고혈압은 본태성 고혈압으로 특발성으로도 부릅니다. 특별히 기질적 질환(원인) 없이 발생하는 고혈압을 말합니다.
-         드물게 신장동맥의 이상 혹은 크롬친화세포종 그외 부신의 종양성 병변 동맥의 혈관염 등 2차성(즉 고혈압을 유발하는 원인이 있는 상태)인 경우에도 혈압이 높게 오르고 들쭉날쭉할수 있습니다. 물론 가능성은 조금 낮을수 있겠지만요
-         혈압의 상태를 24시간동안 체크하고 평균혈압 아침 혈압 그외 잠잘때 혈압을 체크해서 혈압약 투여을 결정하기도 합니다.
-         순환기 내과에 방문하시어 혈압에 대한 정확한 판단과 치료를 받으시기를 권유합니다.   
+        
+       	<%=hmap1.get("dContent") %>
                            
          </div>
          
       </div>
+
+      
    <div class="btn-body">
    <button class="report-btn">신고하기</button>
    <button class="ans-btn">댓글</button>
-   </div >   
-   
+   </div > 
+   </div>  
+        
    <div class="cmt-body">
    
    <textarea id="comment" class="comment"></textarea>
@@ -103,14 +147,57 @@
    	
    		<span>2017.08.28</span>
    		<button class="dec-button">신고</button>
-   	
    	</span>
-     
+   <% } 
+     }else{
+   	 --%>
+     <% if(m ==null){%>
+     <button class="nans-btn" onclick="location.href='<%=request.getContextPath()%>/EnterAnswerServlet?title=<%=q.getbTitle()%>&date=<%=q.getbDate()%>&content=<%=q.getbContent()%>'">로그인을 먼저 해주세요!</button>
+     <%}else{%>
+     <button class="nans-btn" onclick="location.href='/semi/views/member/Login.jsp'">이 질문에 답변달기</button> 
+     <%}%>
+   	
+    
+    <%if(list!=null) {
+    	Attachment picInfo = new Attachment();
+    	   for(int i =0;i<list.size();i++){
+    				picInfo=list.get(i);%>
+   <div class="w3-content slide-img w3-display-container">
    
+
+  <img class="mySlides" src="<%=request.getContextPath() %>/uploadFiles/questionImgFIle/<%=picInfo.getChangeName()%>" style="width:20%">
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  
+   
+</div>
+	
+	<%}
+   }%>
+	<script>
+	
+	var slideIndex = 1;
+	showDivs(slideIndex);
+	
+	function plusDivs(n) {
+	  showDivs(slideIndex += n);
+	}
+	
+	function showDivs(n) {
+	  var i;
+	  var x = document.getElementsByClassName("mySlides");
+	  if (n > x.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = x.length}
+	  for (i = 0; i < x.length; i++) {
+	     x[i].style.display = "none";  
+	  }
+	  x[slideIndex-1].style.display = "block";  
+	}
+	</script>
    
    </div>
  
- 
+ 	
    
    
    
@@ -124,26 +211,7 @@
    
    	function addReply(){
    		
-   		/* var content=document.getElementById("comment").value
-   		$(function(){
-   			
-   			$("#reply-wrap").append('<img src="../../images/QnA/KakaoTalk_20180225_040917719.png">');
-   			$("#reply-wrap").append('<span class="reply-content">
-   								 	<span class="reply-user">gold() 사용자</span>
-				   			   		<span class="reply-content">미백 상담을 받는 것 외에는 다른 방법이 없을까요?ㅜ 그냥 수시로 관리하고 싶어요</span>
-				   			   		</span >
-				   			   		<span class="reply-etc">
-				   			   	
-				   			   	
-				   			   		<span>2017.08.28</span>
-				   			   		<button class="dec-button">신고</button>
-				   			   	
-				   			   		</span>')
-				    		
-   		});
-   		 
    		
-   			 */
    			
    	}
    	
