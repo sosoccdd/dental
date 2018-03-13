@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.*" %>
+    
+<% ArrayList<HashMap<String, Object>> list = (ArrayList<HashMap<String, Object>>)request.getAttribute("list"); %>  
 <!DOCTYPE html>
 <html>
 <head> 
@@ -9,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../../css/reset.css">
-  <link rel="stylesheet" href="../..//css/common.css">
+  <link rel="stylesheet" href="../../css/common.css">
 <title>Insert title here</title>
 <style>
 	.ADmain{
@@ -114,15 +116,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="../../images/event/event11.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="../../images/event/event11.jpg" alt="EAD1" style="width:100%;">
       </div>
 
       <div class="item">
-         <img src="../../images/event/event07.jpg" alt="Chicago" style="width:100%;"> 
+         <img src="../../images/event/event07.jpg" alt="EAD2" style="width:100%;"> 
       </div>
     
       <div class="item">
-        <img src="../../images/event/event03.jpg" alt="New york" style="width:100%;">
+        <img src="../../images/event/event03.jpg" alt="EAD3" style="width:100%;">
       </div>
     </div>
 
@@ -148,7 +150,16 @@
 	</ul>
 	</div>
 	
-
+	<div>
+		<button class = "ELinsertBtn" onclick = "ELinsertBtn();"> 이벤트 등록하기 </button>
+	</div>
+	<script>
+		function ELinsertBtn(){
+			location.href = '<%= request.getContextPath() %>/views/event/EventForm.jsp'
+	
+		}
+	</script>
+	
 	<br><br>
 	
 	
@@ -157,6 +168,27 @@
 		<li>
 		<div class = "ADM " >
 			<div class ="ADmain fl">
+				<% for(int i = 0; i< list.size(); i++){
+					HashMap<String, Object> hmap = list.get(i);
+				%>
+					<div class = "ADimg">
+						<input type = "hidden" value="<%= hmap.get("") %>"/>
+						<!-- <img src = "/dental/"> -->
+					</div>
+					
+					<div class = "ADexp">
+					<div class = "ADprice fl">
+						<label class = Hname2><%= hmap.get("ewriter") %>강남 365 치과의원(송도점)</label><br>
+						<label class = price2><%= hmap.get("eprice") %>월 19만원 ~</label><br>
+						<label class = date2><%= hmap.get("esdate") %> ~ <%= hmap.get("eedate") %>이벤트 기간: 2018.01.31 ~ 2018.02.28 </label>
+					</div>
+			
+					<div class = "ADposition">
+						<label class = "position2"> 인천광역시 송도 </label>
+					</div>
+				</div> 
+				<% } %>
+				
 				<div class = "ADimg">
 					<img src = "../../images/event/event01.jpg" class = "img2"/>
 				</div>
@@ -171,12 +203,25 @@
 					<div class = "ADposition">
 						<label class = "position2"> 인천광역시 송도 </label>
 					</div>
-				</div>
+				</div> 
+				
+				
 			</div>	
 		</div>
+			<script>
+			$(function(){
+				$(".ADimg").click(function(){
+					var num = $(this).children().children().eq(0).val();
+					console.log(num);
+					
+					location.href="<%= request.getContextPath() %>/selectOne.ev?num=" + num;
+				});
+			});
+			</script>
 		</li>
 		
-		<li >
+	
+		<!-- <li >
 		<div class = "ADM">
 			<div class ="ADmain">
 				<div class = "ADimg  fl">
@@ -375,7 +420,7 @@
 				</div>
 			</div>	
 		</div>
-		</li>
+		</li> -->
 	</ul>
 	
 	

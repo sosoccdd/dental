@@ -134,5 +134,6 @@
 			</ul>
 		</div>
 
+}
 <!-- footer -->
 <%@ include file="../common/footer.jsp"%>

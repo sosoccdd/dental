@@ -16,8 +16,11 @@
 			
 			<ul class="gnb fl hidden">
 				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
-				<li><a href="/semi/views/event/EventForm.jsp">이벤트</a></li>
-				<li><a href="/semi/EnterQnAServlet">Q & A</a></li>
+
+				<!-- <li><a href="/semi/views/event/EventList.jsp">이벤트</a></li> -->
+				<li><a href="/semi/selectList.ev">이벤트</a></li>
+				<li><a href="/semi/views/QnA/QnAForm.jsp">Q & A</a></li>
+
 				<li><a href="/semi/views/HealthInfo/HealthView.jsp">건강정보</a></li>
 			</ul>
 			
@@ -29,7 +32,13 @@
 			<% } else { %>
 			<ul class="btn-wrap fr">
 				<li class="login-name">
-					<div class="user-type gUser">일반회원</div>
+					<% if(loginUser.getType().equals("N")){ %>
+						<div class="user-type gUser">일반회원</div>
+					<% } else if(loginUser.getType().equals("D")){ %>
+						<div class="user-type dUser">의사회원</div>
+					<% } else { %>
+						<div class="user-type cUser">치과회원</div>
+					<% } %>
 					<%= loginUser.getmName() %>님
 					<ul class="after-login">
 						<li><a href="#">마이메뉴</a></li>
