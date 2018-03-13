@@ -5,6 +5,19 @@
 .sub-bg > div {
    overflow: hidden;
 }
+.ans-title{
+	
+	width: 450px;
+	margin-left: 50px;
+	
+}
+.doc-text{
+	
+	margin-left:50px;
+	
+}
+
+
 .srch-wrap{
    float: right;
 }
@@ -55,7 +68,7 @@
 }
 .answerTable{
    
-   padding-left: 24px; 
+   padding-left: 124px; 
    
 }
 
@@ -118,12 +131,16 @@
    
 }
 
-.answerTable label{
-	font-size:20px;
-	font-weight:bold;
-	
-}
-.answerTable p{
+
+.add-wrap {
+	margin-top:15px;
 	
 	
 }
+.file-container {
+	
+	background:white;
+	margin-left: 75px;
+	
+}
+

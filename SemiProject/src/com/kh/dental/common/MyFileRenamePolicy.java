@@ -8,7 +8,7 @@ import com.oreilly.servlet.multipart.FileRenamePolicy;
 
 public class MyFileRenamePolicy implements FileRenamePolicy {
 
-	@Override
+	
 	public File rename(File oldFile) {
 		
 		File newFile = null;
@@ -33,7 +33,7 @@ public class MyFileRenamePolicy implements FileRenamePolicy {
 			body =name;
 			ext= "";
 		}
-		String fileName = ft.format(new Date(currentTime));
+		String fileName = ft.format(new Date(currentTime))+randomNumber+ext;
 		
 		newFile = new File(oldFile.getParentFile(),fileName);
 		
