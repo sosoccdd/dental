@@ -19,7 +19,6 @@ public class StarPoint implements java.io.Serializable{
 	
 	
 	
-	
 	public StarPoint(int bno, String bwriter, String bcontent, int btno, int btype, String btitle, String bstatus,
 			int startpt, String ykiho_enc, Date bdate) {
 		super();

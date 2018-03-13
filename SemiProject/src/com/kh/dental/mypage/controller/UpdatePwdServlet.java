@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
-
 import com.kh.dental.member.model.vo.Member;
 import com.kh.dental.mypage.model.service.MypageService;
 

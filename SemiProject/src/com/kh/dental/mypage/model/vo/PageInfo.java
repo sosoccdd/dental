@@ -19,7 +19,6 @@ public class PageInfo implements java.io.Serializable{
 		this.startPage = startPage;
 		this.endPage = endPage;
 	}
-
 	public int getCurrentPage() {
 		return currentPage;
 	}

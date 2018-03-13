@@ -14,7 +14,6 @@ public class Dual implements java.io.Serializable{
 	private String btitle;
 	private String bwriter;
 	private Date bdate;
-	
 	private int ref_bid;
 	private int bcount;
 	private int bpno;

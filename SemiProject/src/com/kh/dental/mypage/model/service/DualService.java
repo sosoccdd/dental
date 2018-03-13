@@ -13,7 +13,6 @@ public class DualService {
 
 	public int getListCount() {
 		Connection con = getConnection();
-		
 		int listCount = new DualDao().getListCount(con);
 		
 		close(con);

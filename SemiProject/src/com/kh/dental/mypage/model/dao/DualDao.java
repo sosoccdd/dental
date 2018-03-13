@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
-
 import com.kh.dental.dual.model.vo.*;
 import com.kh.dental.mypage.model.vo.Dual;
 

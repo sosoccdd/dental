@@ -17,7 +17,6 @@ import com.sun.xml.internal.fastinfoset.Decoder;
 
 import static com.kh.dental.common.JDBCTemplet.*;
 
-
 public class MypageDao {
    
    private Properties prop = new Properties();

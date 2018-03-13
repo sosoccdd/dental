@@ -77,7 +77,6 @@
 			<button class=" tablinks" onclick="openCity(event, 'Information')">
 				개인정보</button>
 		</div>
-		
 		<script>
 			$(function(){
 				console.log("점속???");

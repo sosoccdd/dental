@@ -179,7 +179,6 @@
 					var userId = $("#userId").val();
 					
 					console.log(pwd2 + userId);
-					
 					if(pwd2 === pwd3){
 						
 						$.ajax({

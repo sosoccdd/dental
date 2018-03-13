@@ -14,7 +14,6 @@ public class MypageService {
    public MypageService(){}
 
    public int updatePwd(String userId, String pwd) {
-      
       Connection con = getConnection();
       
       int result = new MypageDao().updatePwd(con, userId, pwd);

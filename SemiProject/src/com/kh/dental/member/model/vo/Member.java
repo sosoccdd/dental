@@ -90,8 +90,6 @@ public class Member implements java.io.Serializable {
 
 
 
-
-
 	public int getBid_count() {
 		return bid_count;
 	}

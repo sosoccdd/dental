@@ -40,11 +40,14 @@ public class MemberDao {
 		try {
 <<<<<<< HEAD
 			//System.out.println("쿼리문 : " + query);
+<<<<<<< HEAD
 =======
 			System.out.println(query);
 			System.out.println("user02"+mId);
 			System.out.println("user02"+mPwd);
 >>>>>>> jihyun
+=======
+>>>>>>> parent of fdd7466... Merge branch 'jihyun'
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);

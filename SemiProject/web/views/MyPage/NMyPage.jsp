@@ -10,7 +10,6 @@
 	int endPage = pi.getEndPage(); 
 %> --%>
    
-    
 <!DOCTYPE html>
 <html>
 <head>

@@ -24,7 +24,6 @@
 	cursor: pointer;
 	border-radius: 8px;
 }
-
 .button2 {
 	border: 2px solid #008CBA;
 	background-color: #008CBA;
