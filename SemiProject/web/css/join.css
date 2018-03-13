@@ -134,10 +134,28 @@
 	width: 110px;
 	float: left;
 }
+
 .chkbox-wrap{
 	float:left;
 	width: 852px;
 }
+.del{
+    border: 0;
+    background: #d0d0d0;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.del:hover{
+	background: #bfbdbd;
+}
+
 /*체크박스 폼*/
 input[type=checkbox]{
 	display: none;
@@ -180,7 +198,6 @@ svg{
 input[type=checkbox]:checked+label .check{
 	stroke-dashoffset: 0;
 	stroke-width: 7px;
-	background: red;
 }
 input[type=checkbox]:checked+label .outer{
 	transition: fill .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -200,10 +217,12 @@ input[type=checkbox]:checked+label .inner{
 	margin-top: 20px;
 }
 .careers{
-	padding: 10px 19px;
     width: 80%;
     margin-left: 124px;
     float: left;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    line-height: 3em;
 }
 .careers:last-child{
 	margin-bottom: 20px;

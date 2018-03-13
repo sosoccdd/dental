@@ -92,7 +92,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	height: 88px;
+	height: 120px;
 	margin-top: 11px;
 	padding: 8px 10px;
 	border: 1px solid #f0f0f0;
@@ -142,7 +142,8 @@
 	border: 1px solid #308deb;
 	color: #308deb;
     padding: 8px 20px;
-    border-radius: 5px;
+    border-radius: 3px;
+    font-size: 13px;
 }
 .choice_mem label:hover,
 .choice_mem input:checked+label {
@@ -153,16 +154,35 @@
 	background: #308deb;
 	color: #fff;
 }
-.agree-join-btn{
-	width: 100%;
-	border: 0;
-	background: #308deb;
-	color: #fff;
-	padding: 15px 0;
+.agree-btn{
+	width: 490px;
 	font-size: 15px;
 	cursor: pointer;
+}
+.disagree{
+	border: 1px solid #308deb;
+	background: #fff;
+	box-sizing: border-box;
+	padding: 15px 0;
+	color: #308deb;
+	margin-right: 15px;
+}
+.agree-join-btn{
+	border: 0;
+	background: #308deb;
+	padding: 16px 0;
+	color: #fff;
 }
 b{
 	font-weight: bold;
 	font-size: 14px;
+	color: #333;
+}
+.goHosJoin{
+	text-align: center;
+	margin-top: 30px;
+}
+.goHosJoin a{
+	text-decoration: underline;
+	font-weight: bold;
 }

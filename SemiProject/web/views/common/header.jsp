@@ -31,7 +31,13 @@
 			<% } else { %>
 			<ul class="btn-wrap fr">
 				<li class="login-name">
-					<div class="user-type gUser">일반회원</div>
+					<% if(loginUser.getType().equals("N")){ %>
+						<div class="user-type gUser">일반회원</div>
+					<% } else if(loginUser.getType().equals("D")){ %>
+						<div class="user-type dUser">의사회원</div>
+					<% } else { %>
+						<div class="user-type cUser">치과회원</div>
+					<% } %>
 					<%= loginUser.getmName() %>님
 					<ul class="after-login">
 						<li><a href="#">마이메뉴</a></li>

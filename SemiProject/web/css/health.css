@@ -4,7 +4,7 @@
 	margin: 20px auto 30px auto;
 	position: relative;
 }
-.health-title h2{
+.health-title h2, h2{
 	font-size: 30px;
 }
 .srch-wrap{
