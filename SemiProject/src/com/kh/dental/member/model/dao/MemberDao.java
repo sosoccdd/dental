@@ -39,6 +39,9 @@ public class MemberDao {
 		
 		try {
 			//System.out.println("쿼리문 : " + query);
+			System.out.println(query);
+			System.out.println("user02"+mId);
+			System.out.println("user02"+mPwd);
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);

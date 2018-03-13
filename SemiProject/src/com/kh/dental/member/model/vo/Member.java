@@ -56,6 +56,29 @@ public class Member implements java.io.Serializable {
 		this.mNo = mNo;
 	}
 
+
+
+
+
+
+	public int getBid_count() {
+		return bid_count;
+	}
+
+
+
+
+
+
+	public void setBid_count(int bid_count) {
+		this.bid_count = bid_count;
+	}
+
+
+
+
+
+
 	public String getmId() {
 		return mId;
 	}
@@ -191,6 +214,9 @@ public class Member implements java.io.Serializable {
 	public void setbIdCnt(int bIdCnt) {
 		this.bIdCnt = bIdCnt;
 	}
+
+
+
 
 	@Override
 	public String toString() {
