@@ -1,77 +1,207 @@
-package com.kh.dental.member.model.dao;
+package com.kh.dental.member.model.vo;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Properties;
+import java.sql.Date;
 
-import com.kh.dental.member.model.vo.Member;
-import static com.kh.dental.common.JDBCTemplet.*;
+public class Member implements java.io.Serializable {
+	private int mNo;
+	private String mId;
+	private String mName;
+	private String mPwd;
+	private String address;
+	private String phone;
+	private String gender;
+	private String type;
+	private int ptNo;
+	private Date joinDate;
+	private String status;
+	private Date delDate;
+	private int fNum;
+	private int hosNo;
+	private String hosName;
+	private String hosGender;
+	private String hosEtc;
+	private int bIdCnt;
 
-public class MemberDao {
-	
-	Properties prop = new Properties();
+	public Member(){}
 
-	public MemberDao() {
-		String fileName = MemberDao.class.getResource("/sql/member/member-query.properties").getPath();
-		try {
-			prop.load(new FileReader(fileName));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	//로그인 처리용 메소드
-	public Member loginCheck(Connection con, String mId, String mPwd) {
-		Member loginUser = null;
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		
-		
-		String query = prop.getProperty("loginCheck");
-		
-		try {
-			//System.out.println(query);
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, mId);
-			pstmt.setString(2, mPwd);
-			
-			rset = pstmt.executeQuery();
-			//System.out.println(rset);
-			
-			if(rset.next()) {
-				loginUser = new Member();
-					
-				loginUser.setmId(rset.getString("M_ID"));
-				loginUser.setmName(rset.getString("M_NAME"));
-				loginUser.setmAddr(rset.getString("M_ADDR"));
-				loginUser.setmPwd(rset.getString("M_PWD"));
-				loginUser.setmPhone(rset.getString("M_PHONE"));
-				loginUser.setmDate(rset.getDate("M_JOIN_DATE"));
-				loginUser.setmGender(rset.getString("M_GENDER"));
-				loginUser.setmType(rset.getString("M_TYPE"));
-				loginUser.setmNo(rset.getInt("M_NO"));
-				loginUser.setfNum(rset.getInt("F_NUM"));
-				loginUser.setmPtNo(rset.getInt("M_PT_NO"));
-				//loginUser.setmRes(rset.getInt("M_RES"));
-				
-				System.out.println("memberDao : " + loginUser);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rset);
-			close(pstmt);
-		}
-		
-		return loginUser;
+	public Member(int mNo, String mId, String mName, String mPwd, String address, String phone, String gender,
+			String type, int ptNo, Date joinDate, String status, Date delDate, int fNum, int hosNo, String hosName,
+			String hosGender, String hosEtc, int bIdCnt) {
+		super();
+		this.mNo = mNo;
+		this.mId = mId;
+		this.mName = mName;
+		this.mPwd = mPwd;
+		this.address = address;
+		this.phone = phone;
+		this.gender = gender;
+		this.type = type;
+		this.ptNo = ptNo;
+		this.joinDate = joinDate;
+		this.status = status;
+		this.delDate = delDate;
+		this.fNum = fNum;
+		this.hosNo = hosNo;
+		this.hosName = hosName;
+		this.hosGender = hosGender;
+		this.hosEtc = hosEtc;
+		this.bIdCnt = bIdCnt;
 	}
 
+	public int getmNo() {
+		return mNo;
+	}
+
+	public void setmNo(int mNo) {
+		this.mNo = mNo;
+	}
+
+	public String getmId() {
+		return mId;
+	}
+
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
+
+	public String getmName() {
+		return mName;
+	}
+
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
+
+	public String getmPwd() {
+		return mPwd;
+	}
+
+	public void setmPwd(String mPwd) {
+		this.mPwd = mPwd;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getPtNo() {
+		return ptNo;
+	}
+
+	public void setPtNo(int ptNo) {
+		this.ptNo = ptNo;
+	}
+
+	public Date getJoinDate() {
+		return joinDate;
+	}
+
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getDelDate() {
+		return delDate;
+	}
+
+	public void setDelDate(Date delDate) {
+		this.delDate = delDate;
+	}
+
+	public int getfNum() {
+		return fNum;
+	}
+
+	public void setfNum(int fNum) {
+		this.fNum = fNum;
+	}
+
+	public int getHosNo() {
+		return hosNo;
+	}
+
+	public void setHosNo(int hosNo) {
+		this.hosNo = hosNo;
+	}
+
+	public String getHosName() {
+		return hosName;
+	}
+
+	public void setHosName(String hosName) {
+		this.hosName = hosName;
+	}
+
+	public String getHosGender() {
+		return hosGender;
+	}
+
+	public void setHosGender(String hosGender) {
+		this.hosGender = hosGender;
+	}
+
+	public String getHosEtc() {
+		return hosEtc;
+	}
+
+	public void setHosEtc(String hosEtc) {
+		this.hosEtc = hosEtc;
+	}
+
+	public int getbIdCnt() {
+		return bIdCnt;
+	}
+
+	public void setbIdCnt(int bIdCnt) {
+		this.bIdCnt = bIdCnt;
+	}
+
+	@Override
+	public String toString() {
+		return "Member [mNo=" + mNo + ", mId=" + mId + ", mName=" + mName + ", mPwd=" + mPwd + ", address=" + address
+				+ ", phone=" + phone + ", gender=" + gender + ", type=" + type + ", ptNo=" + ptNo + ", joinDate="
+				+ joinDate + ", status=" + status + ", delDate=" + delDate + ", fNum=" + fNum + ", hosNo=" + hosNo
+				+ ", hosName=" + hosName + ", hosGender=" + hosGender + ", hosEtc=" + hosEtc + ", bIdCnt=" + bIdCnt
+				+ "]";
+	}
+
+	
+	
+	
 }
