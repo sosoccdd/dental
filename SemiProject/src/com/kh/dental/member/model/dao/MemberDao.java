@@ -38,14 +38,15 @@ public class MemberDao {
 		String query = prop.getProperty("loginCheck");
 		
 		try {
-			//System.out.println(query);
+			System.out.println(query);
+			System.out.println("user02"+mId);
+			System.out.println("user02"+mPwd);
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);
 			
 			rset = pstmt.executeQuery();
 			//System.out.println(rset);
-			
 			if(rset.next()) {
 				loginUser = new Member();
 					
@@ -54,13 +55,13 @@ public class MemberDao {
 				loginUser.setmAddr(rset.getString("M_ADDR"));
 				loginUser.setmPwd(rset.getString("M_PWD"));
 				loginUser.setmPhone(rset.getString("M_PHONE"));
-				loginUser.setmDate(rset.getDate("M_DATE"));
 				loginUser.setmGender(rset.getString("M_GENDER"));
 				loginUser.setmType(rset.getString("M_TYPE"));
 				loginUser.setmNo(rset.getInt("M_NO"));
 				loginUser.setfNum(rset.getInt("F_NUM"));
-				loginUser.setmPtNo(rset.getInt("M_PT_NO"));
-				loginUser.setmRes(rset.getInt("M_RES"));
+				loginUser.setBid_count(rset.getInt("bid_count"));
+				/*loginUser.setmPtNo(rset.getInt("M_PT_NO"));
+				loginUser.setmRes(rset.getInt("M_RES"));*/
 				
 				System.out.println("memberDao : " + loginUser);
 			}

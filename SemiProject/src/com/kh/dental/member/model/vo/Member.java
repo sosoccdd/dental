@@ -20,12 +20,18 @@ public class Member implements java.io.Serializable {
 	private String hosDocGender;
 	private String hosDocType;
 	private String hosDocEtc;
+	private int bid_count;
 	
 	public Member(){}
 
+	
+	
+	
+	
+
 	public Member(String mId, String mName, String mAddr, String mPwd, String mPhone, Date mDate, String mGender,
 			String mType, String mStatus, int mNo, int fNum, int mPtNo, int mRes, String hosDoc, String hosDocGender,
-			String hosDocType, String hosDocEtc) {
+			String hosDocType, String hosDocEtc, int bid_count) {
 		super();
 		this.mId = mId;
 		this.mName = mName;
@@ -44,7 +50,31 @@ public class Member implements java.io.Serializable {
 		this.hosDocGender = hosDocGender;
 		this.hosDocType = hosDocType;
 		this.hosDocEtc = hosDocEtc;
+		this.bid_count = bid_count;
 	}
+
+
+
+
+
+
+	public int getBid_count() {
+		return bid_count;
+	}
+
+
+
+
+
+
+	public void setBid_count(int bid_count) {
+		this.bid_count = bid_count;
+	}
+
+
+
+
+
 
 	public String getmId() {
 		return mId;
@@ -182,13 +212,19 @@ public class Member implements java.io.Serializable {
 		this.hosDocEtc = hosDocEtc;
 	}
 
+
+
+
 	@Override
 	public String toString() {
 		return "Member [mId=" + mId + ", mName=" + mName + ", mAddr=" + mAddr + ", mPwd=" + mPwd + ", mPhone=" + mPhone
 				+ ", mDate=" + mDate + ", mGender=" + mGender + ", mType=" + mType + ", mStatus=" + mStatus + ", mNo="
 				+ mNo + ", fNum=" + fNum + ", mPtNo=" + mPtNo + ", mRes=" + mRes + ", hosDoc=" + hosDoc
-				+ ", hosDocGender=" + hosDocGender + ", hosDocType=" + hosDocType + ", hosDocEtc=" + hosDocEtc + "]";
+				+ ", hosDocGender=" + hosDocGender + ", hosDocType=" + hosDocType + ", hosDocEtc=" + hosDocEtc
+				+ ", bid_count=" + bid_count + "]";
 	}
+
+	
 	
 	
 }

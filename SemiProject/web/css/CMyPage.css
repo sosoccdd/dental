@@ -6,18 +6,19 @@
       background:#2f6bad;
       color: white;
       height:160px;
-      
+      margin:0 auto;
    }
    .CHeader2 label,
    .CHeader2 div, i{
       color:white;
    }
    .CHeader2 label{
-      margin-top: 60px;
+     	 margin-top: 60px;
          margin-left: 25px;
          font-size: 20px;
          width:400px;
    }
+   
    
    .CMimgnone{
       margin-top:160px;
@@ -120,6 +121,14 @@
       background:white;
       color:#308deb;
       border:1px solid white;
+   }
+   .CMrightview{
+   width: 800px;
+   text-align: center;
+ /*  position: absolute; */
+   right:0;
+   /* margin-left: 300px important!; */
+   margin-top: -400px important!; */
    }
    .CMRegister{
       display: block;
