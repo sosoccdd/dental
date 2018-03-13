@@ -54,13 +54,13 @@ public class MemberDao {
 				loginUser.setmAddr(rset.getString("M_ADDR"));
 				loginUser.setmPwd(rset.getString("M_PWD"));
 				loginUser.setmPhone(rset.getString("M_PHONE"));
-				loginUser.setmDate(rset.getDate("M_DATE"));
+				loginUser.setmDate(rset.getDate("M_JOIN_DATE"));
 				loginUser.setmGender(rset.getString("M_GENDER"));
 				loginUser.setmType(rset.getString("M_TYPE"));
 				loginUser.setmNo(rset.getInt("M_NO"));
 				loginUser.setfNum(rset.getInt("F_NUM"));
 				loginUser.setmPtNo(rset.getInt("M_PT_NO"));
-				loginUser.setmRes(rset.getInt("M_RES"));
+				//loginUser.setmRes(rset.getInt("M_RES"));
 				
 				System.out.println("memberDao : " + loginUser);
 			}
