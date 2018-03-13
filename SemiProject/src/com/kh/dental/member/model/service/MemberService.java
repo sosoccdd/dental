@@ -13,7 +13,7 @@ public class MemberService {
 		Connection con = getConnection();
 		
 		Member loginUser = new MemberDao().loginCheck(con, mId, mPwd);
-		//System.out.println("memberService : " + loginUser);
+		System.out.println("memberService : " + loginUser);
 		close(con);
 		
 		return loginUser;

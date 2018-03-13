@@ -9,6 +9,7 @@
 <head>
 <meta charset=UTF-8>
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- datePicker -->
 
  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -130,7 +131,7 @@
  
    <div class =" Eventbody w1200 middle ">
       <br><br>
-      <form id = "EerollForm" action = "<%= request.getContextPath()%>/eventEnroll.me" method = "post"> 
+      <form id = "EerollForm" action = "<%= request.getContextPath()%>/InsertEventServlet" method = "post"> 
          <div class ="EFbody w1200 middle">
             	<ul class = "EFul2">
             		<li>
@@ -140,7 +141,7 @@
             	
             		<li>
             			<label class = "EFlabel">* 이벤트 가격 : &nbsp;</label>
-            			<input type = "text" id ="EFeventPrice" maxlength= "13" name = "Hname" placeholder="이벤트 가격을 입력해주세요">
+            			<input type = "text" id ="EFeventPrice" maxlength= "13" name = "Eprice" placeholder="이벤트 가격을 입력해주세요">
             		</li>
             		
             		<li>
@@ -196,37 +197,36 @@
             	
             		<li>
             			<label class = "EFlabel"> 추가내용 : &nbsp;</label>
-            			<textarea maxlength = "300" name = "pluscontents" class = "EplusContent"></textarea>
+            			<textarea maxlength = "300" name = "Econtent" class = "EplusContent"></textarea>
             		</li>
             	</ul>
          </div>
   
   
          <div id="fileArea">
-				<input type="file" id="thumbnail1" name="thumbnailImg1" onchange="LoadImg1(this);"/>
-				<input type="file" id="thumbnail2" name="thumbnailImg2" onchange="LoadImg2(this);"/>
-				<input type="file" id="thumbnail3" name="thumbnailImg3" onchange="LoadImg3(this);"/>
-				<input type="file" id="thumbnail4" name="thumbnailImg4" onchange="LoadImg4(this);"/>				
-				<input type="file" id="thumbnail5" name="thumbnailImg5" onchange="LoadImg5(this);"/>
+				<input type="file" id="thumbnail1" name="thumbnailImg" onchange="LoadImg1(this);"/>
+				<input type="file" id="thumbnail2" name="thumbnailImg" onchange="LoadImg2(this);"/>
+				<input type="file" id="thumbnail3" name="thumbnailImg" onchange="LoadImg3(this);"/>
+				<input type="file" id="thumbnail4" name="thumbnailImg" onchange="LoadImg4(this);"/>				
+				<input type="file" id="thumbnail5" name="thumbnailImg" onchange="LoadImg5(this);"/>
 
 		</div>
          
          <br>
    
+	      <div align = "center">
+	       
+	         <input type = "checkbox" class = "Echeck" id = "Echeck"><label class = "Echeck" for = "Echeck"> 병원정보 제공동의 및 병원정보 제 3자 제공 동의 (필수)</label>
+	         <br><br>
+	         <div class="EPayArea"><p class ="Epay">결제 금액 : 0</p></div>
+	         <button type = "reset" class = "goMain EFbtn" onclick ="goMain();" > 취소하기 </button>
+	        <!--  <button type = "submit" class = "buyBtn EFbtn" onclick ="EventBuy();"> 결제하기 </button> -->
+	     	 <button class = "buyBtn EFbtn" onclick = "location.href = '<%= request.getContextPath()%>/views/event/EventInsertSucess.jsp'"> 결제하기 </button>
+	  
+	      </div>
          
       </form>
       
-      <div align = "center">
-       
-         <input type = "checkbox" class = "Echeck" id = "Echeck"><label class = "Echeck" for = "Echeck"> 병원정보 제공동의 및 병원정보 제 3자 제공 동의 (필수)</label>
-         <br><br>
-         <div class="EPayArea"><p class ="Epay">결제 금액 : 0</p></div>
-         <button class = "goMain EFbtn" onclick ="goMain();" > 취소하기 </button>&nbsp;&nbsp;&nbsp;
-         <button class = "buyBtn EFbtn" onclick ="EventBuy();"> 결제하기 </button>
-         <script>
-         
-         </script>
-      </div>
   
    
       <script type="text/javascript">
@@ -245,8 +245,8 @@
     	        	Eto.datepicker( "option", "minDate", getDate( this ) );
     	        	
     	        	//날짜 차이 
-            	    var Etoday = new Date();
-          		 	  
+    	        	var Etoday = new Date();
+        		 	  
           		 	var stxt = Efrom.val().split("/");
           		 	var etxt = Eto.val().split("/");
 
@@ -265,7 +265,7 @@
           		 	price = EbetweenDate * 10000;
           		 
           			
-          			$(".Epay").text("결제 금액 : " +price + " 원");
+          			w$(".Epay").text("결제 금액 : " +price + " 원");
         	    	return price;
     	        }),
     	        
@@ -304,7 +304,7 @@
       		 	price = EbetweenDate * 10000;
       		 
       			
-      			$(".Epay").text("결제 금액 : " +price + " 원");
+      			w$(".Epay").text("결제 금액 : " +price + " 원");
     	    	return price;
     	    	
     	      });
@@ -328,10 +328,12 @@
       
      	 /* 결제 API */
          var IMP = window.IMP; 
-         IMP.init('iamport');
-         function EventBuy(){
-   
-       		if ($(EFeventName).val() !="" && $(EFeventPrice).val() != "" 
+         IMP.init('imp76109164');
+       	 
+         <%-- function EventBuy(){
+       		 
+       		
+       			 if ($(EFeventName).val() !="" && $(EFeventPrice).val() != "" 
        				&& $(Efrom).val() != "" && $(Eto).val() != ""
        					&& $('input:checkbox').is(":checked") == true){
        			
@@ -339,21 +341,37 @@
 	                pg : 'inicis', // version 1.1.0부터 지원.
 	                pay_method : 'card',
 	                merchant_uid : 'merchant_' + new Date().getTime(),
-	                name : '주문명:결제테스트',
-	                amount : price,
-	                buyer_email : 'iamport@siot.do',
-	                buyer_name : '구매자이름',
-	                buyer_tel : '010-1234-5678',
-	                buyer_addr : '서울특별시 강남구 삼성동',
-	                buyer_postcode : '123-456',
-	                m_redirect_url : 'https://www.yourdomain.com/payments/complete'
+	                name : '이벤트 등록 비용 결제',
+	                amount : 100, //마지막에 price로 수정
+	                buyer_email :<%= loginUser.get %> ,
+	                buyer_name : <%= loginUser.getmName()%>,
+	                buyer_tel : <%= loginUser.getmPhone() %>,
+	                buyer_addr : <%= loginUser.getmAddr()%>,
+	                m_redirect_url : 'https://www.yourdomain.com/payments/complete' //모바일 결제시에만 사용
 	            }, function(rsp) {
 	                if ( rsp.success ) {
 	                   var msg = '결제가 완료되었습니다.';
-	                       msg += '고유ID : ' + rsp.imp_uid;
-	                       msg += '상점 거래ID : ' + rsp.merchant_uid;
-	                       msg += '결제 금액 : ' + rsp.paid_amount;
-	                       msg += '카드 승인번호 : ' + rsp.apply_num;
+	                       msg += '고유ID : ' + rsp.imp_uid; //imp_uid	string
+	                       msg += '상점 거래ID : ' + rsp.merchant_uid; //merchant_uid	string
+	                       msg += '결제 금액 : ' + rsp.price; //paid_amount	number	
+	                       msg += '카드 승인번호 : ' + rsp.apply_num; //apply_num	string
+	                       
+	                   	 $.ajax({
+	                    	   url:"pay.ev",
+	                    	   data:{ "payMethod":'card', "name":'이벤트 등록 비용 결제',
+	                    		   		,  "amount": price, "buyerName":<%= loginUser.getmName()%>,
+	                    		   		  , "buyerTel":<%= loginUser.getmPhone() %> , "buyerAddr": <%= loginUser.getmAddr()%>
+	                    		  		    , "impUid":rsp.imp_uid, "merchantUid":rsp.merchant_uid
+	                    			 		  , "amount":rsp.price, "applyNum":rsp.apply_num },
+	                    	   type:"post",
+	                    	   success:function(data){
+	                               console.log("서버 전송 성공!");
+	                           },
+	                           error:function(data){
+	                               console.log("서버 전송 실패!");
+	                           },
+	                    	  
+	                       }); 
 	                } else {
 	                   var msg = '결제에 실패하였습니다.';
 	                       msg += '에러내용 : ' + rsp.error_msg;
@@ -370,8 +388,8 @@
        		
        		if ($('input:checkbox').is(":checked") == false){
        			alert("병원정보 제공동의 및 병원정보 제 3자 제공 동의에 체크를 해주세요.");
-       		}
-         }
+       		} 
+         } --%>
       
             
          function goMain(){

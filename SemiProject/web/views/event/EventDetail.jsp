@@ -124,34 +124,6 @@
 			<img src = "../../images/event/event01-05.jpg" class = "Dimg2"/>
 		</div>
 		
-		<div class="askForm fl">
-			<ul class = "Dul">
-				<li><label style = "font-size:25px;"> 병원 예약 </label></li><br>
-				<li>이름 <br>
-				<input type = "text" placeholder="이름을 입력하세요" class = "Dtext2"></li>
-				<br>
-				
-				<li>연락처 <br>
-				<input type = "text" placeholder="연락처를 입력하세요" class = "Dtext2"></li>
-				<br>
-				
-				<li>연받을 시간<br>
-				<input type = "text" placeholder="연락을 받을시간을 입력하세요" class = "Dtext2"></li>
-				<br>
-				
-				<li>추가문의 <br>
-				<textarea class = "Dtext2" style="resize:none;"></textarea></li>
-				<br>
-				
-				<input type = "checkbox"id = "Dcheck2" class = "Dcheck2" value = "check">
-				<label class = "Dlabel2" for = "Dcheck2"> 개인정보 취급 방침 동의 및 <br>개인정보 제 3자 동의 (필수)</label>
-				
-				<br><br>
-				
-				<li align ="center"><label style="color:skyblue;" class = "Dlabel2">* 이벤트 신청을 하시면 병원에서 <br>직접 안내전화를 드립니다. </label></li><br>
-				<li align ="center"><button class = "Drequest2 btn btn-outline-primary" align ="center" onclick = "alert('예약이 완료 되었어용 ^ ~ ^ !')"> 신청하기 </li></button>
-			</ul>
-		</div>
 	</div>
 
 
