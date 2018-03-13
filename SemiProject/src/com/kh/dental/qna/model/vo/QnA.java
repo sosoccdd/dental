@@ -88,12 +88,14 @@ public class QnA {
 	public void settNo(int tNo) {
 		this.tNo = tNo;
 	}
+	
 	@Override
 	public String toString() {
-		return "QnA [bCount=" + bCount + ", bPno=" + bPno + ", bWriter=" + bWriter + ", bTitle=" + bTitle
-				+ ", bContent=" + bContent + ", bStatus=" + bStatus + ", fileNo=" + fileNo + ", bNo=" + bNo + ", tNo="
-				+ tNo + "]";
+		return "QnA [bDate=" + bDate + ", bCount=" + bCount + ", bPno=" + bPno + ", bWriter=" + bWriter + ", bTitle="
+				+ bTitle + ", bContent=" + bContent + ", bStatus=" + bStatus + ", fileNo=" + fileNo + ", bNo=" + bNo
+				+ ", tNo=" + tNo + "]";
 	}
+
 	public QnA(Date bDate, int bCount, int bPno, String bWriter, String bTitle, String bContent, String bStatus,
 			int fileNo, int bNo, int tNo) {
 		super();

@@ -1,21 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*, com.kh.dental.qna.model.vo.*"%>
+
+
+
 <%
-	/* ArrayList<QnA> list = (ArrayList<QnA>)request.getAttribute("list");
+	ArrayList<QnA> list1=
+	(ArrayList<QnA>)request.getAttribute("list1");
+
+	ArrayList<HashMap<String,Object>> list2 =
+	(ArrayList<HashMap<String,Object>>)request.getAttribute("list2");
+
+	ArrayList<HashMap<String,Object>> list3 =
+	(ArrayList<HashMap<String,Object>>)request.getAttribute("list3");
+
 	QnAPageInfo qpi = (QnAPageInfo)request.getAttribute("qpi");
 	int listCount=qpi.getListCount();
 	int totalPage=qpi.getTotalPage();
 	int currentPage=qpi.getCurrentPage();
 	int startPage=qpi.getStartPage();
 	int lastPage=qpi.getLastPage();
-	 */
-	 	int listCount=5;
-		int totalPage=25;
-		int pageNum=10;
-		int currentPage=1;
-		 int startPage=1;
-		 int lastPage=10;
-		
+	
+	
+	
 	
 
 %>
@@ -27,9 +33,9 @@
 <head>
 <meta  charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../css/reset.css">
-<link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/QnAView.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/reset.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/QnAView.css">
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 </head>
@@ -53,32 +59,48 @@
 <!-- sub-bg -->
 <!-- qna list 시작 -->
 <div class="w1200 middle relative">
+   <%for(QnA q: list1){
+   		
+   %>
    <ul class="qna-list">
       <li>
-         <p class="qna-li-title"  onclick="location.href='/semi/views/QnA/QnAList.jsp'">보리차를 먹으면 치아 변색되나요?</p>
-         <p class="qna-li-date">2012-02-23</p>
+      	<form>
+        <p class="qna-li-title" onclick="location.href='<%=request.getContextPath()%>/SelectQnAServlet?tNo=<%=q.gettNo()%>&bCount=<%=q.getbCount()%>'"><%=q.getbTitle() %></p>
+         <p class="qna-li-date"><%=q.getbDate() %></p>
          <hr>
-         <p class="qna-li-con">ㅇ러이넘뢰ㅏ멍론ㅇ미ㅏㅓ룅마ㅓ뢰아ㅓ룅마ㅓ뢴ㅁ아ㅓ룅ㅁ나ㅓ롬아ㅓ로<br>dfkjsdljfhkasjfhlkjh</p>
+         <p class="qna-li-con"><%=q.getbContent() %></p>
+       </form>
+       	 <%if(loginUser!=null){ %>
          <button type="button" class="reply" onclick="location.href='/semi/views/QnA/QnAForm.jsp'">답변달기</button>
+      	<%}else{ %>
+      	  <button type="button" class="reply" onclick="location.href='/semi/views/QnA/QnAForm.jsp'">로그인페이지로연결하쇼~</button>
+      		<%} %>
+      	
       </li>
     </ul>
-   
+   <%} %>
    <div class="qna-box w1200">
       <ul class="order-by">
          <li>답변 최신순</li>
          <li>질문 최신순</li>
       </ul>
-      
+      <%if(loginUser ==null){ %>
+       <button type="button" class="ask-btn" onclick="location.href='/semi/views/QnA/QnAEnroll.jsp'">연결하쇼~</button>
+   	 <%}else{ %>
       <button type="button" class="ask-btn" onclick="location.href='/semi/views/QnA/QnAEnroll.jsp'">질문하기</button>
+   	 	<%} %>
+   
    </div>
+   
+   
 </div>
 <%--페이지 처리 --%>
 <div class="pagingArea" align="center">
-	<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=1'"><<</button>
+	<button onclick="location.href='<%=request.getContextPath() %>/EnterQnAServlet?currentPage=1'"><<</button>
 	<% if(currentPage<=1){ %>
 	<button disabled><</button>
 	<%}else{ %>
-	<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=<%=currentPage-1 %>'"><</button>
+	<button onclick="location.href='<%=request.getContextPath() %>/EnterQnAServlet?currentPage=<%=currentPage-1 %>'"><</button>
 	<%} %>
 	
 	<%for(int p = startPage; p<=lastPage; p++){
@@ -87,7 +109,7 @@
 		<button disabled><%=p %></button>
 	
 	<%		}else{%>
-		<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=<%=p %>'"><%=p %></button>
+		<button onclick="location.href='<%=request.getContextPath() %>/EnterQnAServlet?currentPage=<%=p %>'"><%=p%></button>
 		<%} %>
 		
 		
@@ -96,13 +118,20 @@
 	<%if(currentPage>=totalPage){ %>
 	<button disabled>></button>
 	<%} else{ %>
-	<button onclick="lication.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPage=<%=currentPage+1 %>'">></button>	
+	<button onclick="location.href='<%=request.getContextPath() %>/EnterQnAServlet?currentPage=<%=currentPage+1 %>'">></button>	
 	<%} %>
-	<button onclick="location.href='<%=request.getContextPath() %>/SelectQnAServlet?currentPag=<%=totalPage %>'">>></button>
+	<button onclick="location.href='<%=request.getContextPath() %>/EnterQnAServlet?currentPage=<%=totalPage %>'">>></button>
 	
 
 </div>
-
+	<script>
+	
+	
+	
+	
+	
+	
+	</script>
    
    
    <%@ include file="../common/footer.jsp" %>

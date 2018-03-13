@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../css/reset.css">
 <link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/QnAEnroll.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/QnAEnroll.css">
 </head>
 <body>
 	
@@ -21,7 +21,7 @@
 	<form action="<%=request.getContextPath()%>/InsertQnAServlet" method="post" encType="multipart/form-data">
 		
 		<div class="title-wrap">
-			<span name="title">질문 제목:</span><input cols="50" class="textcl" rows="1" >
+			<span >질문 제목:</span><input cols="50" class="textcl" rows="1" name="title">
 		
 		</div>
 		
@@ -32,10 +32,10 @@
 		
 		<div class="add-wrap">
 		
-			<span>첨부파일:</span><input cols="50" readonly rows="1"><button class="find-btn">파일찾기</button>
+			<span>첨부파일:</span><input type="file" class="find-btn" name="file"s>파일찾기</button>
 		</div>
 	
-		<button class="enroll-btn">등록하기</button>
+		<button class="enroll-btn" type="submit">등록하기</button>
 		</form>
 	</div>
 	
