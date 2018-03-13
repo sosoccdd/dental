@@ -7,56 +7,8 @@
 <!-- header -->
 <%@ include file="../common/header.jsp"%>
 		
-		<div class="health-title">
-			<h2>건강정보</h2>
-			
-			<div class="srch-wrap">
-				<input type="search" placeholder="건강정보를 입력하세요">
-				<button type="button"><i class="fa fa-search"></i></button>
-			</div>
-			<!-- srch-wrap -->
-		</div>
-		<!-- health-title -->
-		<div class="health-cate-wrap">
-			<div class="w1200 middle">
-				
-				<ul class="health-cate">
-					<li>카테고리</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health01.jpg"></div>
-						<p>전체</p>
-					</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health02.jpg"></div>
-						<p>이갈이</p>
-					</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health03.jpg"></div>
-						<p>입냄새</p>
-					</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health04.jpg"></div>
-						<p>구내염</p>
-					</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health05.jpg"></div>
-						<p>구순구개열</p>
-					</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health06.jpg"></div>
-						<p>임플란트</p>
-					</li>
-					<li>
-						<div class="cate-img"><img src="/semi/images/health/health07.jpg"></div>
-						<p>혀통증</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- health-title -->
 		
-		
-		<div class="w1200 middle health_view">
+		<div class="w1200 middle health_view subPage">
 			<div class="he_view_title">
 				너와 나를 괴롭히는 입냄새<br>
 				<span>입냄새, 왜 개선과 치료가 필요할까요?</span>

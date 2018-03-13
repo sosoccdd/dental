@@ -3,47 +3,57 @@ package com.kh.dental.member.model.vo;
 import java.sql.Date;
 
 public class Member implements java.io.Serializable {
+	private int mNo;
 	private String mId;
 	private String mName;
-	private String mAddr;
 	private String mPwd;
-	private String mPhone;
-	private Date mDate;
-	private String mGender;
-	private String mType;
-	private String mStatus;
-	private int mNo;
+	private String address;
+	private String phone;
+	private String gender;
+	private String type;
+	private int ptNo;
+	private Date joinDate;
+	private String status;
+	private Date delDate;
 	private int fNum;
-	private int mPtNo;
-	private int mRes;
-	private String hosDoc;
-	private String hosDocGender;
-	private String hosDocType;
-	private String hosDocEtc;
-	
+	private int hosNo;
+	private String hosName;
+	private String hosGender;
+	private String hosEtc;
+	private int bIdCnt;
+
 	public Member(){}
 
-	public Member(String mId, String mName, String mAddr, String mPwd, String mPhone, Date mDate, String mGender,
-			String mType, String mStatus, int mNo, int fNum, int mPtNo, int mRes, String hosDoc, String hosDocGender,
-			String hosDocType, String hosDocEtc) {
+	public Member(int mNo, String mId, String mName, String mPwd, String address, String phone, String gender,
+			String type, int ptNo, Date joinDate, String status, Date delDate, int fNum, int hosNo, String hosName,
+			String hosGender, String hosEtc, int bIdCnt) {
 		super();
+		this.mNo = mNo;
 		this.mId = mId;
 		this.mName = mName;
-		this.mAddr = mAddr;
 		this.mPwd = mPwd;
-		this.mPhone = mPhone;
-		this.mDate = mDate;
-		this.mGender = mGender;
-		this.mType = mType;
-		this.mStatus = mStatus;
-		this.mNo = mNo;
+		this.address = address;
+		this.phone = phone;
+		this.gender = gender;
+		this.type = type;
+		this.ptNo = ptNo;
+		this.joinDate = joinDate;
+		this.status = status;
+		this.delDate = delDate;
 		this.fNum = fNum;
-		this.mPtNo = mPtNo;
-		this.mRes = mRes;
-		this.hosDoc = hosDoc;
-		this.hosDocGender = hosDocGender;
-		this.hosDocType = hosDocType;
-		this.hosDocEtc = hosDocEtc;
+		this.hosNo = hosNo;
+		this.hosName = hosName;
+		this.hosGender = hosGender;
+		this.hosEtc = hosEtc;
+		this.bIdCnt = bIdCnt;
+	}
+
+	public int getmNo() {
+		return mNo;
+	}
+
+	public void setmNo(int mNo) {
+		this.mNo = mNo;
 	}
 
 	public String getmId() {
@@ -62,14 +72,6 @@ public class Member implements java.io.Serializable {
 		this.mName = mName;
 	}
 
-	public String getmAddr() {
-		return mAddr;
-	}
-
-	public void setmAddr(String mAddr) {
-		this.mAddr = mAddr;
-	}
-
 	public String getmPwd() {
 		return mPwd;
 	}
@@ -78,52 +80,68 @@ public class Member implements java.io.Serializable {
 		this.mPwd = mPwd;
 	}
 
-	public String getmPhone() {
-		return mPhone;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setmPhone(String mPhone) {
-		this.mPhone = mPhone;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public Date getmDate() {
-		return mDate;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setmDate(Date mDate) {
-		this.mDate = mDate;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getmGender() {
-		return mGender;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setmGender(String mGender) {
-		this.mGender = mGender;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public String getmType() {
-		return mType;
+	public String getType() {
+		return type;
 	}
 
-	public void setmType(String mType) {
-		this.mType = mType;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public String getmStatus() {
-		return mStatus;
+	public int getPtNo() {
+		return ptNo;
 	}
 
-	public void setmStatus(String mStatus) {
-		this.mStatus = mStatus;
+	public void setPtNo(int ptNo) {
+		this.ptNo = ptNo;
 	}
 
-	public int getmNo() {
-		return mNo;
+	public Date getJoinDate() {
+		return joinDate;
 	}
 
-	public void setmNo(int mNo) {
-		this.mNo = mNo;
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getDelDate() {
+		return delDate;
+	}
+
+	public void setDelDate(Date delDate) {
+		this.delDate = delDate;
 	}
 
 	public int getfNum() {
@@ -134,61 +152,56 @@ public class Member implements java.io.Serializable {
 		this.fNum = fNum;
 	}
 
-	public int getmPtNo() {
-		return mPtNo;
+	public int getHosNo() {
+		return hosNo;
 	}
 
-	public void setmPtNo(int mPtNo) {
-		this.mPtNo = mPtNo;
+	public void setHosNo(int hosNo) {
+		this.hosNo = hosNo;
 	}
 
-	public int getmRes() {
-		return mRes;
+	public String getHosName() {
+		return hosName;
 	}
 
-	public void setmRes(int mRes) {
-		this.mRes = mRes;
+	public void setHosName(String hosName) {
+		this.hosName = hosName;
 	}
 
-	public String getHosDoc() {
-		return hosDoc;
+	public String getHosGender() {
+		return hosGender;
 	}
 
-	public void setHosDoc(String hosDoc) {
-		this.hosDoc = hosDoc;
+	public void setHosGender(String hosGender) {
+		this.hosGender = hosGender;
 	}
 
-	public String getHosDocGender() {
-		return hosDocGender;
+	public String getHosEtc() {
+		return hosEtc;
 	}
 
-	public void setHosDocGender(String hosDocGender) {
-		this.hosDocGender = hosDocGender;
+	public void setHosEtc(String hosEtc) {
+		this.hosEtc = hosEtc;
 	}
 
-	public String getHosDocType() {
-		return hosDocType;
+	public int getbIdCnt() {
+		return bIdCnt;
 	}
 
-	public void setHosDocType(String hosDocType) {
-		this.hosDocType = hosDocType;
-	}
-
-	public String getHosDocEtc() {
-		return hosDocEtc;
-	}
-
-	public void setHosDocEtc(String hosDocEtc) {
-		this.hosDocEtc = hosDocEtc;
+	public void setbIdCnt(int bIdCnt) {
+		this.bIdCnt = bIdCnt;
 	}
 
 	@Override
 	public String toString() {
-		return "Member [mId=" + mId + ", mName=" + mName + ", mAddr=" + mAddr + ", mPwd=" + mPwd + ", mPhone=" + mPhone
-				+ ", mDate=" + mDate + ", mGender=" + mGender + ", mType=" + mType + ", mStatus=" + mStatus + ", mNo="
-				+ mNo + ", fNum=" + fNum + ", mPtNo=" + mPtNo + ", mRes=" + mRes + ", hosDoc=" + hosDoc
-				+ ", hosDocGender=" + hosDocGender + ", hosDocType=" + hosDocType + ", hosDocEtc=" + hosDocEtc + "]";
+		return "Member [mNo=" + mNo + ", mId=" + mId + ", mName=" + mName + ", mPwd=" + mPwd + ", address=" + address
+				+ ", phone=" + phone + ", gender=" + gender + ", type=" + type + ", ptNo=" + ptNo + ", joinDate="
+				+ joinDate + ", status=" + status + ", delDate=" + delDate + ", fNum=" + fNum + ", hosNo=" + hosNo
+				+ ", hosName=" + hosName + ", hosGender=" + hosGender + ", hosEtc=" + hosEtc + ", bIdCnt=" + bIdCnt
+				+ "]";
 	}
+
+	
 	
 	
 }

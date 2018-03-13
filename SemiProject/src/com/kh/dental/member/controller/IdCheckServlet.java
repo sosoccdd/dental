@@ -1,23 +1,27 @@
 package com.kh.dental.member.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kh.dental.member.model.service.MemberService;
+
 /**
- * Servlet implementation class InsertMember
+ * Servlet implementation class IdCheckServlet
  */
-@WebServlet("/InsertMember")
-public class InsertMemberServlet extends HttpServlet {
+@WebServlet("/IdCheck.me")
+public class IdCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertMemberServlet() {
+    public IdCheckServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,8 +30,23 @@ public class InsertMemberServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String mId = request.getParameter("mId");
+		
+		
+		int result = new MemberService().idCheck(mId);
+		
+		System.out.println("result : " + result);
+		
+		PrintWriter out = response.getWriter();
+		
+		if(result > 0) {
+			out.append("fail");
+		} else {
+			out.append("success");
+		}
+		
+		out.flush();
+		out.close();
 	}
 
 	/**
