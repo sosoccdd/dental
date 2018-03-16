@@ -138,6 +138,9 @@
 .chkbox-wrap{
 	float:left;
 	width: 852px;
+  display: block;
+  position: relative;
+	
 }
 .del{
     border: 0;
@@ -156,60 +159,14 @@
 	background: #bfbdbd;
 }
 
-/*체크박스 폼*/
-input[type=checkbox]{
-	display: none;
-}
-input[type=checkbox] + label {
-    position: relative;
-    padding: 0 90px;
-}
-svg{
-	height: 20px;
-	position: absolute;
-    left: 0;
-}
-.p-label{
-	position: absolute;
-    top: 0;
-    left: 30px;
+.chkbox-wrap label{
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.check{
-	transition: stroke-dashoffset .5s ease-in-out .2s, stroke-width .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-.outer{
-	transition: fill .3s ease-out;
-	fill: #BDBDBD;
-}
-.outer:hover{
-	fill: #9e9e9e;
-}
-.inner{
-	fill: #FFFFFF;
-	transition: opacity .2s ease-in-out .2s, height .3s ease-in-out .3s, width .3s ease-in-out .3s, x .3s ease-in-out .3s, y .3s ease-in-out .3s, rx .3s ease-in-out .3s;
-	opacity: 0;
-	width: 0;
-	height: 0;
-	x: 12px;
-	y: 28px;
-	rx: 100px;
-}
-input[type=checkbox]:checked+label .check{
-	stroke-dashoffset: 0;
-	stroke-width: 7px;
-}
-input[type=checkbox]:checked+label .outer{
-	transition: fill .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    fill: #2196F3;
-}
-input[type=checkbox]:checked+label .inner{
-    height: 0px;
-    width: 0px;
-    x: 16px;
-    y: 16px;
-    rx: 100px;
-}
+
+
 .careerList{
 	overflow: hidden;
 }
@@ -224,6 +181,12 @@ input[type=checkbox]:checked+label .inner{
     border-bottom: 1px solid #ddd;
     line-height: 3em;
 }
+.careers input{
+	border: 0;
+    padding: 10px;
+    background-color: #f6f6f6;
+    width: 96%;
+}
 .careers:last-child{
 	margin-bottom: 20px;
 }
@@ -237,9 +200,7 @@ input[type=checkbox]:checked+label .inner{
 	margin-top: 7px;
 	cursor: pointer;
 }
-.delCareer i:hover{
-	color: #308deb;
-}
+
 
 /* 파일업로드 css */
 .form-group {

@@ -48,7 +48,18 @@ $(document).ready(function(){
 
 //경력사항 추가 삭제
 function addCareer() {
-	$("#careerList").append("<p class='careers'>" + $("#career").val() + "<button type='button' class='del' onclick='delCareer()'>x</button></p>");
+	var careers = $("#career").val();
+	
+	if(!careers){
+		alert("경력사항을 입력해주세요");
+		$("#career").focus();
+	} else {
+		
+		//$("#careerList").append("<p class='careers'>" + careers + "<button type='button' class='del' onclick='delCareer()'>x</button></p>");
+		$("#careerList").append("<div class='careers'><input type='text' value='" + careers + "' name='carCon' readonly><button type='button' class='del' onclick='delCareer()'>x</button></div>");
+		
+		$("#career").select();
+	}
 }
 function delCareer(){
 	$(".del").click(function(){
@@ -104,3 +115,17 @@ $(document).ready(function(){
 	});
 });
 
+
+function dJoin(){
+	
+	
+	var work = ($(".careerList").children().text().replace(/x/gi,", ")).slice(0, -2);
+	
+	var addr = $("#address").val() + ", " + $("#detailAddress").val();
+
+	//console.log(work.slice(0, -1));
+	console.log(work);
+	console.log(addr);
+	return false;
+	
+}

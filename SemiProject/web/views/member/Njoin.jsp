@@ -199,7 +199,7 @@
 				</li>
 				<li class="login-bg">
 					<label></label>
-					<input type="text" id="detailAddress" placeholder="상세 주소를 입력해주세요">
+					<input type="text" id="detailAddress" name="address2" placeholder="상세 주소를 입력해주세요">
 				</li>
 			</ul>
 			
@@ -253,8 +253,8 @@ function execDaumPostCode() {
 
         }
     }).open({
-        left: (window.screen.width / 2)-(width / 2),
-        top: (window.screen.height / 2)-(height / 2)
+        left: ((window.screen.width - width) / 2),
+        top: ((window.screen.height - height) / 2)
     });
 }
 </script>

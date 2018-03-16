@@ -21,12 +21,14 @@ public class Member implements java.io.Serializable {
 	private String hosGender;
 	private String hosEtc;
 	private int bIdCnt;
+	private int dPoint;
+	private int dLincenceNo;
 
 	public Member(){}
 
 	public Member(int mNo, String mId, String mName, String mPwd, String address, String phone, String gender,
 			String type, int ptNo, Date joinDate, String status, Date delDate, int fNum, int hosNo, String hosName,
-			String hosGender, String hosEtc, int bIdCnt) {
+			String hosGender, String hosEtc, int bIdCnt, int dPoint, int dLincenceNo) {
 		super();
 		this.mNo = mNo;
 		this.mId = mId;
@@ -46,6 +48,8 @@ public class Member implements java.io.Serializable {
 		this.hosGender = hosGender;
 		this.hosEtc = hosEtc;
 		this.bIdCnt = bIdCnt;
+		this.dPoint = dPoint;
+		this.dLincenceNo = dLincenceNo;
 	}
 
 	public int getmNo() {
@@ -216,16 +220,31 @@ public class Member implements java.io.Serializable {
 		this.bIdCnt = bIdCnt;
 	}
 
+	public int getDPoint() {
+		return dPoint;
+	}
+
+	public void setDPoint(int dPoint) {
+		this.dPoint = dPoint;
+	}
+
+	public int getDLincenceNo() {
+		return dLincenceNo;
+	}
+
+	public void setDLincenceNo(int dLincenceNo) {
+		this.dLincenceNo = dLincenceNo;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [mNo=" + mNo + ", mId=" + mId + ", mName=" + mName + ", mPwd=" + mPwd + ", address=" + address
 				+ ", phone=" + phone + ", gender=" + gender + ", type=" + type + ", ptNo=" + ptNo + ", joinDate="
 				+ joinDate + ", status=" + status + ", delDate=" + delDate + ", fNum=" + fNum + ", hosNo=" + hosNo
 				+ ", hosName=" + hosName + ", hosGender=" + hosGender + ", hosEtc=" + hosEtc + ", bIdCnt=" + bIdCnt
-				+ "]";
+				+ ", dPoint=" + dPoint + ", dLincenceNo=" + dLincenceNo + "]";
 	}
 
-	
 	
 	
 }
