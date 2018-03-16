@@ -60,8 +60,6 @@ public class Member implements java.io.Serializable {
 		this.mNo = mNo;
 	}
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -83,7 +81,6 @@ public class Member implements java.io.Serializable {
 
 
 
->>>>>>> 8ca1e64a4ac6e4dbb6b5bfe947e776f5d042fb22
 	public String getmId() {
 		return mId;
 	}
