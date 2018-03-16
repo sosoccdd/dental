@@ -38,14 +38,22 @@ public class MemberDao {
 		String query = prop.getProperty("loginCheck");
 		
 		try {
+<<<<<<< HEAD
 			//System.out.println("쿼리문 : " + query);
+<<<<<<< HEAD
+=======
+			System.out.println(query);
+			System.out.println("user02"+mId);
+			System.out.println("user02"+mPwd);
+>>>>>>> jihyun
+=======
+>>>>>>> parent of fdd7466... Merge branch 'jihyun'
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);
 			
 			rset = pstmt.executeQuery();
 			//System.out.println(rset);
-			
 			if(rset.next()) {
 				loginUser = new Member();
 					
@@ -53,6 +61,7 @@ public class MemberDao {
 				loginUser.setmId(rset.getString("M_ID"));
 				loginUser.setmName(rset.getString("M_NAME"));
 				loginUser.setmPwd(rset.getString("M_PWD"));
+<<<<<<< HEAD
 				loginUser.setAddress(rset.getString("M_ADDR"));
 				loginUser.setPhone(rset.getString("M_PHONE"));
 				loginUser.setGender(rset.getString("M_GENDER"));
@@ -67,6 +76,16 @@ public class MemberDao {
 				loginUser.setHosGender(rset.getString("M_HOS_GENDER"));
 				loginUser.setHosEtc(rset.getString("M_HOS_ETC"));
 				loginUser.setbIdCnt(rset.getInt("BID_COUNT"));
+=======
+				loginUser.setmPhone(rset.getString("M_PHONE"));
+				loginUser.setmGender(rset.getString("M_GENDER"));
+				loginUser.setmType(rset.getString("M_TYPE"));
+				loginUser.setmNo(rset.getInt("M_NO"));
+				loginUser.setfNum(rset.getInt("F_NUM"));
+				loginUser.setBid_count(rset.getInt("bid_count"));
+				/*loginUser.setmPtNo(rset.getInt("M_PT_NO"));
+				loginUser.setmRes(rset.getInt("M_RES"));*/
+>>>>>>> jihyun
 				
 				//System.out.println("memberDao : " + loginUser);
 			}
