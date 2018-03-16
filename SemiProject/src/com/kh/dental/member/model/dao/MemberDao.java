@@ -40,10 +40,14 @@ public class MemberDao {
 
 		try {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 			// System.out.println("쿼리문 : " + query);
 >>>>>>> subin
+=======
+
+>>>>>>> jihyun
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);
@@ -78,7 +82,12 @@ public class MemberDao {
 				loginUser.setHosEtc(rset.getString("M_HOS_ETC"));
 				loginUser.setbIdCnt(rset.getInt("BID_COUNT"));
 
+<<<<<<< HEAD
 				// System.out.println("memberDao : " + loginUser);
+=======
+				
+				//System.out.println("memberDao : " + loginUser);
+>>>>>>> jihyun
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

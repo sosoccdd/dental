@@ -323,9 +323,9 @@
          <hr> --%>
 					<span class="title">이름</span><span class="content"><%=loginUser.getmName() %></span>
 					<hr>
-					<span class="title">전화번호</span><span class="content"><%=loginUser.getmPhone() %></span>
+					<span class="title">전화번호</span><span class="content"><%=loginUser.getPhone() %></span>
 					<hr>
-					<span class="title last">주소</span><span class="content"><%=loginUser.getmAddr() %></span>
+					<span class="title last">주소</span><span class="content"><%=loginUser.getAddress() %></span>
 				</div>
 
 				

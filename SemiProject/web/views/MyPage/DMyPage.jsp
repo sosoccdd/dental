@@ -112,14 +112,22 @@
 			<div class="inner-wrap1" id="inner-wrap1">
 			<p class="default-title">기본설정</p>
 			<hr>
+<<<<<<< HEAD
 			<span class="title">이메일</span><span class="content">thdwotkd@nave.rcom</span>
+=======
+			<span class="title">이메일</span><span class="content"><%=loginUser.getType() %></span>
+>>>>>>> jihyun
 			<hr>
 			<span class="title">이름</span><span class="content">송재상</span>
 			<hr>
+<<<<<<< HEAD
 			<span class="title">전화번호</span><span class="content">010-1234-5678</span>
 			<hr>
 			<span class="title">병원전화번호</span><span class="content">043-822-3432</span>
 			
+=======
+			<span class="title">전화번호</span><span class="content"><%=loginUser.getPhone() %></span>
+>>>>>>> jihyun
 			<hr>
 			<span class="title">의사면허번호</span><span class="content">A1823B2010</span><span  class="check-text1">인증완료</span>
 			<hr>
@@ -136,6 +144,7 @@
 			<hr>
 			<span id="exp-content" class="exp-content">인공치아 생성 성공</span>
 			</span>
+			
 			
 			</div>
 			
