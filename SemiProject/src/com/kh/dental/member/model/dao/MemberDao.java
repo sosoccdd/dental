@@ -68,7 +68,7 @@ public class MemberDao {
 				loginUser.setHosEtc(rset.getString("M_HOS_ETC"));
 				loginUser.setbIdCnt(rset.getInt("BID_COUNT"));
 
-				// System.out.println("memberDao : " + loginUser);
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
