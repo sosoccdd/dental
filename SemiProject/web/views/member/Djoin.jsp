@@ -156,20 +156,21 @@
 	<div class="join-wrap">
 		<h2>회원가입 | 의사</h2>
 		
-		<form action="" method="post" class="hidden">
+		<form id="DJoinForm" action="<%= request.getContextPath() %>/insertD.me" method="post" class="hidden" encType="multipart/form-data">
+		<%-- <form action="<%=request.getContextPath()%>/insert.me" method="post" class="hidden" encType="multipart/form-data"> --%>
 			<ul>
 				<!-- 휴대폰인증으로 정보 받아온 영역 -->
 				<li class="login-bg getData">
 					<label>이름</label>
-					<input type="text" value="<%= sName %>" name="mName" class="c-308deb" readonly />
+					<input type="text" value="신경배" name="mName" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>핸드폰 번호</label>
-					<input type="text" value="<%= sMobileNo %>" name="phone" class="c-308deb" readonly />
+					<input type="text" value="010-4369-5555" name="phone" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>생년월일</label>
-					<input type="text" value="<%= sBirthDate %>" class="c-308deb" readonly />
+					<input type="text" value="19940226" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>성별</label>
@@ -207,13 +208,12 @@
 				</li>
 				<li class="login-bg">
 					<label></label>
-					<input type="text" id="detailAddress" placeholder="상세 주소를 입력해주세요">
+					<input type="text" id="detailAddress" name="address2" placeholder="상세 주소를 입력해주세요">
 				</li>
-				
 				
 				<li class="login-bg">
 					<label class="must">의사면허번호</label>
-					<input type="text" placeholder="의사 인증을 위해 수집하는 정보이며 의사 진위 여부 확인 및 인증 목적으로만 이용됩니다.">
+					<input type="number" placeholder="의사 인증을 위해 수집하는 정보이며 의사 진위 여부 확인 및 인증 목적으로만 이용됩니다." name="licence">
 						<p style="text-indent:120px">
 							- 허위 사실 발각 시 의사면허 자격정지 처분 또는 의사면허 자격취소 등 법적 절차에 따라 처벌 받을 수 있습니다.
 						</p>
@@ -223,119 +223,42 @@
 					
 					<!-- 전문분야 체크박스 -->
 					<div class="chkbox-wrap">
-						<input type="checkbox" id="field1" name="field" value="구강내과" />
-						<label for="field1">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">구강내과</span>
-						</label>
+						<input type="radio" id="field1" name="field" value="10" />
+						<label for="field1">구강내과</label>
 						
-						<input type="checkbox" id="field2" name="field" value="구강악안면 방사선과" />
-						<label for="field2">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">구강악안면 방사선과</span>
-						</label>
+						<input type="radio" id="field2" name="field" value="20" />
+						<label for="field2">구강악안면 방사선과</label>
 						
-						<input type="checkbox" id="field3" name="field" value="구강악안면외과" />
-						<label for="field3">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">구강악악면외과</span>
-						</label>
+						<input type="radio" id="field3" name="field" value="30" />
+						<label for="field3">구강악악면외과</label>
 						
-						<input type="checkbox" id="field4" name="field" value="구강외과" />
-						<label for="field4">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">구강외과</span>
-						</label>
+						<input type="radio" id="field4" name="field" value="40" />
+						<label for="field4">구강외과</label>
 						<br>
 						<br>
 						
-						<input type="checkbox" id="field5" name="field" value="소아치과" />
-						<label for="field5">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">소아치과</span>
-						</label>
+						<input type="radio" id="field5" name="field" value="50" />
+						<label for="field5">소아치과</label>
 						
-						<input type="checkbox" id="field6" name="field" value="예방치과" />
-						<label for="field6">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">예방치과</span>
-						</label>
+						<input type="radio" id="field6" name="field" value="60" />
+						<label for="field6">예방치과</label>
 						
-						<input type="checkbox" id="field7" name="field" value="치아교정" />
-						<label for="field7">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">치아교정</span>
-						</label>
+						<input type="radio" id="field7" name="field" value="70" />
+						<label for="field7">치아교정</label>
 						
-						<input type="checkbox" id="field8" name="field" value="치아마취과" />
-						<label for="field8">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">치아마취과</span>
-						</label>
+						<input type="radio" id="field8" name="field" value="80" />
+						<label for="field8">치아마취과</label>
 						<br>
 						<br>
 						
-						<input type="checkbox" id="field9" name="field" value="치아보존과" />
-						<label for="field9">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">구강내과</span>
-						</label>
+						<input type="radio" id="field9" name="field" value="90" />
+						<label for="field9">치아보존과</label>
 						
-						<input type="checkbox" id="field10" name="field" value="치아보철" />
-						<label for="field10">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"></rect>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4"></rect>
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31.8 27.4782609 43 49 22"></polyline>
-							</svg>
-							<span class="p-label">치아보철</span>
-						</label>
+						<input type=radio id="field10" name="field" value="100" />
+						<label for="field10">치아보철</label>
 						
-						<input type="checkbox" id="field11" name="field" value="치주과" />
-						<label for="field11">
-							<svg shape-rendering="optimizeQuality" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect class="outer" fill="#BDBCB9" x="0" y="0" width="64" height="64" rx="8"/>
-								<rect class="inner" fill="#BDBCB9" x="4" y="4" width="56" height="56" rx="4" />
-								<polyline class="check" stroke="#FFFFFF" stroke-dasharray="270" stroke-dashoffset="270" stroke-width="8" stroke-linecap="round" fill="none" stroke-linejoin="round" points="16 31d.8 27.4782609 43 49 22"/>
-							</svg>
-							<span class="p-label">치주과</span>
-						</label>
+						<input type="radio" id="field11" name="field" value="110" />
+						<label for="field11">치주과</label>
 					</div>
 					<!-- chkbox-wrap -->
 				</li>
@@ -355,7 +278,7 @@
 						<input class="upload-name" value="파일선택" disabled="disabled" style="width: 250px;">
 					
 						<label for="input_file">업로드</label> 
-						<input type="file" id="input_file" class="upload-hidden"> 
+						<input type="file" id="input_file" class="upload-hidden" name="mFile"> 
 						<br>
 						<p class="mt10">
 							- 5MB 미만의 파일만 등록할 수 있습니다.<br>
@@ -413,7 +336,7 @@ function execDaumPostCode() {
         }
     }).open({
         left: ((window.screen.width - width) / 2),
-        top: (window.screen.height / 2)-(height / 2)
+        top: ((window.screen.height - height) / 2)
     });
 }
 </script>

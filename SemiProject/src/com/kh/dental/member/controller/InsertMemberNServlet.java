@@ -35,7 +35,12 @@ public class InsertMemberNServlet extends HttpServlet {
 		String mId = request.getParameter("mId");
 		String mName = request.getParameter("mName");
 		String mPwd = request.getParameter("mPwd");
-		String address = request.getParameter("address");
+		
+		String addr = request.getParameter("address");
+		String addr2 = request.getParameter("address2");
+
+		String address = addr + ", " + addr2;
+
 		String phone = request.getParameter("phone");
 		String gender = request.getParameter("gender");
 		String type = "N";
