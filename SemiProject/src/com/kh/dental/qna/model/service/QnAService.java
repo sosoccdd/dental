@@ -74,7 +74,7 @@ public class QnAService {
 	public int insertAnswer(Member m,QnA q,String multiContent, ArrayList<Attachment> fileList) {
 		
 		Connection con = getConnection();
-		
+		System.out.println("Q는 :"+q+"m은 :"+m);
 		int result =new QnADao().insertAnswer(con,m,q);
 		
 		
@@ -85,7 +85,7 @@ public class QnAService {
 			int tNo= new QnADao().selectCurrval2(con);
 			
 			
-			
+		if(fileList.get(0).getChangeName() !=null){
 			int putPic = new QnADao().insertAnswerPic(con,m,fileList,tNo);
 			
 			if(putPic>0){
@@ -98,7 +98,7 @@ public class QnAService {
 				rollback(con);
 				
 			}
-			
+		}
 			
 		}else{
 			
@@ -155,25 +155,23 @@ public class QnAService {
 
 
 
-	public QnA getQContent(Member m ,QnA q) {
+	public QnA getQContent(Member m ,QnA q,int currentPage, int contentNum1) {
 	
 		Connection con = getConnection();
 		
 		
 		
-		QnA qContent = new QnADao().getQContent(q,con);
-		
-	 
-		int updateCount = new QnADao().updateCount(con,q);
-		
+		QnA qContent = new QnADao().getQContent(q,con, currentPage, contentNum1);
+		int updateCount=0;
+		if(currentPage==1){
+		updateCount = new QnADao().updateCount(con,q);
+		}
 		
 		if(updateCount >0){
-			System.out.println("Z커밋?");
 			commit(con);
 			
 			
 		}else{
-			System.out.println("롤백?");
 			rollback(con);
 			
 		}
@@ -185,17 +183,17 @@ public class QnAService {
 
 
 
-	public QnA getDocInfo(Member m, QnA q) {
+	public ArrayList<HashMap<String,Object>> getDocInfo(QnA q,int currentPage, int contentNum1) {
 	
 		Connection con =getConnection();
 		
-//		QnA doc = new QnADao().getDocInfo(m,con,q);
+		ArrayList<HashMap<String,Object>> doc = new QnADao().getDocInfo(con,q,currentPage,contentNum1);
 		
 		close(con);
 		
 		
-		return null;
-//		return doc;
+		
+		return doc;
 	}
 
 
@@ -210,6 +208,110 @@ public class QnAService {
 		
 		return getQPic;
 	}
+
+
+
+	public ArrayList<Attachment> getAic(Member m, QnA q) {
+		Connection con =getConnection();
+		
+		ArrayList<Attachment> getAPic = new QnADao().getAPic(con,m,q);
+		close(con);
+		
+		return getAPic;
+	}
+
+
+
+	public ArrayList<Attachment> getDPhoto(int refNum) {
+		
+		Connection con =getConnection();
+		
+		ArrayList<Attachment> list = new QnADao().getDPhoto(refNum,con);
+		
+		close(con);
+		
+		return list;
+	}
+
+
+
+	public int insertReply(String content, Member m,int tno) {
+
+		Connection con =getConnection();
+		
+		int result = new QnADao().insertReply(con,content, m,tno);
+		
+		if(result>0){
+			
+			commit(con);
+			
+		}else{
+			
+			rollback(con);
+		}
+		
+		return result;
+
+
+	}
+
+
+
+	public QnA getReply(int bno) {
+		
+		Connection con = getConnection();
+		
+		QnA getReply = new QnADao().getReply(con,bno);
+		
+		close(con);
+		
+		return getReply;
+	}
+
+
+
+	public ArrayList<QnA> getReplyPage(int refNum, int currentPage, int contentNum) {
+		
+		Connection con =getConnection();
+		
+		ArrayList<QnA> getReplyPage = new QnADao().getReplyPage(con,refNum,currentPage,contentNum);
+		
+		close(con);
+		
+		return getReplyPage;
+	}
+
+
+
+	public int getAnsList(int getbNo) {
+		
+		Connection con = getConnection();
+		
+		int list = new QnADao().getAnsList(con ,getbNo);
+		
+		close(con);
+		
+		return list;
+	}
+
+
+
+	public int getRepNum(int getbNo) {
+	
+		Connection con	= getConnection();
+		
+		int listNum = new QnADao().getRepNum(con,getbNo);
+		
+		
+		
+		return listNum;
+	}
+
+
+
+
+
+
 
 }
 

@@ -16,7 +16,6 @@ public class Member implements java.io.Serializable {
 	private String status;
 	private Date delDate;
 	private int fNum;
-<<<<<<< HEAD
 	private int hosNo;
 	private String hosName;
 	private String hosGender;
@@ -28,26 +27,6 @@ public class Member implements java.io.Serializable {
 	public Member(int mNo, String mId, String mName, String mPwd, String address, String phone, String gender,
 			String type, int ptNo, Date joinDate, String status, Date delDate, int fNum, int hosNo, String hosName,
 			String hosGender, String hosEtc, int bIdCnt) {
-=======
-	private int mPtNo;
-	private int mRes;
-	private String hosDoc;
-	private String hosDocGender;
-	private String hosDocType;
-	private String hosDocEtc;
-	private int bid_count;
-	
-	public Member(){}
-
-	
-	
-	
-	
-
-	public Member(String mId, String mName, String mAddr, String mPwd, String mPhone, Date mDate, String mGender,
-			String mType, String mStatus, int mNo, int fNum, int mPtNo, int mRes, String hosDoc, String hosDocGender,
-			String hosDocType, String hosDocEtc, int bid_count) {
->>>>>>> jihyun
 		super();
 		this.mNo = mNo;
 		this.mId = mId;
@@ -62,7 +41,6 @@ public class Member implements java.io.Serializable {
 		this.status = status;
 		this.delDate = delDate;
 		this.fNum = fNum;
-<<<<<<< HEAD
 		this.hosNo = hosNo;
 		this.hosName = hosName;
 		this.hosGender = hosGender;
@@ -76,22 +54,13 @@ public class Member implements java.io.Serializable {
 
 	public void setmNo(int mNo) {
 		this.mNo = mNo;
-=======
-		this.mPtNo = mPtNo;
-		this.mRes = mRes;
-		this.hosDoc = hosDoc;
-		this.hosDocGender = hosDocGender;
-		this.hosDocType = hosDocType;
-		this.hosDocEtc = hosDocEtc;
-		this.bid_count = bid_count;
->>>>>>> jihyun
 	}
 
 
 
 
 	public int getBid_count() {
-		return bid_count;
+		return bIdCnt;
 	}
 
 
@@ -100,7 +69,7 @@ public class Member implements java.io.Serializable {
 
 
 	public void setBid_count(int bid_count) {
-		this.bid_count = bid_count;
+		this.bIdCnt = bid_count;
 	}
 
 
@@ -249,19 +218,11 @@ public class Member implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
 		return "Member [mNo=" + mNo + ", mId=" + mId + ", mName=" + mName + ", mPwd=" + mPwd + ", address=" + address
 				+ ", phone=" + phone + ", gender=" + gender + ", type=" + type + ", ptNo=" + ptNo + ", joinDate="
 				+ joinDate + ", status=" + status + ", delDate=" + delDate + ", fNum=" + fNum + ", hosNo=" + hosNo
 				+ ", hosName=" + hosName + ", hosGender=" + hosGender + ", hosEtc=" + hosEtc + ", bIdCnt=" + bIdCnt
 				+ "]";
-=======
-		return "Member [mId=" + mId + ", mName=" + mName + ", mAddr=" + mAddr + ", mPwd=" + mPwd + ", mPhone=" + mPhone
-				+ ", mDate=" + mDate + ", mGender=" + mGender + ", mType=" + mType + ", mStatus=" + mStatus + ", mNo="
-				+ mNo + ", fNum=" + fNum + ", mPtNo=" + mPtNo + ", mRes=" + mRes + ", hosDoc=" + hosDoc
-				+ ", hosDocGender=" + hosDocGender + ", hosDocType=" + hosDocType + ", hosDocEtc=" + hosDocEtc
-				+ ", bid_count=" + bid_count + "]";
->>>>>>> jihyun
 	}
 
 	
