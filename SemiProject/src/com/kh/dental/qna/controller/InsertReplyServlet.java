@@ -1,4 +1,4 @@
-package com.kh.dental.member.controller;
+package com.kh.dental.qna.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,20 +8,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.kh.dental.member.model.service.MemberService;
+import com.google.gson.Gson;
 import com.kh.dental.member.model.vo.Member;
+import com.kh.dental.qna.model.service.QnAService;
+import com.kh.dental.qna.model.vo.QnA;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class InsertReplyServlet
  */
-@WebServlet("/login.me")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/InsertReply")
+public class InsertReplyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public InsertReplyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,24 +32,28 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("들어오냐");
+		String content = request.getParameter("content");
+		int tno= Integer.parseInt(request.getParameter("tNo"));
 		
-		String mId = request.getParameter("mId");
-		String mPwd = request.getParameter("mPwd");
+		HttpSession session = request.getSession();
 		
-		Member loginUser = new MemberService().loginCheck(mId, mPwd);
+		Member m = new Member();
+		m=(Member)session.getAttribute("loginUser");
 		
-
-		if(loginUser != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("loginUser", loginUser);
-			response.sendRedirect("index.jsp");
-		} else {
-			request.setAttribute("msg", "올바르지 않은 로그인 정보입니다. 다시 입력해 주세요.");
-			request.getRequestDispatcher("/views/member/Login.jsp").forward(request, response);
-		}
+		int result = new QnAService().insertReply(content,m,tno);
+		
+		QnA reply = new QnAService().getReply(tno);
 		
 		
-	}
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		
+		new Gson().toJson(reply,response.getWriter());
+		
+		System.out.println(reply);	
+			}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

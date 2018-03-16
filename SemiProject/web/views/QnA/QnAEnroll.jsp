@@ -32,7 +32,7 @@
 		
 		<div class="add-wrap">
 		
-			<span>첨부파일:</span><input type="file" class="find-btn" name="file"s>파일찾기</button>
+			<span>첨부파일:</span><input type="file" class="find-btn" name="file">파일찾기
 		</div>
 	
 		<button class="enroll-btn" type="submit">등록하기</button>

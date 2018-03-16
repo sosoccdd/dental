@@ -65,15 +65,15 @@
    <ul class="qna-list">
       <li>
       	<form>
-        <p class="qna-li-title" onclick="location.href='<%=request.getContextPath()%>/SelectQnAServlet?tNo=<%=q.gettNo()%>&bCount=<%=q.getbCount()%>'"><%=q.getbTitle() %></p>
+        <p class="qna-li-title" onclick="location.href='<%=request.getContextPath()%>/SelectQnAServlet?tNo=<%=q.gettNo()%>&bCount=<%=q.getbCount()%>&bno=<%=q.getbNo() %>'"><%=q.getbTitle() %>&bno=<%=q.getbNo() %></p>
          <p class="qna-li-date"><%=q.getbDate() %></p>
          <hr>
          <p class="qna-li-con"><%=q.getbContent() %></p>
        </form>
        	 <%if(loginUser!=null){ %>
-         <button type="button" class="reply" onclick="location.href='/semi/views/QnA/QnAForm.jsp'">답변달기</button>
+         <button type="button" class="reply" onclick="<%=request.getContextPath()%>/EnterAnswerServlet?title=<%=q.getbTitle()%>&date=<%=q.getbDate()%>&content=<%=q.getbContent()%>'">답변달기</button>
       	<%}else{ %>
-      	  <button type="button" class="reply" onclick="location.href='/semi/views/QnA/QnAForm.jsp'">로그인페이지로연결하쇼~</button>
+      	  <button type="button" class="reply" onclick="location.href='/semi/views/member/Login.jsp'">로그인페이지로연결하쇼~</button>
       		<%} %>
       	
       </li>
@@ -85,7 +85,7 @@
          <li>질문 최신순</li>
       </ul>
       <%if(loginUser ==null){ %>
-       <button type="button" class="ask-btn" onclick="location.href='/semi/views/QnA/QnAEnroll.jsp'">연결하쇼~</button>
+       <button type="button" class="ask-btn" onclick="location.href='/semi/views/member/Login.jsp'">질문은 로그인을 해야 합니다.</button>
    	 <%}else{ %>
       <button type="button" class="ask-btn" onclick="location.href='/semi/views/QnA/QnAEnroll.jsp'">질문하기</button>
    	 	<%} %>
