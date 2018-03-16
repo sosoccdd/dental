@@ -109,7 +109,7 @@ public class InsertQnAServlet extends HttpServlet {
 			System.out.println(multiTitle);
 			System.out.println(multiContent);
 			
-	
+				
 				QnA q = new QnA();
 				q.setbTitle(multiTitle);
 				q.setbContent(multiContent);
@@ -145,16 +145,16 @@ public class InsertQnAServlet extends HttpServlet {
 					
 						File failedFile = new File(savePath +saveFiles.get(i));
 						failedFile.delete();
-					
-					}
+				
+				}
 					request.setAttribute("msg", "등록실패!");
 					request.getRequestDispatcher("weewe.jsp").forward(request, response);
 					
 				}
-		}
-				
-				
 			}
+				
+				
+		}
 			
 	
 

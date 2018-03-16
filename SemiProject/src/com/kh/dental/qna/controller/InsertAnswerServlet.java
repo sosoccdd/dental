@@ -41,7 +41,9 @@ public class InsertAnswerServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("여긴오니>");
 		if(ServletFileUpload.isMultipartContent(request)){
+			System.out.println("여긴왔다");
 		//전송 파일 용량 제한 : 10Mbyte 제한한 경우
 		int maxSize = 1024 * 1024 * 10;
 		
@@ -98,6 +100,7 @@ public class InsertAnswerServlet extends HttpServlet {
 			
 			System.out.println("filesystem : " + multiRequest.getFilesystemName(name));
 			System.out.println("originFile : " + multiRequest.getOriginalFileName(name));
+		
 		}
 				
 			HttpSession session = request.getSession();
@@ -113,15 +116,15 @@ public class InsertAnswerServlet extends HttpServlet {
 			String userId = m.getmId();
 			
 			String multiContent= multiRequest.getParameter("content");
-			
+			System.out.println("content는 넘어오나?: "+multiContent);
 			QnA q = new QnA();
-			
+			q.setbContent(multiContent);
 			q.setbTitle(multiRequest.getParameter("title"));
 			q.settNo(Integer.parseInt(multiRequest.getParameter("tNo")));
+			q.setbNo(Integer.parseInt(multiRequest.getParameter("bNo")));
 			
-		
 			
-			System.out.println("q는?" +q);
+			System.out.println("q는??????????? :"+q+"m은? +"+m);
 			
 			ArrayList<Attachment> fileList = new ArrayList<Attachment>();
 			
@@ -134,7 +137,6 @@ public class InsertAnswerServlet extends HttpServlet {
 		
 				fileList.add(at);
 			}
-			
 			int result= new QnAService().insertAnswer(m,q,multiContent,fileList);
 			System.out.println("result의 값은? :" +result);
 			String page= "";
@@ -153,7 +155,7 @@ public class InsertAnswerServlet extends HttpServlet {
 				
 				}
 				request.setAttribute("msg", "등록실패!");
-				request.getRequestDispatcher("weewe.jsp").forward(request, response);
+				request.getRequestDispatcher("weewqwevqweqwe.jsp").forward(request, response);
 				
 			}
 			

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>조은치과 - 관리자</title>
     <link href="../../css/admin/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/admin/metisMenu.min.css" rel="stylesheet">
@@ -23,22 +24,26 @@
                         <h3 class="panel-title">관리자 로그인</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
+                        <form id="loginForm" action="<%= request.getContextPath() %>/Adminligin.me" method="post">
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="아이디" name="email" type="text" autofocus>
+                                    <input class="form-control" placeholder="아이디" name="userId" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="패스워드" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="패스워드" name="userPwd" type="password" >
                                 </div>
-                                <a href="AdminMain.jsp" class="btn btn-lg btn-success btn-block">로그인</a>
-                            </fieldset>
+                                <div class="btn btn-lg btn-success btn-block" onclick="login()">로그인</div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    
+    	function login(){
+    		$('#loginForm').submit();
+    	}
+    </script>
 
 
 

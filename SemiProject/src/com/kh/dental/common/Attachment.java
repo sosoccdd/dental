@@ -2,6 +2,7 @@ package com.kh.dental.common;
 import java.sql.Date;
 
 public class Attachment implements java.io.Serializable{
+	
 	private int fid;
 	private int bid;
 	private String originName;
@@ -16,6 +17,7 @@ public class Attachment implements java.io.Serializable{
 
 	public Attachment(int fid, int bid, String originName, String changeName, String filePath, Date uploadDate,
 			int fileLevel, int downloadCount, String status) {
+		
 		super();
 		this.fid = fid;
 		this.bid = bid;

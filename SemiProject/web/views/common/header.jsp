@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.kh.dental.member.model.vo.*"%>
-<% Member loginUser = (Member)session.getAttribute("loginUser"); %>
+<% 
+Member loginUser =(Member)session.getAttribute("loginUser"); 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
 
 				<!-- <li><a href="/semi/views/event/EventList.jsp">이벤트</a></li> -->
 				<li><a href="/semi/selectList.ev">이벤트</a></li>
-				<li><a href="/semi/views/QnA/QnAForm.jsp">Q & A</a></li>
+				<li><a href="/semi/EnterQnAServlet">Q & A</a></li>
 
 				<li><a href="/semi/views/HealthInfo/HealthView.jsp">건강정보</a></li>
 			</ul>
@@ -41,7 +43,20 @@
 					<% } %>
 					<%= loginUser.getmName() %>님
 					<ul class="after-login">
+<<<<<<< HEAD
 						<li><a href="#">마이메뉴</a></li>
+=======
+						<%
+						System.out.println(loginUser.getType());
+						if(loginUser.getType().equals("N")) {
+						%>
+						<li><a href="<%=request.getContextPath()%>/selectList.mp">마이메뉴</a></li>
+						<%}else if(loginUser.getType().equals("D")) { %>
+						<li><a href="<%=request.getContextPath()%>/selectListD.mp">마이메뉴</a></li>
+						<%}else { %>
+						<li><a href="/semi/views/MyPage/NMyPage.jsp">마이메뉴</a></li>
+						<%} %>
+>>>>>>> 8ca1e64a4ac6e4dbb6b5bfe947e776f5d042fb22
 						<li><a href="#">내 접수현황</a></li>
 						<li><a href="#">병원 후기</a></li>
 						<li><a href="#">1:1문의</a></li>
@@ -51,6 +66,10 @@
 				</li>
 				<li><button type="button" class="join-btn" onclick="location.href=''">조치 가족병원 문의</button></li>
 			</ul>
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 8ca1e64a4ac6e4dbb6b5bfe947e776f5d042fb22
  			<% } %>
 		</div>
 	</header>

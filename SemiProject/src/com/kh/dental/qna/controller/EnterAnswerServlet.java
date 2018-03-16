@@ -33,20 +33,20 @@ public class EnterAnswerServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+			
+		System.out.println("넘어왔나?");
 		QnA q = new QnA();
-		
-		q.setbTitle(request.getParameter("title")); 
-		q.setbDate(Date.valueOf(request.getParameter("date")));
+		q.setbNo(Integer.parseInt(request.getParameter("bNo")));
+		q.setbTitle(request.getParameter("question")); 
 		q.setbContent(request.getParameter("content"));
- 
+		q.settNo(Integer.parseInt(request.getParameter("tNo")));
+		q.setbDate(Date.valueOf(request.getParameter("date")));
+		System.out.println("q는뭔가요?: "+q);
 		String page= "views/QnA/QnAForm.jsp";
-		
 		request.setAttribute("q", q);
 		RequestDispatcher view = request.getRequestDispatcher(page);
 		
 		view.forward(request, response);
-		
 		
 	
 	}

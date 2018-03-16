@@ -22,8 +22,6 @@
 <body>
 
  <%@ include file="../common/header.jsp"%>
- 
-
 
 
 <div class="sub-bg">
@@ -43,6 +41,7 @@
 <div class="w1200 middle relati9 ve">
    <ul class="qna-list">
          <li>
+         	<input type="text" name="tNo" value="<%=q.gettNo() %>" style="display:none;">
             <p class="qna-li-title"><%=q.getbTitle() %></p>
             <p class="qna-li-date"><%=(Date)q.getbDate() %></p>
             <hr>
@@ -51,23 +50,23 @@
    </ul>      
 </div>
       
-    <form action="<%=request.getContextPath()%>/InsertAnswerServlet?tNo=<%=q.gettNo() %>" method="post" encType="multipart/form-data">
+    <form action="<%=request.getContextPath()%>/InsertAnswerServlet" method="post" encType="multipart/form-data">
 <div class="w1200 middle relative">
     <div class="answerTable">
     	<label>답변 제목</label> <!-- 수정: b 태그에서 label -->
     	<input type=text name="title" class="ans-title">
+    
+       <input type="text" name="bNo" value="<%=q.getbNo() %>" style="display:none;">
+     <input type="text" name="tNo" value="<%=q.gettNo() %>" style="display:none" >
         <br>
         <br>
         <p>답변자 명:</p><!--  수정: font 태그에서 p태그 -->
-       <%--  <% if((String)m.getmType()=="D" && (String)m.getmType()=="C"){ %>
-        <input type="text" class="doc-text" name="name" value="의사이름!" readonly style="border:none;">
+       <% if(m.getType()=="D" && (String)m.getType()=="C"){ %>
+        <input type="text" class="doc-text" name="name" value="<%=m.getmName() %>(의사,병원이름)" readonly style="border:none;">
     	<%}else{ %>
-    	  <input type="text" class="doc-text" name="id" value="일반인아이디!" readonly style="border:none;">
-    	<%} %> --%>
-    <input type="text" class="doc-text" name="id" value="로그인후 설정다시!" readonly style="border:none;">
-    	
+    	  <input type="text" class="doc-text" name="id" value="<%=m.getmId() %>(일반인아이디)" readonly style="border:none;">
+    	<%} %> 
     <table class="ans-tab" >
-     
     
     <tr class="ans-text">
        <td>답변 CONTENT:</td>

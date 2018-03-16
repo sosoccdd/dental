@@ -21,7 +21,7 @@
 				<li><button type="button" onclick="location.href='/semi/views/common/privacy.jsp'">개인정보취급방침</button></li>
 				<li><button type="button" onclick="location.href='/semi/views/common/service.jsp'">비보험 진료비 수가표</button></li>
 				<li><button type="button" onclick="location.href='/semi/views/common/privilege.jsp'">환자의 권리와 의무</button></li>
-				<li><button type="button">관리자 로그인</button></li>
+				<li><button type="button" onclick="location.href='/semi/views/admin/AdminLogin.jsp'">관리자 로그인</button></li>
 			</ul>			
 		</div>
 		<!-- footer -->
