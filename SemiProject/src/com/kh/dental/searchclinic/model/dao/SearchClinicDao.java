@@ -30,7 +30,7 @@ public class SearchClinicDao {
 	}
 	
 	
-	public ArrayList<SearchClinic> selectaddress(Connection con, String sido, String gugun, String dong) {
+	public ArrayList<SearchClinic> selectaddress(Connection con, String sido, String gugun, String dong, int currentPage, int limit) {
 		ArrayList<SearchClinic> list=new ArrayList<SearchClinic>();
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -38,10 +38,15 @@ public class SearchClinicDao {
 		String query = prop.getProperty("selectaddres");
 		
 		try {
+			
+			 int startRow = (currentPage -1)*limit+1;
+	         int endRow =startRow + limit-1;
 			pstmt=con.prepareStatement(query);
 			pstmt.setString(1, sido);
 			pstmt.setString(2, gugun);
 			pstmt.setString(3, dong);
+			pstmt.setInt(4, startRow);
+			pstmt.setInt(5, endRow);
 			
 			rset = pstmt.executeQuery();
 			

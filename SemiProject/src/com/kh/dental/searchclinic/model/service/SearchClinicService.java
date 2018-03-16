@@ -10,10 +10,10 @@ import com.kh.dental.searchclinic.model.vo.SearchClinic;
 
 public class SearchClinicService {
 
-	public ArrayList<SearchClinic> selectaddress(String sido, String gugun, String dong) {
+	public ArrayList<SearchClinic> selectaddress(String sido, String gugun, String dong, int currentPage, int limit) {
 		Connection con = getConnection();
 		
-		ArrayList<SearchClinic> list = new SearchClinicDao().selectaddress(con, sido, gugun, dong);
+		ArrayList<SearchClinic> list = new SearchClinicDao().selectaddress(con, sido, gugun, dong, currentPage, limit);
 		
 		close(con);
 		
