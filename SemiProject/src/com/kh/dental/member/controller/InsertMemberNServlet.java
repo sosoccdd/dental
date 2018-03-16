@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.kh.dental.member.controller;
 
 import java.io.IOException;
@@ -76,6 +77,7 @@ public class InsertMemberNServlet extends HttpServlet {
 	}
 
 }
+=======
 package com.kh.dental.member.controller;
 
 import java.io.IOException;
@@ -159,3 +161,4 @@ public class InsertMemberNServlet extends HttpServlet {
 	}
 
 }
+>>>>>>> subin

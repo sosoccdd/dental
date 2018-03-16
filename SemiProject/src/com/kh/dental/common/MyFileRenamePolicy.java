@@ -1,11 +1,15 @@
 package com.kh.dental.common;
 
 import java.io.File;
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
+=======
+>>>>>>> subin
 import java.util.Date;
 
 import com.oreilly.servlet.multipart.FileRenamePolicy;
 
+<<<<<<< HEAD
 public class MyFileRenamePolicy implements FileRenamePolicy {
 
 	
@@ -40,6 +44,7 @@ public class MyFileRenamePolicy implements FileRenamePolicy {
 		
 		return newFile;
 	}
+=======
 import java.text.SimpleDateFormat;
 
 public class MyFileRenamePolicy implements FileRenamePolicy {
@@ -78,6 +83,7 @@ public class MyFileRenamePolicy implements FileRenamePolicy {
 	   }
 	
 	
+>>>>>>> subin
 	
 	
 }

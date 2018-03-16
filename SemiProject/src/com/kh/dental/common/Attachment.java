@@ -2,6 +2,7 @@ package com.kh.dental.common;
 import java.sql.Date;
 
 public class Attachment implements java.io.Serializable{
+<<<<<<< HEAD
 	
 	private int fid;
 	private int bid;
@@ -112,6 +113,7 @@ public class Attachment implements java.io.Serializable{
 	
 }
 
+=======
    /**
 	 * 
 	 */
@@ -235,3 +237,4 @@ public String toString() {
    
    
 }
+>>>>>>> subin
