@@ -64,32 +64,30 @@ public class SelectSearchClinicServlet extends HttpServlet {
 		SearchClinicService scs = new SearchClinicService();
 		listCount = scs.getListCount(sido, gugun, dong);
 		System.out.println("listCount : " + listCount);
-
+		
 		
 
 		
 		System.out.println(sido+","+gugun+","+dong);
 		
-		ArrayList<SearchClinic> list = new SearchClinicService().selectaddress(sido, gugun, dong);
+		ArrayList<SearchClinic> list = new SearchClinicService().selectaddress(sido, gugun, dong, currentPage, limit);
 		
 		//페이지
 		System.out.println("servlet:"+list);
 		System.out.println("listsize()_"+list.size());
 		System.out.println("listCount()_"+listCount);
-		if (list.size()< 6) {
+		if (list.size()< 100) {
 			list = new SearchClinicService().selectgugun(sido, gugun);
 			listCount += scs.getListCountgugun(sido, gugun);
 			System.out.println("listsize()22_"+list.size());
 			System.out.println("listCount()22_"+listCount);
-			if (list.size()< 6) {
+			if (list.size()< 100) {
 				list = new SearchClinicService().selectsido(sido);
 				listCount += scs.getListCountsido(sido);
 				System.out.println("listsize()3333_"+list.size());
 				System.out.println("listCount()3333_"+listCount);
 			}
 		}
-		
-		
 		// 총페이지수 계산
 		//예를 들면, 목록 수가 123개면 13페이지가 필요함
 		//짜뚜리 목록이 최소 1개일때, 1page로 처리하기 위해서
@@ -107,11 +105,29 @@ public class SelectSearchClinicServlet extends HttpServlet {
 			endPage = maxPage;
 		}
 
+
+
+		
+		
+		
 		PageInfo pi = new PageInfo(currentPage, listCount, limit, maxPage, startPage, endPage);
 		JSONArray list1 = new JSONArray();
 		JSONArray list2 = new JSONArray();
 		JSONObject result = null;
 			
+		if(pi!=null){
+			result = new JSONObject();
+			result.put("currentPage", pi.getCurrentPage());
+			result.put("listCount", pi.getListCount());
+			result.put("limit", pi.getLimit());
+			result.put("maxPage", pi.getMaxPage());
+			result.put("startPage", pi.getStartPage());
+			result.put("endPage", pi.getEndPage());
+			list1.add(result);
+		}
+		
+		
+		
 		for(SearchClinic sc:list) {
 			result = new JSONObject();
 			result.put("yadm_nm", sc.getYadm_nm());
@@ -125,7 +141,7 @@ public class SelectSearchClinicServlet extends HttpServlet {
 			
 		}
 		
-
+		System.out.println("제발좀.,...."+list1);
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		out.print(list1);
@@ -135,14 +151,7 @@ public class SelectSearchClinicServlet extends HttpServlet {
 		
 		//JSONArray jsonArray=JSONArray.fromObject(list);
 
-		String page = "" ;
-		if(pi != null){
-			HttpSession session = request.getSession();
-			session.setAttribute("list", list);
-			session.setAttribute("pi", pi);
-		} else {
-			System.out.println("에러라고~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" );
-		}
+		
 		
 	}
 
