@@ -4,12 +4,12 @@ import java.sql.Date;
 
 public class Event {
 
-	private String eid;
+	private int eid;
 	private String eWriter;
 	private String eContent;
 	private Date sysdate;
 	private int eCount;
-	private int ePhoto;
+	private String ePhoto;
 	private String eTitle;
 	private String eStatus;
 	private Date eSdate;
@@ -19,7 +19,7 @@ public class Event {
 	
 	public Event(){}
 
-	public Event(String eWriter, String eTitle, int ePrice, Date eSdate, Date eEdate, int ePhoto, String eContent ){
+	public Event(String eWriter, String eTitle, int ePrice, Date eSdate, Date eEdate, String ePhoto, String eContent ){
 		super();
 		this.eTitle = eTitle;
 		this.ePrice = ePrice;
@@ -29,9 +29,10 @@ public class Event {
 		this.eContent = eContent;
 	}
 
-	public Event(String eWriter, String eContent, Date sysdate, int eCount, int ePhoto, String eTitle,
+	public Event(int eid , String eWriter, String eContent, Date sysdate, int eCount, String ePhoto, String eTitle,
 			String eStatus, Date eSdate, Date eEdate, int ePrice) {
 		super();
+		this.eid= eid;
 		this.eWriter = eWriter;
 		this.eContent = eContent;
 		this.sysdate = sysdate;
@@ -42,6 +43,15 @@ public class Event {
 		this.eSdate = eSdate;
 		this.eEdate = eEdate;
 		this.ePrice = ePrice;
+	}
+
+	
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
 	}
 
 	public String geteWriter() {
@@ -60,7 +70,7 @@ public class Event {
 		return eCount;
 	}
 
-	public int getePhoto() {
+	public String getePhoto() {
 		return ePhoto;
 	}
 
@@ -100,7 +110,7 @@ public class Event {
 		this.eCount = eCount;
 	}
 
-	public void setePhoto(int ePhoto) {
+	public void setePhoto(String ePhoto) {
 		this.ePhoto = ePhoto;
 	}
 

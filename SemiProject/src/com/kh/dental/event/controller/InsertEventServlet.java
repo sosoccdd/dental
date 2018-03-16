@@ -48,47 +48,22 @@ public class InsertEventServlet extends HttpServlet {
 		
 		
 		System.out.println("InsertEventServlet : 테스트");
-		//if(loginUser.getmType().equals('c') && loginUser != null){
-			String Ewriter = (String)session.getAttribute("mId"); //이벤트 작성자 아이디
-			String Ename = request.getParameter("Ename"); // 이벤트 이름 
-			int Eprice = Integer.parseInt(request.getParameter("Eprice"));
-			String Stemp = request.getParameter("Efrom");
-			String Etemp = request.getParameter("Eto");
-			
-			
-		
-			
-			String Econtent = request.getParameter("Econtent");
-			
-			String Eimg = "";
-			String[] Eimages = request.getParameterValues("thumbnailImg");
-			for(int i =0; i< Eimages.length; i++ ){
-				if(i ==0){
-					Eimg += Eimages[i];
-				}else{
-					Eimg += ", "+ Eimages[i];
-				}
-				
-			}
-			
-			//event 객체 생성
-			//Event e = new Event(Ewriter, Ename, Eprice, Esdate, Eedate, Integer.parseInt(Eimg), Econtent);
+	
 			//폼 전송을 multipart/form-data로 전송하는 경우에는
 			//기존처럼 request.getParameter로 값을 받을 수 없다.
 			//cos.jar라는 api를 이용하자. 파일도 받고 폼의 다른 값들도 받아주는 역할을 한다.
 			//com.orelilly.servlet의 약자이다.
-			System.out.println("InsertEventServlet : 테스트xm");
+			
 			if(ServletFileUpload.isMultipartContent(request)){
-				System.out.println("InsertEventServlet : 테스트2");
 				//파일이 저장될 수 있는 맥시멈 사이즈 : 10Mbyte 제한한 경우
 				int maxSize = 1024 * 1024 * 10; //10메가
 				
 				//사진을 저장할 경로를 찾기 위해 컨테이너의 루트 경로 추출
 				String root = request.getSession().getServletContext().getRealPath("/");
-				System.out.println(root);
+				System.out.println("root : " +root);
 				
 				//파일을 저장할 경로 정하기
-				String savePath = root + "thumbnail_uploadFiles/";
+				String savePath = root + "event_uploadFiles/";
 				//객체 생성시 파일을 저장하고 그에 대한 정보를 가져오는 형태
 				//즉, 파일의 정보를 검사하여 저장하는 형태가 아닌 저장한 다음 검사 후 삭제를 해야한다.
 				
@@ -100,8 +75,8 @@ public class InsertEventServlet extends HttpServlet {
 				//ex: aaa.zip, aaa1.zip, aaa2.zip 형태
 				
 				//DefaultFileRenamePolicy()
-				//MultipartRequest multiRequest 
-				//= new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());
+				/*MultipartRequest multiRequest 
+				= new MultipartRequest(request, savePath, maxSize, "UTF-8", new DefaultFileRenamePolicy());*/
 				
 				//FileRenamePolicy상속 후 오버라이딩
 				MultipartRequest multiRequest 
@@ -116,7 +91,9 @@ public class InsertEventServlet extends HttpServlet {
 				
 				//파일이 전송된 폼의 이름을 반환한다.
 				Enumeration<String> files = multiRequest.getFileNames();
-				
+
+				System.out.println("files.hasMoreElements() : " + files.hasMoreElements());
+				System.out.println("multiRequest.getFileNames() : " + multiRequest.getFileNames());
 				while(files.hasMoreElements()){
 					String name = files.nextElement();
 					
@@ -124,6 +101,7 @@ public class InsertEventServlet extends HttpServlet {
 				
 					//지정한 경로에 저장된 파일 시스템의 이름을 가져와서
 					//ArrayList에 담는다.
+					
 					saveFiles.add(multiRequest.getFilesystemName(name));
 					originFiles.add(multiRequest.getOriginalFileName(name));
 					
@@ -131,27 +109,37 @@ public class InsertEventServlet extends HttpServlet {
 					System.out.println("originFile : " + multiRequest.getOriginalFileName(name));
 				}
 				
+
 				//multipartRequest객체에서 파일 외의 값도 꺼내온다.
-				//Event e = new Event(Ewriter, Ename, Eprice, Esdate, 
-				//Eedate, Integer.parseInt(Eimg), Econtent);
-				String multiEwriter = multiRequest.getParameter("Ewriter");
+				String multiEwriter = ((Member)request.getSession().getAttribute("loginUser")).getmName();
 				String multiEname = multiRequest.getParameter("Ename");
 				int multiEprice = Integer.parseInt(multiRequest.getParameter("Eprice"));
-				String multiStemp = multiRequest.getParameter("Stemp");
-				String multiEtemp = multiRequest.getParameter("Etemp");
+				String multiStemp = multiRequest.getParameter("Efrom");
+				String multiEtemp = multiRequest.getParameter("Eto");
+				
+				System.out.println("multiEwriter : " + multiEwriter);
+				System.out.println("multiEname : " + multiEname);
+				System.out.println("multiEprice: " + multiEprice);
+				System.out.println("multiStemp : " + multiStemp);
+				System.out.println("multiEtemp : " + multiEtemp);
 				
 				Date Esdate = null;
-				System.out.println("InsertEventServlet : 테스트3");
-				if(Stemp != ""){
-					String[] SdateArr = Stemp.split("/");
-					int[] Sdrr = new int[SdateArr.length];
 				
+				if(multiStemp != ""){
+					String[] SdateArr = multiStemp.split("/");
+					int[] Sdrr = new int[SdateArr.length];
+					
+
 					for(int i = 0 ; i < SdateArr.length; i++){
+						System.out.println("SdateArr : " + SdateArr[i]);
 						Sdrr[i] = Integer.parseInt(SdateArr[i]);
+						System.out.println(Sdrr[i]);
 					}
-					int year = Sdrr[0];
-					int month = Sdrr[1];
-					int day = Sdrr[2];
+					int year = Sdrr[2];
+					int month = Sdrr[0]-1;
+					int day = Sdrr[1];
+					
+					System.out.println(year +"/"+month+ "/"+day);
 					
 					
 					Esdate = new Date(new GregorianCalendar(year, month, day).getTimeInMillis());
@@ -159,49 +147,37 @@ public class InsertEventServlet extends HttpServlet {
 					Esdate = new Date(new GregorianCalendar().getTimeInMillis());
 				}
 				
+				System.out.println("Esdate : " + Esdate);
 				//종료
 				Date Eedate = null;
 				
 				
-				if(Etemp != ""){
-					String[] EdateArr = Stemp.split("/");
+				if(multiEtemp != ""){
+					String[] EdateArr = multiEtemp.split("/");
 					int[] Edrr = new int[EdateArr.length];
 				
 					for(int i = 0 ; i < EdateArr.length; i++){
 						Edrr[i] = Integer.parseInt(EdateArr[i]);
+						
 					}
-					int year = Edrr[0];
-					int month = Edrr[1];
-					int day = Edrr[2];
+					int year = Edrr[2];
+					int month = Edrr[0]-1;
+					int day = Edrr[1];
 					
 					
-					Esdate = new Date(new GregorianCalendar(year, month, day).getTimeInMillis());
+					Eedate = new Date(new GregorianCalendar(year, month, day).getTimeInMillis());
 				}else {
-					Esdate = new Date(new GregorianCalendar().getTimeInMillis());
+					Eedate = new Date(new GregorianCalendar().getTimeInMillis());
 				}
-		
-				SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
+			
 				
-				Date multiEsdate = null;
-				Date multiEedate = null;
+				//if문으로 div 이미지 불러오고 배열에 담아주기.
+			
 				
-				try {
-					System.out.println("InsertEventServlet : 테스트4");
-					multiEsdate = (Date) transFormat.parse(multiStemp);
-					multiEedate = (Date) transFormat.parse(multiEtemp);
-					
-				} catch (ParseException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
-				int multiEimg = Integer.parseInt(multiRequest.getParameter("Eimg"));
 				String multiEcontent = multiRequest.getParameter("Econtent");
 				
-				
-				
-				System.out.println("multiTitle : " + multiEwriter);
-		
+				System.out.println(multiEwriter +" / " + multiEname +" / " + multiEprice 
+						+" / " + Esdate +" / " + Eedate+" /" +  multiEcontent );
 				
 				//Board 객체 생성
 				Event e = new Event();
@@ -209,9 +185,9 @@ public class InsertEventServlet extends HttpServlet {
 				e.seteWriter(multiEwriter);
 				e.seteTitle(multiEname);
 				e.setePrice(multiEprice);
-				e.seteSdate(multiEsdate);
-				e.seteEdate(multiEedate);
-				e.setePhoto(multiEimg);
+				
+				e.seteSdate(Esdate);
+				e.seteEdate(Eedate);
 				e.seteContent(multiEcontent);
 				HttpSession session1 = request.getSession();
 				Member m = (Member)session1.getAttribute("loginUser");
@@ -238,14 +214,15 @@ public class InsertEventServlet extends HttpServlet {
 					fileList.add(at);
 				}
 				
-				System.out.println(fileList);
+				System.out.println("insertEventServlet fileList "+fileList);
 				
 				//Service로 전송
-				int result = new EventService().insertEvent(e, fileList);
+				int result = new EventService().insertEvent(e, fileList, loginUser);
 				
-				System.out.println("result = " + result);
+				System.out.println(" insertEventServlet result = " + result);
 				if(result > 0){
-
+				
+					request.getRequestDispatcher("views/event/EventInsertSucess.jsp").forward(request, response);
 
 				}else {
 					//실패시 저장된 사진 삭제
@@ -267,7 +244,7 @@ public class InsertEventServlet extends HttpServlet {
 		}
 		
 	
-	//}
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

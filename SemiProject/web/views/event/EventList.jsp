@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" %>
     
-<% ArrayList<HashMap<String, Object>> list = (ArrayList<HashMap<String, Object>>)request.getAttribute("list"); %>  
+<% 
+	ArrayList<HashMap<String, Object>> list = (ArrayList<HashMap<String, Object>>)request.getAttribute("list"); 
+	
+%>  
 <!DOCTYPE html>
 <html>
 <head> 
@@ -10,8 +13,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../../css/reset.css">
-  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="/semi/css/reset.css">
+  <link rel="stylesheet" href="/semi/css/common.css">
 <title>Insert title here</title>
 <style>
 	.ADmain{
@@ -116,15 +119,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="../../images/event/event11.jpg" alt="EAD1" style="width:100%;">
+        <img src="/semi/images/event/event11.jpg" alt="EAD1" style="width:100%;">
       </div>
 
       <div class="item">
-         <img src="../../images/event/event07.jpg" alt="EAD2" style="width:100%;"> 
+         <img src="/semi/images/event/event07.jpg" alt="EAD2" style="width:100%;"> 
       </div>
     
       <div class="item">
-        <img src="../../images/event/event03.jpg" alt="EAD3" style="width:100%;">
+        <img src="/semi/images/event/event03.jpg" alt="EAD3" style="width:100%;">
       </div>
     </div>
 
@@ -151,7 +154,10 @@
 	</div>
 	
 	<div>
-		<button class = "ELinsertBtn" onclick = "ELinsertBtn();"> 이벤트 등록하기 </button>
+		
+		<% if(loginUser.getType().equals("C") && loginUser != null){ %>
+				<button class = "ELinsertBtn" onclick = "ELinsertBtn();"> 이벤트 등록하기 </button>
+		<% } %>
 	</div>
 	<script>
 		function ELinsertBtn(){
@@ -164,23 +170,26 @@
 	
 	
 	<!-- 광고리스트 -->
-	<ul class="w1200 middle">
-		<li>
+	<div class="w1200 middle">
+		
 		<div class = "ADM " >
 			<div class ="ADmain fl">
-				<% for(int i = 0; i< list.size(); i++){
+				<% System.out.println("list.size() : " + list.size());
+				
+				for(int i = 0; i< list.size(); i++){
 					HashMap<String, Object> hmap = list.get(i);
 				%>
 					<div class = "ADimg">
-						<input type = "hidden" value="<%= hmap.get("") %>"/>
+						<input type = "hidden" value="<%= hmap.get("eid") %>"/>
 						<!-- <img src = "/dental/"> -->
 					</div>
 					
 					<div class = "ADexp">
 					<div class = "ADprice fl">
-						<label class = Hname2><%= hmap.get("ewriter") %>강남 365 치과의원(송도점)</label><br>
-						<label class = price2><%= hmap.get("eprice") %>월 19만원 ~</label><br>
-						<label class = date2><%= hmap.get("esdate") %> ~ <%= hmap.get("eedate") %>이벤트 기간: 2018.01.31 ~ 2018.02.28 </label>
+						<label class = "Hname2"><%= hmap.get("ewriter") %></label><br>
+						<label class = "price2"><%= hmap.get("eprice") %></label><br>
+						<label class = "date2">이벤트 기간: <%= hmap.get("esdate") %> ~ <%= hmap.get("eedate") %> </label>
+						<label class = "date2">조회수 <%= hmap.get("ecount") %> w</label>
 					</div>
 			
 					<div class = "ADposition">
@@ -190,14 +199,14 @@
 				<% } %>
 				
 				<div class = "ADimg">
-					<img src = "../../images/event/event01.jpg" class = "img2"/>
+					<img src = "/semi/images/event/event01.jpg" class = "img2"/>
 				</div>
 				
 				<div class = "ADexp">
 					<div class = "ADprice fl">
-						<label class = Hname2>강남 365 치과의원(송도점)</label><br>
-						<label class = price2>월 19만원 ~</label><br>
-						<label class = date2>이벤트 기간: 2018.01.31 ~ 2018.02.28 </label>
+						<label class = "Hname2">강남 365 치과의원(송도점)</label><br>
+						<label class = "price2">월 19만원 ~</label><br>
+						<label class = "date2">이벤트 기간: 2018.01.31 ~ 2018.02.28 </label>
 					</div>
 					
 					<div class = "ADposition">
@@ -218,7 +227,7 @@
 				});
 			});
 			</script>
-		</li>
+		
 		
 	
 		<!-- <li >
@@ -421,7 +430,7 @@
 			</div>	
 		</div>
 		</li> -->
-	</ul>
+	</div>
 	
 	
 	
