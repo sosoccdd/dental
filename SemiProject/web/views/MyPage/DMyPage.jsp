@@ -95,11 +95,11 @@
 			<div class="inner-wrap1" id="inner-wrap1">
 			<p class="default-title">기본설정</p>
 			<hr>
-			<span class="title">이메일</span><span class="content"><%=loginUser.getmType() %></span>
+			<span class="title">이메일</span><span class="content"><%=loginUser.getType() %></span>
 			<hr>
 			<span class="title">이름</span><span class="content"><%=loginUser.getmName() %></span>
 			<hr>
-			<span class="title">전화번호</span><span class="content"><%=loginUser.getmPhone() %></span>
+			<span class="title">전화번호</span><span class="content"><%=loginUser.getPhone() %></span>
 			<hr>
 			<span class="title">의사면허번호</span><span class="content">A1823B2010</span><span  class="check-text1">인증완료</span>
 			<hr>

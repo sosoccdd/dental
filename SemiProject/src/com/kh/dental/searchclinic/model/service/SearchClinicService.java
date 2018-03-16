@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import com.kh.dental.searchclinic.model.dao.SearchClinicDao;
+import com.kh.dental.searchclinic.model.vo.Res;
 import com.kh.dental.searchclinic.model.vo.SearchClinic;
 
 public class SearchClinicService {
@@ -69,5 +70,44 @@ public class SearchClinicService {
 	      return listCount;
 	}
 
+	public int insertRes(Res rs) {
+		Connection con = getConnection();
+		
+		int result = 0;
+		
+		result = new SearchClinicDao().insertRes(con, rs);
+		
+		if(result>0) commit(con);
+		else rollback(con);
+		
+		close(con);
+		
+		return result;
+		
+	}
+
+	public String selectHnm(String hosName) {
+		Connection con = getConnection();
+		
+		String result = "";
+		
+		result = new SearchClinicDao().searchHnm(con, hosName);
+		
+		close(con);
+		
+		return result;
+	}
+
 	
 }
+
+
+
+
+
+
+
+
+
+
+

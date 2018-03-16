@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.util.Properties;
 
 import static com.kh.dental.common.JDBCTemplet.*;
 
+import com.kh.dental.searchclinic.model.vo.Res;
 import com.kh.dental.searchclinic.model.vo.SearchClinic;
 
 public class SearchClinicDao {
@@ -233,6 +235,71 @@ public class SearchClinicDao {
 	      }
 	      
 	      return listCount;
+	}
+
+
+	public int insertRes(Connection con, Res rs) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = prop.getProperty("insertRes");
+		
+		
+		System.out.println(query);
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, rs.getR_time());
+			pstmt.setInt(2, rs.getM_no());
+			pstmt.setString(3, rs.getEtc());
+			pstmt.setString(4, rs.getYkiho_enc());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
+	public String searchHnm(Connection con, String hosName) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String result ="";
+		
+		String query = prop.getProperty("selectHnm");
+		
+		System.out.println(query);
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, hosName);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()){
+				result = rset.getString("ykiho_enc");
+			}
+			/*if(rset != null){
+				while(rset.next()){
+					result = rset.getString("YKIHO_ENC");
+				}
+			}*/
+			System.out.println("병원이름 " + result);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(con);
+		}
+	
+		return result;
 	}
 
 

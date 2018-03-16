@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*, com.kh.dental.mypage.model.vo.*"%>
-<%-- <% 
-	ArrayList<Dual> list = (ArrayList<Dual>)request.getAttribute("list");
-	PageInfo pi = (PageInfo)request.getAttribute("pi");
-	int listCount = pi.getListCount();
-	int currentPage = pi.getCurrentPage();
-	int maxPage = pi.getMaxPage();
-	int startPage = pi.getStartPage();
-	int endPage = pi.getEndPage(); 
-%> --%>
+<% 
+
+	ArrayList<Res> list1 = (ArrayList<Res>)request.getAttribute("list1");
+	PageInfo pi1 = (PageInfo)request.getAttribute("pi1");
+	int listCount1 = pi1.getListCount();
+	int currentPage1 = pi1.getCurrentPage();
+	int maxPage1 = pi1.getMaxPage();
+	int startPage1 = pi1.getStartPage();
+	int endPage1 = pi1.getEndPage();
+	
+	
+	
+	
+%> 
+
+
    
 <!DOCTYPE html>
 <html>
@@ -184,16 +191,16 @@
 	
 	<div class ="w1200 middle NHeader2 hidden">
 		<div class = "fl">
-			<img src = "../../images/common/tooth2.png" class = "NMsubtitle">
+			<img src = "/semi/images/common/tooth2.png" class = "NMsubtitle">
 		</div>
 		<div class = "fl">
-			<label class = "NMname"> 아삭병원 님<% %></label> <!-- 이름값 받아오기 -->
+			<label class = "NMname"><%=loginUser.getmName() %></label> <!-- 이름값 받아오기 -->
 		</div>
 		
 		<div class = "NMsubmenu fl">
 			<i class="fa fa-calendar"></i>&nbsp;
 			접수현황
-			<p>0</p>
+			<p><%=listCount1%></p>
 		</div>
 		
 		<div class = "NMsubmenu fl">
@@ -213,14 +220,13 @@
 
 	<div class = "NMtotal2 w1200 middle">	
 		<div class="tab w1200 middle">
-		  <button class="tablinks NMRegister active" onclick="openCity(event, 'NMRegister')"> 접수현황 </button>
+		  <button id="dcm" class="tablinks NMRegister active" onclick="openCity(event, 'NMRegister')"> 접수현황 </button>
 		  <button class=" tablinks" onclick="openCity(event, 'NMReview')" > 내 이벤트 </button>
 		  <button class=" tablinks" onclick="openCity(event, 'NMInquiry')"> 1:1 문의 </button>
 		  <button class=" tablinks" onclick="openCity(event, 'NMInformation')"> 가족병원수정 </button>
 		</div>
 	
 		<div id="NMRegister" class="tabcontent w1200 middle NMRegister" align = "center" >
-       <%-- <% if(){ %> --%> <!-- 접수 현황이 null이 아닐때  -->
           <div class = "fl NMregister" align="center">
             <label> 예약확인 </label>
             <hr>
@@ -229,37 +235,25 @@
 			<br>
 			<button onclick="myFunction()" class = "NMstorybtn">예약자 조회하기</button>
 			<p id="demo"></p>
-			
-			<script>
-			function dateFunction() {
-			    var x = document.getElementById("NMreserve").value;
-			    document.getElementById("demo").innerHTML = x;
-			}
-			</script>
-			             
          </div> 
-  
- 
           <div class = "fl NMregister">
          	<div> <!-- 예약자를 새로고침해야 할 영역 -->
-         		
-         		<table >
+         		<table>
          			<tr>
          				<th>예약자명</th>
          				<th>휴대전화</th>
          				<th>접수</th> <!-- check : y = 접수완료 n : 접수취소 -->
          			</tr>
-         			
          			<tr>
          				<td>송재상</td>
          				<td>010-4534-5678</td>
          				<td>접수완료</td>
          			</tr>
-         			<tr>
+         			<!-- <tr>
          				<td>서은별</td>
          				<td>010-1234-5678</td>
          				<td>접수취소</td>
-         			</tr>
+         			</tr> -->
          		</table>
          		<br><br>
          		<div class = "NMbottombtn" >
@@ -274,68 +268,96 @@
          	</div>
           </div>
           
+          
+          
+          
           <div class="NMconfirmtable container fl" >
               <h4>신청 목록</h4><br>
                
                  <table class="table NMtable" >
                    <thead>
                      <tr class = "NMtr2" align="center">
-                       <th>예약 일자</th>
                        <th>예약 시간 </th>
                        <th>과목</th>
-                       <th>담당의</th>
+                       <th>예약자 회원 번호</th>
                        <th>확인</th>
-                       <th>취소</th>
                        <th>비고</th>
+                       <th>예약 여부</th>
                      </tr>
                    </thead>
                    <tbody align = "center">
-                     <tr>
-                       <td>2018-02-26(월)</td>
-                       <td>13:20</td>
-                       <td>보철과</td>
-                       <td>김지현 원장</td>
-                       <td>접수 확인</td>
-                       <td></td>
-                       <td><button>승인</button>&nbsp;&nbsp;
+                    
+                     <% for(Res b : list1){ %>
+					<tr>
+						<td><%= b.getRtime() %></td>
+						<td><%= b.getF_num() %></td>
+						<td><%= b.getMno() %></td>
+						<td><%= b.getR_status() %></td>
+						<td><%= b.getEtc() %></td>
+						 <td><button id="rid">승인</button>&nbsp;&nbsp;
                        	   <button>취소</button></td>
-                     </tr>      
-                     <tr>
-                       <td>2018-02-26(월)</td>
-                       <td>13:20</td>
-                       <td>보철과</td>
-                       <td>김지현 원장</td>
-                       <td>접수 확인</td>
-                       <td></td>
-                       <td><button>승인</button>&nbsp;&nbsp;
-                       	   <button>취소</button></td>
-                     </tr>  
+					</tr>
+					<% } %>
+	                     
                      
                    
                    </tbody>
                    
+                  <%--  <script type="text/javascript">
+				  		var webSocket = new WebSocket('ws://172.20.10.6:8001/<%= request.getContextPath() %>/broadcasting1');
+				   		webSocket.onmessage = function(event) {
+					      onMessage(event)
+					    };
+					    function onMessage(event) {
+					      	alert(event.data);
+					    	
+					    }
+					    
+					    $("#rid").click(function(){
+					    	send("접수완료");
+					    });
+					    
+					    function send(data) {
+					        webSocket.send(data);
+					    }
+  				 </script> --%>
+                   
+                   
                  </table>
-	             <div class = "NMbottombtn">
-	                <button class = "NMstorybtn"><</button>
-	                <button class = "NMstorybtn">1</button>
-	                <button class = "NMstorybtn">2</button>
-	                <button class = "NMstorybtn">3</button>
-	                <button class = "NMstorybtn">4</button>
-	                <button class = "NMstorybtn">5</button>
-	                <button class = "NMstorybtn">></button>
-	             </div>
+	             
+	            <%-- 페이지 처리 --%>
+				<div class="pagingArea" align="center">
+					<button onclick="location.href='<%= request.getContextPath() %>/selectR.mp?currentPage1=1'"><<</button>
+					<% if(currentPage1 <= 1){ %>
+					<button disabled><</button>
+					<% }else{ %>
+					<button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?currentPage1=<%= currentPage1 -1 %>'"><</button>
+					<% } %>
+					
+					<% for(int p = startPage1; p <= endPage1; p++){ 
+							if(p == currentPage1){
+					%>
+								<button disabled><%= p %></button>
+					<%      }else{ %>
+								<button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?currentPage1=<%= p %>'"><%= p %></button>
+					<%      } %>
+					<% } %>
+					
+					<% if(currentPage1 >= maxPage1){ %>
+					<button disabled>></button>
+					<% }else{ %>
+					<button onclick="location.href='<%=request.getContextPath()%>/selectR.mp?currentPage1=<%=currentPage1 + 1%>'">></button>
+					<% } %>
+					<button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?curruntPage1=<%=maxPage1%>'">>></button>
+				</div>
+	             
                  
             </div>
           <div>
           
           </div>
-       
-       <%-- <% }else{ %> --%><!-- 접수가 없을떄  --> 
-      <!--  <div class = "CMimgnone">
-          <img src = "../../images/mypage/magnifier2.png" >
-          <p> 접수한 내역이 없습니다.</p>
-       </div>    -->
-       <%-- <% } %> --%>
+          
+         
     
       
 		</div>
@@ -376,8 +398,84 @@
 					type:"post",
 					success:function(data){
 						console.log(data);
-						var $tablebody = $("#DualList tbody");	
+						var $tablebody = $("#DualList  tbody");	
 						var $table = $("#DualList");
+						var pi = data[0];
+						var currentPage = pi.currentPage;
+						var listCount = pi.listCount;
+						var limit = pi.limit;
+						var maxPage = pi.maxPage;
+						var startPage = pi.startPage;
+						var endPage = pi.endPage;
+						console.log(maxPage);
+						for(var i = 1; i<data.length-1; i++){
+							var $tr = $("<tr>");
+							var $dateTd = $("<td>").text(data[i].date);
+							var $titleTd = $("<td>").text(decodeURIComponent(data[i].title));
+							var $contentTd = $("<td>").text(decodeURIComponent(data[i].content));
+							var $statusTd = $("<td>").text(data[i].b_status);
+							$tr.append($titleTd);
+							$tr.append($contentTd);
+							$tr.append($dateTd);
+							$tr.append($statusTd);
+							$tablebody.append($tr);
+						}
+						$div = $("<div>").attr("class", "pagingArea").attr("id", "pageA").attr("align", "center");
+						
+						$btn1 = $("<button>").text("<<").attr("id", "point").attr("value", startPage);
+						if(currentPage == "1"){
+							$btn2 = $("<button>").text("<");	
+						}else{
+						$btn2 = $("<button>").text("<").attr("id", "point").attr("value", currentPage-1);
+						}
+						$div.append($btn1);
+						$div.append($btn2);
+						
+						for(var i = startPage; i<=pi.maxPage; i++){
+							console.log("번호 ! : " + i);							
+							var $btn = $("<button>").text(i).attr("id","point").attr("value", i);
+							$div.append($btn);
+						}
+						if(currentPage == maxPage){
+							$btn3 = $("<button>").text(">");	
+						}else{
+						$btn3 = $("<button>").text(">").attr("id", "point").attr("value", currentPage+1);
+						}
+						$btn4 = $("<button>").text(">>").attr("id", "point").attr("value", maxPage);
+						
+						$div.append($btn3);
+						$div.append($btn4);
+						$table.after($div);
+						
+						var Listcount = data[data.length-1].listS;
+						console.log(Listcount);
+						$("#Nreview").text(Listcount);
+					},
+					error:function(msg){
+						alert(msg);
+						console.log("리시트조회실패");
+					}
+				});
+			});
+			
+			
+			/* 에이젝스 페이징 클릭이벤트 */
+			$(document).on("click", "#point", function(){
+				alert($(this).val());
+				var num = $(this).val();
+				alert(num);
+				var $tablebody = $("#DualList tbody");	
+				var $table = $("#DualList");
+				var $buttonA = $("#pageA");
+				$tablebody.empty();
+				$buttonA.empty();
+				
+				$.ajax({
+					url:"/semi/selectReviewNN.mp",
+					type:"get",
+					data:{"currentPage":num},
+					success:function(data){
+						console.log(data);
 						
 						var pi = data[0];
 						var currentPage = pi.currentPage;
@@ -386,6 +484,7 @@
 						var maxPage = pi.maxPage;
 						var startPage = pi.startPage;
 						var endPage = pi.endPage;
+						console.log(maxPage);
 						
 						for(var i = 1; i<data.length-1; i++){
 							var $tr = $("<tr>");
@@ -393,103 +492,52 @@
 							var $titleTd = $("<td>").text(decodeURIComponent(data[i].title));
 							var $contentTd = $("<td>").text(decodeURIComponent(data[i].content));
 							var $statusTd = $("<td>").text(data[i].b_status);
-							
-							$tr.append($dateTd);
 							$tr.append($titleTd);
 							$tr.append($contentTd);
+							$tr.append($dateTd);
 							$tr.append($statusTd);
 							$tablebody.append($tr);
 						}
 						
-						$div = $("<div>").attr("class", "pagingArea").attr("align", "center");
-						$btn1 = $("<button>").text("<<").attr("onclick","location.href='<%=request.getContextPath()%>/selectReviewNN.mp?currentPage=1'");
-						$btn2 = $("<button>").text("<").attr("onclick","location.href='<%=request.getContextPath()%>/selectReviewNN.mp?currentPage='" + currentPage-1);
+						$div = $("<div>").attr("class", "pagingArea").attr("id", "pageA").attr("align", "center");
+						
+						$btn1 = $("<button>").text("<<").attr("id", "point").attr("value", startPage);
+						if(currentPage == "1"){
+							$btn2 = $("<button>").text("<");	
+						}else{
+						$btn2 = $("<button>").text("<").attr("id", "point").attr("value", currentPage-1);
+						}
 						
 						$div.append($btn1);
 						$div.append($btn2);
-						console.log(endPage);
-						$.each(data, function(index, data){
-							var num1 = data/index + 0.9;
-							var $btn = $("<button>").text(index).attr("onclick","location.href='<%=request.getContextPath()%>/selectReviewNN.mp?currentPage='"+ num1);									
-							$div.append($btn);								
-						});
 						
-						$btn3 = $("<button>").text(">").attr("onclick","location.href='<%=request.getContextPath()%>/selectReviewNN.mp?currentPage='" + currentPage+1);
-						$btn4 = $("<button>").text(">>").attr("onclick","location.href='<%=request.getContextPath()%>/selectReviewNN.mp?currentPage='"+ maxPage);
+						for(var i = startPage; i<=pi.maxPage; i++){
+							console.log("번호 ! : " + i);							
+							var $btn = $("<button>").text(i).attr("id","point").attr("value", i);
+							$div.append($btn);
+						}
+						
+						if(currentPage == maxPage){
+							$btn3 = $("<button>").text(">");	
+						}else{
+						$btn3 = $("<button>").text(">").attr("id", "point").attr("value", currentPage+1);
+						}
+						$btn4 = $("<button>").text(">>").attr("id", "point").attr("value", maxPage);
+						
 						$div.append($btn3);
 						$div.append($btn4);
-						
 						$table.after($div);
-						
-						
-						<%-- <% for(int p = startPage; p <= endPage; p++){ 
-							if(p == currentPage){
-						%>
-								<button disabled><%= p %></button>
-						<%}else{ %>
-								<button onclick="location.href='<%=request.getContextPath() %>/selectList.mp?currentPage=<%= p %>'"><%= p %></button>
-						<%} %>
-						<%} %> --%>
-						
-						
-						<%-- $button.text("<<").attr("onclick","location.href='<%=request.getContextPath()%>/selectReviewN.mp?currentPage=1'");
-						$div.append($button);
-						
-						$table.append($div); --%>
-						
-						
-						<%-- <div class="pagingArea" align="center">
-						<button onclick="location.href='<%= request.getContextPath() %>/selectList.mp?currentPage=1'"><<</button>
-						<% if(currentPage <= 1){ %>
-						<button disabled><</button>
-						<% }else{ %>
-						<button onclick="location.href='<%=request.getContextPath() %>/selectList.mp?currentPage=<%= currentPage -1 %>'"><</button>
-						<% } %>
-						
-						<% for(int p = startPage; p <= endPage; p++){ 
-								if(p == currentPage){
-						%>
-									<button disabled><%= p %></button>
-						<%      }else{ %>
-									<button onclick="location.href='<%=request.getContextPath() %>/selectList.mp?currentPage=<%= p %>'"><%= p %></button>
-						<%      } %>
-						<% } %>
-						
-						<% if(currentPage >= maxPage){ %>
-						<button disabled>></button>
-						<% }else{ %>
-						<button onclick="location.href='<%= request.getContextPath() %>/selectList.mp?currentPage=<%= currentPage + 1%>'">></button>
-						<% } %>
-						<button onclick="location.href='<%=request.getContextPath() %>/selectList.mp?currentPage=<%= maxPage%>'">>></button>
-						</div> --%>
-						
-							/* $.each(data, function(index, value){
-								var $tr = $("<tr>");
-								var $titleTd = $("<td>").text(decodeURIComponent(value.title));
-								var $contentTd = $("<td>").text(decodeURIComponent(value.content));
-								var $dateTd = $("<td>").text(decodeURIComponent(value.date));
-								var $statusTd = $("<td>").text(decodeURIComponent(value.b_status));
-								
-								$tr.append($titleTd);
-								$tr.append($contentTd);
-								$tr.append($dateTd);
-								$tr.append($statusTd);
-								$tablebody.append($tr);
-								
-							}); */
-						
 						var Listcount = data[data.length-1].listS;
 						console.log(Listcount);
 						$("#Nreview").text(Listcount);
 						
 					},
 					error:function(msg){
-						alert(msg);
-						console.log("리시트조회실패");
+						console.log("ㅁ라ㅡㅁ자르");
 					}
-				});
-				
+				});		
 			});
+			
 		</script>
          
         
@@ -504,7 +552,7 @@
          <pre>안전한 개인정보 관리를 위하여 비밀번호를 다시 입력해주세요.
 개인정보 변경의 휴대폰 번호의 이메일은 재인증을 통해 변경 가능합니다.</pre>
          
-         <img src="../../images/QnA/lock.png">
+         <img src="/semi/images/QnA/lock.png">
          <br>
       <input type="text" class="pass-text" placeholder="비밀번호를 입력해주세요.">   
       
@@ -542,13 +590,13 @@
          <div class="inner-wrap1">
          <p class="default-title">기본설정</p>
          <hr>
-         <span class="title">이메일</span><span class="content"><%=loginUser.getmGender() %></span>
+         <span class="title">이메일</span><span class="content"><%=loginUser.getAddress()%></span>
          <hr>
          <span class="title">이름</span><span class="content"><%=loginUser.getmId() %></span>
          <hr>
-         <span class="title">전화번호</span><span class="content"><%=loginUser.getmPhone() %></span>
+         <span class="title">전화번호</span><span class="content"><%=loginUser.getPhone() %></span>
          <hr>
-         <span class="title last">주소</span><span class="content"><%=loginUser.getmAddr() %></span>
+         <span class="title last">주소</span><span class="content"><%=loginUser.getAddress() %></span>
          </div>
          
          <div class="inner-wrap2" id="inner-wrap2">
@@ -621,11 +669,8 @@
          });
       });
       </script>
-<<<<<<< HEAD
       
      
-=======
->>>>>>> jihyun
    </div>
 </div>
 

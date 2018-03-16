@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import com.kh.dental.mypage.model.dao.MypageDao;
 import com.kh.dental.mypage.model.vo.Dual;
+import com.kh.dental.mypage.model.vo.Res;
 import com.kh.dental.mypage.model.vo.StarPoint;
 
 
@@ -27,21 +28,21 @@ public class MypageService {
       return result;
    }
 
-   public int getListCount() {
+   public int getListCount(String userName) {
 		Connection con = getConnection();
 		
-		int listCount = new MypageDao().getListCount(con);
+		int listCount = new MypageDao().getListCount(con, userName);
 		
 		close(con);
 		
 		return listCount;
 	}
 
-	public ArrayList<Dual> selectList(int currentPage, int limit) {
+	public ArrayList<Dual> selectList(int currentPage, int limit, String userName) {
 		
 		Connection con = getConnection();
 		
-		ArrayList<Dual> list = new MypageDao().selectList(con, currentPage, limit);
+		ArrayList<Dual> list = new MypageDao().selectList(con, currentPage, limit, userName);
 		
 		close(con);
 		
@@ -76,30 +77,30 @@ public class MypageService {
 		return list;
 	}
 
-	public int getListCountD() {
+	public int getListCountD(String userName) {
 		Connection con = getConnection();
 		
-		int listCount = new MypageDao().getListCountD(con);
+		int listCount = new MypageDao().getListCountD(con, userName);
 		
 		close(con);
 		
 		return listCount;
 	}
 
-	public ArrayList<Dual> selectListD(int currentPage, int limit) {
+	public ArrayList<Dual> selectListD(int currentPage, int limit, String userName) {
 		Connection con = getConnection();
 		
-		ArrayList<Dual> list = new MypageDao().selectListD(con, currentPage, limit);
+		ArrayList<Dual> list = new MypageDao().selectListD(con, currentPage, limit, userName);
 		
 		close(con);
 		
 		return list;
 	}
 
-	public ArrayList<Dual> selectDualD() {
+	public ArrayList<Dual> selectDualD(String userName) {
 		Connection con = getConnection();
 		
-		ArrayList<Dual> list = new MypageDao().selectDualD(con);
+		ArrayList<Dual> list = new MypageDao().selectDualD(con, userName);
 		
 		close(con);
 		
@@ -110,10 +111,10 @@ public class MypageService {
 		
 	}
 
-	public int getListCountN() {
+	public int getListCountN(String userName) {
 		Connection con = getConnection();
 		
-		int listCount = new MypageDao().getListCountN(con);
+		int listCount = new MypageDao().getListCountN(con, userName);
 		
 		close(con);
 		
@@ -121,14 +122,48 @@ public class MypageService {
 		
 	}
 
-	public ArrayList<Dual> selectListN(int currentPage, int limit) {
+	public ArrayList<Dual> selectListN(int currentPage, int limit, String userName) {
 		Connection con = getConnection();
 		
-		ArrayList<Dual> list = new MypageDao().selectListN(con, currentPage, limit);
+		ArrayList<Dual> list = new MypageDao().selectListN(con, currentPage, limit, userName);
 		
 		close(con);
 		
 		return list;	
+	}
+
+	public int getListCountR(String hosCd) {
+		Connection con = getConnection();
+		
+		int listCount = new MypageDao().getListCountR(con, hosCd);
+		
+		close(con);
+		
+		return listCount;
+	}
+
+	public ArrayList<Res> selectListR(int currentPage, int limit, String hosCd) {
+		
+		Connection con = getConnection();
+		
+		ArrayList<Res> list = new MypageDao().selectListR(con, currentPage, limit, hosCd);
+		
+		close(con);
+		
+		return list;
+	}
+
+	public String hospitalCd(int loginNo) {
+		
+		Connection con = getConnection();
+		
+		String result = "";
+		
+		result = new MypageDao().hospitalCd(con, loginNo);
+		
+		close(con);
+	
+		return result;
 	}
 
 	

@@ -37,6 +37,8 @@ public class SelectNoticeList2 extends HttpServlet {
 		int startPage;		//한번에 표시될 페이지가 시작할 페이지
 		int endPage;		//한번에 표시될 페이지가 끝나는 페이지
 		
+		String userName = request.getParameter("userName");
+		
 		//게시판은 1페이지부터 시작함
 		currentPage = 1;
 		
@@ -48,7 +50,7 @@ public class SelectNoticeList2 extends HttpServlet {
 		
 		//전체 목록 갯수를 리턴받음
 		MypageService ds = new MypageService();
-		int listCount = ds.getListCountD();
+		int listCount = ds.getListCountD(userName);
 		
 		System.out.println("listCount : " + listCount);
 		
@@ -76,7 +78,7 @@ public class SelectNoticeList2 extends HttpServlet {
 		
 		//ArrayList<Board> list = new BoardService().selectList();
 		
-		ArrayList<Dual> list = new MypageService().selectListD(currentPage, limit);
+		ArrayList<Dual> list = new MypageService().selectListD(currentPage, limit, userName);
 		
 		System.out.println("2" + list);
 		

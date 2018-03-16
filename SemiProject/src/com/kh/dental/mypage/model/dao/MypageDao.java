@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import com.kh.dental.mypage.model.vo.Dual;
+import com.kh.dental.mypage.model.vo.Res;
 import com.kh.dental.mypage.model.vo.StarPoint;
 import com.sun.xml.internal.fastinfoset.Decoder;
 
@@ -58,16 +59,17 @@ public class MypageDao {
       return result;
    }
    
-   public int getListCount(Connection con) {
-		Statement stmt = null;
+   public int getListCount(Connection con, String userName) {
+		PreparedStatement pstmt = null;
 		int listCount = 0;
 		ResultSet rset = null;
 		
 		String query = prop.getProperty("listCount");
 		
 		try {
-			stmt = con.createStatement();
-			rset = stmt.executeQuery(query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, userName);
+			rset = pstmt.executeQuery();
 			
 			if(rset.next()){
 				listCount = rset.getInt(1);
@@ -77,13 +79,13 @@ public class MypageDao {
 			e.printStackTrace();
 		} finally {
 			close(rset);
-			close(stmt);
+			close(pstmt);
 		}
 		
 		return listCount;
 	}
 
-	public ArrayList<Dual> selectList(Connection con, int currentPage, int limit) {
+	public ArrayList<Dual> selectList(Connection con, int currentPage, int limit, String userName) {
 		//페이징처리 전
 				//Statement stmt = null;
 				
@@ -107,6 +109,7 @@ public class MypageDao {
 					int endRow = startRow + limit - 1;
 					pstmt.setInt(1, startRow);
 					pstmt.setInt(2, endRow);
+					pstmt.setString(3, userName);
 					
 					rset = pstmt.executeQuery();
 					
@@ -208,16 +211,17 @@ public class MypageDao {
 		return list;
 	}
 
-	public int getListCountD(Connection con) {
-		Statement stmt = null;
+	public int getListCountD(Connection con, String userName) {
+		PreparedStatement pstmt = null;
 		int listCount = 0;
 		ResultSet rset = null;
 		
 		String query = prop.getProperty("listCount");
 		
 		try {
-			stmt = con.createStatement();
-			rset = stmt.executeQuery(query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, userName);
+			rset = pstmt.executeQuery();
 			
 			if(rset.next()){
 				listCount = rset.getInt(1);
@@ -227,13 +231,13 @@ public class MypageDao {
 			e.printStackTrace();
 		} finally {
 			close(rset);
-			close(stmt);
+			close(pstmt);
 		}
 		
 		return listCount;
 	}
 
-	public ArrayList<Dual> selectListD(Connection con, int currentPage, int limit) {
+	public ArrayList<Dual> selectListD(Connection con, int currentPage, int limit, String userName) {
 		//페이징처리 전
 		//Statement stmt = null;
 		
@@ -257,6 +261,7 @@ public class MypageDao {
 			int endRow = startRow + limit - 1;
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
+			pstmt.setString(3, userName);
 			
 			rset = pstmt.executeQuery();
 			
@@ -287,7 +292,7 @@ public class MypageDao {
 	
 	}
 
-	public ArrayList<Dual> selectDualD(Connection con) {
+	public ArrayList<Dual> selectDualD(Connection con, String userName) {
 		ArrayList<Dual> list = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
@@ -328,16 +333,17 @@ public class MypageDao {
 	
 	}
 
-	public int getListCountN(Connection con) {
-		Statement stmt = null;
+	public int getListCountN(Connection con, String userName) {
+		PreparedStatement pstmt = null;
 		int listCount = 0;
 		ResultSet rset = null;
 		
 		String query = prop.getProperty("listCountN");
 		
 		try {
-			stmt = con.createStatement();
-			rset = stmt.executeQuery(query);
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, userName);
+			rset = pstmt.executeQuery();
 			
 			if(rset.next()){
 				listCount = rset.getInt(1);
@@ -347,7 +353,7 @@ public class MypageDao {
 			e.printStackTrace();
 		} finally {
 			close(rset);
-			close(stmt);
+			close(pstmt);
 		}
 		
 		return listCount;
@@ -355,7 +361,7 @@ public class MypageDao {
 	
 	}
 
-	public ArrayList<Dual> selectListN(Connection con, int currentPage, int limit) {
+	public ArrayList<Dual> selectListN(Connection con, int currentPage, int limit, String userName) {
 		
 		//페이징처리 후
 				PreparedStatement pstmt = null;
@@ -376,8 +382,9 @@ public class MypageDao {
 					int startRow = (currentPage - 1) * limit + 1;
 					int endRow = startRow + limit - 1;
 					
-					pstmt.setInt(1, startRow);
-					pstmt.setInt(2, endRow);
+					pstmt.setString(1, userName);
+					pstmt.setInt(2, startRow);
+					pstmt.setInt(3, endRow);
 					
 					rset = pstmt.executeQuery();
 					
@@ -389,7 +396,7 @@ public class MypageDao {
 						da.setBno(rset.getInt("b_no"));
 						da.setBtitle(rset.getString("b_title"));
 						da.setBcontent(rset.getString("b_content"));
-						da.setBstatus(rset.getString("status"));
+						da.setBstatus(rset.getString("b_status"));
 						da.setBdate(rset.getDate("b_date"));
 						
 						list.add(da);
@@ -404,6 +411,110 @@ public class MypageDao {
 				return list;
 	
 	
+	}
+
+	public int getListCountR(Connection con, String hosCd) {
+		
+		PreparedStatement pstmt = null;
+		int listCount = 0;
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("listCountR");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, hosCd);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()){
+				listCount = rset.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return listCount;
+	}
+
+	public ArrayList<Res> selectListR(Connection con, int currentPage, int limit, String hosCd) {
+		
+		//페이징처리 후
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<Res> list = null;
+		
+		String query = prop.getProperty("selectResR");
+		
+		try {
+			
+			//페이징처리 후
+			pstmt = con.prepareStatement(query);
+			
+			//조회 시작할 행 번호와 마지막 행 번호 계산
+			int startRow = (currentPage - 1) * limit + 1;
+			int endRow = startRow + limit - 1;
+			pstmt.setString(1, hosCd);
+			pstmt.setInt(2, startRow);
+			pstmt.setInt(3, endRow);
+			
+			rset = pstmt.executeQuery();
+			
+			list = new ArrayList<Res>();
+			
+			while(rset.next()){
+				Res r = new Res();
+				
+				r.setRno(rset.getInt("r_no"));
+				r.setRtime(rset.getString("r_time"));
+				r.setF_num(rset.getInt("f_num"));
+				r.setR_status(rset.getString("r_status"));
+				r.setMno(rset.getInt("m_no"));
+				r.setEtc(rset.getString("etc"));
+				
+				list.add(r);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
+	
+	
+	}
+
+	public String hospitalCd(Connection con, int loginNo) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String result = "";
+		String query = prop.getProperty("hospitalCd"); 
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, loginNo);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()){
+				result = rset.getString("YKIHO_ENC");
+			}
+			System.out.println("rset.getString('YKIHO_ENC') "+rset.getString("YKIHO_ENC"));
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return result;
 	}
 
 	

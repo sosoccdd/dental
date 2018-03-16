@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kh.dental.member.model.vo.Member;
 import com.kh.dental.mypage.model.service.MypageService;
 import com.kh.dental.mypage.model.vo.Dual;
 import com.kh.dental.mypage.model.vo.PageInfo;
@@ -40,6 +41,10 @@ public class SelectNoticeList extends HttpServlet {
 		//게시판은 1페이지부터 시작함
 		currentPage = 1;
 		
+		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
+		String userName = loginUser.getmName();
+		System.out.println("awlfkcawljcnawljcnawljcn : " + userName);
+		
 		if(request.getParameter("currentPage") != null){
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
 			System.out.println("Servlet currentPage" + currentPage);
@@ -50,7 +55,7 @@ public class SelectNoticeList extends HttpServlet {
 		
 		//전체 목록 갯수를 리턴받음
 		MypageService ds = new MypageService();
-		int listCount = ds.getListCount();
+		int listCount = ds.getListCount(userName);
 		
 		System.out.println("listCount : " + listCount);
 		
@@ -77,8 +82,8 @@ public class SelectNoticeList extends HttpServlet {
 		
 		
 		//ArrayList<Board> list = new BoardService().selectList();
-		
-		ArrayList<Dual> list = new MypageService().selectList(currentPage, limit);
+		System.out.println("ckmsckmsacjklsncljasncalsjfnalsjfcnlasjf");
+		ArrayList<Dual> list = new MypageService().selectList(currentPage, limit, userName);
 		
 		System.out.println(list);
 		

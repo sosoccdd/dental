@@ -36,15 +36,7 @@ public class LoginServlet extends HttpServlet {
 		
 		Member loginUser = new MemberService().loginCheck(mId, mPwd);
 		
-<<<<<<< HEAD
-<<<<<<< HEAD
-		//System.out.println("LoginServlet : " +loginUser);
-=======
-	
->>>>>>> joonhyun
-=======
-		System.out.println("??????" +loginUser);
->>>>>>> jihyun
+
 		if(loginUser != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);

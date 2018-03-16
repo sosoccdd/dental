@@ -32,6 +32,7 @@
 			<% } else { %>
 			<ul class="btn-wrap fr">
 				<li class="login-name">
+				
 					<% if(loginUser.getType().equals("N")){ %>
 						<div class="user-type gUser">일반회원</div>
 					<% } else if(loginUser.getType().equals("D")){ %>
@@ -42,20 +43,28 @@
 					<%= loginUser.getmName() %>님
 					<ul class="after-login">
 						<%
-						System.out.println(loginUser.getmType());
-						if(loginUser.getmType().equals("N")) {
+					    System.out.println(loginUser.getType());
+						if(loginUser.getType().equals("N")) {
 						%>
-						<li><a href="<%=request.getContextPath()%>/selectList.mp">마이메뉴</a></li>
-						<%}else if(loginUser.getmType().equals("D")) { %>
-						<li><a href="<%=request.getContextPath()%>/selectListD.mp">마이메뉴</a></li>
+						
+						<li>
+						<a href="<%=request.getContextPath()%>/selectList.mp">마이메뉴</a></li>
+							<li><a href="/semi/views/SerchClinic/Res.jsp">예약하기</a></li>
+						<%}else if(loginUser.getType().equals("D")) { %>
+						
+						<li><input type="hidden" name="userName" id="userName" value="<%=loginUser.getmName() %>"/>
+						<a href="<%=request.getContextPath()%>/selectListD.mp">마이메뉴</a></li>
 						<%}else { %>
-						<li><a href="/semi/views/MyPage/NMyPage.jsp">마이메뉴</a></li>
-						<%} %>
+						<li><input type="hidden" name="userName" id="userName" value="<%=loginUser.getmName() %>"/>
+						<a href="<%=request.getContextPath()%>/selectR.mp">마이메뉴</a></li>
+						<%} %> 
 						<li><a href="#">내 접수현황</a></li>
 						<li><a href="#">병원 후기</a></li>
 						<li><a href="#">1:1문의</a></li>
 						<li><a href="#">개인정보</a></li>
-						<li><a href="<%= request.getContextPath() %>/logout.me">로그아웃</a></li>
+						<li>
+						<input type="hidden" name="userName" id="userName" value="<%=loginUser.getmName() %>"/>
+						<a href="<%= request.getContextPath() %>/logout.me">로그아웃</a></li>
 					</ul>
 				</li>
 				<li><button type="button" class="join-btn" onclick="location.href=''">조치 가족병원 문의</button></li>
@@ -64,7 +73,7 @@
 			<script>
 			function goMy(){
 					
-				<%if(loginUser.getmType().equals('D')){%>
+				<%if(loginUser.getType().equals('D')){%>
 					location.href="views/Mypage/DMyPage.jsp";	
 				<%}%>
 				

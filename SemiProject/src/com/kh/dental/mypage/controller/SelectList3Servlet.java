@@ -36,6 +36,9 @@ public class SelectList3Servlet extends HttpServlet {
 				//게시판은 1페이지부터 시작함
 				currentPage = 1;
 				
+				String userName = request.getParameter("userName");
+				System.out.println("일반회원 이름!!!!!!!!!!!!!1"+ userName);
+				
 				if(request.getParameter("currentPage") != null){
 					currentPage = Integer.parseInt(request.getParameter("currentPage"));
 				}
@@ -44,7 +47,7 @@ public class SelectList3Servlet extends HttpServlet {
 				
 				//전체 목록 갯수를 리턴받음
 				MypageService ds = new MypageService();
-				int listCount = ds.getListCountN();
+				int listCount = ds.getListCountN(userName);
 				
 				System.out.println("listCount : " + listCount);
 				
