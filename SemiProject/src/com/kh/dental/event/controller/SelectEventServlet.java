@@ -38,7 +38,7 @@ public class SelectEventServlet extends HttpServlet {
 
 		ArrayList<HashMap<String, Object>> list = new EventService().selectEventList();
 		
-		System.out.println(list);
+		System.out.println("selectEventServlet list : " + list);
 		
 		String page = ""; 
 		if(list != null){

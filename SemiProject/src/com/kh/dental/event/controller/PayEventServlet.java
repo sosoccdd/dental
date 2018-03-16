@@ -1,6 +1,8 @@
 package com.kh.dental.event.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,16 +49,27 @@ public class PayEventServlet extends HttpServlet {
         int amount = Integer.parseInt(request.getParameter("amount"));
         String applyNum = request.getParameter("applyNum");
         
-      System.out.println(impUid+" / "+ merchantUid+" / "+ payMethod+" / "+ amount+" / "+ name+" / "+ buyerName
+        System.out.println(impUid+" / "+ merchantUid+" / "+ payMethod+" / "+ amount+" / "+ name+" / "+ buyerName
     		  +" / "+ buyerTel+" / "+ buyerAddr+" / "+ applyNum );
       
         
        Pay p = new Pay(impUid, merchantUid, payMethod, amount, name, buyerName, buyerTel, buyerAddr, applyNum );
        
        int result = new EventService().insertPayInfo(p);
-		
-	   
-	
+       System.out.println("payEventServlet result : " + result);
+       
+       String msg = "";
+       if(result > 0){
+    	   msg = "success";
+       }else {
+    	   msg = "fail";
+       }
+       // response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+		out.print(msg);
+		out.flush();
+		out.close();
+     
 		
 	}
 
