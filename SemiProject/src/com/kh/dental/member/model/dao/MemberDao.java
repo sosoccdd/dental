@@ -39,28 +39,14 @@ public class MemberDao {
 		String query = prop.getProperty("loginCheck");
 
 		try {
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-			// System.out.println("쿼리문 : " + query);
->>>>>>> subin
-=======
-
->>>>>>> jihyun
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, mId);
 			pstmt.setString(2, mPwd);
 
 			rset = pstmt.executeQuery();
-<<<<<<< HEAD
 			//System.out.println(rset);
 			if(rset.next()) {
-=======
-			// System.out.println(rset);
-
-			if (rset.next()) {
->>>>>>> subin
 				loginUser = new Member();
 
 				loginUser.setmNo(rset.getInt("M_NO"));
@@ -82,12 +68,7 @@ public class MemberDao {
 				loginUser.setHosEtc(rset.getString("M_HOS_ETC"));
 				loginUser.setbIdCnt(rset.getInt("BID_COUNT"));
 
-<<<<<<< HEAD
-				// System.out.println("memberDao : " + loginUser);
-=======
-				
-				//System.out.println("memberDao : " + loginUser);
->>>>>>> jihyun
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -19,11 +19,7 @@ public class MemberService {
 		Connection con = getConnection();
 
 		Member loginUser = new MemberDao().loginCheck(con, mId, mPwd);
-<<<<<<< HEAD
 		System.out.println("memberService : " + loginUser);
-=======
-		// System.out.println("memberService : " + loginUser);
->>>>>>> subin
 		close(con);
 
 		return loginUser;
