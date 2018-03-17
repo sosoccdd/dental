@@ -1,9 +1,6 @@
 package com.kh.dental.mypage.model.service;
-<<<<<<< HEAD
 
-public class MypageService {
 
-=======
 import static com.kh.dental.common.JDBCTemplet.*;
 
 import java.sql.Connection;
@@ -173,5 +170,4 @@ public class MypageService {
 
 	
    
->>>>>>> jihyun
 }

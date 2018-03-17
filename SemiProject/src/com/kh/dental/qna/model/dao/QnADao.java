@@ -528,11 +528,11 @@ public class QnADao {
 		
 		try {
 			pstmt= con.prepareStatement(query);
-			pstmt.setInt(1, q.gettNo());
+
 			
 			rset=pstmt.executeQuery();
 			
-			if(rset !=null){
+		
 			while(rset.next()){
 				
 				at.setChangeName(rset.getString("p_after_name"));
@@ -541,7 +541,7 @@ public class QnADao {
 				list.add(at);
 				
 			}
-			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -634,7 +634,7 @@ public class QnADao {
 		
 		try {
 			pstmt= con.prepareStatement(query);
-			pstmt.setInt(1, q.gettNo());
+
 			
 			rset=pstmt.executeQuery();
 			

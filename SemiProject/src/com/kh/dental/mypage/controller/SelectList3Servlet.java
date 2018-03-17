@@ -75,7 +75,7 @@ public class SelectList3Servlet extends HttpServlet {
 				
 				//ArrayList<Board> list = new BoardService().selectList();
 				
-				ArrayList<Dual> list = new MypageService().selectListN(currentPage, limit);
+				ArrayList<Dual> list = new MypageService().selectListN(currentPage, limit, userName);
 				
 				System.out.println("2" + list);
 				
