@@ -112,7 +112,7 @@ public class SelectQnAServlet extends HttpServlet {
 			request.setAttribute("qContent", qContent);
 			request.setAttribute("aContent", aContent);
 			request.setAttribute("aPic", aPic);
-			request.setAttribute("aPhoto", dPhoto);
+			request.setAttribute("dPhoto", dPhoto);
 			request.setAttribute("reply", reply);
 			request.setAttribute("ans", ans);
 			request.setAttribute("rep", rep);
@@ -122,9 +122,13 @@ public class SelectQnAServlet extends HttpServlet {
 			page="wewe";
 			 
 		}
-		
-		
-		
+		System.out.println("차례대로 qcontent부터");
+		System.out.println("qContent"+qContent);
+		System.out.println("aContent"+aContent);
+		System.out.println("aPic"+aPic);
+		System.out.println("dPhoto");
+		System.out.println("reply");
+		System.out.println("ans");
 		RequestDispatcher view = request.getRequestDispatcher(page);
 		view.forward(request, response);
 		
