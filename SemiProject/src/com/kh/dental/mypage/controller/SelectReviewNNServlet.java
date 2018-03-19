@@ -89,7 +89,7 @@ public class SelectReviewNNServlet extends HttpServlet {
 					
 					//ArrayList<Board> list = new BoardService().selectList();
 					
-					ArrayList<Dual> list = new MypageService().selectListN(currentPage, limit);
+					ArrayList<Dual> list = new MypageService().selectListN(currentPage, limit, userName);
 					
 					System.out.println("어레이리스트 1:" + list);
 

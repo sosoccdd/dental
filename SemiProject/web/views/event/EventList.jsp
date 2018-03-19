@@ -174,7 +174,7 @@
 		
 		<div class = "ADM " >
 			<div class ="ADmain fl">
-				<% System.out.println("list.size() : " + list.size());
+<%-- 				<% System.out.println("list.size() : " + list.size());
 				
 				for(int i = 0; i< list.size(); i++){
 					HashMap<String, Object> hmap = list.get(i);
@@ -197,7 +197,7 @@
 					</div>
 				</div> 
 				<% } %>
-				
+				 --%>
 				<div class = "ADimg">
 					<img src = "/semi/images/event/event01.jpg" class = "img2"/>
 				</div>

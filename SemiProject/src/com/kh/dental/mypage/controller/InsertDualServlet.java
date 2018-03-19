@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import com.kh.dental.member.model.vo.Member;
+=======
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 import com.kh.dental.mypage.model.service.MypageService;
 import com.kh.dental.mypage.model.vo.*;
 import com.kh.dental.mypage.model.vo.Dual;
@@ -25,6 +28,7 @@ public class InsertDualServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+<<<<<<< HEAD
 		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
 		String type= loginUser.getType();
 		
@@ -33,6 +37,15 @@ public class InsertDualServlet extends HttpServlet {
 		String content = request.getParameter("content");
 		
 		
+=======
+		String userId = request.getParameter("userId");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		/*System.out.println(userId);
+		System.out.println(title);
+		System.out.println(content);*/
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 		
 		Dual d = new Dual();
 		d.setBwriter(userId);
@@ -44,6 +57,7 @@ public class InsertDualServlet extends HttpServlet {
 		String page = "";
 		
 		if(result>0){
+<<<<<<< HEAD
 			if(type.equals("N")){
 				page = "/selectList.mp";
 			}else if(type.equals("D")){
@@ -51,6 +65,9 @@ public class InsertDualServlet extends HttpServlet {
 			}else{
 				page = "/selectR.mp";
 			}
+=======
+			page = "/selectList.mp";
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 			
 		}else{
 			page = "views/common/errorPage.jsp";

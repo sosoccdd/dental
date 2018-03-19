@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.*, com.kh.dental.admin.model.vo.*"%>
+	<%
+   ArrayList<Admin> list = (ArrayList<Admin>)session.getAttribute("list");
+   
+   PageInfo pi = (PageInfo)session.getAttribute("pi");
+   int listCount = pi.getListCount();
+   int currentPage = pi.getCurrentPage();
+   int maxPage = pi.getMaxPage();
+   int startPage = pi.getStartPage();
+   int endPage = pi.getEndPage();
+%>
 <!DOCTYPE html>
 <html>
 
@@ -49,22 +59,17 @@
         <th>병원 이름</th>
         <th>주소</th>
         <th>전화번호</th>
-        <th>가입날짜</th>
-        <th>이메일주소</th>
         <th>승인여부</th>
       </tr>
     </thead>
-    <%for(int i = 0; i<20; i++){ %>
+    <%for(Admin ad : list){ %>
     <tr>
-      <td>test01</td>
-      <td>조은치과</td>
-      <td>서울특별시 구로구</td>
-      <td>033-1233-1233</td>
-      <td>2018-03-03</td>
-      <td>123@nam.dkk</td>
+      <td><%=ad.getmId() %></td>
+      <td><%=ad.getmName() %></td>
+      <td><%=ad.getAddress() %></td>
+      <td><%=ad.getPhone() %></td>
       <td>
-      <button class="w3-white w3-border w3-border-blue w3-round">승인</button>
-      <button class="w3-white w3-border w3-border-blue w3-round">거절</button>
+      <button onclick="updateCmember('<%=ad.getmId() %>','<%=ad.getmName() %>');" class="w3-white w3-border w3-border-blue w3-round">승인</button>
       </td>
     </tr>
    <%} %>
@@ -73,15 +78,26 @@
   </table>
 <div class="w3-center">
 <div class="w3-bar">
-  <a href="#" class="w3-button">&laquo;</a>
-  <a href="#" class="w3-button">1</a>
-  <a href="#" class="w3-button">2</a>
-  <a href="#" class="w3-button">3</a>
-  <a href="#" class="w3-button">4</a>
-  <a href="#" class="w3-button">&raquo;</a>
+  <a onclick="location.href='<%=request.getContextPath()%>/Cmember.ad?currentPage=1'" class="w3-button">&laquo;</a>
+  <% for(int p = startPage; p<= endPage; p++){ 
+     if( p == currentPage){
+  %>         
+  	<a href="#" class="w3-button" disabled><%=p %></a>
+  <%}else{ %>
+  	<a onclick="location.href='<%= request.getContextPath()%>/Cmember.ad?currentPage=<%= p%>'" class="w3-button"><%=p %></a>
+   <%} %>      
+  <%} %>
+  <a onclick="location.href='<%=request.getContextPath() %>/Cmember.ad?currentPage=<%= maxPage %>'" class="w3-button">&raquo;</a>
+
 </div>
 </div>
 </div>
+<script type="text/javascript">
+function updateCmember(mId, mName){
+	location.href='/semi/UpdateApproval.ad?mId='+mId+'&mName='+mName;
+	 
+}
+</script>
 </body>
 
 </html>

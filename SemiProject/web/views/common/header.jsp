@@ -19,8 +19,8 @@ Member loginUser =(Member)session.getAttribute("loginUser");
 			<ul class="gnb fl hidden">
 				<li><a href="/semi/views/SerchClinic/Cserch.jsp">병원찾기</a></li>
 
-				<!-- <li><a href="/semi/views/event/EventList.jsp">이벤트</a></li> -->
-				<li><a href="/semi/selectList.ev">이벤트</a></li>
+				<li><a href="/semi/views/event/EventList.jsp">이벤트</a></li> 
+				<!-- <li><a href="/semi/selectList.ev">이벤트</a></li> -->
 				<li><a href="/semi/EnterQnAServlet">Q & A</a></li>
 
 				<li><a href="/semi/views/HealthInfo/HealthView.jsp">건강정보</a></li>
@@ -44,22 +44,9 @@ Member loginUser =(Member)session.getAttribute("loginUser");
 					<% } %>
 					<%= loginUser.getmName() %>님
 					<ul class="after-login">
-<<<<<<< HEAD
-						<li><a href="#">마이메뉴</a></li>
-=======
+
 						<%
-<<<<<<< HEAD
-						System.out.println(loginUser.getType());
-						if(loginUser.getType().equals("N")) {
-						%>
-						<li><a href="<%=request.getContextPath()%>/selectList.mp">마이메뉴</a></li>
-						<%}else if(loginUser.getType().equals("D")) { %>
-						<li><a href="<%=request.getContextPath()%>/selectListD.mp">마이메뉴</a></li>
-						<%}else { %>
-						<li><a href="/semi/views/MyPage/NMyPage.jsp">마이메뉴</a></li>
-						<%} %>
->>>>>>> 8ca1e64a4ac6e4dbb6b5bfe947e776f5d042fb22
-=======
+
 					    System.out.println(loginUser.getType());
 						if(loginUser.getType().equals("N")) {
 						%>
@@ -76,7 +63,11 @@ Member loginUser =(Member)session.getAttribute("loginUser");
 						<a href="<%=request.getContextPath()%>/selectR.mp">마이메뉴</a></li>
 						<%} %> 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> jihyun
+=======
+
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 						<li><a href="#">내 접수현황</a></li>
 						<li><a href="#">병원 후기</a></li>
 						<li><a href="#">1:1문의</a></li>
@@ -91,22 +82,8 @@ Member loginUser =(Member)session.getAttribute("loginUser");
 				</li>
 				<li><button type="button" class="join-btn" onclick="location.href=''">조치 가족병원 문의</button></li>
 			</ul>
-<<<<<<< HEAD
-=======
+
 			
-<<<<<<< HEAD
->>>>>>> 8ca1e64a4ac6e4dbb6b5bfe947e776f5d042fb22
-=======
-			<script>
-			function goMy(){
-					
-				<%if(loginUser.getType().equals('D')){%>
-					location.href="views/Mypage/DMyPage.jsp";	
-				<%}%>
-				
-			}	
-			</script>
->>>>>>> jihyun
  			<% } %>
 		</div>
 	</header>

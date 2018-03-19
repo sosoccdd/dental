@@ -1,10 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
-    pageEncoding="UTF-8"%>
-=======
     pageEncoding="UTF-8" import="java.util.*, com.kh.dental.mypage.model.vo.*"%>
 <% 
 
+<<<<<<< HEAD
 	ArrayList<Res> list1 = (ArrayList<Res>)request.getAttribute("list1");
 	PageInfo pi1 = (PageInfo)request.getAttribute("pi1");
 	int listCount1 = pi1.getListCount();
@@ -13,11 +11,23 @@
 	int startPage1 = pi1.getStartPage();
 	int endPage1 = pi1.getEndPage();
 	
+=======
+   ArrayList<Res> list1 = (ArrayList<Res>)request.getAttribute("list1");
+   PageInfo pi1 = (PageInfo)request.getAttribute("pi1");
+   int listCount1 = pi1.getListCount();
+   int currentPage1 = pi1.getCurrentPage();
+   int maxPage1 = pi1.getMaxPage();
+   int startPage1 = pi1.getStartPage();
+   int endPage1 = pi1.getEndPage();
+   
+   
+   
+   
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 %> 
 
 
    
->>>>>>> jihyun
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +44,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
+<<<<<<< HEAD
 	
 	/* Style the tab */
 	.tab {
@@ -85,56 +96,102 @@
 		width:290px;
 	}
 	.NMtotal2{
+=======
+   
+   /* Style the tab */
+   .tab {
+   
+       overflow: hidden;
+       border: 1px solid #ccc;
+       background-color: #f1f1f1;
+       padding-top:40px;
+      
+   }
+   
+   /* Style the buttons inside the tab */
+   .tab button {
+       background-color: inherit;
+       float: left;
+       border: none;
+       outline: none;
+       cursor: pointer;
+       padding: 14px 16px;
+       transition: 0.3s;
+       font-size: 17px;
+   }
+   
+   /* Change background color of buttons on hover */
+   .tab button:hover {
+       background-color: #ddd;
+   }
+   
+   /* Create an active/current tablink class */
+   .tab button.active {
+       background-color: #ccc;
+   }
+   
+   /* Style the tab content */
+   .tabcontent {
+      display: none;
+       padding: 6px 12px;
+       border-top: none;
+   }
+   .tablinks{
+      border:1px solid lightgray;
+      width:290px;
+   }
+   .NMtotal2{
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
       height:700px;
       background:#f6f6f6;
    }
-	/* 헤더 부분을 제외한 헤더 부분  */
-	/* 치아 이미지. */
-	.NMsubtitle{
-	
-		 width:100px;
-		 height:100px;
-		 margin-top:25px;
-		 margin-left:50px;
-	}
-	
-	/* 헤더 밑 부분 div */
-	.NHeader2{
-		background:#2f6bad;
-		color: white;
-		height:160px;
-	}
-	.NHeader2 label,
-	.NHeader2 div, i{
-		color:white;
-	}
-	.NHeader2 label{
-		margin-top: 60px;
-   		margin-left: 25px;
-   		font-size: 20px;
-   		width:400px;
-	}
-	
-	/* 헤더 밑 div영역  */
-	.NMsubmenu{
-	
-		font-size: 17px;
-    	margin-top: 30px;
-    	margin-right: 30px;
-	
-	}
-	.NMsubmenu p{
-	
-		color:white;
-		font-size:35px;
-		text-align:center;
-		font-weight:bold;
-	
-	}
-	.NMRegister{
+   /* 헤더 부분을 제외한 헤더 부분  */
+   /* 치아 이미지. */
+   .NMsubtitle{
+   
+       width:100px;
+       height:100px;
+       margin-top:25px;
+       margin-left:50px;
+   }
+   
+   /* 헤더 밑 부분 div */
+   .NHeader2{
+      background:#2f6bad;
+      color: white;
+      height:160px;
+   }
+   .NHeader2 label,
+   .NHeader2 div, i{
+      color:white;
+   }
+   .NHeader2 label{
+      margin-top: 60px;
+         margin-left: 25px;
+         font-size: 20px;
+         width:400px;
+   }
+   
+   /* 헤더 밑 div영역  */
+   .NMsubmenu{
+   
+      font-size: 17px;
+       margin-top: 30px;
+       margin-right: 30px;
+   
+   }
+   .NMsubmenu p{
+   
+      color:white;
+      font-size:35px;
+      text-align:center;
+      font-weight:bold;
+   
+   }
+   .NMRegister{
       display: block;
    }
-	.NMregister{
+   .NMregister{
       background:white;
       margin-top:25px;
       margin-left:180px;
@@ -143,7 +200,7 @@
       height: 180px;
    }
    .NMconfirmtable{
-   		margin-top:40px;
+         margin-top:40px;
    }
    .NMtr2 th:first-child{
       width:150px;
@@ -167,7 +224,7 @@
       width:120px;
    }
    .NMdate{
-   		margin-bottom:20px;
+         margin-bottom:20px;
    }
    .NMstorybtn{
       background:white;
@@ -180,21 +237,21 @@
       cursor:pointer;
    }
    .NMregister table th{
-   		font-weight:bold;
-   		text-align:center;
+         font-weight:bold;
+         text-align:center;
    }
    .NMregister table th:nth-child(2){
-   		width:130px;
-   	
+         width:130px;
+      
    }
    .NMregister table td{
-   		text-align:center;
+         text-align:center;
    }
    .table tr:nth-child(odd){
        background: #f1f1f1;
    }
    .NMtable{
-   		margin-bottom:25px;
+         margin-bottom:25px;
    }
    .default-wrap{
    margin-top:50px;
@@ -219,6 +276,7 @@
 </style>
 </head>
 <body>
+<<<<<<< HEAD
 	<%@ include file="../common/header.jsp"%>
 	
 	<div class="w1200" style="margin-left:auto; margin-right:auto;">
@@ -250,27 +308,59 @@
 	</div>
 	</div>
 	
+=======
+   <%@ include file="../common/header.jsp"%>
+   
+   <div class ="w1200 middle NHeader2 hidden">
+      <div class = "fl">
+         <img src = "/semi/images/common/tooth2.png" class = "NMsubtitle">
+      </div>
+      <div class = "fl">
+         <label class = "NMname"><%=loginUser.getmName() %></label> <!-- 이름값 받아오기 -->
+      </div>
+      
+      <div class = "NMsubmenu fl">
+         <i class="fa fa-calendar"></i>&nbsp;
+         접수현황
+         <p><%=listCount1%></p>
+      </div>
+      
+      <div class = "NMsubmenu fl">
+         <i class="fa fa-pencil"></i>&nbsp;
+         병원후기
+         <p>0</p>
+      </div>
+      
+      <div class = "NMsubmenu fl">
+         <i class="fa fa-question"></i>&nbsp;
+         문의내역
+         <p id="Nreview"></p>
+      </div>
+   </div>
+   
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 
 
-	<div class = "NMtotal2 w1200 middle">	
-		<div class="tab w1200 middle">
-		  <button id="dcm" class="tablinks NMRegister active" onclick="openCity(event, 'NMRegister')"> 접수현황 </button>
-		  <button class=" tablinks" onclick="openCity(event, 'NMReview')" > 내 이벤트 </button>
-		  <button class=" tablinks" onclick="openCity(event, 'NMInquiry')"> 1:1 문의 </button>
-		  <button class=" tablinks" onclick="openCity(event, 'NMInformation')"> 가족병원수정 </button>
-		</div>
-	
-		<div id="NMRegister" class="tabcontent w1200 middle NMRegister" align = "center" >
+   <div class = "NMtotal2 w1200 middle">   
+      <div class="tab w1200 middle">
+        <button id="dcm" class="tablinks NMRegister active" onclick="openCity(event, 'NMRegister')"> 접수현황 </button>
+        <button class=" tablinks" onclick="openCity(event, 'NMReview')" > 내 이벤트 </button>
+        <button class=" tablinks" onclick="openCity(event, 'NMInquiry')"> 1:1 문의 </button>
+        <button class=" tablinks" onclick="openCity(event, 'NMInformation')"> 가족병원수정 </button>
+      </div>
+   
+      <div id="NMRegister" class="tabcontent w1200 middle NMRegister" align = "center" >
           <div class = "fl NMregister" align="center">
             <label> 예약확인 </label>
             <hr>
 
-			<input type="date" id="myDate" class = "NMdate">
-			<br>
-			<button onclick="myFunction()" class = "NMstorybtn">예약자 조회하기</button>
-			<p id="demo"></p>
+         <input type="date" id="myDate" class = "NMdate">
+         <br>
+         <button onclick="myFunction()" class = "NMstorybtn">예약자 조회하기</button>
+         <p id="demo"></p>
          </div> 
           <div class = "fl NMregister">
+<<<<<<< HEAD
          	<div style="width:300px;"> <!-- 예약자를 새로고침해야 할 영역 -->
          		<table id="Rmember">
          			<thead>
@@ -287,6 +377,37 @@
          		</table>
          		<br><br>
          	</div>
+=======
+            <div> <!-- 예약자를 새로고침해야 할 영역 -->
+               <table>
+                  <tr>
+                     <th>예약자명</th>
+                     <th>휴대전화</th>
+                     <th>접수</th> <!-- check : y = 접수완료 n : 접수취소 -->
+                  </tr>
+                  <tr>
+                     <td>송재상</td>
+                     <td>010-4534-5678</td>
+                     <td>접수완료</td>
+                  </tr>
+                  <!-- <tr>
+                     <td>서은별</td>
+                     <td>010-1234-5678</td>
+                     <td>접수취소</td>
+                  </tr> -->
+               </table>
+               <br><br>
+               <div class = "NMbottombtn" >
+                    <button class = "NMstorybtn"><</button>
+                    <button class = "NMstorybtn">1</button>
+                    <button class = "NMstorybtn">2</button>
+                    <button class = "NMstorybtn">3</button>
+                    <button class = "NMstorybtn">4</button>
+                    <button class = "NMstorybtn">5</button>
+                    <button class = "NMstorybtn">></button>
+                 </div>
+            </div>
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
           </div>
           
            <script>
@@ -449,6 +570,7 @@
                      </tr>
                    </thead>
                    <tbody align = "center">
+<<<<<<< HEAD
 					<% for(Res b : list1){ %>
 					<tr>
 						<td><%= b.getRtime() %></td>
@@ -510,40 +632,76 @@
 					
 					</script>
 	                     
+=======
+                    
+                     <% for(Res b : list1){ %>
+               <tr>
+                  <td><%= b.getRtime() %></td>
+                  <td><%= b.getF_num() %></td>
+                  <td><%= b.getMno() %></td>
+                  <td><%= b.getR_status() %></td>
+                  <td><%= b.getEtc() %></td>
+                   <td><button id="rid">승인</button>&nbsp;&nbsp;
+                             <button>취소</button></td>
+               </tr>
+               <% } %>
+                        
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
                      
->>>>>>> jihyun
                    
                    </tbody>
                    
+<<<<<<< HEAD
+=======
+                  <%--  <script type="text/javascript">
+                    var webSocket = new WebSocket('ws://172.20.10.6:8001/<%= request.getContextPath() %>/broadcasting1');
+                     webSocket.onmessage = function(event) {
+                     onMessage(event)
+                   };
+                   function onMessage(event) {
+                        alert(event.data);
+                      
+                   }
+                   
+                   $("#rid").click(function(){
+                      send("접수완료");
+                   });
+                   
+                   function send(data) {
+                       webSocket.send(data);
+                   }
+               </script> --%>
+                   
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
                    
                  </table>
-	             
-	            <%-- 페이지 처리 --%>
-				<div class="pagingArea" align="center">
-					<button onclick="location.href='<%= request.getContextPath() %>/selectR.mp?currentPage1=1'"><<</button>
-					<% if(currentPage1 <= 1){ %>
-					<button disabled><</button>
-					<% }else{ %>
-					<button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?currentPage1=<%= currentPage1 -1 %>'"><</button>
-					<% } %>
-					
-					<% for(int p = startPage1; p <= endPage1; p++){ 
-							if(p == currentPage1){
-					%>
-								<button disabled><%= p %></button>
-					<%      }else{ %>
-								<button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?currentPage1=<%= p %>'"><%= p %></button>
-					<%      } %>
-					<% } %>
-					
-					<% if(currentPage1 >= maxPage1){ %>
-					<button disabled>></button>
-					<% }else{ %>
-					<button onclick="location.href='<%=request.getContextPath()%>/selectR.mp?currentPage1=<%=currentPage1 + 1%>'">></button>
-					<% } %>
-					<button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?curruntPage1=<%=maxPage1%>'">>></button>
-				</div>
-	             
+                
+               <%-- 페이지 처리 --%>
+            <div class="pagingArea" align="center">
+               <button onclick="location.href='<%= request.getContextPath() %>/selectR.mp?currentPage1=1'"><<</button>
+               <% if(currentPage1 <= 1){ %>
+               <button disabled><</button>
+               <% }else{ %>
+               <button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?currentPage1=<%= currentPage1 -1 %>'"><</button>
+               <% } %>
+               
+               <% for(int p = startPage1; p <= endPage1; p++){ 
+                     if(p == currentPage1){
+               %>
+                        <button disabled><%= p %></button>
+               <%      }else{ %>
+                        <button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?currentPage1=<%= p %>'"><%= p %></button>
+               <%      } %>
+               <% } %>
+               
+               <% if(currentPage1 >= maxPage1){ %>
+               <button disabled>></button>
+               <% }else{ %>
+               <button onclick="location.href='<%=request.getContextPath()%>/selectR.mp?currentPage1=<%=currentPage1 + 1%>'">></button>
+               <% } %>
+               <button onclick="location.href='<%=request.getContextPath() %>/selectR.mp?curruntPage1=<%=maxPage1%>'">>></button>
+            </div>
+                
                  
             </div>
           <div>
@@ -553,48 +711,38 @@
          
     
       
-		</div>
-	
-	
-	<!-- 이벤트 등록하기 -->
-	
-	
-	
-	
-	<!-- 1:1 문의하기 -->
-	 <div id="NMInquiry" class = "tabcontent CMRreview">
+      </div>
+   
+   
+   <!-- 이벤트 등록하기 -->
+   
+   
+    
+   <!-- 1:1 문의하기 -->
+    <div id="NMInquiry" class = "tabcontent CMRreview">
             <button class="Inquiry-btn">1:1문의하기</button>
-                 <table class="table CMtable" >
+                 <table class="table CMtable" id="DualList">
                    <thead>
                      <tr class = "CMtr3">
-                       <th>문의유형</th>
                        <th>제목</th>
                        <th>내용</th>
                        <th>문의날짜</th>
                        <th>답변상태</th>
-                       <th>삭제</th>
                      </tr>
                    </thead>
                    <tbody>
-                     <tr>
-                       <td>진료과목변경</td>
-                       <td>주과목을 변경하고싶습니다.</td>
-                       <td>ㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄱㄷ쥿ㄷ</td>
-                       <td>티몬과품바</td>
-                       <td>2016.02.18</td>
-                       <td>N</td>   
-                     </tr>      
-                     
-                     
+                    
                    </tbody>
                  </table>
+               
+               
+               
          </div>
          
-<<<<<<< HEAD
-=======
          <script>
          
          
+<<<<<<< HEAD
 			$(function(){
 				console.log("점속???");
 				$.ajax({
@@ -739,13 +887,162 @@
 			});
 			
 		</script>
+=======
+         $(function(){
+            console.log("점속???");
+            $.ajax({
+               url:"/semi/selectReviewN.mp",
+               type:"post",
+               success:function(data){
+                  console.log(data);
+                  var $tablebody = $("#DualList  tbody");   
+                  var $table = $("#DualList");
+                  var pi = data[0];
+                  var currentPage = pi.currentPage;
+                  var listCount = pi.listCount;
+                  var limit = pi.limit;
+                  var maxPage = pi.maxPage;
+                  var startPage = pi.startPage;
+                  var endPage = pi.endPage;
+                  console.log(maxPage);
+                  for(var i = 1; i<data.length-1; i++){
+                     var $tr = $("<tr>");
+                     var $dateTd = $("<td>").text(data[i].date);
+                     var $titleTd = $("<td>").text(decodeURIComponent(data[i].title));
+                     var $contentTd = $("<td>").text(decodeURIComponent(data[i].content));
+                     var $statusTd = $("<td>").text(data[i].b_status);
+                     $tr.append($titleTd);
+                     $tr.append($contentTd);
+                     $tr.append($dateTd);
+                     $tr.append($statusTd);
+                     $tablebody.append($tr);
+                  }
+                  $div = $("<div>").attr("class", "pagingArea").attr("id", "pageA").attr("align", "center");
+                  
+                  $btn1 = $("<button>").text("<<").attr("id", "point").attr("value", startPage);
+                  if(currentPage == "1"){
+                     $btn2 = $("<button>").text("<");   
+                  }else{
+                  $btn2 = $("<button>").text("<").attr("id", "point").attr("value", currentPage-1);
+                  }
+                  $div.append($btn1);
+                  $div.append($btn2);
+                  
+                  for(var i = startPage; i<=pi.maxPage; i++){
+                     console.log("번호 ! : " + i);                     
+                     var $btn = $("<button>").text(i).attr("id","point").attr("value", i);
+                     $div.append($btn);
+                  }
+                  if(currentPage == maxPage){
+                     $btn3 = $("<button>").text(">");   
+                  }else{
+                  $btn3 = $("<button>").text(">").attr("id", "point").attr("value", currentPage+1);
+                  }
+                  $btn4 = $("<button>").text(">>").attr("id", "point").attr("value", maxPage);
+                  
+                  $div.append($btn3);
+                  $div.append($btn4);
+                  $table.after($div);
+                  
+                  var Listcount = data[data.length-1].listS;
+                  console.log(Listcount);
+                  $("#Nreview").text(Listcount);
+               },
+               error:function(msg){
+                  alert(msg);
+                  console.log("리시트조회실패");
+               }
+            });
+         });
+         
+         
+         /* 에이젝스 페이징 클릭이벤트 */
+         $(document).on("click", "#point", function(){
+            alert($(this).val());
+            var num = $(this).val();
+            alert(num);
+            var $tablebody = $("#DualList tbody");   
+            var $table = $("#DualList");
+            var $buttonA = $("#pageA");
+            $tablebody.empty();
+            $buttonA.empty();
+            
+            $.ajax({
+               url:"/semi/selectReviewNN.mp",
+               type:"get",
+               data:{"currentPage":num},
+               success:function(data){
+                  console.log(data);
+                  
+                  var pi = data[0];
+                  var currentPage = pi.currentPage;
+                  var listCount = pi.listCount;
+                  var limit = pi.limit;
+                  var maxPage = pi.maxPage;
+                  var startPage = pi.startPage;
+                  var endPage = pi.endPage;
+                  console.log(maxPage);
+                  
+                  for(var i = 1; i<data.length-1; i++){
+                     var $tr = $("<tr>");
+                     var $dateTd = $("<td>").text(data[i].date);
+                     var $titleTd = $("<td>").text(decodeURIComponent(data[i].title));
+                     var $contentTd = $("<td>").text(decodeURIComponent(data[i].content));
+                     var $statusTd = $("<td>").text(data[i].b_status);
+                     $tr.append($titleTd);
+                     $tr.append($contentTd);
+                     $tr.append($dateTd);
+                     $tr.append($statusTd);
+                     $tablebody.append($tr);
+                  }
+                  
+                  $div = $("<div>").attr("class", "pagingArea").attr("id", "pageA").attr("align", "center");
+                  
+                  $btn1 = $("<button>").text("<<").attr("id", "point").attr("value", startPage);
+                  if(currentPage == "1"){
+                     $btn2 = $("<button>").text("<");   
+                  }else{
+                  $btn2 = $("<button>").text("<").attr("id", "point").attr("value", currentPage-1);
+                  }
+                  
+                  $div.append($btn1);
+                  $div.append($btn2);
+                  
+                  for(var i = startPage; i<=pi.maxPage; i++){
+                     console.log("번호 ! : " + i);                     
+                     var $btn = $("<button>").text(i).attr("id","point").attr("value", i);
+                     $div.append($btn);
+                  }
+                  
+                  if(currentPage == maxPage){
+                     $btn3 = $("<button>").text(">");   
+                  }else{
+                  $btn3 = $("<button>").text(">").attr("id", "point").attr("value", currentPage+1);
+                  }
+                  $btn4 = $("<button>").text(">>").attr("id", "point").attr("value", maxPage);
+                  
+                  $div.append($btn3);
+                  $div.append($btn4);
+                  $table.after($div);
+                  var Listcount = data[data.length-1].listS;
+                  console.log(Listcount);
+                  $("#Nreview").text(Listcount);
+                  
+               },
+               error:function(msg){
+                  console.log("ㅁ라ㅡㅁ자르");
+               }
+            });      
+         });
+         
+      </script>
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
          
         
          
          
          
          
->>>>>>> jihyun
          <div id="Information" class="tabcontent">
            
          
@@ -755,10 +1052,11 @@
          
          <img src="/semi/images/QnA/lock.png">
          <br>
-      <textarea class="pass-text" placeholder="비밀번호를 입력해주세요." cols="50"></textarea>   
+      <input type="text" class="pass-text" placeholder="비밀번호를 입력해주세요.">   
       
       <button id="pass-check" class="pass-check">확인</button>
       </div>
+       </div>
          
    <!--  클릭할 시 나오게 하는 jquery
                다른 탭을 클릭시 원상복귀 -->      
@@ -766,24 +1064,22 @@
    
       $(function(){
          
-         $("#default-wrap").hide();
+         $("#NMInformation").hide();
          $("#pass-check").click(function(){
             
             $("#pass-wrap").hide();
-            $("#default-wrap").show();
+            $("#NMInformation").show();
          });
          
          $(".tablinks").click(function(){
             
             $(".NMtotal2").css("height","700px");
             $("#pass-wrap").show();
-            $("#default-wrap").hide();
+            $("NMInformation").hide();
             $("#withdraw-btn").css("margin-top","10px");
          });
          
       });
-   
-   
    
    </script>      
       
@@ -792,23 +1088,13 @@
          <div class="inner-wrap1">
          <p class="default-title">기본설정</p>
          <hr>
-<<<<<<< HEAD
-         <span class="title">이메일</span><span class="content">thdwotkd@nave.rcom</span>
-=======
          <span class="title">이메일</span><span class="content"><%=loginUser.getAddress()%></span>
->>>>>>> jihyun
          <hr>
-         <span class="title">이름</span><span class="content">송재상</span>
+         <span class="title">이름</span><span class="content"><%=loginUser.getmId() %></span>
          <hr>
-<<<<<<< HEAD
-         <span class="title">전화번호</span><span class="content">010-1234-5678</span>
-         <hr>
-         <span class="title last">주소</span><span class="content">경기도 수우너시시ㅟㅈ뷪부긴</span>
-=======
          <span class="title">전화번호</span><span class="content"><%=loginUser.getPhone() %></span>
          <hr>
          <span class="title last">주소</span><span class="content"><%=loginUser.getAddress() %></span>
->>>>>>> jihyun
          </div>
          
          <div class="inner-wrap2" id="inner-wrap2">
@@ -816,47 +1102,77 @@
          <hr>
          <span class="title">본인인증하기</span><span class="check-wrap"><span class="check-text">인증완료</span><button class="check-btn">이메일재인증</button><button class="check-btn">휴대폰재인증</button></span>
          <hr>
-         <span class="title">비밀번호변경</span><img id="change-btn" class="change-btn" src="../../images/mypage/bottom-direction.png">
+         <span class="title">비밀번호변경</span><img id="change-btn" class="change-btn" src="/semi/images/mypage/bottom-direction.png">
          <span id="tog">
          <hr>
-         <span class="title">현재비밀번호</span><textarea class="change-area" placeholder="현재 비밀번호를 입력하세요." ></textarea>
+         <input type="hidden" value="<%=loginUser.getmId() %>" id="userId">
+         <span class="title">현재비밀번호</span><input type="text" class="change-area" placeholder="현재 비밀번호를 입력하세요." value="<%=loginUser.getmPwd()%>" readonly>
          <hr>
-         <span class="title">새 비밀번호</span><textarea class="change-area" placeholder="새로운 비밀번호를 입력하세요."></textarea>
+         <span class="title">새 비밀번호</span><input type="text" class="change-area" placeholder="새로운 비밀번호를 입력하세요." id="pwd1">
          <hr>
-         <span class="title">비밀번호 확인</span><textarea class="change-area" placeholder="비밀번호를 확인해주세요."></textarea>
+         <span class="title">비밀번호 확인</span><input type="text" class="change-area" placeholder="비밀번호를 확인해주세요." id="pwd2">
          </span>
          
          </div>
          <button id="withdraw-btn" class="withdraw-btn">회원탈퇴</button>
-         
-         
+          <button id="withdraw-btn1" class="withdraw-btn">비밀번호 변경</button>
          </div>
       </div>
-      
+
       <script>
+      
+      $("#withdraw-btn1").click(function(){
+         var pwd1 = $("#pwd1").val();
+         var pwd2 = $("#pwd2").val();
+         var userId = $("#userId").val();
+         
+         if(pwd1 === pwd2){
+            $.ajax({
+               url:"/semi/updatePwd.me",
+               type:"post",
+               data:{pwd:pwd1, userId:userId},
+               success:function(data){
+                  <%
+                     /* session.invalidate(); */
+                  %>
+                  
+                  alert("변경이 완료 되었습니다 다시 로그인 해주세요");
+                  location.href="/semi";
+               },
+               error:function(){
+                  alert("비밀번호 변경 실패");
+               }
+            });                  
+            
+         }else{
+            alert("비밀번호가 일치하지 않습니다.");
+         }
+         
+      });
+      
+      
       
       $(function(){
 <<<<<<< HEAD
          /*.Ctotal2  */
+<<<<<<< HEAD
          
 =======
     	  
     	  /*.NMtotal2  */
 >>>>>>> jihyun
+=======
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
          $("#tog").hide();
-         
          $("#change-btn").click(function(){
          $("#tog").toggle();
 <<<<<<< HEAD
          if($(".Ctotal2").height()==700){
-            
-             $(".Ctotal2").css("height","900px");
-
+            $(".Ctotal2").css("height","900px");
             $("#withdraw-btn").css("margin-top","150px");
-            
          }else if($(".Ctotal2").height()==900){
-            
             $(".Ctotal2").css("height","700px");
+<<<<<<< HEAD
 
 =======
          if($(".NMtotal2").height()==700){
@@ -865,19 +1181,16 @@
          }else if($(".NMtotal2").height()==900){
             $(".NMtotal2").css("height","700px");
 >>>>>>> jihyun
+=======
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
             $("#withdraw-btn").css("margin-top","10px");
-         };
+         }
          });
-         
-         
       });
-      
-      
       </script>
       
      
    </div>
-   
 </div>
 
    <script>
@@ -896,6 +1209,8 @@
    }
    </script>
    
-
+   <%@ include file="../common/footer.jsp"%>
 </body>
 </html>
+
+

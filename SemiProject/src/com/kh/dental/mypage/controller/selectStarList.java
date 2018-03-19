@@ -14,7 +14,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
+<<<<<<< HEAD
 import com.kh.dental.member.model.vo.Member;
+=======
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 import com.kh.dental.mypage.model.service.MypageService;
 import com.kh.dental.mypage.model.vo.StarPoint;
 
@@ -33,15 +36,24 @@ public class selectStarList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		ArrayList<StarPoint> list =null;
+<<<<<<< HEAD
 		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
 		String userid = loginUser.getmId();
 		list = new MypageService().selectStar(userid);
+=======
+		
+		list = new MypageService().selectStar();
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 		request.setAttribute("list", list);
 		JSONArray result = new JSONArray();
 		JSONObject starInfo=null;
 		
 		System.out.println("control" +list);
+<<<<<<< HEAD
 		System.out.println(list.size());
+=======
+		
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 		for(StarPoint sp : list){
 			starInfo = new JSONObject();
 			
@@ -52,6 +64,7 @@ public class selectStarList extends HttpServlet {
 			result.add(starInfo);
 		}
 		
+<<<<<<< HEAD
 		JSONObject ListL = new JSONObject();
 		ListL.put("listS", list.size());
 		result.add(ListL);
@@ -59,6 +72,21 @@ public class selectStarList extends HttpServlet {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		System.out.println("cascasc ++++++ : " + result);
+=======
+		int ListSize = list.size();
+		JSONObject ListL = new JSONObject();
+		ListL.put("listS", ListSize);
+		result.add(ListL);
+		System.out.println("ListL : "+ListL);
+		System.out.println(result);
+		
+		JSONObject result1 = new JSONObject();
+		
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 		new Gson().toJson(result, response.getWriter());
 		
 		/*PrintWriter out = response.getWriter();

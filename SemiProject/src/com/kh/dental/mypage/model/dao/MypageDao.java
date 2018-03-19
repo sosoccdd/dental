@@ -1,8 +1,5 @@
 package com.kh.dental.mypage.model.dao;
 
-<<<<<<< HEAD
-public class MypageDao {
-=======
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -627,6 +624,5 @@ public class MypageDao {
 	}
 
 	
->>>>>>> jihyun
 
 }

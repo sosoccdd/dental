@@ -38,7 +38,11 @@
 	<%@ include file="../../views/common/header.jsp"%>
 
 	<div class="w1200 middle no1">
+<<<<<<< HEAD
 		<label align="center" class="f20">신고하기</label>
+=======
+		<label align="center" class="f20">1:1문의작성</label>
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 	</div>
 	
 	
@@ -81,11 +85,19 @@
 		
 		function goMy(){
 			
+<<<<<<< HEAD
 			<%if(loginUser.getType().equals("N")){%>
 			
 			location.href="<%= request.getContextPath()%>/selectList.mp";
 				
 			<%}else if(loginUser.getType().equals("D")){%>
+=======
+			<%if(loginUser.getmType().equals("N")){%>
+			
+			location.href="<%= request.getContextPath()%>/selectList.mp";
+				
+			<%}else if(loginUser.getmType().equals("D")){%>
+>>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 			location.href="<%= request.getContextPath()%>/views/MyPage/DMyPage.jsp";
 			
 			<%}%>

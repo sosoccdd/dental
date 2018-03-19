@@ -29,12 +29,8 @@ public class Member implements java.io.Serializable {
 
 	public Member(int mNo, String mId, String mName, String mPwd, String address, String phone, String gender,
 			String type, int ptNo, Date joinDate, String status, Date delDate, int fNum, int hosNo, String hosName,
-<<<<<<< HEAD
 			String hosGender, String hosEtc, int bIdCnt, int dPoint, int dLincenceNo) {
-=======
-			String hosGender, String hosEtc, int bIdCnt) {
 
->>>>>>> jihyun
 		super();
 		this.mNo = mNo;
 		this.mId = mId;
@@ -49,10 +45,6 @@ public class Member implements java.io.Serializable {
 		this.status = status;
 		this.delDate = delDate;
 		this.fNum = fNum;
-<<<<<<< HEAD
-=======
-
->>>>>>> jihyun
 		this.hosNo = hosNo;
 		this.hosName = hosName;
 		this.hosGender = hosGender;
@@ -68,14 +60,8 @@ public class Member implements java.io.Serializable {
 
 	public void setmNo(int mNo) {
 		this.mNo = mNo;
-<<<<<<< HEAD
-=======
-
->>>>>>> jihyun
 	}
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -97,7 +83,6 @@ public class Member implements java.io.Serializable {
 
 
 
->>>>>>> 8ca1e64a4ac6e4dbb6b5bfe947e776f5d042fb22
 	public String getmId() {
 		return mId;
 	}
@@ -256,12 +241,7 @@ public class Member implements java.io.Serializable {
 				+ ", phone=" + phone + ", gender=" + gender + ", type=" + type + ", ptNo=" + ptNo + ", joinDate="
 				+ joinDate + ", status=" + status + ", delDate=" + delDate + ", fNum=" + fNum + ", hosNo=" + hosNo
 				+ ", hosName=" + hosName + ", hosGender=" + hosGender + ", hosEtc=" + hosEtc + ", bIdCnt=" + bIdCnt
-<<<<<<< HEAD
 				+ ", dPoint=" + dPoint + ", dLincenceNo=" + dLincenceNo + "]";
-=======
-				+ "]";
-
->>>>>>> jihyun
 	}
 
 	

@@ -40,7 +40,7 @@ public class SelectAdminLoginServlet extends HttpServlet {
 		if(loginUser != null){
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);
-			response.sendRedirect("views/admin/AdminMain.jsp");
+			response.sendRedirect("/semi/Nmember.ad");
 		} else {
 			request.getRequestDispatcher("/semi").forward(request, response);
 		}
