@@ -20,11 +20,11 @@ import com.kh.dental.mypage.model.vo.Dual;
 import com.kh.dental.mypage.model.vo.PageInfo;
 
 
-@WebServlet("/selectReviewN.mp")
-public class SelectReviewNServlet extends HttpServlet {
+@WebServlet("/selectReviewNN.mp")
+public class SelectReviewNNServlet extends HttpServlet {
    private static final long serialVersionUID = 1L;
        
-    public SelectReviewNServlet() {
+    public SelectReviewNNServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
