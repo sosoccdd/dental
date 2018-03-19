@@ -91,21 +91,22 @@ h3{
 	right: 0;
 	border: 0;
 	color: #fff;
-	padding: 8px 20px 8px 35px;
+	padding: 8px 13px 8px 25px;
 	cursor: pointer;
+	text-indent: 2px;
 }
 .bestClinic .reserve{
 	background-color: #1b9cff;
-	right: 110px;
+	right: 90px;
 	background-image: url('../images/main/reserve.jpg');
 	background-repeat: no-repeat;
-	background-position: 15px 10px;
+	background-position: 10px 10px;
 }
 .bestClinic .goToClinic{
 	background: #26c6da;
 	background-image: url('../images/main/goToClinic.jpg');
 	background-repeat: no-repeat;
-	background-position: 15px 8px;
+	background-position: 10px 8px;
 }
 
 /* 건강정보  */
@@ -290,7 +291,6 @@ div.nav > button.ri-btn{
 div.bt{
 	border-top: 1px solid #f1eeec;
 	padding: 50px 0;
-	width:1400px;
 }
 div.bt button{
 	margin-top: 20px;
@@ -353,4 +353,7 @@ div.bt button{
 }
 .faq a{
 	text-decoration: underline;
+}
+.event div.bt{
+	border: 0;
 }

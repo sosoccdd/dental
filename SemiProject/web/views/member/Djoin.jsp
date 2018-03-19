@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%	//인증 후 결과값이 null로 나오는 부분은 관리담당자에게 문의 바랍니다.
+<%	
+Member joinUser = (Member)request.getSession().getAttribute("joinUser");
+//인증 후 결과값이 null로 나오는 부분은 관리담당자에게 문의 바랍니다.
     NiceID.Check.CPClient niceCheck = new  NiceID.Check.CPClient();
 
     String sEncodeData = requestReplace(request.getParameter("EncodeData"), "encodeData");
@@ -130,21 +132,13 @@
 <link rel="stylesheet" type="text/css" href="/semi/css/join.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="/semi/js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="/semi/js/join.js"></script>
-<script type="text/javascript" src="/semi/js/Njoin.js"></script>
+<script type="text/javascript" src="/semi/js/Djoin.js"></script>
+<script type="text/javascript" src="/semi/js/regex.js"></script>
 <!-- 우편번호 찾기 -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <!-- header -->
 <%@ include file="../common/header.jsp"%>
-<script>
 
-	var arr = 0;
-	
-	$(function(){
-		
-		
-	});
-</script>
 <div class="w1200 middle CjoinPage subPage">
 	<ol class="join-process hidden">
 		<li>01 본인인증</li>
@@ -157,27 +151,22 @@
 		<h2>회원가입 | 의사</h2>
 		
 		<form id="DJoinForm" action="<%= request.getContextPath() %>/insertD.me" method="post" class="hidden" encType="multipart/form-data">
-		<%-- <form action="<%=request.getContextPath()%>/insert.me" method="post" class="hidden" encType="multipart/form-data"> --%>
 			<ul>
 				<!-- 휴대폰인증으로 정보 받아온 영역 -->
 				<li class="login-bg getData">
 					<label>이름</label>
-					<input type="text" value="신경배" name="mName" class="c-308deb" readonly />
+					<input type="text" value="<%= joinUser.getmName() %>"  name="mName" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>핸드폰 번호</label>
-					<input type="text" value="010-4369-5555" name="phone" class="c-308deb" readonly />
-				</li>
-				<li class="login-bg getData">
-					<label>생년월일</label>
-					<input type="text" value="19940226" class="c-308deb" readonly />
+					<input type="text" value="<%= joinUser.getPhone() %>" name="phone" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>성별</label>
-					<% if(sGender == "0") { %>
-						<input type="text" value="F" name="gender" class="c-308deb" readonly />
-					<% } else { %>
+					<% if(joinUser.getGender() == "0") { %>
 						<input type="text" value="M" name="gender" class="c-308deb" readonly />
+					<% } else { %>
+						<input type="text" value="F" name="gender" class="c-308deb" readonly />
 					<% } %>
 				</li>
 				

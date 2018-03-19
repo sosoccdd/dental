@@ -1,130 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%	//인증 후 결과값이 null로 나오는 부분은 관리담당자에게 문의 바랍니다.
-    NiceID.Check.CPClient niceCheck = new  NiceID.Check.CPClient();
-
-    String sEncodeData = requestReplace(request.getParameter("EncodeData"), "encodeData");
-
-    String sSiteCode = "BF502";				// NICE로부터 부여받은 사이트 코드
-    String sSitePassword = "GAqEkFJnpyG8";			// NICE로부터 부여받은 사이트 패스워드
-
-    String sCipherTime = "";			// 복호화한 시간
-    String sRequestNumber = "";			// 요청 번호
-    String sResponseNumber = "";		// 인증 고유번호
-    String sAuthType = "";				// 인증 수단
-    String sName = "";					// 성명
-    String sDupInfo = "";				// 중복가입 확인값 (DI_64 byte)
-    String sConnInfo = "";				// 연계정보 확인값 (CI_88 byte)
-    String sBirthDate = "";				// 생년월일(YYYYMMDD)
-    String sGender = "";				// 성별
-    String sNationalInfo = "";			// 내/외국인정보 (개발가이드 참조)
-	String sMobileNo = "";				// 휴대폰번호
-	String sMobileCo = "";				// 통신사
-    String sMessage = "";
-    String sPlainData = "";
-    
-    int iReturn = niceCheck.fnDecode(sSiteCode, sSitePassword, sEncodeData);
-
-    if( iReturn == 0 )
-    {
-        sPlainData = niceCheck.getPlainData();
-        sCipherTime = niceCheck.getCipherDateTime();
-        
-        // 데이타를 추출합니다.
-        java.util.HashMap mapresult = niceCheck.fnParse(sPlainData);
-        
-        sRequestNumber  = (String)mapresult.get("REQ_SEQ");
-        sResponseNumber = (String)mapresult.get("RES_SEQ");
-        sAuthType		= (String)mapresult.get("AUTH_TYPE");
-        sName			= (String)mapresult.get("NAME");
-		//sName			= (String)mapresult.get("UTF8_NAME"); //charset utf8 사용시 주석 해제 후 사용
-        sBirthDate		= (String)mapresult.get("BIRTHDATE");
-        sGender			= (String)mapresult.get("GENDER");
-        sNationalInfo  	= (String)mapresult.get("NATIONALINFO");
-        sDupInfo		= (String)mapresult.get("DI");
-        sConnInfo		= (String)mapresult.get("CI");
-        sMobileNo		= (String)mapresult.get("MOBILE_NO");
-        sMobileCo		= (String)mapresult.get("MOBILE_CO");
-        
-        String session_sRequestNumber = (String)session.getAttribute("REQ_SEQ");
-        if(!sRequestNumber.equals(session_sRequestNumber))
-        {
-            sMessage = "세션값이 다릅니다. 올바른 경로로 접근하시기 바랍니다.";
-            sResponseNumber = "";
-            sAuthType = "";
-        }
-    }
-    else if( iReturn == -1)
-    {
-        sMessage = "복호화 시스템 에러입니다.";
-    }    
-    else if( iReturn == -4)
-    {
-        sMessage = "복호화 처리오류입니다.";
-    }    
-    else if( iReturn == -5)
-    {
-        sMessage = "복호화 해쉬 오류입니다.";
-    }    
-    else if( iReturn == -6)
-    {
-        sMessage = "복호화 데이터 오류입니다.";
-    }    
-    else if( iReturn == -9)
-    {
-        sMessage = "입력 데이터 오류입니다.";
-    }    
-    else if( iReturn == -12)
-    {
-        sMessage = "사이트 패스워드 오류입니다.";
-    }    
-    else
-    {
-        sMessage = "알수 없는 에러 입니다. iReturn : " + iReturn;
-    }
-
-%>
-<%!
-
-	public String requestReplace (String paramValue, String gubun) {
-
-        String result = "";
-        
-        if (paramValue != null) {
-        	
-        	paramValue = paramValue.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-
-        	paramValue = paramValue.replaceAll("\\*", "");
-        	paramValue = paramValue.replaceAll("\\?", "");
-        	paramValue = paramValue.replaceAll("\\[", "");
-        	paramValue = paramValue.replaceAll("\\{", "");
-        	paramValue = paramValue.replaceAll("\\(", "");
-        	paramValue = paramValue.replaceAll("\\)", "");
-        	paramValue = paramValue.replaceAll("\\^", "");
-        	paramValue = paramValue.replaceAll("\\$", "");
-        	paramValue = paramValue.replaceAll("'", "");
-        	paramValue = paramValue.replaceAll("@", "");
-        	paramValue = paramValue.replaceAll("%", "");
-        	paramValue = paramValue.replaceAll(";", "");
-        	paramValue = paramValue.replaceAll(":", "");
-        	paramValue = paramValue.replaceAll("-", "");
-        	paramValue = paramValue.replaceAll("#", "");
-        	paramValue = paramValue.replaceAll("--", "");
-        	paramValue = paramValue.replaceAll("-", "");
-        	paramValue = paramValue.replaceAll(",", "");
-        	
-        	if(gubun != "encodeData"){
-        		paramValue = paramValue.replaceAll("\\+", "");
-        		paramValue = paramValue.replaceAll("/", "");
-            paramValue = paramValue.replaceAll("=", "");
-        	}
-        	
-        	result = paramValue;
-            
-        }
-        return result;
-  }
+<%
+Member joinUser = (Member)request.getSession().getAttribute("joinUser");
 %>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/semi/css/join.css">
@@ -132,10 +10,10 @@
 <!-- 우편번호 찾기 -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
-<script type="text/javascript" src="/semi/js/Njoin.js"></script>
+<script type="text/javascript" src="/semi/js/regex.js"></script>
 
 <!-- header -->
-<%@ include file="../common/header.jsp"%>
+<%@ include file="../../views/common/header.jsp"%>
 
 <div class="w1200 middle CjoinPage subPage">
 	<ol class="join-process hidden">
@@ -153,22 +31,18 @@
 				<!-- 휴대폰인증으로 정보 받아온 영역 -->
 				<li class="login-bg getData">
 					<label>이름</label>
-					<input type="text" value="<%= sName %>" name="mName" class="c-308deb" readonly />
+					<input type="text" value="<%= joinUser.getmName() %>" name="mName" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>핸드폰 번호</label>
-					<input type="text" value="<%= sMobileNo %>" name="phone" class="c-308deb" readonly />
-				</li>
-				<li class="login-bg getData">
-					<label>생년월일</label>
-					<input type="text" value="<%= sBirthDate %>" class="c-308deb" readonly />
+					<input type="text" value="<%= joinUser.getPhone() %>" name="phone" class="c-308deb" readonly />
 				</li>
 				<li class="login-bg getData">
 					<label>성별</label>
-					<% if(sGender == "0") { %>
-						<input type="text" value="F" name="gender" class="c-308deb" readonly />
-					<% } else { %>
+					<% if(joinUser.getGender() == "0") { %>
 						<input type="text" value="M" name="gender" class="c-308deb" readonly />
+					<% } else { %>
+						<input type="text" value="F" name="gender" class="c-308deb" readonly />
 					<% } %>
 				</li>
 				
@@ -211,10 +85,10 @@
 			<button type="submit" id="joinBtn" class="join-member">확인</button>
 			<button type="reset" class="join-can">취소하기</button>
 		</form>
+		
 	</div>
 </div>
 <!-- agreePage -->
-
 
 <script type="text/javascript">
 //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
