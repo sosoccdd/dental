@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.*, com.kh.dental.admin.model.vo.*" %>
+	
+	<%
+   ArrayList<Admin> list = (ArrayList<Admin>)session.getAttribute("list");
+   
+   PageInfo pi = (PageInfo)session.getAttribute("pi");
+   int listCount = pi.getListCount();
+   int currentPage = pi.getCurrentPage();
+   int maxPage = pi.getMaxPage();
+   int startPage = pi.getStartPage();
+   int endPage = pi.getEndPage();
+%> 
+	
+	
 <!DOCTYPE html>
 <html>
 
@@ -39,42 +52,64 @@
 
 	<div class="div-tag-good">
   <div class="w3-bar w3-sand">
-    <a href="AdminMain.jsp" class="w3-bar-item w3-button">일반</a>
-    <a href="AdminMain_D.jsp" class="w3-bar-item w3-button test-a-tag">의사</a>
-    <a href="AdminMain_C.jsp" class="w3-bar-item w3-button">병원</a>
+    <a onclick="goNmember()" class="w3-bar-item w3-button ">일반</a>
+    <a onclick="goDmember()" class="w3-bar-item w3-button test-a-tag">의사</a>
+    <a onclick="goCmember()" class="w3-bar-item w3-button">병원</a>
   </div>
 
   <table class="w3-table-all w3-hoverable">
     <thead>
       <tr class="w3-light-grey">
-        <th>구분</th>
+        <th>회원번호</th>
         <th>회원아이디</th>
         <th>회원이름</th>
         <th>가입일</th>
         <th>탈퇴여부</th>
       </tr>
     </thead>
-    <%for(int i = 0; i<20; i++){ %>
+    <%for(Admin ad : list){ %>
     <tr>
-      <td>1</td>
-      <td>test01</td>
-      <td>서은별</td>
-      <td>2017-12-30</td>
-      <td><button class="w3-white w3-border w3-border-blue w3-round">탈퇴</button></td>
+      <td><%=ad.getmNo() %></td>
+      <td><%=ad.getmId() %></td>
+      <td><%=ad.getmName() %></td>
+      <td><%=ad.getJoinDate() %></td>
+      <td>
+      <button onclick="updateDmember('<%=ad.getmId() %>','<%=ad.getmName() %>');" class="w3-white w3-border w3-border-blue w3-round">탈퇴</button>
+      </td>
     </tr>
+
    <%} %>
    </table>
 <div class="w3-center">
 <div class="w3-bar">
-  <a href="#" class="w3-button">&laquo;</a>
-  <a href="#" class="w3-button">1</a>
-  <a href="#" class="w3-button">2</a>
-  <a href="#" class="w3-button">3</a>
-  <a href="#" class="w3-button">4</a>
-  <a href="#" class="w3-button">&raquo;</a>
+ <a onclick="location.href='<%=request.getContextPath()%>/Dmember.ad?currentPage=1'" class="w3-button">&laquo;</a>
+  <% for(int p = startPage; p<= endPage; p++){ 
+     if( p == currentPage){
+  %>         
+  	<a href="#" class="w3-button" disabled><%=p %></a>
+  <%}else{ %>
+  	<a onclick="location.href='<%= request.getContextPath()%>/Dmember.ad?currentPage=<%= p%>'" class="w3-button"><%=p %></a>
+   <%} %>      
+  <%} %>
+  <a onclick="location.href='<%=request.getContextPath() %>/Dmember.ad?currentPage=<%= maxPage %>'" class="w3-button">&raquo;</a>
 </div>
 </div>
 </div>
+<script type="text/javascript">
+	function updateDmember(mId, mName){
+		location.href='/semi/UpdateDmember.ad?mId='+mId+'&mName='+mName;
+	 
+	}
+	function goNmember(){
+		location.href='/semi/Nmember.ad';
+	}
+	function goDmember(){
+		location.href='/semi/Dmember.ad';
+	}
+	function goCmember(){
+		location.href='/semi/Cmember.ad';
+	}
+</script>
 </body>
 
 </html>
