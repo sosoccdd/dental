@@ -2,16 +2,6 @@
     pageEncoding="UTF-8" import="java.util.*, com.kh.dental.mypage.model.vo.*"%>
 <% 
 
-<<<<<<< HEAD
-	ArrayList<Res> list1 = (ArrayList<Res>)request.getAttribute("list1");
-	PageInfo pi1 = (PageInfo)request.getAttribute("pi1");
-	int listCount1 = pi1.getListCount();
-	int currentPage1 = pi1.getCurrentPage();
-	int maxPage1 = pi1.getMaxPage();
-	int startPage1 = pi1.getStartPage();
-	int endPage1 = pi1.getEndPage();
-	
-=======
    ArrayList<Res> list1 = (ArrayList<Res>)request.getAttribute("list1");
    PageInfo pi1 = (PageInfo)request.getAttribute("pi1");
    int listCount1 = pi1.getListCount();
@@ -20,10 +10,6 @@
    int startPage1 = pi1.getStartPage();
    int endPage1 = pi1.getEndPage();
    
-   
-   
-   
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 %> 
 
 
@@ -44,59 +30,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
-<<<<<<< HEAD
-	
-	/* Style the tab */
-	.tab {
-	
-	    overflow: hidden;
-	    border: 1px solid #ccc;
-	    background-color: #f1f1f1;
-	    padding-top:40px;
-	   
-	}
-	.inner-wrap2{
-   margin-top:100px;
-   background:#f6f6f6;
-   height:200px;
-   
-   
-}
-	
-	/* Style the buttons inside the tab */
-	.tab button {
-	    background-color: inherit;
-	    float: left;
-	    border: none;
-	    outline: none;
-	    cursor: pointer;
-	    padding: 14px 16px;
-	    transition: 0.3s;
-	    font-size: 17px;
-	}
-	
-	/* Change background color of buttons on hover */
-	.tab button:hover {
-	    background-color: #ddd;
-	}
-	
-	/* Create an active/current tablink class */
-	.tab button.active {
-	    background-color: #ccc;
-	}
-	
-	/* Style the tab content */
-	.tabcontent {
-		display: none;
-	    padding: 6px 12px;
-	    border-top: none;
-	}
-	.tablinks{
-		border:1px solid lightgray;
-		width:290px;
-	}
-	.NMtotal2{
-=======
    
    /* Style the tab */
    .tab {
@@ -107,6 +40,13 @@
        padding-top:40px;
       
    }
+   .inner-wrap2{
+   margin-top:100px;
+   background:#f6f6f6;
+   height:200px;
+   
+   
+}
    
    /* Style the buttons inside the tab */
    .tab button {
@@ -141,7 +81,6 @@
       width:290px;
    }
    .NMtotal2{
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
       height:700px;
       background:#f6f6f6;
    }
@@ -261,7 +200,7 @@
    background:#f6f6f6;
    height:260px;
 
-   	  
+        
    }
    .info-wrap {
    
@@ -276,41 +215,9 @@
 </style>
 </head>
 <body>
-<<<<<<< HEAD
-	<%@ include file="../common/header.jsp"%>
-	
-	<div class="w1200" style="margin-left:auto; margin-right:auto;">
-	<div class ="w1200 middle NHeader2 hidden">
-		<div class = "fl">
-			<img src = "/semi/images/common/tooth2.png" class = "NMsubtitle">
-		</div>
-		<div class = "fl">
-			<label class = "NMname"><%=loginUser.getmName() %></label> <!-- 이름값 받아오기 -->
-		</div>
-		
-		<div class = "NMsubmenu fl">
-			<i class="fa fa-calendar"></i>&nbsp;
-			접수현황
-			<p><%=listCount1%></p>
-		</div>
-		
-		<div class = "NMsubmenu fl">
-			<i class="fa fa-pencil"></i>&nbsp;
-			병원후기
-			<p>0</p>
-		</div>
-		
-		<div class = "NMsubmenu fl">
-			<i class="fa fa-question"></i>&nbsp;
-			문의내역
-			<p>0</p>
-		</div>
-	</div>
-	</div>
-	
-=======
    <%@ include file="../common/header.jsp"%>
    
+   <div class="w1200" style="margin-left:auto; margin-right:auto;">
    <div class ="w1200 middle NHeader2 hidden">
       <div class = "fl">
          <img src = "/semi/images/common/tooth2.png" class = "NMsubtitle">
@@ -337,8 +244,8 @@
          <p id="Nreview"></p>
       </div>
    </div>
+   </div>
    
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 
 
    <div class = "NMtotal2 w1200 middle">   
@@ -360,196 +267,164 @@
          <p id="demo"></p>
          </div> 
           <div class = "fl NMregister">
-<<<<<<< HEAD
-         	<div style="width:300px;"> <!-- 예약자를 새로고침해야 할 영역 -->
-         		<table id="Rmember">
-         			<thead>
-         			<tr>
-         				<th>예약자명<input type="hidden" id="Mno" value="<%= loginUser.getmNo()%>"></th>
-         				<th>진료분야</th>
-         				<th>접수</th> <!-- check : y = 접수완료 n : 접수취소 -->
-         			</tr>
-         			
-         			</thead>
-         			<tbody>
-         			
-         			</tbody>
-         		</table>
-         		<br><br>
-         	</div>
-=======
-            <div> <!-- 예약자를 새로고침해야 할 영역 -->
-               <table>
+            <div style="width:300px;"> <!-- 예약자를 새로고침해야 할 영역 -->
+               <table id="Rmember">
+                  <thead>
                   <tr>
-                     <th>예약자명</th>
-                     <th>휴대전화</th>
+                     <th>예약자명<input type="hidden" id="Mno" value="<%= loginUser.getmNo()%>"></th>
+                     <th>진료분야</th>
                      <th>접수</th> <!-- check : y = 접수완료 n : 접수취소 -->
                   </tr>
-                  <tr>
-                     <td>송재상</td>
-                     <td>010-4534-5678</td>
-                     <td>접수완료</td>
-                  </tr>
-                  <!-- <tr>
-                     <td>서은별</td>
-                     <td>010-1234-5678</td>
-                     <td>접수취소</td>
-                  </tr> -->
+                  
+                  </thead>
+                  <tbody>
+                  
+                  </tbody>
                </table>
                <br><br>
-               <div class = "NMbottombtn" >
-                    <button class = "NMstorybtn"><</button>
-                    <button class = "NMstorybtn">1</button>
-                    <button class = "NMstorybtn">2</button>
-                    <button class = "NMstorybtn">3</button>
-                    <button class = "NMstorybtn">4</button>
-                    <button class = "NMstorybtn">5</button>
-                    <button class = "NMstorybtn">></button>
-                 </div>
             </div>
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
           </div>
           
            <script>
-			$(function(){
-				
-				var mno = $("#Mno").val();
-				
-				console.log("sksksksk??"+mno);
+         $(function(){
+            
+            var mno = $("#Mno").val();
+            
+            console.log("sksksksk??"+mno);
 
-				$.ajax({
-					url:"/semi/selectRmember.mp",
-					data:{mno:mno},
-					type:"post",
-					success:function(data){
-						
-						var $table1 = $("#Rmember tbody");
-						var pi = data[0];
-						var currentPage = pi.currentPage;
-						var listCount = pi.listCount;
-						var limit = pi.limit;
-						var maxPage = pi.maxPage;
-						var startPage = pi.startPage;
-						var endPage = pi.endPage;
-						
-						for(var i = 0; i< limit; i++){
-							var $tr = $("<tr>");
-							var $nameTd = $("<td>").text(data[i].m_name);
-							var $fTd = $("<td>").text(data[i].f_name);
-							var $statusTd = $("<td>").text(data[i].r_status);
-							
-							$tr.append($nameTd);
-							$tr.append($fTd);
-							$tr.append($statusTd);
-							$table1.append($tr);
-							
-						}
-						
-						$div = $("<div>").attr("class", "Rpaging").attr("id", "pageR").attr("align", "center");
-						
-						$btn1 = $("<button>").text("<<").attr("id", "point1").attr("value", startPage);
-						if(currentPage == "1"){
-							$btn2 = $("<button>").text("<");	
-						}else{
-						$btn2 = $("<button>").text("<").attr("id", "point1").attr("value", currentPage-1);
-						}
-						$div.append($btn1);
-						$div.append($btn2);
-						
-						for(var i = startPage; i<=pi.maxPage; i++){
-							var $btn = $("<button>").text(i).attr("id","point1").attr("value", i);
-							$div.append($btn);
-						}
-						if(currentPage == maxPage){
-							$btn3 = $("<button>").text(">");	
-						}else{
-						$btn3 = $("<button>").text(">").attr("id", "point1").attr("value", currentPage+1);
-						}
-						$btn4 = $("<button>").text(">>").attr("id", "point1").attr("value", maxPage);
-						
-						$div.append($btn3);
-						$div.append($btn4);
-						$table1.after($div);
-						
-					},
-					error:function(msg){
-						console.log("리시트조회실패");
-					}
-				});
-			});
+            $.ajax({
+               url:"/semi/selectRmember.mp",
+               data:{mno:mno},
+               type:"post",
+               success:function(data){
+                  
+                  var $table1 = $("#Rmember tbody");
+                  var pi = data[0];
+                  var currentPage = pi.currentPage;
+                  var listCount = pi.listCount;
+                  var limit = pi.limit;
+                  var maxPage = pi.maxPage;
+                  var startPage = pi.startPage;
+                  var endPage = pi.endPage;
+                  
+                  for(var i = 0; i< limit; i++){
+                     var $tr = $("<tr>");
+                     var $nameTd = $("<td>").text(data[i].m_name);
+                     var $fTd = $("<td>").text(data[i].f_name);
+                     var $statusTd = $("<td>").text(data[i].r_status);
+                     
+                     $tr.append($nameTd);
+                     $tr.append($fTd);
+                     $tr.append($statusTd);
+                     $table1.append($tr);
+                     
+                  }
+                  
+                  $div = $("<div>").attr("class", "Rpaging").attr("id", "pageR").attr("align", "center");
+                  
+                  $btn1 = $("<button>").text("<<").attr("id", "point1").attr("value", startPage);
+                  if(currentPage == "1"){
+                     $btn2 = $("<button>").text("<");   
+                  }else{
+                  $btn2 = $("<button>").text("<").attr("id", "point1").attr("value", currentPage-1);
+                  }
+                  $div.append($btn1);
+                  $div.append($btn2);
+                  
+                  for(var i = startPage; i<=pi.maxPage; i++){
+                     var $btn = $("<button>").text(i).attr("id","point1").attr("value", i);
+                     $div.append($btn);
+                  }
+                  if(currentPage == maxPage){
+                     $btn3 = $("<button>").text(">");   
+                  }else{
+                  $btn3 = $("<button>").text(">").attr("id", "point1").attr("value", currentPage+1);
+                  }
+                  $btn4 = $("<button>").text(">>").attr("id", "point1").attr("value", maxPage);
+                  
+                  $div.append($btn3);
+                  $div.append($btn4);
+                  $table1.after($div);
+                  
+               },
+               error:function(msg){
+                  console.log("리시트조회실패");
+               }
+            });
+         });
           
           /* 에이젝스 페이징 클릭이벤트 */
-			$(document).on("click", "#point1", function(){
-				var num = $(this).val();
-				var mno = $("#Mno").val();
-				var $table1 = $("#Rmember tbody");
-				var $buttonA = $("#pageR");
-				$table1.empty();
-				$buttonA.empty();
-				
-				$.ajax({
-					url:"/semi/selectRmember.mp",
-					type:"get",
-					data:{"currentPage":num, mno:mno},
-					success:function(data){
-						console.log(data);
-						
-						var pi = data[0];
-						var currentPage = pi.currentPage;
-						var listCount = pi.listCount;
-						var limit = pi.limit;
-						var maxPage = pi.maxPage;
-						var startPage = pi.startPage;
-						var endPage = pi.endPage;
-						console.log(maxPage);
-						
-						for(var i = 1; i< data.length-1; i++){
-							var $tr = $("<tr>");
-							var $nameTd = $("<td>").text(data[i].m_name);
-							var $fTd = $("<td>").text(data[i].f_name);
-							var $statusTd = $("<td>").text(data[i].r_status);
-							
-							$tr.append($nameTd);
-							$tr.append($fTd);
-							$tr.append($statusTd);
-							$table1.append($tr);
-							
-						}
-						
-						$div = $("<div>").attr("class", "Rpaging").attr("id", "pageR").attr("align", "center");
-						
-						$btn1 = $("<button>").text("<<").attr("id", "point1").attr("value", startPage);
-						if(currentPage == "1"){
-							$btn2 = $("<button>").text("<");	
-						}else{
-						$btn2 = $("<button>").text("<").attr("id", "point1").attr("value", currentPage-1);
-						}
-						$div.append($btn1);
-						$div.append($btn2);
-						
-						for(var i = startPage; i<=pi.maxPage; i++){
-							var $btn = $("<button>").text(i).attr("id","point1").attr("value", i);
-							$div.append($btn);
-						}
-						if(currentPage == maxPage){
-							$btn3 = $("<button>").text(">");	
-						}else{
-						$btn3 = $("<button>").text(">").attr("id", "point1").attr("value", currentPage+1);
-						}
-						$btn4 = $("<button>").text(">>").attr("id", "point1").attr("value", maxPage);
-						
-						$div.append($btn3);
-						$div.append($btn4);
-						$table1.after($div);
-						
-					},
-					error:function(msg){
-						console.log("ㅁ라ㅡㅁ자르");
-					}
-				});		
-			});
-			
-		</script>
+         $(document).on("click", "#point1", function(){
+            var num = $(this).val();
+            var mno = $("#Mno").val();
+            var $table1 = $("#Rmember tbody");
+            var $buttonA = $("#pageR");
+            $table1.empty();
+            $buttonA.empty();
+            
+            $.ajax({
+               url:"/semi/selectRmember.mp",
+               type:"get",
+               data:{"currentPage":num, mno:mno},
+               success:function(data){
+                  console.log(data);
+                  
+                  var pi = data[0];
+                  var currentPage = pi.currentPage;
+                  var listCount = pi.listCount;
+                  var limit = pi.limit;
+                  var maxPage = pi.maxPage;
+                  var startPage = pi.startPage;
+                  var endPage = pi.endPage;
+                  console.log(maxPage);
+                  
+                  for(var i = 1; i< data.length-1; i++){
+                     var $tr = $("<tr>");
+                     var $nameTd = $("<td>").text(data[i].m_name);
+                     var $fTd = $("<td>").text(data[i].f_name);
+                     var $statusTd = $("<td>").text(data[i].r_status);
+                     
+                     $tr.append($nameTd);
+                     $tr.append($fTd);
+                     $tr.append($statusTd);
+                     $table1.append($tr);
+                     
+                  }
+                  
+                  $div = $("<div>").attr("class", "Rpaging").attr("id", "pageR").attr("align", "center");
+                  
+                  $btn1 = $("<button>").text("<<").attr("id", "point1").attr("value", startPage);
+                  if(currentPage == "1"){
+                     $btn2 = $("<button>").text("<");   
+                  }else{
+                  $btn2 = $("<button>").text("<").attr("id", "point1").attr("value", currentPage-1);
+                  }
+                  $div.append($btn1);
+                  $div.append($btn2);
+                  
+                  for(var i = startPage; i<=pi.maxPage; i++){
+                     var $btn = $("<button>").text(i).attr("id","point1").attr("value", i);
+                     $div.append($btn);
+                  }
+                  if(currentPage == maxPage){
+                     $btn3 = $("<button>").text(">");   
+                  }else{
+                  $btn3 = $("<button>").text(">").attr("id", "point1").attr("value", currentPage+1);
+                  }
+                  $btn4 = $("<button>").text(">>").attr("id", "point1").attr("value", maxPage);
+                  
+                  $div.append($btn3);
+                  $div.append($btn4);
+                  $table1.after($div);
+                  
+               },
+               error:function(msg){
+                  console.log("ㅁ라ㅡㅁ자르");
+               }
+            });      
+         });
+         
+      </script>
           
           
           
@@ -570,109 +445,33 @@
                      </tr>
                    </thead>
                    <tbody align = "center">
-<<<<<<< HEAD
-					<% for(Res b : list1){ %>
-					<tr>
-						<td><%= b.getRtime() %></td>
-						<td><%= b.getF_name() %></td>
-						<td><%= b.getMno() %></td>
-						<td id="status"><%= b.getR_status()%></td>
-						<td><%= b.getEtc() %></td>
-<<<<<<< HEAD
-						 <td><button id="rid">승인</button>&nbsp;&nbsp;
-                       	   <button>취소</button></td>
-<<<<<<< HEAD
-                     </tr>  
-                     <tr>
-                       <td>2018-02-26(월)</td>
-                       <td>13:20</td>
-                       <td>보철과</td>
-                       <td>김지현 원장</td>
-                       <td>접수 확인</td>
-                       <td></td>
-                       <td><button>승인</button>&nbsp;&nbsp;
-                       	   <button>취소</button></td>
-                     </tr>  
-                     <tr>
-                       <td>2018-02-26(월)</td>
-                       <td>13:20</td>
-                       <td>보철과</td>
-                       <td>김지현 원장</td>
-                       <td>접수 확인</td>
-                       <td></td>
-                       <td><button>승인</button>&nbsp;&nbsp;
-                       	   <button>취소</button></td>
-                     </tr>  
-                      <tr>
-                       <td>2018-02-26(월)</td>
-                       <td>13:20</td>
-                       <td>보철과</td>
-                       <td>김지현 원장</td>
-                       <td>접수 확인</td>
-                       <td></td>
-                       <td><button>승인</button>&nbsp;&nbsp;
-                       	   <button>취소</button></td>
-                     </tr>  
-=======
-=======
-						 <td>
-						 <button id="rid" onclick="updateY(<%=b.getRno()%>);">승인</button>&nbsp;&nbsp;
-                       	  </td>
->>>>>>> jihyun
-					</tr>
-					<% } %>
-			
-					<script>
-						function updateY(rno){
-							console.log(rno);
-							
-							location.href='/semi/updateRstatus.mp?rno='+ rno;
-							
-						}					
-					
-					</script>
-	                     
-=======
-                    
-                     <% for(Res b : list1){ %>
+               <% for(Res b : list1){ %>
                <tr>
                   <td><%= b.getRtime() %></td>
-                  <td><%= b.getF_num() %></td>
+                  <td><%= b.getF_name() %></td>
                   <td><%= b.getMno() %></td>
-                  <td><%= b.getR_status() %></td>
+                  <td id="status"><%= b.getR_status()%></td>
                   <td><%= b.getEtc() %></td>
-                   <td><button id="rid">승인</button>&nbsp;&nbsp;
-                             <button>취소</button></td>
+                   <td>
+                   <button id="rid" onclick="updateY(<%=b.getRno()%>);">승인</button>&nbsp;&nbsp;
+                            </td>
                </tr>
                <% } %>
+         
+               <script>
+                  function updateY(rno){
+                     console.log(rno);
+                     
+                     location.href='/semi/updateRstatus.mp?rno='+ rno;
+                     
+                  }               
+               
+               </script>
                         
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
                      
                    
                    </tbody>
                    
-<<<<<<< HEAD
-=======
-                  <%--  <script type="text/javascript">
-                    var webSocket = new WebSocket('ws://172.20.10.6:8001/<%= request.getContextPath() %>/broadcasting1');
-                     webSocket.onmessage = function(event) {
-                     onMessage(event)
-                   };
-                   function onMessage(event) {
-                        alert(event.data);
-                      
-                   }
-                   
-                   $("#rid").click(function(){
-                      send("접수완료");
-                   });
-                   
-                   function send(data) {
-                       webSocket.send(data);
-                   }
-               </script> --%>
-                   
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
                    
                  </table>
                 
@@ -742,152 +541,6 @@
          <script>
          
          
-<<<<<<< HEAD
-			$(function(){
-				console.log("점속???");
-				$.ajax({
-					url:"/semi/selectReviewN.mp",
-					type:"post",
-					success:function(data){
-						console.log(data);
-						var $tablebody = $("#DualList tbody");	
-						var $table = $("#DualList");
-						var pi = data[0];
-						var currentPage = pi.currentPage;
-						var listCount = pi.listCount;
-						var limit = pi.limit;
-						var maxPage = pi.maxPage;
-						var startPage = pi.startPage;
-						var endPage = pi.endPage;
-						console.log(maxPage);
-						for(var i = 1; i<data.length-1; i++){
-							var $tr = $("<tr>");
-							var $dateTd = $("<td>").text(data[i].date);
-							var $titleTd = $("<td>").text(decodeURIComponent(data[i].title));
-							var $contentTd = $("<td>").text(decodeURIComponent(data[i].content));
-							var $statusTd = $("<td>").text(data[i].b_status);
-							$tr.append($titleTd);
-							$tr.append($contentTd);
-							$tr.append($dateTd);
-							$tr.append($statusTd);
-							$tablebody.append($tr);
-						}
-						$div = $("<div>").attr("class", "pagingArea").attr("id", "pageA").attr("align", "center");
-						
-						$btn1 = $("<button>").text("<<").attr("id", "point").attr("value", startPage);
-						if(currentPage == "1"){
-							$btn2 = $("<button>").text("<");	
-						}else{
-						$btn2 = $("<button>").text("<").attr("id", "point").attr("value", currentPage-1);
-						}
-						$div.append($btn1);
-						$div.append($btn2);
-						
-						for(var i = startPage; i<=pi.maxPage; i++){
-							console.log("번호 ! : " + i);							
-							var $btn = $("<button>").text(i).attr("id","point").attr("value", i);
-							$div.append($btn);
-						}
-						if(currentPage == maxPage){
-							$btn3 = $("<button>").text(">");	
-						}else{
-						$btn3 = $("<button>").text(">").attr("id", "point").attr("value", currentPage+1);
-						}
-						$btn4 = $("<button>").text(">>").attr("id", "point").attr("value", maxPage);
-						
-						$div.append($btn3);
-						$div.append($btn4);
-						$table.after($div);
-						
-						var Listcount = data[data.length-1].listS;
-						$("#Nreview").text(Listcount);
-					},
-					error:function(msg){
-						console.log("리시트조회실패");
-					}
-				});
-			});
-			
-			
-			/* 에이젝스 페이징 클릭이벤트 */
-			$(document).on("click", "#point", function(){
-				var num = $(this).val();
-				var $tablebody = $("#DualList tbody");	
-				var $table = $("#DualList");
-				var $buttonA = $("#pageA");
-				$tablebody.empty();
-				$buttonA.empty();
-				
-				$.ajax({
-					url:"/semi/selectReviewNN.mp",
-					type:"get",
-					data:{"currentPage":num},
-					success:function(data){
-						console.log(data);
-						
-						var pi = data[0];
-						var currentPage = pi.currentPage;
-						var listCount = pi.listCount;
-						var limit = pi.limit;
-						var maxPage = pi.maxPage;
-						var startPage = pi.startPage;
-						var endPage = pi.endPage;
-						console.log(maxPage);
-						
-						for(var i = 1; i<data.length-1; i++){
-							var $tr = $("<tr>");
-							var $dateTd = $("<td>").text(data[i].date);
-							var $titleTd = $("<td>").text(decodeURIComponent(data[i].title));
-							var $contentTd = $("<td>").text(decodeURIComponent(data[i].content));
-							var $statusTd = $("<td>").text(data[i].b_status);
-							$tr.append($titleTd);
-							$tr.append($contentTd);
-							$tr.append($dateTd);
-							$tr.append($statusTd);
-							$tablebody.append($tr);
-						}
-						
-						$div = $("<div>").attr("class", "pagingArea").attr("id", "pageA").attr("align", "center");
-						
-						$btn1 = $("<button>").text("<<").attr("id", "point").attr("value", startPage);
-						if(currentPage == "1"){
-							$btn2 = $("<button>").text("<");	
-						}else{
-						$btn2 = $("<button>").text("<").attr("id", "point").attr("value", currentPage-1);
-						}
-						
-						$div.append($btn1);
-						$div.append($btn2);
-						
-						for(var i = startPage; i<=pi.maxPage; i++){
-							console.log("번호 ! : " + i);							
-							var $btn = $("<button>").text(i).attr("id","point").attr("value", i);
-							$div.append($btn);
-						}
-						
-						if(currentPage == maxPage){
-							$btn3 = $("<button>").text(">");	
-						}else{
-						$btn3 = $("<button>").text(">").attr("id", "point").attr("value", currentPage+1);
-						}
-						$btn4 = $("<button>").text(">>").attr("id", "point").attr("value", maxPage);
-						
-						$div.append($btn3);
-						$div.append($btn4);
-						$table.after($div);
-						var Listcount = data[data.length-1].listS;
-						console.log(Listcount);
-						$("#Nreview").text(Listcount);
-						
-					},
-					error:function(msg){
-						console.log("ㅁ라ㅡㅁ자르");
-					}
-				});		
-			});
-			
-		</script>
-=======
          $(function(){
             console.log("점속???");
             $.ajax({
@@ -895,7 +548,7 @@
                type:"post",
                success:function(data){
                   console.log(data);
-                  var $tablebody = $("#DualList  tbody");   
+                  var $tablebody = $("#DualList tbody");   
                   var $table = $("#DualList");
                   var pi = data[0];
                   var currentPage = pi.currentPage;
@@ -945,11 +598,9 @@
                   $table.after($div);
                   
                   var Listcount = data[data.length-1].listS;
-                  console.log(Listcount);
                   $("#Nreview").text(Listcount);
                },
                error:function(msg){
-                  alert(msg);
                   console.log("리시트조회실패");
                }
             });
@@ -958,9 +609,7 @@
          
          /* 에이젝스 페이징 클릭이벤트 */
          $(document).on("click", "#point", function(){
-            alert($(this).val());
             var num = $(this).val();
-            alert(num);
             var $tablebody = $("#DualList tbody");   
             var $table = $("#DualList");
             var $buttonA = $("#pageA");
@@ -1036,7 +685,6 @@
          });
          
       </script>
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
          
         
          
@@ -1153,36 +801,16 @@
       
       
       $(function(){
-<<<<<<< HEAD
-         /*.Ctotal2  */
-<<<<<<< HEAD
          
-=======
-    	  
-    	  /*.NMtotal2  */
->>>>>>> jihyun
-=======
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
+         /*.NMtotal2  */
          $("#tog").hide();
          $("#change-btn").click(function(){
          $("#tog").toggle();
-<<<<<<< HEAD
-         if($(".Ctotal2").height()==700){
-            $(".Ctotal2").css("height","900px");
-            $("#withdraw-btn").css("margin-top","150px");
-         }else if($(".Ctotal2").height()==900){
-            $(".Ctotal2").css("height","700px");
-<<<<<<< HEAD
-
-=======
          if($(".NMtotal2").height()==700){
             $(".NMtotal2").css("height","900px");
             $("#withdraw-btn").css("margin-top","150px");
          }else if($(".NMtotal2").height()==900){
             $(".NMtotal2").css("height","700px");
->>>>>>> jihyun
-=======
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
             $("#withdraw-btn").css("margin-top","10px");
          }
          });

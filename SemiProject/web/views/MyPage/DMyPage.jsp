@@ -37,43 +37,9 @@
 </style>
 </head>
 <body>
-<<<<<<< HEAD
-	<%@ include file="../common/header.jsp"%>
-
-	<div class="w1200" style="margin-left:auto; margin-right:auto;">
-	<div class="w1200 middle CHeader2 hidden">
-		<div class="fl">
-			<img src="../../images/common/tooth2.png" class="CMsubtitle">
-		</div>
-		<div class="fl">
-			<label class="CMname"> 서은별 님<%
-				
-			%></label>
-			<!-- 이름값 받아오기 -->
-		</div>
-
-		<div class="CMfirstdiv fl">
-			<i class="fa fa-calendar"></i>&nbsp; 조치포인트
-			<p>393</p>
-		</div>
-<<<<<<< HEAD
-
-		<div class="CMfirstdiv fl">
-			<i class="fa fa-pencil"></i>&nbsp; 예약환자수
-			<p>0</p>
-		</div>
-
-=======
->>>>>>> jihyun
-		<div class="CMfirstdiv fl">
-			<i class="fa fa-question"></i>&nbsp; 문의내역
-			<p>0</p>
-		</div>
-	</div>
-	</div>
-=======
    <%@ include file="../common/header.jsp"%>
 
+   <div class="w1200" style="margin-left:auto; margin-right:auto;">
    <div class="w1200 middle CHeader2 hidden">
       <div class="fl">
          <img src="/semi/images/common/tooth2.png" class="CMsubtitle">
@@ -82,44 +48,24 @@
          <label class="CMname"><%= loginUser.getmName() %></label>
          <!-- 이름값 받아오기 -->
       </div>
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
 
       <div class="CMfirstdiv fl">
          <i class="fa fa-calendar"></i>&nbsp; 조치포인트
          <p><%=loginUser.getBid_count() %></p>
       </div>
-
-      <!-- <div class="CMfirstdiv fl">
-         <i class="fa fa-pencil"></i>&nbsp; 
-         <p></p>
-      </div> -->
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-			<button class=" tablinks" onclick="openCity(event, 'Information')">
-=======
-			<button class=" tablinks Information active" onclick="openCity(event, 'Information')"> 
-				신고하기</button>
-			<button class=" tablinks" onclick="openCity(event, 'Inquiry')">
->>>>>>> jihyun
-				개인정보</button>
-			<button class=" tablinks" onclick="openCity(event, 'Inquiry')">
-				1:1 문의</button>
-				</div>
-=======
       <div class="CMfirstdiv fl">
          <i class="fa fa-question"></i>&nbsp; 문의내역
          <p><%=listCount %></p>
       </div>
    </div>
->>>>>>> ab094e497c98397a2e734bc7a3dd1d6b0d719c64
+   </div>
 
 
    <div class="Ctotal2 w1200 middle">
       <div class="tab w1200 middle">
 
          <button class=" tablinks Information active" onclick="openCity(event, 'Information')"> 
-            1:1 문의</button>
+            신고하기</button>
          <button class=" tablinks" onclick="openCity(event, 'Inquiry')">
             개인정보</button>
             </div>
