@@ -1,144 +1,144 @@
 @charset "UTF-8";
 
 h3{
-	font-size: 24px;
-	
-	margin: 0 auto 40px auto;
+   font-size: 24px;
+   
+   margin: 0 auto 40px auto;
 }
 /* 월간베스트 */
 .monthlyBest{
-	padding-top: 50px;
-	overflow: hidden;
+   padding-top: 50px;
+   overflow: hidden;
 }
 /* 월간베스트.의사 */
 .monthlyDentist{
-	border-top: 1px solid #f1eeec;
-	border-right: 1px solid #f1eeec;
-	width: 810px;
-	box-sizing: border-box;
-	float: left;
-	padding-bottom: 38px;
+   border-top: 1px solid #f1eeec;
+   border-right: 1px solid #f1eeec;
+   width: 810px;
+   box-sizing: border-box;
+   float: left;
+   padding-bottom: 38px;
 }
-.monthlyDentist dl{	
-	overflow:hidden;
-	margin-top: 38px;
+.monthlyDentist dl{   
+   overflow:hidden;
+   margin-top: 38px;
 }
 .monthlyDentist dt{
-	width: 170px;
-	height: 170px;
-	border-radius: 50%;
-	overflow: hidden;
-	float: right;
-	margin-right: 40px;
+   width: 170px;
+   height: 170px;
+   border-radius: 50%;
+   overflow: hidden;
+   float: right;
+   margin-right: 40px;
 }
 .monthlyDentist dd{
-	line-height: 1.8em;
+   line-height: 1.8em;
 }
 .monthlyDentist .dentName{
-	font-weight: bold;
-	font-size: 18px;
+   font-weight: bold;
+   font-size: 18px;
 }
 
 .monthlyDentist .discription{
-	font-size: 17px;
+   font-size: 17px;
 }
 .monthlyDentist .dentDept, 
 .monthlyDentist .replyPoint{
-	font-size: 14px;
+   font-size: 14px;
 }
 .monthlyDentist button{
-	border: 1px solid #666;
-	background: transparent;
-	padding: 10px 60px 8px 15px;
-	margin-top: 15px;
-	background: url('../images/main/btnBg.png') no-repeat;
-	background-position: 102px 11px;
-	cursor: pointer;
+   border: 1px solid #666;
+   background: transparent;
+   padding: 10px 60px 8px 15px;
+   margin-top: 15px;
+   background: url('../images/main/btnBg.png') no-repeat;
+   background-position: 102px 11px;
+   cursor: pointer;
 }
 .monthlyDentist button:hover{
-	color: #fff;
-	background-image: url('../images/main/btnBgOn.png');
-	background-repeat: no-repeat;
-	background-color: #666;
-	background-position: 102px 11px;
+   color: #fff;
+   background-image: url('../images/main/btnBgOn.png');
+   background-repeat: no-repeat;
+   background-color: #666;
+   background-position: 102px 11px;
 }
 .monthlyDentist img{
-	width: 100%;
+   width: 100%;
 }
 .monthlyDentist .line{
-	border-top: 1px solid #f1eeec;
-	margin: 38px 25px 0 25px;
+   border-top: 1px solid #f1eeec;
+   margin: 38px 25px 0 25px;
 }
 
 /* 월간베스트.치과 */
 .monthlyClinic{
-	width: 390px;
-	float: left;
-	border-top: 1px solid #f1eeec;
-	padding: 38px 0 0 38px; 
-	box-sizing: border-box;
+   width: 390px;
+   float: left;
+   border-top: 1px solid #f1eeec;
+   padding: 38px 0 0 38px; 
+   box-sizing: border-box;
 }
 .monthlyClinic li{
-	position: relative;
+   position: relative;
 }
 .monthlyClinic .bestClinic{
-	margin-top: 50px;
-	padding-top: 8px;
+   margin-top: 50px;
+   padding-top: 8px;
 }
 .bestClinic button{
-	position: absolute;
-	top: 0;
-	right: 0;
-	border: 0;
-	color: #fff;
-	padding: 8px 13px 8px 25px;
-	cursor: pointer;
-	text-indent: 2px;
+   position: absolute;
+   top: 0;
+   right: 0;
+   border: 0;
+   color: #fff;
+   padding: 8px 13px 8px 25px;
+   cursor: pointer;
+   text-indent: 2px;
 }
 .bestClinic .reserve{
-	background-color: #1b9cff;
-	right: 90px;
-	background-image: url('../images/main/reserve.jpg');
-	background-repeat: no-repeat;
-	background-position: 10px 10px;
+   background-color: #1b9cff;
+   right: 90px;
+   background-image: url('../images/main/reserve.jpg');
+   background-repeat: no-repeat;
+   background-position: 10px 10px;
 }
 .bestClinic .goToClinic{
-	background: #26c6da;
-	background-image: url('../images/main/goToClinic.jpg');
-	background-repeat: no-repeat;
-	background-position: 10px 8px;
+   background: #26c6da;
+   background-image: url('../images/main/goToClinic.jpg');
+   background-repeat: no-repeat;
+   background-position: 10px 8px;
 }
 
 /* 건강정보  */
 
 /* .dentalNews ul{
 
-	overflow: hidden;
-	width: 3000px;
-	height: 367.5px;
-	margin: 0 auto;
-	animation-dration:3s;
-	animation-name:slidein;
-	ainmation-iteration-count:infinite;
+   overflow: hidden;
+   width: 3000px;
+   height: 367.5px;
+   margin: 0 auto;
+   animation-dration:3s;
+   animation-name:slidein;
+   ainmation-iteration-count:infinite;
 
 
 }
 .dentalNews span{
-	position: absolute;
-	top: 200px;
-	cursor: pointer;
-	font-size: 40px;
-	z-index: 999;
+   position: absolute;
+   top: 200px;
+   cursor: pointer;
+   font-size: 40px;
+   z-index: 999;
 }
 .dentalNews .leftBtn{
-	left: -40px;
+   left: -40px;
 }
 .dentalNews .rightBtn{
-	right: -40px;
+   right: -40px;
 }
 */
 .slidebox {
-	width:1200px;
+   width:1200px;
     overflow:hidden;
     position:relative;
     height:370px;
@@ -157,38 +157,38 @@ h3{
     overflow: hidden;
 }
 .slide dl{
-	margin-right: 30px;
-	width: calc(1140px/3);
-	float: left;
-	border: 1px solid #f1eeec;
-	box-sizing: border-box;
-	cursor: pointer;
+   margin-right: 30px;
+   width: calc(1140px/3);
+   float: left;
+   border: 1px solid #f1eeec;
+   box-sizing: border-box;
+   cursor: pointer;
 }
 .slide dl:last-child{
-	margin-right: 0;
+   margin-right: 0;
 }
 .slide img{
-	width: 100%;
-	border-bottom: 1px solid #f1eeec;
+   width: 100%;
+   border-bottom: 1px solid #f1eeec;
 }
 .dentalNews{
-	position: relative;
+   position: relative;
 }
 .slidectrl{
-	width: 1200px;
+   width: 1200px;
 }
 .slidectrl > button{
-	position: absolute;
-	font-size: 40px;
-	padding: 0 !important;
-	margin: 0 !important;
-	top: 200px;
+   position: absolute;
+   font-size: 40px;
+   padding: 0 !important;
+   margin: 0 !important;
+   top: 200px;
 }
 .slidectrl #leftbtn{
-	left: -40px;
+   left: -40px;
 }
 .slidectrl #rightbtn{
-	right: -40px;
+   right: -40px;
 }
 
 
@@ -198,80 +198,80 @@ h3{
 
 /* .event ul{
 
-	overflow: hidden;
-	width: 1200px;
-	height: 159px;
-	margin: 0 auto;
+   overflow: hidden;
+   width: 1200px;
+   height: 159px;
+   margin: 0 auto;
 }
 .event span{
-	position: absolute;
-	top: 130px;
-	cursor: pointer;
-	font-size: 40px;
+   position: absolute;
+   top: 130px;
+   cursor: pointer;
+   font-size: 40px;
 }
 .event .left-btn{
-	left: -40px;
+   left: -40px;
 }
 .event .right-btn{
-	right: -40px;
+   right: -40px;
 }
 .event li{
-	overflow: hidden;
-	float: left;
-	width: 380px;
-	margin-right: 30px; 
+   overflow: hidden;
+   float: left;
+   width: 380px;
+   margin-right: 30px; 
 }
 .event li:nth-child(3n){
-	margin-right:0;
+   margin-right:0;
 }
 .event li img{
-	width: 100%;
+   width: 100%;
 } */
 
 
 
 
 .event{
-	position: relative;
+   position: relative;
 }
 .nav{
-	width: 1200px;
-	margin: 0 auto;
-	overflow: hidden;
+   width: 1200px;
+   margin: 0 auto;
+   overflow: hidden;
 }
 div.nav > button{
-	position: absolute;
-	border: 0;
-	top: 130px;
-	font-size: 40px;
-	background-color: transparent;
-	margin-left:-40px;
-	curosr: pointer
+   position: absolute;
+   border: 0;
+   top: 130px;
+   font-size: 40px;
+   background-color: transparent;
+   margin-left:-40px;
+   curosr: pointer
 }
 div.nav > button.ri-btn{
-	margin-left: 1210px;
+   margin-left: 1210px;
 }
 .RollDiv{
-	margin: 0 auto; 
-	width: 1200px; 
-	height:152px;
-	overflow:hidden;
+   margin: 0 auto; 
+   width: 1200px; 
+   height:152px;
+   overflow:hidden;
 }  
 .RollDiv > div{
-	overflow:hidden;
-	height:152px;
-	width: 2400px;
+   overflow:hidden;
+   height:152px;
+   width: 2400px;
 }
 .RollDiv > div > a{ 
-	float:left; 
-	display:block;
+   float:left; 
+   display:block;
 }
 .RollDiv > div > a > img{ 
-	width: calc(1140px/3);
-	margin-right: 30px;
+   width: calc(1140px/3);
+   margin-right: 30px;
 }
 .RollDiv > div > a > img:nth-child(4n){
-	margin-right: 0;
+   margin-right: 0;
 }
 
 
@@ -289,71 +289,71 @@ div.nav > button.ri-btn{
 
 /* 문의하기 */
 div.bt{
-	border-top: 1px solid #f1eeec;
-	padding: 50px 0;
+   border-top: 1px solid #f1eeec;
+   padding: 50px 0;
 }
 div.bt button{
-	margin-top: 20px;
-	padding: 10px 60px 10px 20px;
-	border: 0;
-	background-color: transparent;
-	background-image: url('../images/main/btnBg.png');
-	background-repeat: no-repeat;
-	background-position: 140px 10px;
-	cursor: pointer;
+   margin-top: 20px;
+   padding: 10px 60px 10px 20px;
+   border: 0;
+   background-color: transparent;
+   background-image: url('../images/main/btnBg.png');
+   background-repeat: no-repeat;
+   background-position: 140px 10px;
+   cursor: pointer;
 }
 .imgWrap{
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	float: left;
-	overflow: hidden;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   float: left;
+   overflow: hidden;
 }
 .imgWrap img{
-	width: 30px;
-	height: auto;
+   width: 30px;
+   height: auto;
 }
 .ask li{
-	cursor: pointer;
+   cursor: pointer;
 }
 .ask li:first-child{
-	border-bottom: 1px solid #f1eeec;
+   border-bottom: 1px solid #f1eeec;
 }
 
 /* 공지사항*/ 
 .boardBox{
-	background: #f1f1f1;
-	padding: 40px 0;
+   background: #f1f1f1;
+   padding: 40px 0;
 }
 .notice{
-	width: 765px;
-	float: left;
+   width: 765px;
+   float: left;
 }
 .notice li{
-	line-height: 2em;
-	font-size: 14px;
-	position: relative;
+   line-height: 2em;
+   font-size: 14px;
+   position: relative;
 }
 .notice li:hover{
-	color: #333;
+   color: #333;
 }
 .notice span{
-	position: absolute;
-	right: 0;
+   position: absolute;
+   right: 0;
 }
 .notice h3{
-	margin-bottom: 25px;
+   margin-bottom: 25px;
 }
 .faq{
-	width: 350px;
-	float: right;
+   width: 350px;
+   float: right;
 }
 .faq h3{
-	margin-bottom: 18px;
+   margin-bottom: 18px;
 }
 .faq a{
-	text-decoration: underline;
+   text-decoration: underline;
 }
 .event div.bt{
-	border: 0;
+   border: 0;
 }
