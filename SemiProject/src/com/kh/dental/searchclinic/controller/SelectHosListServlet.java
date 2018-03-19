@@ -40,6 +40,7 @@ public class SelectHosListServlet extends HttpServlet {
 			result = new JSONObject();
 			
 			result.put("rno", r.getRno());
+			result.put("f_name", r.getF_name());
 			result.put("r_time", r.getR_time());
 			result.put("r_status", r.getR_status());
 			result.put("etc", r.getEtc());
@@ -47,7 +48,7 @@ public class SelectHosListServlet extends HttpServlet {
 			Alist.add(result);
 		}
 		
-		System.out.println(Alist);
+		System.out.println("wefujejejejejejejejejejej"+Alist);
 		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

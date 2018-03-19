@@ -20,7 +20,7 @@
 }
 </style>
 <link rel="stylesheet" href="/semi/css/event.css">
-
+<link rel="stylesheet" href="/semi/css/common.css">
 <link rel="stylesheet" href="/semi/css/DMyPage.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,6 +39,7 @@
 <body>
 	<%@ include file="../common/header.jsp"%>
 
+	<div class="w1200" style="margin-left:auto; margin-right:auto;">
 	<div class="w1200 middle CHeader2 hidden">
 		<div class="fl">
 			<img src="/semi/images/common/tooth2.png" class="CMsubtitle">
@@ -52,16 +53,11 @@
 			<i class="fa fa-calendar"></i>&nbsp; 조치포인트
 			<p><%=loginUser.getBid_count() %></p>
 		</div>
-
-		<!-- <div class="CMfirstdiv fl">
-			<i class="fa fa-pencil"></i>&nbsp; 
-			<p></p>
-		</div> -->
-
 		<div class="CMfirstdiv fl">
 			<i class="fa fa-question"></i>&nbsp; 문의내역
 			<p><%=listCount %></p>
 		</div>
+	</div>
 	</div>
 
 
@@ -69,7 +65,7 @@
 		<div class="tab w1200 middle">
 
 			<button class=" tablinks Information active" onclick="openCity(event, 'Information')"> 
-				1:1 문의</button>
+				신고하기</button>
 			<button class=" tablinks" onclick="openCity(event, 'Inquiry')">
 				개인정보</button>
 				</div>

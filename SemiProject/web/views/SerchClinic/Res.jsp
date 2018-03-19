@@ -130,37 +130,6 @@
       	가족병원 예약하기
       </div>
    </div>
-   
-   <script>
-	/* var webSocket = new WebSocket('ws://localhost:8080/WebSocketEx/broadcasting');
-	var inputMessage = document.getElementById('inputMessage');
-			        
-	webSocket.onerror = function(event) {
-		 onError(event)
-	};
-	webSocket.onopen = function(event) {
-	     onOpen(event)
-	};
-	webSocket.onmessage = function(event) {
-	     onMessage(event)
-	};
-	function onMessage(event) {
-	     textarea.value += "상대 : " + event.data + "\n";
-	}
-	function onOpen(event) {
-	     textarea.value += "연결 성공\n";
-	}
-	function onError(event) {
-	     alert(event.data);
-	}
-	function send() {
-	     textarea.value += "나 : " + inputMessage.value + "\n";
-	     webSocket.send(inputMessage.value);
-	     inputMessage.value = "";
-	} */
-   </script>
-   
-   
  
    <div class =" Eventbody w1200 middle ">
       <br><br>
@@ -227,7 +196,6 @@
          
       </form>
       
-      
          
          
          
@@ -235,28 +203,7 @@
 
    <%@ include file="../common/footer.jsp" %>
    
-<%--    <script type="text/javascript">
-  		var webSocket = new WebSocket('ws://172.20.10.6:8001/<%= request.getContextPath() %>/broadcasting');
-   		webSocket.onmessage = function(event) {
-	      onMessage(event)
-	    };
-	    function onMessage(event) {
-	      	alert(event.data);
-	    }
-	    
-	    $("#cl").click(function(){
-	    	var wSocket = new WebSocket('ws://172.20.10.6:8001/<%= request.getContextPath() %>/broadcasting1');
-	    	send("예약");
-	    	
-	    	return false;
-	    });
-	    
-	    function send(data) {
-	    	
-	    	wSocket.send(data);
-	    	
-	    }
-   </script> --%>
+
 
 </body>
 </html>

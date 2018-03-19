@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.kh.dental.member.model.vo.Member;
 import com.kh.dental.mypage.model.service.MypageService;
 import com.kh.dental.mypage.model.vo.*;
 import com.kh.dental.mypage.model.vo.Dual;
@@ -24,13 +25,14 @@ public class InsertDualServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String userId = request.getParameter("userId");
+		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
+		String type= loginUser.getType();
+		
+		String userId = loginUser.getmId();
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		/*System.out.println(userId);
-		System.out.println(title);
-		System.out.println(content);*/
+		
 		
 		Dual d = new Dual();
 		d.setBwriter(userId);
@@ -42,7 +44,13 @@ public class InsertDualServlet extends HttpServlet {
 		String page = "";
 		
 		if(result>0){
-			page = "/selectList.mp";
+			if(type.equals("N")){
+				page = "/selectList.mp";
+			}else if(type.equals("D")){
+				page = "/selectListD.mp";
+			}else{
+				page = "/selectR.mp";
+			}
 			
 		}else{
 			page = "views/common/errorPage.jsp";

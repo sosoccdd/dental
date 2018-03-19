@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.dental.dual.model.service.DualService;
-import com.kh.dental.dual.model.vo.Dual;
-import com.kh.dental.dual.model.vo.PageInfo;
+import com.kh.dental.mypage.model.service.DualService;
+import com.kh.dental.mypage.model.vo.Dual;
+import com.kh.dental.mypage.model.vo.PageInfo;
+
 
 
 /**

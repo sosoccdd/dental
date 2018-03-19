@@ -38,7 +38,7 @@
 	<%@ include file="../../views/common/header.jsp"%>
 
 	<div class="w1200 middle no1">
-		<label align="center" class="f20">1:1문의작성</label>
+		<label align="center" class="f20">신고하기</label>
 	</div>
 	
 	
@@ -81,11 +81,11 @@
 		
 		function goMy(){
 			
-			<%if(loginUser.getmType().equals("N")){%>
+			<%if(loginUser.getType().equals("N")){%>
 			
 			location.href="<%= request.getContextPath()%>/selectList.mp";
 				
-			<%}else if(loginUser.getmType().equals("D")){%>
+			<%}else if(loginUser.getType().equals("D")){%>
 			location.href="<%= request.getContextPath()%>/views/MyPage/DMyPage.jsp";
 			
 			<%}%>

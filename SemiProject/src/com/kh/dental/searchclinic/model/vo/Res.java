@@ -7,6 +7,7 @@ public class Res implements java.io.Serializable{
 	private int rno;			//예약번호
 	private String r_time;		//예약시간
 	private int f_num;			//전문분야코드
+	private String f_name;
 	private String r_status;	//예약여부 =Y,N
 	private int m_no;			//회원번호
 	private String etc;			//비고
@@ -24,6 +25,15 @@ public class Res implements java.io.Serializable{
 		this.m_no = m_no;
 		this.etc = etc;
 		this.ykiho_enc = ykiho_enc;
+	}
+	
+	
+	public String getF_name() {
+		return f_name;
+	}
+
+	public void setF_name(String f_name) {
+		this.f_name = f_name;
 	}
 
 	public int getRno() {

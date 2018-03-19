@@ -42,7 +42,7 @@ public class SelectNoticeList extends HttpServlet {
 		currentPage = 1;
 		
 		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
-		String userName = loginUser.getmName();
+		String userName = loginUser.getmId();
 		System.out.println("awlfkcawljcnawljcnawljcn : " + userName);
 		
 		if(request.getParameter("currentPage") != null){

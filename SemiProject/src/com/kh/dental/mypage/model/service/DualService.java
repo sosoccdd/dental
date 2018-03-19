@@ -4,8 +4,8 @@ package com.kh.dental.mypage.model.service;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import com.kh.dental.dual.model.dao.DualDao;
-import com.kh.dental.dual.model.vo.Dual;
+import com.kh.dental.mypage.model.dao.DualDao;
+import com.kh.dental.mypage.model.vo.Dual;
 
 import static com.kh.dental.common.JDBCTemplet.*;
 

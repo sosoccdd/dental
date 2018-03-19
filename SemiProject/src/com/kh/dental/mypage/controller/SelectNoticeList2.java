@@ -37,7 +37,7 @@ public class SelectNoticeList2 extends HttpServlet {
 		int startPage;		//한번에 표시될 페이지가 시작할 페이지
 		int endPage;		//한번에 표시될 페이지가 끝나는 페이지
 		
-		String userName = request.getParameter("userName");
+		String userName = request.getParameter("userId");
 		
 		//게시판은 1페이지부터 시작함
 		currentPage = 1;

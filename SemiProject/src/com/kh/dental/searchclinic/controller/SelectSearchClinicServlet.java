@@ -115,6 +115,7 @@ public class SelectSearchClinicServlet extends HttpServlet {
 		for(SearchClinic sc:list) {
 			result = new JSONObject();
 			result.put("yadm_nm", sc.getYadm_nm());
+			result.put("ykiho_enc", sc.getYkiho_enc());
 			result.put("addr", sc.getAddr());
 			result.put("telno", sc.getTelno());
 			result.put("x_pos", sc.getX_pos());

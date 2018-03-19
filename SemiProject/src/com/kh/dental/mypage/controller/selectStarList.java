@@ -14,6 +14,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
+import com.kh.dental.member.model.vo.Member;
 import com.kh.dental.mypage.model.service.MypageService;
 import com.kh.dental.mypage.model.vo.StarPoint;
 
@@ -32,37 +33,32 @@ public class selectStarList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		ArrayList<StarPoint> list =null;
-		
-		list = new MypageService().selectStar();
+		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
+		String userid = loginUser.getmId();
+		list = new MypageService().selectStar(userid);
 		request.setAttribute("list", list);
 		JSONArray result = new JSONArray();
 		JSONObject starInfo=null;
 		
 		System.out.println("control" +list);
-		
+		System.out.println(list.size());
 		for(StarPoint sp : list){
 			starInfo = new JSONObject();
 			
-			starInfo.put("hosName",  URLEncoder.encode(sp.getYkiho_enc(), "UTF-8"));
+			starInfo.put("hosName", sp.getYkiho_enc());
 			starInfo.put("date", sp.getBdate());
 			starInfo.put("starpt", sp.getStartpt());
 			
 			result.add(starInfo);
 		}
 		
-		int ListSize = list.size();
 		JSONObject ListL = new JSONObject();
-		ListL.put("listS", ListSize);
+		ListL.put("listS", list.size());
 		result.add(ListL);
-		System.out.println("ListL : "+ListL);
-		System.out.println(result);
-		
-		JSONObject result1 = new JSONObject();
-		
 		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		
+		System.out.println("cascasc ++++++ : " + result);
 		new Gson().toJson(result, response.getWriter());
 		
 		/*PrintWriter out = response.getWriter();

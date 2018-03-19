@@ -5,6 +5,7 @@ public class Res implements java.io.Serializable{
 	private int rno;
 	private String rtime;
 	private int f_num;
+	private String f_name;
 	private String r_status;
 	private int mno;
 	private String etc;
@@ -21,6 +22,16 @@ public class Res implements java.io.Serializable{
 		this.mno = mno;
 		this.etc = etc;
 		this.ykiho_enc = ykiho_enc;
+	}
+
+	
+	
+	public String getF_name() {
+		return f_name;
+	}
+
+	public void setF_name(String f_name) {
+		this.f_name = f_name;
 	}
 
 	public int getRno() {
