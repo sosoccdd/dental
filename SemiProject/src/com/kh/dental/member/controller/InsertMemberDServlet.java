@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import com.kh.dental.member.model.service.MemberService;
 import com.kh.dental.member.model.vo.Member;
@@ -50,7 +49,7 @@ public class InsertMemberDServlet extends HttpServlet {
 
 		//파일을 저장할 경로 지정
 		String savePath = root + "uploadFiles/profileImgFile/";
-		System.out.println("savePath(저장된 경로) : " + savePath);
+		System.out.println("savePath : " + savePath);
 		//FileRenamePolicy상속 후 오버라이딩
 		MultipartRequest multiRequest = new MultipartRequest(request, savePath, maxSize, "UTF-8", new MyFileRenamePolicy());
 		
@@ -70,14 +69,14 @@ public class InsertMemberDServlet extends HttpServlet {
 		while(files.hasMoreElements()){
 			String name = files.nextElement();
 			
-			System.out.println("name??? " + name);
+			System.out.println("name :  " + name);
 			
 			//저장된 경로에 저장된 파일 시스템의 이름을 가져와서 arrayList에 담는다.
 			saveFiles.add(multiRequest.getFilesystemName(name));
 			originFiles.add(multiRequest.getOriginalFileName(name));
 			
-			System.out.println("filesystem 이거뭐지?: " + multiRequest.getFilesystemName(name));
-			System.out.println("originFile 모르겠네: " + multiRequest.getOriginalFileName(name));
+			System.out.println("filesystem : " + multiRequest.getFilesystemName(name));
+			System.out.println("originFile : " + multiRequest.getOriginalFileName(name));
 
 			
 			//multipartRequest 객체에서 파일 외의 값도 꺼내온다.

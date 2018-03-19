@@ -143,11 +143,12 @@
 	<div class="agree-wrap">
 		<h2>회원가입 약관 동의</h2>
 		
-		<form action="" method="post" onSubmit="return CheckForm(this)" id="agreeJoin1">
+		<form action="<%= request.getContextPath() %>/agree.me" method="post" id="agreeJoin1">
 		
 		<div class="terms_p">
 			<p class="terms_chk_all">
 				<span class="input_chk"> 
+				
 					<input type="checkbox" id="chk_all" onclick="" class=""> 
 					<label id="chk_allLb" for="chk_all" class="">
 						이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), <br>
@@ -223,10 +224,14 @@
 				<label for="ch_mem_dentist">의사회원</label>
 			</div>
 			<!-- choice -->
+			<input type="hidden" value="<%= sName %>" name="sName">
+			<input type="hidden" value="<%= sBirthDate %>" name="sBirthDate">
+			<input type="hidden" value="<%= sGender %>" name="sGender">
+			<input type="hidden" value="<%= sMobileNo %>" name="sMobileNo">
 		</div>
 		<!-- terms_p -->
 			<button type="button" onclick="location.href='/semi/index.jsp'" class="agree-btn disagree">비동의</button>
-			<button type="submit" class="agree-btn agree-join-btn">동의</button>
+			<button type="submit" class="agree-btn agree-join-btn" >동의</button>
 		</form>
 		
 		<br>
@@ -234,65 +239,11 @@
 	</div>
 </div>
 <!-- agreePage -->
-    <center>
-    <p><p><p><p>
-    본인인증이 완료 되었습니다.<br>
-    <table border=1>
-        <tr>
-            <td>복호화한 시간</td>
-            <td><%= sCipherTime %> (YYMMDDHHMMSS)</td>
-        </tr>
-        <tr>
-            <td>요청 번호</td>
-            <td><%= sRequestNumber %></td>
-        </tr>            
-        <tr>
-            <td>NICE응답 번호</td>
-            <td><%= sResponseNumber %></td>
-        </tr>            
-        <tr>
-            <td>인증수단</td>
-            <td><%= sAuthType %></td>
-        </tr>
-		<tr>
-            <td>성명</td>
-            <td><%= sName %></td>
-        </tr>
-		<tr>
-            <td>중복가입 확인값(DI)</td>
-            <td><%= sDupInfo %></td>
-        </tr>
-		<tr>
-            <td>연계정보 확인값(CI)</td>
-            <td><%= sConnInfo %></td>
-        </tr>
-		<tr>
-            <td>생년월일(YYYYMMDD)</td>
-            <td><%= sBirthDate %></td>
-        </tr>
-		<tr>
-            <td>성별</td>
-            <td><%= sGender %></td>
-        </tr>
-				<tr>
-            <td>내/외국인정보</td>
-            <td><%= sNationalInfo %></td>
-        </tr>
-        </tr>
-			<td>휴대폰번호</td>
-            <td><%= sMobileNo %></td>
-        </tr>
-		<tr>
-			<td>통신사</td>
-			<td><%= sMobileCo %></td>
-        </tr>
-		<tr>
-			<td colspan="2">인증 후 결과값은 내부 설정에 따른 값만 리턴받으실 수 있습니다. <br>
-			일부 결과값이 null로 리턴되는 경우 관리담당자 또는 계약부서(02-2122-4615)로 문의바랍니다.</td>
-		</tr>
-		</table><br><br>        
-    <%= sMessage %><br>
-    </center>
+
+
+
+
+
 
 <script type="text/javascript">
 	//체크박스 전체 선택
@@ -308,6 +259,7 @@
 
 </script>
 <script type="text/javascript">
+
 //체크박스 체크여부 확인
 function CheckForm(Join){
 	
@@ -328,11 +280,11 @@ function CheckForm(Join){
     	alert('회원 유형에 따라 가입 절차에 차이가 있으니 반드시 일반회원 또는 의사회원을 선택해주세요 ');
     }
     
-	if(chk1 && chk2 && memType == "N"){
+	/* if(chk1 && chk2 && memType == "N"){
 		location.href="/semi/views/member/Njoin.jsp";
 	} else if(chk1 && chk2 && memType == "D"){
 		location.href="/semi/views/member/Djoin.jsp";
-	}
+	} */
 	
 	return false;
 }

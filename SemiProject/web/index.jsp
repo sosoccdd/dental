@@ -9,57 +9,6 @@
 <style>
 
 
-	.slidebox {
-        width:1200px;
-        overflow:hidden;
-        position:relative;
-        height:500px;
-    }
-     
-    .slide {
-        width:3000px;
-        height:500px;
-        position:relative;
-        left:0;
-    }
-     
-    .slide li {
-        display:inline-block;
-        width:400px;
-        height:400px;  
-        text-align:center;
-        color:white;
-        font-size:30px;
-        line-height:150px;
-        margin-right:-4px;
-    }
-    
-    .slidebox1 {
-        width:1200px;
-        overflow:hidden;
-        position:relative;
-        height:159px;
-    }
-     
-    .slide1 {
-        width:1500px;
-        height:500px;
-        position:relative;
-        left:0;
-    }
-     
-    .slide1 li {
-        display:inline-block;
-        width:400px;
-        height:400px;  
-        text-align:center;
-        color:white;
-        font-size:30px;
-        line-height:150px;
-        margin-right:-4px;
-    }
-
-
 
 
 
@@ -87,27 +36,27 @@
 				<dd class="dentName">이준호 의사</dd>
 				<dd class="discription">99.9%의 환자분들이 인정한 안아프고 간단하고 확실한 임플란트 수술!</dd>
 				<dd class="dentDept">임플란트 · 라미네이트 · 인비절라인</dd>
-				<dd class="replyPoint">답변 포인트  21</dd>
+				<dd class="replyPoint">답변 포인트  240</dd>
 				<dd><button type="button">자세히 보기</button></dd>
 				<dd class="line"></dd>
 			</dl>
 			
 			<dl>
-				<dt><img src="images/dentist/dentist01.png"></dt>
-				<dd class="dentName">이준호 의사</dd>
-				<dd class="discription">99.9%의 환자분들이 인정한 안아프고 간단하고 확실한 임플란트 수술!</dd>
-				<dd class="dentDept">임플란트 · 라미네이트 · 인비절라인</dd>
-				<dd class="replyPoint">답변 포인트  21</dd>
+				<dt><img src="images/dentist/dentist02.jpg"></dt>
+				<dd class="dentName">이수진 의사</dd>
+				<dd class="discription">예방에서 치료, 체계적인 사후관리까지 늘당신과 함께 합니다.</dd>
+				<dd class="dentDept">보철 · 임플란트· 심미보철· 올세라믹· 라미네이트· 레이저</dd>
+				<dd class="replyPoint">답변 포인트  145</dd>
 				<dd><button type="button">자세히 보기</button></dd>
 				<dd class="line"></dd>
 			</dl>
 			
 			<dl>
-				<dt><img src="images/dentist/dentist01.png"></dt>
-				<dd class="dentName">이준호 의사</dd>
-				<dd class="discription">99.9%의 환자분들이 인정한 안아프고 간단하고 확실한 임플란트 수술!</dd>
-				<dd class="dentDept">임플란트 · 라미네이트 · 인비절라인</dd>
-				<dd class="replyPoint">답변 포인트  21</dd>
+				<dt><img src="images/dentist/dentist03.jpg"></dt>
+				<dd class="dentName">김성근 의사</dd>
+				<dd class="discription">진단과 상담의 전과정에서 프리니티 시스템 도입한 수술</dd>
+				<dd class="dentDept">돌출입교정 · 부정교합 · 수술교정 · 성장조절교정 · 주걱턱교정 </dd>
+				<dd class="replyPoint">답변 포인트  105</dd>
 				<dd><button type="button">자세히 보기</button></dd>
 			</dl>
 		</div>
@@ -122,33 +71,33 @@
 			</li>
 			
 			<li class="bestClinic">
-				<p class="f18 w700 mb20">푸른나무치과의원</p>
+				<p class="f18 w700 mb20">하나로치과의원</p>
 				<p class="lh20">
-					주소 : 서울특별시 강남구 삼성동 142046 암천빌딩 4층<br>
-					전화번호 : 02-552-2754<br>
-					진료과목 : 보철, 치주, 사랑니 
+					주소 : 서울특별시 강남구 삼성동 166-2<br>
+					전화번호 : 02-563-5435<br>
+					진료과목 : 레이저 임플란트, 보철, 치주, 사랑니 , 치아성형, 치아미백
 				</p>
 				<button type="button" class="reserve">예약</button>
 				<button type="button" class="goToClinic">병원보기</button>
 			</li>
 			
 			<li class="bestClinic">
-				<p class="f18 w700 mb20">푸른나무치과의원</p>
+				<p class="f18 w700 mb20">더블유화이트치과의원</p>
 				<p class="lh20">
-					주소 : 서울특별시 강남구 삼성동 142046 암천빌딩 4층<br>
-					전화번호 : 02-552-2754<br>
-					진료과목 : 보철, 치주, 사랑니 
+					주소 : 서울특별시 강남구 테헤란로87길 17 304호 (삼성동)<br>
+					전화번호 : 02-564-0075<br>
+					진료과목 : 임플란트, 치아성형, 무삭제 앞니 보철, 치아교정 
 				</p>
 				<button type="button" class="reserve">예약</button>
 				<button type="button" class="goToClinic">병원보기</button>
 			</li>
 			
 			<li class="bestClinic">
-				<p class="f18 w700 mb20">푸른나무치과의원</p>
+				<p class="f18 w700 mb20">이준호서울미시간치과의원</p>
 				<p class="lh20">
 					주소 : 서울특별시 강남구 삼성동 142046 암천빌딩 4층<br>
-					전화번호 : 02-552-2754<br>
-					진료과목 : 보철, 치주, 사랑니 
+					전화번호 : 6273-2828<br>
+					진료과목 : 임플란트, 라미네이트, 투명교정, 치아미백, 보톡스
 				</p>
 				<button type="button" class="reserve">예약</button>
 				<button type="button" class="goToClinic">병원보기</button>
@@ -164,24 +113,25 @@
 		
 		<ul class="w1200 middle">
 			<li onclick="location.href='/semi/views/QnA/QnAView.jsp'" class="mb40 pb40">
-				<p class="f15">사랑니</p>
+				<p class="f15">치아교정</p>
 				<p class="f20 mb15">교정 후 상악 확장장치에 음식물 끼임</p>
-				<p class="f15 mb15"><span class="f15 c-fe7506 w700 mr10">답변</span> 부혜진 상담의</p>
+				<p class="f15 mb15"><span class="f15 c-fe7506 w700 mr10">답변</span> 이수진 전문의</p>
 				<p class="f15">
 현재 상태를 정확하게 알 수 없기 때문에 설명드리기가 힘듭니다만 교합조정 시에 치아를 과도하게 삭제하는 경우는 드뭅니다.  좀 더 지켜보시는 것이 좋을 듯 하지만, 씹을 때 불편감이 
 있다면 치과에 가셔서서 검진을 해보시는 것이 더 좋으실 거 같습니다. 만약 노출된 경우에는 신경치료를 하게됩니다. 전반적으로 좀 더 지켜보시는 것이 좋을것으로 ···
 				</p>
-				<div class="imgWrap mt10 mr15 ml15"><img src="images/dentist/dentist01.png"></div>
+				<div class="imgWrap mt10 mr15 ml15"><img src="images/dentist/dentist02.jpg"></div>
 				<p class="f16 mt15">다른 전문가 답변 1개</p> 
 			</li>
 			
 			<li onclick="location.href='/semi/views/QnA/QnAView.jsp'">
 				<p class="f15">사랑니</p>
-				<p class="f20 mb15">교정 후 상악 확장장치에 음식물 끼임</p>
-				<p class="f15 mb15"><span class="f15 c-fe7506 w700 mr10">답변</span> 부혜진 상담의</p>
+				<p class="f20 mb15">사랑니 발치후 신경손상율 검사 질문입니다.</p>
+				<p class="f15 mb15"><span class="f15 c-fe7506 w700 mr10">답변</span> 이준호 전문의</p>
 				<p class="f15">
-현재 상태를 정확하게 알 수 없기 때문에 설명드리기가 힘듭니다만 교합조정 시에 치아를 과도하게 삭제하는 경우는 드뭅니다.  좀 더 지켜보시는 것이 좋을 듯 하지만, 씹을 때 불편감이 
-있다면 치과에 가셔서서 검진을 해보시는 것이 더 좋으실 거 같습니다. 만약 노출된 경우에는 신경치료를 하게됩니다. 전반적으로 좀 더 지켜보시는 것이 좋을것으로 ···
+#1. 혀의 감각
+- 혀의 감각을 담당하는 신경은 크게 3가지로, 앞 2/3의 일반적인 감각을 담당하는 혀신경 (Lingual nerve), 뒤 1/3 의 일반적인 감각을 담당하는 설인신경 
+Glossopharyngeal nerve), 그리고 '맛' 이라는 특수한 감각을 담당하는 고삭신경 (chorda tympani nerve) 로 나누어져 있고, 각각 신경운 좌우 1쌍씩 존재하여 혀의 좌 우 감각을 ···
 				</p>
 				<div class="imgWrap mt10 mr15 ml15"><img src="images/dentist/dentist01.png"></div>
 				<p class="f16 mt15">다른 전문가 답변 1개</p> 
@@ -192,50 +142,8 @@
 	</div>
 	<!-- ask -->
 
-<script>
-    var idx = 0;
-    var slidemax = 1;
-    var pos = 800;
-    
-    function sliding(add) {
-        idx = idx + add;
-        if(idx < 0) idx = slidemax;
-        else if(idx > slidemax) idx = 0;
-        $('.slide').stop().animate({'left' : -(idx*pos)+"px"}, "slow");
-    }
-     
-    autoslide = setInterval(function() { sliding(1) }, 3000);
-     
-    function after() {
-        setTimeout(function() {
-            clearInterval(autoslide);  
-            autoslide = setInterval(function() { sliding(1) }, 3000);
-        }, 2000);
-    }
-    
-    /* function sliding(add) {
-        idx1 = idx1 + add;
-        if(idx1 < 0) idx1 = slidemax1;
-        else if(idx1 > slidemax1) idx1 = 0;
-        $('.slide').stop().animate({'left' : -(idx1*pos1)+"px"}, "slow");
-    }
-     
-    autoslide1 = setInterval(function() { sliding(1) }, 3000);
-     
-    function after() {
-        setTimeout(function() {
-            clearInterval(autoslide1);  
-            autoslide1 = setInterval(function() { sliding(1) }, 3000);
-        }, 2000);
-    }
- */
-
-</script>	
-	
-	
 	
 	<!-- 건강정보 -->
-
 	<div class="dentalNews bt">
 	<div class="w1200 middle relative">
 		<h3>건강정보</h3>
@@ -243,63 +151,63 @@
 		    <ul class="slide">
 		        <li>
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews1.jpg"></dt>
+						<dt><img src="images/health/health01.jpg"></dt>
 						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
 						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
 					</dl>
 					
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews1.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health02.jpg"></dt>
+						<dd class="f15 ml15 mt10">이갈이 때문에 나타나는 증상</dd>
+						<dd class="f13 ml15 mb15 lh20">심한 이갈이는 치아와 턱에 어떤 문제를 일으킬까요?</dd>
 					</dl>
 					
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews1.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health03.jpg"></dt>
+						<dd class="f15 ml15 mt10">이갈이를 하는 이유</dd>
+						<dd class="f13 ml15 mb15 lh20">사람들이 이를 가는 데에는 어떤 원인이 있을까요?</dd>
 					</dl>
 				</li>
 
 				
 		        <li>
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews2.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health04.jpg"></dt>
+						<dd class="f15 ml15 mt10">병원에서의 입냄새 진단과 치료</dd>
+						<dd class="f13 ml15 mb15 lh20">병원에서는 심한 입냄새를 어떻게 진단, 치료할까요?</dd>
 					</dl>
 					
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews2.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health05.jpg"></dt>
+						<dd class="f15 ml15 mt10">이갈이를 줄이는 방법</dd>
+						<dd class="f13 ml15 mb15 lh20">어떻게 하면 이갈이 증상을 완화할 수 있을까요?</dd>
 					</dl>
 					
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews2.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health06.jpg"></dt>
+						<dd class="f15 ml15 mt10">이갈이 자가 진단법</dd>
+						<dd class="f13 ml15 mb15 lh20">이갈이가 얼마나 심한지 알아볼 수 있는 방법은 없을까요?</dd>
 					</dl>
 				</li>
 				
 
 		        <li>
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews3.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health07.jpg"></dt>
+						<dd class="f15 ml15 mt10">입냄새를 줄이는 생활습관</dd>
+						<dd class="f13 ml15 mb15 lh20">일상생활 속에서 입냄새를 줄일 수 있는 방법으로는 어떤 것들...</dd>
 					</dl>
 					
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews3.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health08.jpg"></dt>
+						<dd class="f15 ml15 mt10">심한 입냄새의 원인</dd>
+						<dd class="f13 ml15 mb15 lh20">입냄새가 발생하는 이유는 무엇일까요?</dd>
 					</dl>
 					
 					<dl onclick="location.href='/semi/views/HealthInfo/HealthView.jsp'">
-						<dt><img src="images/main/dentalNews3.jpg"></dt>
-						<dd class="f15 ml15 mt10">치아 건강을 해치는 이갈이</dd>
-						<dd class="f13 ml15 mb15 lh20">이갈이는 과연 어떤 증상일까요? 왜 치료가 필요할까요?</dd>
+						<dt><img src="images/health/health09.jpg"></dt>
+						<dd class="f15 ml15 mt10">입냄새 Q&A</dd>
+						<dd class="f13 ml15 mb15 lh20">입냄새와 관련된 궁금증, 똑닥이 풀어드릴게요.</dd>
 					</dl>
 				</li>
 		    </ul>
@@ -331,12 +239,12 @@
 		<div class="RollDiv">
 			<div>
 				<a href=""><img src="images/event/event01.jpg" /></a>
-				<a href=""><img src="images/event/event01.jpg" /></a>
-				<a href=""><img src="images/event/event01.jpg" /></a>
-				<a href=""><img src="images/event/event01.jpg" /></a>
-				<a href=""><img src="images/event/event01.jpg" /></a>
-				<a href=""><img src="images/event/event01.jpg" /></a>
-				<a href=""><img src="images/event/event01.jpg" /></a>
+				<a href=""><img src="images/event/event02.jpg" /></a>
+				<a href=""><img src="images/event/event03.jpg" /></a>
+				<a href=""><img src="images/event/event04.jpg" /></a>
+				<a href=""><img src="images/event/event05.jpg" /></a>
+				<a href=""><img src="images/event/event06.jpg" /></a>
+				<a href=""><img src="images/event/event07.jpg" /></a>
 			</div>
 		</div>
 		<!-- RollDiv -->
@@ -396,7 +304,7 @@ function sliding(add) {
   $('.slide').stop().animate({'left' : -(idx*pos)+"px"}, "slow");
 }
 
-autoslide = setInterval(function() { sliding(1) }, 5000);
+autoslide = setInterval(function() { sliding(1 ) }, 3000);
 
 function after() {
   setTimeout(function() {
