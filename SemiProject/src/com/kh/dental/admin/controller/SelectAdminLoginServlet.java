@@ -32,7 +32,7 @@ public class SelectAdminLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
+		String userPwd = request.getParameter("mPwd");
 		System.out.println(userId);
 		System.out.println(userPwd);
 		Admin loginUser = new AdminService().loginCheck(userId, userPwd);
