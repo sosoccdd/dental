@@ -23,12 +23,12 @@
 
 </head>
 <body>
-
+S
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
               
-                <a class="navbar-brand" href="/semi/views/admin/AdminMain.jsp">조치 관리자</a>
+                <a class="navbar-brand" href="/semi/Nmember.ad">조치 관리자</a>
             </div>
         </nav>
 

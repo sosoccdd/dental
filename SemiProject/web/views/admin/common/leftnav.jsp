@@ -25,29 +25,19 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="/semi/views/admin/AdminMain.jsp">회원관리</a>
+                            <a href="/semi/Nmember.ad">회원관리</a>
                         </li>
                         <li>
-                            <a href="/semi/views/admin/AdminMain_event.jsp">이벤트관리</a>
+                            <a href="/semi/selectboev.ad">이벤트관리</a>
                         </li>
                         <li>
-                            <a href="/semi/views/admin/AdminMain_healthInfo.jsp">건강정보관리</a>
+                            <a href="/semi/SelectMo.ad">신고관리</a>
                         </li>
                         <li>
-                            <a href="/semi/views/admin/AdminMain_clinic.jsp">병원정보수정관리</a>
+                            <a href="/semi/approvalC.ad">병원가입승인</a>
                         </li>
-                        <li>
-                            <a href="/semi/views/admin/AdminMain_help.jsp">1:1문의&신고관리</a>
-                        </li>
-                        <li>
-                            <a href="/semi/views/admin/AdminMain_approvalC.jsp">병원가입승인</a>
-                        </li>
-                        <li>
-                            <a href="/semi/views/admin/AdminMain_approvalD.jsp">의사가입승인</a>
-                        </li>
-                        <li>
-                            <a href="/semi/views/admin/AdminMain_notice.jsp">공지사항등록</a>
-                        </li>
+                       
+                        
                     </ul>
                 </div>
             </div>
