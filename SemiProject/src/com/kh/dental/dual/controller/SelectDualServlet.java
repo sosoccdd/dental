@@ -1,7 +1,7 @@
-package com.kh.dental.mypage.controller;
-
+package com.kh.dental.dual.controller;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,23 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kh.dental.member.model.vo.Member;
-import com.kh.dental.mypage.model.service.MypageService;
+import com.kh.dental.mypage.model.service.DualService;
 import com.kh.dental.mypage.model.vo.Dual;
 import com.kh.dental.mypage.model.vo.PageInfo;
-
-
 
 
 
 /**
  * Servlet implementation class SelectDualServlet
  */
-@WebServlet("/selectList.mp")
-public class SelectNoticeList extends HttpServlet {
+@WebServlet("/selectDual.du")
+public class SelectDualServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public SelectNoticeList() {
+    public SelectDualServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,21 +38,16 @@ public class SelectNoticeList extends HttpServlet {
 		//게시판은 1페이지부터 시작함
 		currentPage = 1;
 		
-		Member loginUser = (Member)request.getSession().getAttribute("loginUser");
-		String userName = loginUser.getmId();
-		System.out.println("awlfkcawljcnawljcnawljcn : " + userName);
-		
 		if(request.getParameter("currentPage") != null){
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
-			System.out.println("Servlet currentPage" + currentPage);
 		}
 		
 		//한페이지에 보여질 목록 갯수
 		limit = 10;
 		
 		//전체 목록 갯수를 리턴받음
-		MypageService ds = new MypageService();
-		int listCount = ds.getListCount(userName);
+		DualService ds = new DualService();
+		int listCount = ds.getListCount();
 		
 		System.out.println("listCount : " + listCount);
 		
@@ -82,23 +74,23 @@ public class SelectNoticeList extends HttpServlet {
 		
 		
 		//ArrayList<Board> list = new BoardService().selectList();
-		System.out.println("ckmsckmsacjklsncljasncalsjfnalsjfcnlasjf");
-		ArrayList<Dual> list = new MypageService().selectList(currentPage, limit, userName);
+		
+		ArrayList<Dual> list = new DualService().selectList(currentPage, limit);
 		
 		System.out.println(list);
 		
 		String page = "";
 		if(list != null){
-			page = "views/MyPage/CMyPage.jsp";
+			page = "semi/views/MyPage/CMyPage.jsp";
 			request.setAttribute("list", list);
 			request.setAttribute("pi", pi);
-			System.out.println("SelectNoticeList : " + pi);
 		}else{
 			page = "views/common/errorPage.jsp";
 			request.setAttribute("msg", "게시판 조회 실패!");
 		}
-		System.out.println("page : " + page);
-		request.getRequestDispatcher(page).forward(request, response);
+		
+		RequestDispatcher view = request.getRequestDispatcher(page);
+		view.forward(request, response);
 		
 		
 	}

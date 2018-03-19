@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/semi/css/event.css">
-
+<link rel="stylesheet" href="/semi/css/common.css">
 <link rel="stylesheet" href="/semi/css/DMyPage.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,6 +25,7 @@
 <body>
 	<%@ include file="../common/header.jsp"%>
 
+	<div class="w1200" style="margin-left:auto; margin-right:auto;">
 	<div class="w1200 middle CHeader2 hidden">
 		<div class="fl">
 			<img src="../../images/common/tooth2.png" class="CMsubtitle">
@@ -40,23 +41,33 @@
 			<i class="fa fa-calendar"></i>&nbsp; 조치포인트
 			<p>393</p>
 		</div>
+<<<<<<< HEAD
 
 		<div class="CMfirstdiv fl">
 			<i class="fa fa-pencil"></i>&nbsp; 예약환자수
 			<p>0</p>
 		</div>
 
+=======
+>>>>>>> jihyun
 		<div class="CMfirstdiv fl">
 			<i class="fa fa-question"></i>&nbsp; 문의내역
 			<p>0</p>
 		</div>
+	</div>
 	</div>
 
 
 	<div class="Ctotal2 w1200 middle">
 		<div class="tab w1200 middle">
 
+<<<<<<< HEAD
 			<button class=" tablinks" onclick="openCity(event, 'Information')">
+=======
+			<button class=" tablinks Information active" onclick="openCity(event, 'Information')"> 
+				신고하기</button>
+			<button class=" tablinks" onclick="openCity(event, 'Inquiry')">
+>>>>>>> jihyun
 				개인정보</button>
 			<button class=" tablinks" onclick="openCity(event, 'Inquiry')">
 				1:1 문의</button>

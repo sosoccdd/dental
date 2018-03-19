@@ -69,17 +69,21 @@ Member loginUser =(Member)session.getAttribute("loginUser");
 							<li><a href="/semi/views/SerchClinic/Res.jsp">예약하기</a></li>
 						<%}else if(loginUser.getType().equals("D")) { %>
 						
-						<li><input type="hidden" name="userName" id="userName" value="<%=loginUser.getmName() %>"/>
+						<li><input type="hidden" name="userName" id="userName" value="<%=loginUser.getmId() %>"/>
 						<a href="<%=request.getContextPath()%>/selectListD.mp">마이메뉴</a></li>
 						<%}else { %>
 						<li><input type="hidden" name="userName" id="userName" value="<%=loginUser.getmName() %>"/>
 						<a href="<%=request.getContextPath()%>/selectR.mp">마이메뉴</a></li>
 						<%} %> 
+<<<<<<< HEAD
 >>>>>>> jihyun
 						<li><a href="#">내 접수현황</a></li>
 						<li><a href="#">병원 후기</a></li>
 						<li><a href="#">1:1문의</a></li>
 						<li><a href="#">개인정보</a></li>
+=======
+						<li><a href="/semi/views/MyPage/DualForm.jsp">신고하기</a></li>
+>>>>>>> jihyun
 						<li>
 						<input type="hidden" name="userName" id="userName" value="<%=loginUser.getmName() %>"/>
 						<a href="<%= request.getContextPath() %>/logout.me">로그아웃</a></li>

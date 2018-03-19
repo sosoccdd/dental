@@ -10,7 +10,9 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import com.kh.dental.mypage.model.dao.MypageDao;
+import com.kh.dental.mypage.model.vo.CRlist;
 import com.kh.dental.mypage.model.vo.Dual;
+import com.kh.dental.mypage.model.vo.RMember;
 import com.kh.dental.mypage.model.vo.Res;
 import com.kh.dental.mypage.model.vo.StarPoint;
 
@@ -71,11 +73,11 @@ public class MypageService {
 		return result;
 	}
 
-	public ArrayList<StarPoint> selectStar() {
+	public ArrayList<StarPoint> selectStar(String userid) {
 		
 		Connection con = getConnection();
 		
-		ArrayList<StarPoint> list = new MypageDao().selectStar(con);
+		ArrayList<StarPoint> list = new MypageDao().selectStar(con, userid);
 		
 		close(con);
 		System.out.println("service" +list);
@@ -169,6 +171,38 @@ public class MypageService {
 		close(con);
 	
 		return result;
+	}
+
+	public int getListCountRmember(String mno) {
+		Connection con = getConnection();
+		
+		int listCount = new MypageDao().listCountRmember(con, mno);
+		
+		close(con);
+		
+		return listCount;
+	}
+
+	public ArrayList<RMember> selectRMemberList(int currentPage, int limit, String mno) {
+		
+		Connection con = getConnection();
+		
+		ArrayList<RMember> list = new MypageDao().selectRMemberList(con, currentPage, limit, mno);
+		
+		close(con);
+		
+		return list;
+	}
+
+	public ArrayList<CRlist> selectCRlist(String rid) {
+		
+		Connection con = getConnection();
+		
+		ArrayList<CRlist> list = new MypageDao().selectCRlist(con, rid);
+		
+		close(con);
+		
+		return list;
 	}
 
 	

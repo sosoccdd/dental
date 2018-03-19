@@ -13,9 +13,6 @@
 	int startPage1 = pi1.getStartPage();
 	int endPage1 = pi1.getEndPage();
 	
-	
-	
-	
 %> 
 
 
@@ -26,7 +23,11 @@
 <head>
 <meta charset=UTF-8>
 <title>Insert title here</title>
-<link rel="stylesheet" href="/semi/css/event.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/event.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/MyPage4_1.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/MyPage4_2.css">
+
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -43,6 +44,13 @@
 	    padding-top:40px;
 	   
 	}
+	.inner-wrap2{
+   margin-top:100px;
+   background:#f6f6f6;
+   height:200px;
+   
+   
+}
 	
 	/* Style the buttons inside the tab */
 	.tab button {
@@ -188,11 +196,32 @@
    .NMtable{
    		margin-bottom:25px;
    }
+   .default-wrap{
+   margin-top:50px;
+   margin-left:auto;
+   margin-right:auto;
+   width:80%;
+   background:#f6f6f6;
+   height:260px;
+
+   	  
+   }
+   .info-wrap {
+   
+   margin-left:auto;
+   margin-right:auto;
+   width:1200px;
+   height:900px;
+   background: darkgray;
+   padding-top:20px;
+}
+   
 </style>
 </head>
 <body>
 	<%@ include file="../common/header.jsp"%>
 	
+	<div class="w1200" style="margin-left:auto; margin-right:auto;">
 	<div class ="w1200 middle NHeader2 hidden">
 		<div class = "fl">
 			<img src = "/semi/images/common/tooth2.png" class = "NMsubtitle">
@@ -219,6 +248,7 @@
 			<p>0</p>
 		</div>
 	</div>
+	</div>
 	
 
 
@@ -241,36 +271,165 @@
 			<p id="demo"></p>
          </div> 
           <div class = "fl NMregister">
-         	<div> <!-- 예약자를 새로고침해야 할 영역 -->
-         		<table>
+         	<div style="width:300px;"> <!-- 예약자를 새로고침해야 할 영역 -->
+         		<table id="Rmember">
+         			<thead>
          			<tr>
-         				<th>예약자명</th>
-         				<th>휴대전화</th>
+         				<th>예약자명<input type="hidden" id="Mno" value="<%= loginUser.getmNo()%>"></th>
+         				<th>진료분야</th>
          				<th>접수</th> <!-- check : y = 접수완료 n : 접수취소 -->
          			</tr>
-         			<tr>
-         				<td>송재상</td>
-         				<td>010-4534-5678</td>
-         				<td>접수완료</td>
-         			</tr>
-         			<!-- <tr>
-         				<td>서은별</td>
-         				<td>010-1234-5678</td>
-         				<td>접수취소</td>
-         			</tr> -->
+         			
+         			</thead>
+         			<tbody>
+         			
+         			</tbody>
          		</table>
          		<br><br>
-         		<div class = "NMbottombtn" >
-                    <button class = "NMstorybtn"><</button>
-                    <button class = "NMstorybtn">1</button>
-                    <button class = "NMstorybtn">2</button>
-                    <button class = "NMstorybtn">3</button>
-                    <button class = "NMstorybtn">4</button>
-                    <button class = "NMstorybtn">5</button>
-                    <button class = "NMstorybtn">></button>
-                 </div>
          	</div>
           </div>
+          
+           <script>
+			$(function(){
+				
+				var mno = $("#Mno").val();
+				
+				console.log("sksksksk??"+mno);
+
+				$.ajax({
+					url:"/semi/selectRmember.mp",
+					data:{mno:mno},
+					type:"post",
+					success:function(data){
+						
+						var $table1 = $("#Rmember tbody");
+						var pi = data[0];
+						var currentPage = pi.currentPage;
+						var listCount = pi.listCount;
+						var limit = pi.limit;
+						var maxPage = pi.maxPage;
+						var startPage = pi.startPage;
+						var endPage = pi.endPage;
+						
+						for(var i = 0; i< limit; i++){
+							var $tr = $("<tr>");
+							var $nameTd = $("<td>").text(data[i].m_name);
+							var $fTd = $("<td>").text(data[i].f_name);
+							var $statusTd = $("<td>").text(data[i].r_status);
+							
+							$tr.append($nameTd);
+							$tr.append($fTd);
+							$tr.append($statusTd);
+							$table1.append($tr);
+							
+						}
+						
+						$div = $("<div>").attr("class", "Rpaging").attr("id", "pageR").attr("align", "center");
+						
+						$btn1 = $("<button>").text("<<").attr("id", "point1").attr("value", startPage);
+						if(currentPage == "1"){
+							$btn2 = $("<button>").text("<");	
+						}else{
+						$btn2 = $("<button>").text("<").attr("id", "point1").attr("value", currentPage-1);
+						}
+						$div.append($btn1);
+						$div.append($btn2);
+						
+						for(var i = startPage; i<=pi.maxPage; i++){
+							var $btn = $("<button>").text(i).attr("id","point1").attr("value", i);
+							$div.append($btn);
+						}
+						if(currentPage == maxPage){
+							$btn3 = $("<button>").text(">");	
+						}else{
+						$btn3 = $("<button>").text(">").attr("id", "point1").attr("value", currentPage+1);
+						}
+						$btn4 = $("<button>").text(">>").attr("id", "point1").attr("value", maxPage);
+						
+						$div.append($btn3);
+						$div.append($btn4);
+						$table1.after($div);
+						
+					},
+					error:function(msg){
+						console.log("리시트조회실패");
+					}
+				});
+			});
+          
+          /* 에이젝스 페이징 클릭이벤트 */
+			$(document).on("click", "#point1", function(){
+				var num = $(this).val();
+				var mno = $("#Mno").val();
+				var $table1 = $("#Rmember tbody");
+				var $buttonA = $("#pageR");
+				$table1.empty();
+				$buttonA.empty();
+				
+				$.ajax({
+					url:"/semi/selectRmember.mp",
+					type:"get",
+					data:{"currentPage":num, mno:mno},
+					success:function(data){
+						console.log(data);
+						
+						var pi = data[0];
+						var currentPage = pi.currentPage;
+						var listCount = pi.listCount;
+						var limit = pi.limit;
+						var maxPage = pi.maxPage;
+						var startPage = pi.startPage;
+						var endPage = pi.endPage;
+						console.log(maxPage);
+						
+						for(var i = 1; i< data.length-1; i++){
+							var $tr = $("<tr>");
+							var $nameTd = $("<td>").text(data[i].m_name);
+							var $fTd = $("<td>").text(data[i].f_name);
+							var $statusTd = $("<td>").text(data[i].r_status);
+							
+							$tr.append($nameTd);
+							$tr.append($fTd);
+							$tr.append($statusTd);
+							$table1.append($tr);
+							
+						}
+						
+						$div = $("<div>").attr("class", "Rpaging").attr("id", "pageR").attr("align", "center");
+						
+						$btn1 = $("<button>").text("<<").attr("id", "point1").attr("value", startPage);
+						if(currentPage == "1"){
+							$btn2 = $("<button>").text("<");	
+						}else{
+						$btn2 = $("<button>").text("<").attr("id", "point1").attr("value", currentPage-1);
+						}
+						$div.append($btn1);
+						$div.append($btn2);
+						
+						for(var i = startPage; i<=pi.maxPage; i++){
+							var $btn = $("<button>").text(i).attr("id","point1").attr("value", i);
+							$div.append($btn);
+						}
+						if(currentPage == maxPage){
+							$btn3 = $("<button>").text(">");	
+						}else{
+						$btn3 = $("<button>").text(">").attr("id", "point1").attr("value", currentPage+1);
+						}
+						$btn4 = $("<button>").text(">>").attr("id", "point1").attr("value", maxPage);
+						
+						$div.append($btn3);
+						$div.append($btn4);
+						$table1.after($div);
+						
+					},
+					error:function(msg){
+						console.log("ㅁ라ㅡㅁ자르");
+					}
+				});		
+			});
+			
+		</script>
+          
           
           
           
@@ -283,21 +442,21 @@
                      <tr class = "NMtr2" align="center">
                        <th>예약 시간 </th>
                        <th>과목</th>
-                       <th>예약자 회원 번호</th>
+                       <th>예약자 회원 이름</th>
                        <th>확인</th>
                        <th>비고</th>
                        <th>예약 여부</th>
                      </tr>
                    </thead>
                    <tbody align = "center">
-                    
-                     <% for(Res b : list1){ %>
+					<% for(Res b : list1){ %>
 					<tr>
 						<td><%= b.getRtime() %></td>
-						<td><%= b.getF_num() %></td>
+						<td><%= b.getF_name() %></td>
 						<td><%= b.getMno() %></td>
-						<td><%= b.getR_status() %></td>
+						<td id="status"><%= b.getR_status()%></td>
 						<td><%= b.getEtc() %></td>
+<<<<<<< HEAD
 						 <td><button id="rid">승인</button>&nbsp;&nbsp;
                        	   <button>취소</button></td>
 <<<<<<< HEAD
@@ -333,32 +492,28 @@
                        	   <button>취소</button></td>
                      </tr>  
 =======
+=======
+						 <td>
+						 <button id="rid" onclick="updateY(<%=b.getRno()%>);">승인</button>&nbsp;&nbsp;
+                       	  </td>
+>>>>>>> jihyun
 					</tr>
 					<% } %>
+			
+					<script>
+						function updateY(rno){
+							console.log(rno);
+							
+							location.href='/semi/updateRstatus.mp?rno='+ rno;
+							
+						}					
+					
+					</script>
 	                     
                      
 >>>>>>> jihyun
                    
                    </tbody>
-                   
-                  <%--  <script type="text/javascript">
-				  		var webSocket = new WebSocket('ws://172.20.10.6:8001/<%= request.getContextPath() %>/broadcasting1');
-				   		webSocket.onmessage = function(event) {
-					      onMessage(event)
-					    };
-					    function onMessage(event) {
-					      	alert(event.data);
-					    	
-					    }
-					    
-					    $("#rid").click(function(){
-					    	send("접수완료");
-					    });
-					    
-					    function send(data) {
-					        webSocket.send(data);
-					    }
-  				 </script> --%>
                    
                    
                  </table>
@@ -447,7 +602,7 @@
 					type:"post",
 					success:function(data){
 						console.log(data);
-						var $tablebody = $("#DualList  tbody");	
+						var $tablebody = $("#DualList tbody");	
 						var $table = $("#DualList");
 						var pi = data[0];
 						var currentPage = pi.currentPage;
@@ -497,11 +652,9 @@
 						$table.after($div);
 						
 						var Listcount = data[data.length-1].listS;
-						console.log(Listcount);
 						$("#Nreview").text(Listcount);
 					},
 					error:function(msg){
-						alert(msg);
 						console.log("리시트조회실패");
 					}
 				});
@@ -510,9 +663,7 @@
 			
 			/* 에이젝스 페이징 클릭이벤트 */
 			$(document).on("click", "#point", function(){
-				alert($(this).val());
 				var num = $(this).val();
-				alert(num);
 				var $tablebody = $("#DualList tbody");	
 				var $table = $("#DualList");
 				var $buttonA = $("#pageA");
@@ -624,7 +775,7 @@
          
          $(".tablinks").click(function(){
             
-            $(".Ctotal2").css("height","700px");
+            $(".NMtotal2").css("height","700px");
             $("#pass-wrap").show();
             $("#default-wrap").hide();
             $("#withdraw-btn").css("margin-top","10px");
@@ -685,12 +836,18 @@
       <script>
       
       $(function(){
+<<<<<<< HEAD
          /*.Ctotal2  */
          
+=======
+    	  
+    	  /*.NMtotal2  */
+>>>>>>> jihyun
          $("#tog").hide();
          
          $("#change-btn").click(function(){
          $("#tog").toggle();
+<<<<<<< HEAD
          if($(".Ctotal2").height()==700){
             
              $(".Ctotal2").css("height","900px");
@@ -701,6 +858,13 @@
             
             $(".Ctotal2").css("height","700px");
 
+=======
+         if($(".NMtotal2").height()==700){
+            $(".NMtotal2").css("height","900px");
+            $("#withdraw-btn").css("margin-top","150px");
+         }else if($(".NMtotal2").height()==900){
+            $(".NMtotal2").css("height","700px");
+>>>>>>> jihyun
             $("#withdraw-btn").css("margin-top","10px");
          };
          });

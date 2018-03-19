@@ -14,7 +14,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import com.kh.dental.mypage.model.vo.CRlist;
 import com.kh.dental.mypage.model.vo.Dual;
+import com.kh.dental.mypage.model.vo.RMember;
 import com.kh.dental.mypage.model.vo.Res;
 import com.kh.dental.mypage.model.vo.StarPoint;
 import com.sun.xml.internal.fastinfoset.Decoder;
@@ -170,7 +172,7 @@ public class MypageDao {
 	
 	
 	
-	public ArrayList<StarPoint> selectStar(Connection con) {
+	public ArrayList<StarPoint> selectStar(Connection con, String userid) {
 		
 		ArrayList<StarPoint> list = null;
 		PreparedStatement pstmt = null;
@@ -181,6 +183,7 @@ public class MypageDao {
 		
 		try {
 			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, userid);
 			
 			rset = pstmt.executeQuery();
 			
@@ -192,13 +195,8 @@ public class MypageDao {
 					
 					sp.setBno(rset.getInt("b_no"));
 					sp.setBwriter(rset.getString("b_writer"));
-					sp.setBcontent(rset.getString("b_content"));
-					sp.setBtno(rset.getInt("b_tno"));
-					sp.setBtype(rset.getShort("b_type"));
-					sp.setBtitle(rset.getString("b_title"));
-					sp.setBstatus(rset.getString("b_status"));
 					sp.setStartpt(rset.getInt("start_pt"));
-					sp.setYkiho_enc(rset.getString("YKIHO_ENC"));
+					sp.setYkiho_enc(rset.getString("yadm_nm"));
 					sp.setBdate(rset.getDate("b_date"));
 					list.add(sp);
 				}
@@ -475,6 +473,7 @@ public class MypageDao {
 				r.setRno(rset.getInt("r_no"));
 				r.setRtime(rset.getString("r_time"));
 				r.setF_num(rset.getInt("f_num"));
+				r.setF_name(rset.getString("f_name"));
 				r.setR_status(rset.getString("r_status"));
 				r.setMno(rset.getInt("m_no"));
 				r.setEtc(rset.getString("etc"));
@@ -518,6 +517,113 @@ public class MypageDao {
 			close(pstmt);
 		}
 		return result;
+	}
+
+	public int listCountRmember(Connection con, String mno) {
+		
+		PreparedStatement pstmt = null;
+		int listCount = 0;
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("listCountRmember");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, mno);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()){
+				listCount = rset.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return listCount;
+	}
+
+	public ArrayList<RMember> selectRMemberList(Connection con, int currentPage, int limit, String mno) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<RMember> list = null;
+		RMember r = null;
+		
+		String query = prop.getProperty("selectRMember");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, Integer.parseInt(mno));
+			pstmt.setInt(2, currentPage);
+			pstmt.setInt(3, limit);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset != null){
+				list = new ArrayList<RMember>();
+				while(rset.next()){
+					r = new RMember();
+					
+					r.setStatus(rset.getString("r_status"));
+					r.setmName(rset.getString("m_name"));
+					r.setFname(rset.getString("f_name"));
+					
+					list.add(r);
+					
+				}
+				System.out.println("콘틍롤!!!11"+list);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
+	}
+
+	public ArrayList<CRlist> selectCRlist(Connection con, String rid) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<CRlist> list = null;
+		CRlist cr = null;
+		String query = prop.getProperty("selectCRlist");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, rid);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset != null){
+				list = new ArrayList<CRlist>();
+				while(rset.next()){
+					cr = new CRlist();
+					
+					cr.setHosName(rset.getString("yadm_nm"));
+					cr.setR_date(rset.getString("r_date"));
+					cr.setR_time(rset.getString("r_time"));
+					cr.setEtc(rset.getString("etc"));
+					cr.setMno(rset.getInt("m_no"));
+						
+					list.add(cr);
+				}
+				System.out.println("asfkzjsxmfhf"+list);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return list;
 	}
 
 	
