@@ -17,8 +17,8 @@ public class LoginWrapper extends HttpServletRequestWrapper{
 	@Override
 	public String getParameter(String key){
 		String value = "";
-		if(key != null && key.equals("userPwd")){
-			value = getSha512(super.getParameter("userPwd"));
+		if(key != null && key.equals("mPwd")){
+			value = getSha512(super.getParameter("mPwd"));
 		}else{
 			value = super.getParameter(key);
 		}

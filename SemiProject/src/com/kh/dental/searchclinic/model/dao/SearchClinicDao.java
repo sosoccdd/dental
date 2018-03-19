@@ -61,6 +61,7 @@ public class SearchClinicDao {
 				sc.setX_pos(rset.getString("X_POS_WGS84"));
 				sc.setY_pos(rset.getString("Y_POS_WGS84"));
 				sc.setStatus(rset.getString("STATUS"));
+				sc.setM_no(rset.getInt("M_NO"));
 				list.add(sc);
 			}
 			System.out.println(list);
@@ -105,6 +106,7 @@ public class SearchClinicDao {
 				sc.setX_pos(rset.getString("X_POS_WGS84"));
 				sc.setY_pos(rset.getString("Y_POS_WGS84"));
 				sc.setStatus(rset.getString("STATUS"));
+				sc.setM_no(rset.getInt("M_NO"));
 				list.add(sc);
 			}
 			System.out.println(list);
@@ -145,6 +147,7 @@ public class SearchClinicDao {
 				sc.setX_pos(rset.getString("X_POS_WGS84"));
 				sc.setY_pos(rset.getString("Y_POS_WGS84"));
 				sc.setStatus(rset.getString("STATUS"));
+				sc.setM_no(rset.getInt("M_NO"));
 				list.add(sc);
 			}
 			System.out.println(list);

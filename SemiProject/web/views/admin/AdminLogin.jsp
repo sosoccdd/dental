@@ -29,7 +29,7 @@
                                     <input class="form-control" placeholder="아이디" name="userId" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="패스워드" name="userPwd" type="password" >
+                                    <input class="form-control" placeholder="패스워드" name="mPwd" type="password" >
                                 </div>
                                 <div class="btn btn-lg btn-success btn-block" onclick="login()">로그인</div>
                         </form>

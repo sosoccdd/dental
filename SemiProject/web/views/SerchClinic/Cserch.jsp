@@ -561,26 +561,43 @@
 								
 	
 	
-	
 								$('#div-tag-table-add').empty();
-	
 								for (var k = 1; k <= limit; k++) {
-	
-									$('#div-tag-table-add').append("<table class='table-box bluck-in' id='table-tag-id'>"
+								var table = "";
+									
+									table+="<table class='table-box bluck-in' id='table-tag-id'>"
 										+ "<tr class='tr-tag-st'>"
 										+ "<td class='tr-img-tag'>"
 										+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
 										+ "<td colspan='2' class='f20'>"
 										+ data[k].yadm_nm
 										+ "</td></tr><tr><td></td><td></td><td></td></tr>"
+									if(data[k].status==='Y'){
+										table+="<tr class='tr-tag-st'><td>"
+											+"<button onclick='gogogo()'"
+											+"style='width: 50px; height: 30px; margin-left: 15px; padding: 0px; margin-top: 5px;' class='w3-button w3-white w3-border w3-border-blue w3-round-large'>예약"
+											+"<input type='hidden' id='input-tag-hidden' value='"
+											+data[k].yadm_nm
+											+"'></button>"
+											+ "</td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+											+ data[k].addr
+											+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
+											+ data[k].telno
+											+ "</td></tr>"
+											+ "</table>"
+									}else{
+										
+										table+="</td><td></td><td></td></tr>"
 										+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
 										+ data[k].addr
 										+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
 										+ data[k].telno
 										+ "</td></tr>"
-										+ "</table>");
-	
-	
+										+ "</table>"
+									}
+										$('#div-tag-table-add').append(table);
+
+
 								}
 								$('#div-tag-add-a-tag').empty();
 								$('#div-tag-add-a-tag').append("<div class='w3-center'>");
@@ -742,23 +759,42 @@
 	
 	
 					$('#div-tag-table-add').empty();
-					var table = "";
 					for (var k = 1; k <= limit; k++) {
-	
-						$('#div-tag-table-add').append("<table class='table-box bluck-in' id='table-tag-id'>"
-								+ "<tr class='tr-tag-st'>"
-								+ "<td class='tr-img-tag'>"
-								+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
-								+ "<td colspan='2' class='f20'>"
-								+ data[k].yadm_nm
-								+ "</td></tr><tr><td></td><td></td><td></td></tr>"
-								+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+					var table = "";
+						
+						table+="<table class='table-box bluck-in' id='table-tag-id'>"
+							+ "<tr class='tr-tag-st'>"
+							+ "<td class='tr-img-tag'>"
+							+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
+							+ "<td colspan='2' class='f20'>"
+							+ data[k].yadm_nm
+							+ "</td></tr><tr><td></td><td></td><td></td></tr>"
+						if(data[k].status==='Y'){
+							table+="<tr class='tr-tag-st'><td>"
+								+"<button onclick='gogogo()'"
+								+"style='width: 50px; height: 30px; margin-left: 15px; padding: 0px; margin-top: 5px;' class='w3-button w3-white w3-border w3-border-blue w3-round-large'>예약"
+								+"<input type='hidden' id='input-tag-hidden' value='"
+								+data[k].yadm_nm
+								+"'></button>"
+								+ "</td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
 								+ data[k].addr
 								+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
 								+ data[k].telno
 								+ "</td></tr>"
-								+ "</table>");
-	
+								+ "</table>"
+						}else{
+							
+							table+="</td><td></td><td></td></tr>"
+							+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+							+ data[k].addr
+							+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
+							+ data[k].telno
+							+ "</td></tr>"
+							+ "</table>"
+						}
+							$('#div-tag-table-add').append(table);
+
+
 					}
 					$('#div-tag-add-a-tag').empty();
 					$('#div-tag-add-a-tag').append("<div class='w3-center'>");
@@ -901,28 +937,50 @@
 					};
 				}
 				$('#div-tag-table-add').empty();
-				for (var k = start; k < end; k++) {
-					console.log("test");
-					$('#div-tag-table-add').append("<table class='table-box bluck-in' id='table-tag-id'>"
-							+ "<tr class='tr-tag-st'>"
-							+ "<td class='tr-img-tag'>"
-							+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
-							+ "<td colspan='2' class='f20'>"
-							+ listSearchClinic[k].yadm_nm
-							+ "</td></tr><tr><td></td><td></td><td></td></tr>"
-							+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+				for (var k = start; k <= end; k++) {
+				var table = "";
+					
+					table+="<table class='table-box bluck-in' id='table-tag-id'>"
+						+ "<tr class='tr-tag-st'>"
+						+ "<td class='tr-img-tag'>"
+						+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
+						+ "<td colspan='2' class='f20'>"
+						+ listSearchClinic[k].yadm_nm
+						+ "</td></tr><tr><td></td><td></td><td></td></tr>"
+					if(listSearchClinic[k].status==='Y'){
+						table+="<tr class='tr-tag-st'><td>"
+							+"<button onclick='gogogo()'"
+							+"style='width: 50px; height: 30px; margin-left: 15px; padding: 0px; margin-top: 5px;' class='w3-button w3-white w3-border w3-border-blue w3-round-large'>예약"
+							+"<input type='hidden' id='input-tag-hidden' value='"
+							+listSearchClinic[k].yadm_nm
+							+"'></button>"
+							+ "</td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
 							+ listSearchClinic[k].addr
 							+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
 							+ listSearchClinic[k].telno
 							+ "</td></tr>"
-							+ "</table>");
+							+ "</table>"
+					}else{
+						
+						table+="</td><td></td><td></td></tr>"
+						+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+						+ listSearchClinic[k].addr
+						+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
+						+ listSearchClinic[k].telno
+						+ "</td></tr>"
+						+ "</table>"
+					}
+						$('#div-tag-table-add').append(table);
+
+
 				}
+				
 				
 			} else {
 				hideMarkers();
 				var start = limit * p + 2;
 				var end = start + 10;
-				for (var k = 1; k <= limit; k++) {
+				for (var k = start; k <= end; k++) {
 					positions.push({
 						content : '<div>' + listSearchClinic[k].yadm_nm + '</div>',
 						latlng : new daum.maps.LatLng(listSearchClinic[k].y_pos, listSearchClinic[k].x_pos)
@@ -971,21 +1029,42 @@
 					};
 				}
 				$('#div-tag-table-add').empty();
-				for (var k = 1; k <= limit; k++) {
-					console.log("test");
-					$('#div-tag-table-add').append("<table class='table-box bluck-in' id='table-tag-id'>"
-							+ "<tr class='tr-tag-st'>"
-							+ "<td class='tr-img-tag'>"
-							+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
-							+ "<td colspan='2' class='f20'>"
-							+ listSearchClinic[k].yadm_nm
-							+ "</td></tr><tr><td></td><td></td><td></td></tr>"
-							+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+				for (var k = start; k <= end; k++) {
+				var table = "";
+					
+					table+="<table class='table-box bluck-in' id='table-tag-id'>"
+						+ "<tr class='tr-tag-st'>"
+						+ "<td class='tr-img-tag'>"
+						+ "<img class='tr-td-img-tag' src='../../images/SerchClinic/지도포인트.png'></td>"
+						+ "<td colspan='2' class='f20'>"
+						+ listSearchClinic[k].yadm_nm
+						+ "</td></tr><tr><td></td><td></td><td></td></tr>"
+					if(listSearchClinic[k].status==='Y'){
+						table+="<tr class='tr-tag-st'><td>"
+							+"<button onclick='gogogo()'"
+							+"style='width: 50px; height: 30px; margin-left: 15px; padding: 0px; margin-top: 5px;' class='w3-button w3-white w3-border w3-border-blue w3-round-large'>예약"
+							+"<input type='hidden' id='input-tag-hidden' value='"
+							+listSearchClinic[k].yadm_nm
+							+"'></button>"
+							+ "</td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
 							+ listSearchClinic[k].addr
 							+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
 							+ listSearchClinic[k].telno
 							+ "</td></tr>"
-							+ "</table>");
+							+ "</table>"
+					}else{
+						
+						table+="</td><td></td><td></td></tr>"
+						+ "<tr class='tr-tag-st'><td></td><td class='td-px-wi-1'>주 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 소&nbsp;:&nbsp;</td><td class='td-px-wi-2'>"
+						+ listSearchClinic[k].addr
+						+ "</td></tr><tr class='tr-tag-st'><td></td><td>전화번호 &nbsp;:&nbsp;</td><td>"
+						+ listSearchClinic[k].telno
+						+ "</td></tr>"
+						+ "</table>"
+					}
+						$('#div-tag-table-add').append(table);
+
+
 				}
 	
 			
@@ -1037,6 +1116,10 @@
 		// "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
 		function hideMarkers() {
 			setMarkers(null);
+		}
+		function gogogo(){
+			
+			location.href='/semi/rescname.sc?yadm_nm='+$("#input-tag-hidden").val();
 		}
 		
 	

@@ -26,6 +26,8 @@
 }
 .tr-td-img-tag{
 	vertical-align: middle;
+	width: 50px;
+	height: 50px;
 }
 .li-div-tag {
    width: 90px;
